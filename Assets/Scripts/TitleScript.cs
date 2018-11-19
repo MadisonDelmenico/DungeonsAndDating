@@ -1,25 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManager;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class TitleScript : MonoBehaviour {
+public class TitleScript : MonoBehaviour
+{
 
     // Use this for initialization
-    void ChangeScene(string sceneName)
+    public Scene StartScene;
+
+    public void Start()
     {
-        Application.LoadLevel(sceneName);
+        
+    }
+
+    public void Startgamebutton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
 
+    public void QuitGame()
+    {
 
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        Application.Quit();
+
+    }
+
 }

@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Title.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/CharacterCreation.unity
+    guid: dd485a155417a184199c1e513f79b62d
+  - enabled: 1
+    path: Assets/Scenes/Barovia.unity
+    guid: 99199d464394bd848930bb40ace7196c
   m_configObjects: {}

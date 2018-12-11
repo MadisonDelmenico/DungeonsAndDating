@@ -54,7 +54,11 @@ public class ExampleText : MonoBehaviour {
 
 	public void UpdateText()
 	{
-		
+		if (CharName == "") 
+		{
+			CharName = "Name";
+
+		}
 
 		exampleText.GetComponentInParent<Text> ().text = CharName + " is a " + Class + " of " + Affiliation + ". " + pronounSubjective +" " + worship + " the Deity " + Deity;
 

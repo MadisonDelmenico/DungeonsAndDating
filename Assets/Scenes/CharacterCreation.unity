@@ -333,6 +333,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1362973906}
+        m_MethodName: Confirm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &33044136
@@ -1213,6 +1224,63 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 475006295}
   m_CullTransparentMesh: 0
+--- !u!1001 &530068413
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4932267516261016, guid: 9e2b93da00ab44a48a45dc051cfb4853, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.8087163
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932267516261016, guid: 9e2b93da00ab44a48a45dc051cfb4853, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.5030538
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932267516261016, guid: 9e2b93da00ab44a48a45dc051cfb4853, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 95.95488
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932267516261016, guid: 9e2b93da00ab44a48a45dc051cfb4853, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932267516261016, guid: 9e2b93da00ab44a48a45dc051cfb4853, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932267516261016, guid: 9e2b93da00ab44a48a45dc051cfb4853, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932267516261016, guid: 9e2b93da00ab44a48a45dc051cfb4853, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932267516261016, guid: 9e2b93da00ab44a48a45dc051cfb4853, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114815823409620822, guid: 9e2b93da00ab44a48a45dc051cfb4853,
+        type: 2}
+      propertyPath: characterpic
+      value: 
+      objectReference: {fileID: 950955315}
+    - target: {fileID: 114254101212367960, guid: 9e2b93da00ab44a48a45dc051cfb4853,
+        type: 2}
+      propertyPath: exampleText
+      value: 
+      objectReference: {fileID: 911062072}
+    - target: {fileID: 114254101212367960, guid: 9e2b93da00ab44a48a45dc051cfb4853,
+        type: 2}
+      propertyPath: characterNameInput
+      value: 
+      objectReference: {fileID: 560381635}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e2b93da00ab44a48a45dc051cfb4853, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &560381635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2809,111 +2877,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1316255097}
   m_CullTransparentMesh: 0
---- !u!1 &1362973904
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1362973907}
-  - component: {fileID: 1362973906}
-  - component: {fileID: 1362973905}
-  - component: {fileID: 1362973908}
-  - component: {fileID: 1362973909}
-  m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1362973905
+--- !u!114 &1362973906 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1362973904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80882499fe8faf94b8daf95b04844bdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  She: 0
-  He: 0
-  They: 0
-  pronounSubjective: null
-  pronounObjective: null
-  pronounPossessive: null
-  nullError: 
---- !u!114 &1362973906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1362973904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114815823409620822, guid: 9e2b93da00ab44a48a45dc051cfb4853,
+    type: 2}
+  m_PrefabInternal: {fileID: 530068413}
   m_Script: {fileID: 11500000, guid: 2bee8918739b29b45be70d91d54b67c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 1362973904}
-  characterpic: {fileID: 950955315}
-  skin1: {fileID: 21300000, guid: 70e49ed67890f1e478280db7d129e26d, type: 3}
-  skin2: {fileID: 21300000, guid: 7ffb5bfb56cae494db480a45ca4a629d, type: 3}
-  skin3: {fileID: 21300000, guid: 8ba6f3860c9b0de4db2eac0847355359, type: 3}
-  skin4: {fileID: 21300000, guid: 9f02665399af99e40aac18d861608b02, type: 3}
-  skin5: {fileID: 21300000, guid: c0f0418d4972d1e4085074a5fe785065, type: 3}
-  skincolour: 0
---- !u!4 &1362973907
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1362973904}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8087163, y: 1.5030538, z: 95.95488}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1362973908
+--- !u!114 &1362973909 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1362973904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f6ac1dc8222574ca0606ff1f6cdb6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exampleText: {fileID: 911062072}
-  CharName: 
-  Class: 
-  Affiliation: 
-  Deity: 
-  characterNameInput: {fileID: 560381635}
-  pronounSubjective: 
-  worship: 
---- !u!114 &1362973909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1362973904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114675120631808988, guid: 9e2b93da00ab44a48a45dc051cfb4853,
+    type: 2}
+  m_PrefabInternal: {fileID: 530068413}
   m_Script: {fileID: 11500000, guid: 95d36068b2eec584e9d8a899224f6cfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Manager: {fileID: 1362973904}
-  PName: 
-  PGender: 
-  PClass: 
-  PDeity: 
-  PSkin: 0
 --- !u!1 &1370472666
 GameObject:
   m_ObjectHideFlags: 0

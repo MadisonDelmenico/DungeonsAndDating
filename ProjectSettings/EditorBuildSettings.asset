@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterCreation.unity
     guid: dd485a155417a184199c1e513f79b62d
   - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: ebdfe5395d3ab044c94e17b9a2d13efa
+  - enabled: 0
     path: Assets/Scenes/Barovia.unity
     guid: 99199d464394bd848930bb40ace7196c
   - enabled: 1

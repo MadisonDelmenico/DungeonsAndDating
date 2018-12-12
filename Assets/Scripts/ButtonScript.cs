@@ -57,6 +57,11 @@ public class ButtonScript : MonoBehaviour
 		print ("Reloaded");
 
 	}
+	public void Confirm()
+	{
+		SceneManager.LoadScene ("Map");
+
+	}
 
 	public void SetSkinColour1 ()
 	{

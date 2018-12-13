@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114076808986530544}
   - component: {fileID: 114254101212367960}
   - component: {fileID: 114675120631808988}
+  - component: {fileID: 114969117241595616}
+  - component: {fileID: 114889399916565858}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -116,3 +118,38 @@ MonoBehaviour:
   skin4: {fileID: 21300000, guid: 9f02665399af99e40aac18d861608b02, type: 3}
   skin5: {fileID: 21300000, guid: c0f0418d4972d1e4085074a5fe785065, type: 3}
   skincolour: 0
+--- !u!114 &114889399916565858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000643935817922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd328c77e637834484b5bd1d619b3f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1000643935817922}
+  skincolour: 0
+  skin: {fileID: 0}
+  skin1: {fileID: 2800000, guid: 2a788c7eab8fb7c4aa7b7bd545f3f9b8, type: 3}
+  skin2: {fileID: 2800000, guid: 5866858de8d86e548b10ac94d2f00d37, type: 3}
+  skin3: {fileID: 2800000, guid: 14d3f8794fcb9204389c0013de352dbb, type: 3}
+  skin4: {fileID: 2800000, guid: 90b02055ec241ac47a70f0e212a40bf8, type: 3}
+  skin5: {fileID: 2800000, guid: 4c0794521de8128469349c76fcac8873, type: 3}
+--- !u!114 &114969117241595616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000643935817922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da21d1e296e35e24c9776f12bb86c8e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerName: 
+  PlayerGender: 
+  PlayerClass: 
+  PlayerDeity: 
+  PlayerSkin: 0

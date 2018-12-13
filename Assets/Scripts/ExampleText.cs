@@ -29,6 +29,10 @@ public class ExampleText : MonoBehaviour {
 	void Update () {
 		pronounSubjective = GetComponentInParent<Pronouns> ().pronounSubjective;
 		CharName = characterNameInput.GetComponent<Text> ().text;
+        if (CharName == "")
+        {
+            CharName = PlayerPrefs.GetString("Pname");
+        }
 
 		if (pronounSubjective == "null") 
 		{

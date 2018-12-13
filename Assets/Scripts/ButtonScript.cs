@@ -60,8 +60,10 @@ public class ButtonScript : MonoBehaviour
 	public void Confirm()
 	{
 		SceneManager.LoadScene ("Map");
+        print("Player Skin is" + PlayerPrefs.GetInt("PSkin"));
 
-	}
+
+    }
 
 	public void SetSkinColour1 ()
 	{

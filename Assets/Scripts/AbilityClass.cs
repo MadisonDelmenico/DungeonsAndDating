@@ -1,24 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class AbilityClass : MonoBehaviour
+public class AbilityClass
 {
 
     public string abilityName;
     public string userClass;
-    public GameObject target;
+    public string abilityEffect;
+    public float cooldownTime;
+    public float useTime;
 
 
-    // Start is called before the first frame update
-    void Start()
+    public AbilityClass(string newAbilityName, string newUserClass, string newAbilityEffect, float newCooldownTime, float newUseTime)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        abilityName = newAbilityName;
+        userClass = newUserClass;
+        abilityEffect = newAbilityEffect;
+        cooldownTime = newCooldownTime;
+        useTime = newUseTime;
     }
 }

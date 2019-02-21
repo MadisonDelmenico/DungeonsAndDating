@@ -8,7 +8,6 @@ public class LevelGenerator : MonoBehaviour
 {
     public Texture2D map;
     public ColourToPrefab[] colorMappings;
-    public float nextPosition = 0;
 
     void Start()
     {
@@ -43,15 +42,10 @@ public class LevelGenerator : MonoBehaviour
 
                 Vector3 position = new Vector3(x, 0, y );
                 Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
-                nextPosition += 5;
-
             }
         }
     }
-
-
-
-
+    
     // Update is called once per frame
     void Update()
     {

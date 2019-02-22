@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterActions : MonoBehaviour
 {
-    public enum Action { Melee, Firebolt, Shield, WildSpin}
+    public enum Action { Melee, Firebolt, Shield, WildSpin, None }
     public Action actionOne = Action.Melee;
     public Action actionTwo = Action.Firebolt;
     public Action actionThree = Action.Shield;
@@ -15,8 +15,6 @@ public class CharacterActions : MonoBehaviour
     public KeyCode abilityTwo = KeyCode.Alpha2;
     public KeyCode abilityThree = KeyCode.Alpha3;
     public KeyCode abilityFour = KeyCode.Alpha4;
-
-    public Button buttonOne;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +28,6 @@ public class CharacterActions : MonoBehaviour
         if (Input.GetKeyDown(abilityOne))
         {
             DoActionOne();
-            buttonOne.Select();
         }
         if (Input.GetKeyDown(abilityTwo))
         {
@@ -78,6 +75,9 @@ public class CharacterActions : MonoBehaviour
                 break;
             case Action.WildSpin:
                 Debug.Log("Beyblade time!");
+                break;
+            case Action.None:
+                Debug.Log("No action assigned");
                 break;
             default:
                 break;

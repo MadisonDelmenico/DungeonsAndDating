@@ -263,9 +263,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 830412902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 290988263063c854aa8bc5e5e5c83f85, type: 3}
+  m_Script: {fileID: 11500000, guid: 061e77581d6842241a8096627a4432c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentClass: 2
 --- !u!65 &830412904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -332,7 +333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830412902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.85, z: -5.34}
+  m_LocalPosition: {x: -17.21, y: 0.85, z: -0.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -358,7 +359,6 @@ MonoBehaviour:
   abilityTwo: 50
   abilityThree: 51
   abilityFour: 52
-  buttonOne: {fileID: 0}
 --- !u!1 &842419638
 GameObject:
   m_ObjectHideFlags: 0

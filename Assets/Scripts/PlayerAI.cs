@@ -22,6 +22,11 @@ public class PlayerAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target == null)
+        {
+            target = gameObject;
+
+        }
         Distance = Vector3.Distance(target.transform.position, player.transform.position);
 
     }

@@ -9,7 +9,7 @@ public class AffectionRating : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        affectionLevel = 0;
+        affectionLevel = 1;
     }
 
     // Update is called once per frame

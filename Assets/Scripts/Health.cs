@@ -14,17 +14,17 @@ public class Health : MonoBehaviour
 
     [Header("Status")]
     public bool fainted;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
+
 
         // Checks if the gameObject is the player
-      if (gameObject.CompareTag("Player"))
-      {
-          isPlayer = true;
-      }
+        if (gameObject.CompareTag("Player"))
+        {
+            isPlayer = true;
+        }
     }
 
     // Update is called once per frame
@@ -39,7 +39,8 @@ public class Health : MonoBehaviour
                 fainted = true;
                 SceneManager.LoadScene("Map");
             }
-            else {
+            else
+            {
                 Die();
             }
         }
@@ -55,6 +56,15 @@ public class Health : MonoBehaviour
     {
         if (gameObject.CompareTag("Companion") == false)
         {
+            GameObject[] companions = GameObject.FindGameObjectsWithTag("Companion");
+            foreach (var i in companions)
+            {
+                i.GetComponent<NavMeshMovement>().Disengage();
+
+            }
+
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<NavMeshMovement>().Disengage();
             Destroy(this.gameObject);
         }
     }

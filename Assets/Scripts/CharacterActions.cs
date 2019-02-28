@@ -22,17 +22,26 @@ public class CharacterActions : MonoBehaviour
     public KeyCode abilityFour = KeyCode.Alpha4;
 
     [Header("Attack values")]
-    public int attackValue;
-    public int fireboltValue;
-    public int wildspinValue;
-    public int RevitalizeValue;
-    public int elementalsphereValue;
+    public float attackValue;
+    public float fireboltValue;
+    public float wildspinValue;
+    public float RevitalizeValue;
+    public float elementalsphereValue;
+
+
 
     [Header("Cooldown Values")]
-    public float abilityOneCooldown;
-    public float abilityTwoCooldown;
-    public float abilityThreeCooldown;
-    public float abilityFourCooldown;
+    public float basicCooldown;
+    public float fireboltCooldown;
+    public float revitalizeCooldown;
+    public float wildSpinCooldown;
+    public float elementalSphereCooldown;
+
+    private float basicCooldownReset;
+    private float fireboltCooldownReset;
+    private float revitalizeCooldownReset;
+    private float wildSpinCooldownReset;
+    private float elementalSphereCooldownReset;
 
     [HideInInspector]
     public AffectionRating affectionRating;
@@ -52,7 +61,18 @@ public class CharacterActions : MonoBehaviour
         affectionLevel = affectionRating.affectionLevel;
         characterClass = GetComponent<CharacterClass>();
         UnpackAbilities();
+
+        basicCooldownReset = basicCooldown;
+        fireboltCooldownReset = fireboltCooldown;
+        revitalizeCooldownReset = revitalizeCooldown;
+        wildSpinCooldownReset = wildSpinCooldown;
+        elementalSphereCooldownReset = elementalSphereCooldown;
+
         switch (characterClass.currentClass)
+
+
+
+
         {
             case CharacterClass.Class.Barbarian:
 
@@ -86,6 +106,13 @@ public class CharacterActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        basicCooldown -= Time.deltaTime;
+        fireboltCooldown -= Time.deltaTime;
+        revitalizeCooldown -= Time.deltaTime;
+        wildSpinCooldown -= Time.deltaTime;
+        elementalSphereCooldown -= Time.deltaTime;
+
+
         if (Input.GetKeyDown(abilityOne))
         {
             DoAction(actionOne, gameObject.GetComponent<TargettingEnemies>().target);
@@ -109,41 +136,69 @@ public class CharacterActions : MonoBehaviour
         switch (action)
         {
             case Action.Basic:
-                Debug.Log("Boop!");
-                target.GetComponent<Health>().health -= affectionLevel * attackValue;
-                Debug.Log(target.name);
-                break;
+                if (basicCooldown <= 0)
+                {
+                    Debug.Log("Boop!");
+                    target.GetComponent<Health>().health -= affectionLevel * attackValue;
+                    Debug.Log(target.name);
+                    basicCooldown = basicCooldownReset;
+                    break;
+                }
+                else
+                {
+                    break;
+
+                }
+
+
 
             case Action.Firebolt:
                 Debug.Log("Pew Pew Firebolt!");
                 target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
+                fireboltCooldown = fireboltCooldownReset;
                 break;
 
             case Action.Revitalize:
                 Debug.Log("Healing Spell!");
                 if (target.CompareTag("Enemy"))
                 {
-                    if (GetComponent<CompanionAIScript>().text)
+                    if (GetComponent<CompanionAIScript>())
                     {
                         gameObject.GetComponent<CompanionAIScript>().text.text = "I cant heal an enemy!";
-                        Debug.Log("I cant heal an enemy!");
 
                     }
+                    Debug.Log("I cant heal an enemy!");
+
                 }
                 else
                 {
-                    target.GetComponent<Health>().health +=(affectionLevel * RevitalizeValue);
+                    target.GetComponent<Health>().health += affectionLevel * RevitalizeValue;
+                    Debug.Log(target.name);
+                    revitalizeCooldown = revitalizeCooldownReset;
+
 
                 }
+
                 break;
 
             case Action.WildSpin:
-                Debug.Log("Beyblade time!");
-                target.GetComponent<Health>().health -=(affectionLevel * wildspinValue);
+                if (target.CompareTag("Enemy"))
+                {
+                    Debug.Log("Beyblade time!");
+                    target.GetComponent<Health>().health -= (affectionLevel * wildspinValue);
+                    wildSpinCooldown = wildSpinCooldownReset;
+                }
+
                 break;
+
             case Action.ElementalSphere:
-                Debug.Log("Elemental Sphere attack!");
-                target.GetComponent<Health>().health -=(affectionLevel * elementalsphereValue);
+                if (target.CompareTag("Enemy"))
+                {
+                    Debug.Log("Elemental Sphere attack!");
+                    target.GetComponent<Health>().health -= (affectionLevel * elementalsphereValue);
+                    elementalSphereCooldown = elementalSphereCooldownReset;
+                }
+
                 break;
             case Action.None:
                 Debug.Log("No action assigned!");

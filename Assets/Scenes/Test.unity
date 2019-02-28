@@ -386,19 +386,20 @@ MonoBehaviour:
   actionTwo: 2
   actionThree: 5
   actionFour: 3
-  abilityOne: 49
-  abilityTwo: 50
-  abilityThree: 51
-  abilityFour: 52
-  attackValue: 0
-  fireboltValue: 0
-  wildspinValue: 0
-  RevitalizeValue: 0
-  elementalsphereValue: 0
-  abilityOneCooldown: 0
-  abilityTwoCooldown: 0
-  abilityThreeCooldown: 0
-  abilityFourCooldown: 0
+  abilityOne: 0
+  abilityTwo: 0
+  abilityThree: 0
+  abilityFour: 0
+  attackValue: 2
+  fireboltValue: 5
+  wildspinValue: 10
+  RevitalizeValue: 20
+  elementalsphereValue: 10
+  basicCooldown: 2
+  fireboltCooldown: 3
+  revitalizeCooldown: 5
+  wildSpinCooldown: 5
+  elementalSphereCooldown: 3
   affectionRating: {fileID: 0}
   affectionLevel: 0
   myAbilities:
@@ -443,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ed53db5ea1e2741a8617f773b6d4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affectionLevel: 0
+  affectionLevel: 1
 --- !u!1 &101535472
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,8 +778,6 @@ GameObject:
   - component: {fileID: 766008061}
   - component: {fileID: 766008060}
   - component: {fileID: 766008054}
-  - component: {fileID: 766008058}
-  - component: {fileID: 766008057}
   - component: {fileID: 766008056}
   - component: {fileID: 766008055}
   - component: {fileID: 766008063}
@@ -872,39 +871,6 @@ MonoBehaviour:
   health: 80
   maxHealth: 100
   fainted: 0
---- !u!114 &766008057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766008052}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6bfa20903991b489499deacc7bfd3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  gravity: 20
-  rotSpeed: 120
---- !u!143 &766008058
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766008052}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &766008059
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1038,19 +1004,20 @@ MonoBehaviour:
   actionTwo: 1
   actionThree: 5
   actionFour: 5
-  abilityOne: 49
-  abilityTwo: 50
-  abilityThree: 51
-  abilityFour: 52
-  attackValue: 0
-  fireboltValue: 0
-  wildspinValue: 0
-  RevitalizeValue: 0
-  elementalsphereValue: 0
-  abilityOneCooldown: 0
-  abilityTwoCooldown: 0
-  abilityThreeCooldown: 0
-  abilityFourCooldown: 0
+  abilityOne: 0
+  abilityTwo: 0
+  abilityThree: 0
+  abilityFour: 0
+  attackValue: 1
+  fireboltValue: 5
+  wildspinValue: 10
+  RevitalizeValue: 20
+  elementalsphereValue: 10
+  basicCooldown: 1
+  fireboltCooldown: 3
+  revitalizeCooldown: 5
+  wildSpinCooldown: 5
+  elementalSphereCooldown: 3
   affectionRating: {fileID: 0}
   affectionLevel: 0
   myAbilities:
@@ -1095,7 +1062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ed53db5ea1e2741a8617f773b6d4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affectionLevel: 0
+  affectionLevel: 1
 --- !u!1 &773549514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,12 +1373,13 @@ GameObject:
   - component: {fileID: 1117132036}
   - component: {fileID: 1117132035}
   - component: {fileID: 1117132034}
-  - component: {fileID: 1117132033}
   - component: {fileID: 1117132039}
+  - component: {fileID: 1117132033}
   - component: {fileID: 1117132041}
   - component: {fileID: 1117132040}
   - component: {fileID: 1117132042}
   - component: {fileID: 1117132043}
+  - component: {fileID: 1117132044}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1426,32 +1394,75 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117132032}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6bfa20903991b489499deacc7bfd3a, type: 3}
+  m_Script: {fileID: 11500000, guid: ae514ff328b3cd440a3075e4789d019a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  gravity: 20
-  rotSpeed: 120
---- !u!143 &1117132034
-CharacterController:
+  characterClass: {fileID: 0}
+  actionOne: 0
+  actionTwo: 1
+  actionThree: 2
+  actionFour: 3
+  abilityOne: 0
+  abilityTwo: 49
+  abilityThree: 50
+  abilityFour: 51
+  attackValue: 1.5
+  fireboltValue: 5
+  wildspinValue: 10
+  RevitalizeValue: 20
+  elementalsphereValue: 10
+  basicCooldown: 1.5
+  fireboltCooldown: 3
+  revitalizeCooldown: 5
+  wildSpinCooldown: 5
+  elementalSphereCooldown: 3
+  affectionRating: {fileID: 0}
+  affectionLevel: 0
+  myAbilities:
+  - abilityName: 
+    usableBy: 0
+    abilityRange: 
+    abilityEffect: 
+    energyCost: 0
+    abilityCooldown: 0
+    abilityCastTime: 0
+  - abilityName: 
+    usableBy: 0
+    abilityRange: 
+    abilityEffect: 
+    energyCost: 0
+    abilityCooldown: 0
+    abilityCastTime: 0
+  - abilityName: 
+    usableBy: 0
+    abilityRange: 
+    abilityEffect: 
+    energyCost: 0
+    abilityCooldown: 0
+    abilityCastTime: 0
+  - abilityName: 
+    usableBy: 0
+    abilityRange: 
+    abilityEffect: 
+    energyCost: 0
+    abilityCooldown: 0
+    abilityCastTime: 0
+  allAbilities: []
+--- !u!114 &1117132034
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117132032}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061e77581d6842241a8096627a4432c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentClass: 2
 --- !u!136 &1117132035
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1542,7 +1553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  health: 80
+  health: 10
   maxHealth: 100
   fainted: 0
 --- !u!195 &1117132040
@@ -1612,6 +1623,19 @@ MonoBehaviour:
   isAttacking: 0
   Distance: 0
   target: {fileID: 0}
+--- !u!114 &1117132044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117132032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ed53db5ea1e2741a8617f773b6d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affectionLevel: 1
 --- !u!1 &1160140803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,7 +2682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ed53db5ea1e2741a8617f773b6d4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affectionLevel: 0
+  affectionLevel: 1
 --- !u!136 &1849465751
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2796,15 +2820,16 @@ MonoBehaviour:
   abilityTwo: 0
   abilityThree: 0
   abilityFour: 0
-  attackValue: 0
-  fireboltValue: 0
-  wildspinValue: 0
-  RevitalizeValue: 0
-  elementalsphereValue: 0
-  abilityOneCooldown: 0
-  abilityTwoCooldown: 0
-  abilityThreeCooldown: 0
-  abilityFourCooldown: 0
+  attackValue: 3
+  fireboltValue: 5
+  wildspinValue: 10
+  RevitalizeValue: 20
+  elementalsphereValue: 10
+  basicCooldown: 3
+  fireboltCooldown: 3
+  revitalizeCooldown: 5
+  wildSpinCooldown: 5
+  elementalSphereCooldown: 3
   affectionRating: {fileID: 0}
   affectionLevel: 0
   myAbilities:

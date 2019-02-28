@@ -28,7 +28,7 @@ public class CompanionAIScript : MonoBehaviour
     private float myMaxHealth;
     [HideInInspector]
     private float playerMaxHealth;
-    [HideInInspector]
+    
     public float castTime;
 
     [Header("Status")]
@@ -39,8 +39,6 @@ public class CompanionAIScript : MonoBehaviour
     public float meleeDistance;
     public float rangedDistance;
     public float disengageDistance;
-    [HideInInspector]
-    private int attackValue;
     [Header("Debug text item")]
     public Text text;
 
@@ -49,7 +47,6 @@ public class CompanionAIScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attackValue = GetComponent<CharacterActions>().attackValue;
         isAttacking = false;
         isFollowingPlayer = true;
         rotspeed = 3f;
@@ -162,10 +159,14 @@ public class CompanionAIScript : MonoBehaviour
         //if im not following the player, look towards my target
         if (isFollowingPlayer == false)
         {
-            if (GetComponent<TargettingEnemies>().enabled)
+            if (player.GetComponent<TargettingEnemies>().target != null)
             {
-                transform.rotation = Quaternion.Lerp(transform.rotation, GetComponent<TargettingEnemies>().target.transform.rotation, Time.deltaTime * rotspeed);
+                if (GetComponent<TargettingEnemies>().enabled)
+                {
+                    transform.rotation = Quaternion.Lerp(transform.rotation, GetComponent<TargettingEnemies>().target.transform.rotation, Time.deltaTime * rotspeed);
+                }
             }
+
         }
 
 
@@ -237,7 +238,7 @@ public class CompanionAIScript : MonoBehaviour
                         //i'm casting a spell and no longer following the player
                         //do heal -> target = Player;
                         text.text = "I'm healing the player!";
-                        GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Revitalize,player.gameObject);
+                        GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Revitalize, player.gameObject);
                     }
                     else
                     {
@@ -286,24 +287,28 @@ public class CompanionAIScript : MonoBehaviour
     {
         if (GetComponent<TargettingEnemies>().enabled)
         {
-            if (player.GetComponent<TargettingEnemies>().target != player)
+            if (gameObject.GetComponent<TargettingEnemies>().target != null)
             {
-                GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
-                isAttacking = true;
+                if (player.GetComponent<TargettingEnemies>().target != player)
+                {
+                    GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
+                    isAttacking = true;
 
-                //move to x meters away from the target
-                text.text = "I'm moving to melee distance";
-                Vector3 direction = transform.position - GetComponent<TargettingEnemies>().target.transform.position;
-                direction.Normalize();
-                Vector3 targetPos = GetComponent<TargettingEnemies>().target.transform.position + direction * meleeDistance;
-                meshAgent.destination = targetPos;
+                    //move to x meters away from the target
+                    text.text = "I'm moving to melee distance";
+                    Vector3 direction = transform.position - GetComponent<TargettingEnemies>().target.transform.position;
+                    direction.Normalize();
+                    Vector3 targetPos = GetComponent<TargettingEnemies>().target.transform.position + direction * meleeDistance;
+                    meshAgent.destination = targetPos;
 
-                //look at the enemy
-                transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
+                    //look at the enemy
+                    transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
 
-                //attack the enemy
-                text.text = "I'm attacking " + GetComponent<TargettingEnemies>().target.name;
-                GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
+                    //attack the enemy
+                    text.text = "I'm attacking " + GetComponent<TargettingEnemies>().target.name;
+                    GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
+                }
+
 
             }
         }
@@ -313,24 +318,28 @@ public class CompanionAIScript : MonoBehaviour
     {
         if (GetComponent<TargettingEnemies>().enabled)
         {
-            if (player.GetComponent<TargettingEnemies>().target != player)
+            if (GetComponent<TargettingEnemies>().target != null)
             {
-                GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
-                isAttacking = true;
+                if (player.GetComponent<TargettingEnemies>().target != player)
+                {
+                    GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
+                    isAttacking = true;
 
-                //move to x meters away from the target
-                text.text = "I'm moving to ranged distance";
-                Vector3 direction = transform.position - GetComponent<TargettingEnemies>().target.transform.position;
-                direction.Normalize();
-                Vector3 targetPos = GetComponent<TargettingEnemies>().target.transform.position + direction * rangedDistance;
-                meshAgent.destination = targetPos;
+                    //move to x meters away from the target
+                    text.text = "I'm moving to ranged distance";
+                    Vector3 direction = transform.position - GetComponent<TargettingEnemies>().target.transform.position;
+                    direction.Normalize();
+                    Vector3 targetPos = GetComponent<TargettingEnemies>().target.transform.position + direction * rangedDistance;
+                    meshAgent.destination = targetPos;
 
-                //look at the enemy
-                transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
+                    //look at the enemy
+                    transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
 
-                //attack the enemy
-                text.text = " I'm attacking " + GetComponent<TargettingEnemies>().target.name;
-                GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
+                    //attack the enemy
+                    text.text = " I'm attacking " + GetComponent<TargettingEnemies>().target.name;
+                    GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
+                }
+
             }
         }
     }

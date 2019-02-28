@@ -1,0 +1,4 @@
+Revitalize/Paladin/Player, Self/heal/10/5/0
+WildSpin/Barbarian/enemies within *range*/damage/10/5/3
+Firebolt/Polymath/Range 1/damage/10/3/1
+ElementalSphere/Sorcerer/Range 1/damage/10/3/1

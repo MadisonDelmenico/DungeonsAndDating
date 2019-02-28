@@ -160,6 +160,9 @@ MonoBehaviour:
   isFollowingPlayer: 0
   isAttacking: 0
   distanceFromPlayer: 0
+  meleeDistance: 0
+  rangedDistance: 0
+  disengageDistance: 0
 --- !u!195 &97459452
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -413,7 +416,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6c0212ef61b3eee45940e797c4b03bc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -669,6 +672,9 @@ MonoBehaviour:
   isFollowingPlayer: 0
   isAttacking: 0
   distanceFromPlayer: 0
+  meleeDistance: 0
+  rangedDistance: 5
+  disengageDistance: 0
 --- !u!195 &766008054
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1959,6 +1965,9 @@ MonoBehaviour:
   isFollowingPlayer: 0
   isAttacking: 0
   distanceFromPlayer: 0
+  meleeDistance: 0
+  rangedDistance: 0
+  disengageDistance: 0
 --- !u!195 &1849465746
 NavMeshAgent:
   m_ObjectHideFlags: 0

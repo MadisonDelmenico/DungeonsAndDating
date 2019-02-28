@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Assertions.Comparers;
 
 public class CompanionFollowScript : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class CompanionFollowScript : MonoBehaviour
     public bool isFollowingPlayer;
     public bool isAttacking;
     public float distanceFromPlayer;
+    public float meleeDistance;
+    public float rangedDistance;
+    public float disengageDistance;
 
 
 
@@ -30,6 +34,9 @@ public class CompanionFollowScript : MonoBehaviour
         isFollowingPlayer = true;
         rotspeed = 3f;
         distanceFromPlayer = 0;
+        meleeDistance = 0.5f;
+        rangedDistance = 5f;
+        disengageDistance = 10f;
         meshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -91,7 +98,7 @@ public class CompanionFollowScript : MonoBehaviour
         if (isAttacking == true)
         {
             //and the distance between myself and the player is > 5m
-            if (distanceFromPlayer > 5f)
+            if (distanceFromPlayer > disengageDistance)
             {
                 //stop fighting, go back to following the player
                 GetComponent<NavMeshMovement>().Disengage();
@@ -148,28 +155,28 @@ public class CompanionFollowScript : MonoBehaviour
             case CharacterClass.Class.Barbarian:
 
 
-                //  ___   _   ___ ___   _   ___ ___   _   _  _     _   ___ ___ _    ___ _____ ___ ___ ___ 
-                // | _ ) /_\ | _ \ _ ) /_\ | _ \_ _| /_\ | \| |   /_\ | _ )_ _| |  |_ _|_   _|_ _| __/ __|
-                // | _ \/ _ \|   / _ \/ _ \|   /| | / _ \| .` |  / _ \| _ \| || |__ | |  | |  | || _|\__ \
-                // |___/_/ \_\_|_\___/_/ \_\_|_\___/_/ \_\_|\_| /_/ \_\___/___|____|___| |_| |___|___|___/
-                                                                                        
+                /*  ___   _   ___ ___   _   ___ ___   _   _  _     _   ___ ___ _    ___ _____ ___ ___ ___ 
+                   | _ ) /_\ | _ \ _ ) /_\ | _ \_ _| /_\ | \| |   /_\ | _ )_ _| |  |_ _|_   _|_ _| __/ __|
+                   | _ \/ _ \|   / _ \/ _ \|   /| | / _ \| .` |  / _ \| _ \| || |__ | |  | |  | || _|\__ \
+                   |___/_/ \_\_|_\___/_/ \_\_|_\___/_/ \_\_|\_| /_/ \_\___/___|____|___| |_| |___|___|___/
+                */
 
-
-
-
+                //if i have more than 1/4 of my max health, ATTACK!
+                if (GetComponent<Health>().health > (myMaxHealth / 4))
+                {
+                    AttackMelee();
+                }
 
                 break;
-
-
 
             //if i am a Paladin
             case CharacterClass.Class.Paladin:
 
-                 //       ___  _   _      _   ___ ___ _  _     _   ___ ___ _    ___ _____ ___ ___ ___ 
-                //       | _ \/_\ | |    /_\ |   \_ _| \| |   /_\ | _ )_ _| |  |_ _|_   _|_ _| __/ __|
-                //       |  _/ _ \| |__ / _ \| |) | || .` |  / _ \| _ \| || |__ | |  | |  | || _|\__ \
-                //       |_|/_/ \_\____/_/ \_\___/___|_|\_| /_/ \_\___/___|____|___| |_| |___|___|___/
-
+                /*       ___  _   _      _   ___ ___ _  _     _   ___ ___ _    ___ _____ ___ ___ ___ 
+                        | _ \/_\ | |    /_\ |   \_ _| \| |   /_\ | _ )_ _| |  |_ _|_   _|_ _| __/ __|
+                        |  _/ _ \| |__ / _ \| |) | || .` |  / _ \| _ \| || |__ | |  | |  | || _|\__ \
+                        |_|/_/ \_\____/_/ \_\___/___|_|\_| /_/ \_\___/___|____|___| |_| |___|___|___/
+                */
 
 
                 Debug.Log("Checking Health for healing");
@@ -197,18 +204,7 @@ public class CompanionFollowScript : MonoBehaviour
                 //if the player has more than 1/4 of their max health and i have more than 1/4 of my max health, ATTACK!
                 if (player.GetComponent<Health>().health > (playerMaxHealth / 4) && GetComponent<Health>().health > (myMaxHealth / 4))
                 {
-                    if (GetComponent<TargettingEnemies>().enabled)
-                    {
-                        if (player.GetComponent<TargettingEnemies>().target != player)
-                        {
-                            GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
-                            isAttacking = true;
-                            meshAgent.destination = GetComponent<TargettingEnemies>().target.transform.position;
-                            transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
-                            Debug.Log(gameObject.name + ":" + " I'm attacking " + GetComponent<TargettingEnemies>().target.name);
-
-                        }
-                    }
+                    AttackMelee();
                 }
                 //if the player has <= 1/4 of their max health and im not already casting, HEAL THE PLAYER!
                 if (player.GetComponent<Health>().health <= (playerMaxHealth / 4))
@@ -231,23 +227,29 @@ public class CompanionFollowScript : MonoBehaviour
 
             //if i am a polymath
             case CharacterClass.Class.Polymath:
-                
-                    //  ___  ___  _ __   ____  __   _ _____ _  _     _   ___ ___ _    ___ _____ ___ ___ ___ 
-                    // | _ \/ _ \| |\ \ / /  \/  | /_\_   _| || |   /_\ | _ )_ _| |  |_ _|_   _|_ _| __/ __|
-                    // |  _/ (_) | |_\ V /| |\/| |/ _ \| | | __ |  / _ \| _ \| || |__ | |  | |  | || _|\__ \
-                    // |_|  \___/|____|_| |_|  |_/_/ \_\_| |_||_| /_/ \_\___/___|____|___| |_| |___|___|___/
-                                                                                      
+
+                /*  ___  ___  _ __   ____  __   _ _____ _  _     _   ___ ___ _    ___ _____ ___ ___ ___ 
+                   | _ \/ _ \| |\ \ / /  \/  | /_\_   _| || |   /_\ | _ )_ _| |  |_ _|_   _|_ _| __/ __|
+                   |  _/ (_) | |_\ V /| |\/| |/ _ \| | | __ |  / _ \| _ \| || |__ | |  | |  | || _|\__ \
+                   |_|  \___/|____|_| |_|  |_/_/ \_\_| |_||_| /_/ \_\___/___|____|___| |_| |___|___|___/
+                */
 
                 break;
 
             //if i am a Sorcerer
             case CharacterClass.Class.Sorcerer:
 
-                    //  ___  ___  ___  ___ ___ ___ ___ ___     _   ___ ___ _    ___ _____ ___ ___ ___ 
-                    // / __|/ _ \| _ \/ __| __| _ \ __| _ \   /_\ | _ )_ _| |  |_ _|_   _|_ _| __/ __|
-                    // \__ \ (_) |   / (__| _||   / _||   /  / _ \| _ \| || |__ | |  | |  | || _|\__ \
-                    // |___/\___/|_|_\\___|___|_|_\___|_|_\ /_/ \_\___/___|____|___| |_| |___|___|___/
-                                                                                
+                /*  ___  ___  ___  ___ ___ ___ ___ ___     _   ___ ___ _    ___ _____ ___ ___ ___ 
+                   / __|/ _ \| _ \/ __| __| _ \ __| _ \   /_\ | _ )_ _| |  |_ _|_   _|_ _| __/ __|
+                   \__ \ (_) |   / (__| _||   / _||   /  / _ \| _ \| || |__ | |  | |  | || _|\__ \
+                   |___/\___/|_|_\\___|___|_|_\___|_|_\ /_/ \_\___/___|____|___| |_| |___|___|___/
+                */
+
+                //if i have more than 1/4 of my max health, ATTACK!
+                if (GetComponent<Health>().health > (myMaxHealth / 4))
+                {
+                    AttackRanged();
+                }
 
                 break;
 
@@ -257,5 +259,57 @@ public class CompanionFollowScript : MonoBehaviour
         }
 
 
+    }
+
+    public void AttackMelee()
+    {
+        if (GetComponent<TargettingEnemies>().enabled)
+        {
+            if (player.GetComponent<TargettingEnemies>().target != player)
+            {
+                GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
+                isAttacking = true;
+
+                //move to x meters away from the target
+                Debug.Log(gameObject.name + ":" + "I'm moving to melee distance");
+                Vector3 direction = transform.position - GetComponent<TargettingEnemies>().target.transform.position;
+                direction.Normalize();
+                Vector3 targetPos = GetComponent<TargettingEnemies>().target.transform.position + direction * meleeDistance;
+                meshAgent.destination = targetPos;
+
+                //look at the enemy
+                transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
+
+                //attack the enemy
+                Debug.Log(gameObject.name + ":" + " I'm attacking " + GetComponent<TargettingEnemies>().target.name);
+
+            }
+        }
+    }
+
+    public void AttackRanged()
+    {
+        if (GetComponent<TargettingEnemies>().enabled)
+        {
+            if (player.GetComponent<TargettingEnemies>().target != player)
+            {
+                GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
+                isAttacking = true;
+
+                //move to x meters away from the target
+                Debug.Log(gameObject.name + ":" + "I'm moving to ranged distance");
+                Vector3 direction = transform.position - GetComponent<TargettingEnemies>().target.transform.position;
+                direction.Normalize();
+                Vector3 targetPos = GetComponent<TargettingEnemies>().target.transform.position + direction * rangedDistance;
+                meshAgent.destination = targetPos;
+
+                //look at the enemy
+                transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
+               
+                //attack the enemy
+                Debug.Log(gameObject.name + ":" + " I'm attacking " + GetComponent<TargettingEnemies>().target.name);
+
+            }
+        }
     }
 }

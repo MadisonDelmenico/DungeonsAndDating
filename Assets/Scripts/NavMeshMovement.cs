@@ -12,14 +12,17 @@ public class NavMeshMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //checking to see if it has all the components
+        //checking to see if I have all the components
+        
+        //if I'm the player
         if (gameObject.CompareTag("Player"))
         {
             meshAgent = GetComponent<NavMeshAgent>();
             playerAI = GetComponent<PlayerAI>();
         }
         target = GetComponent<TargettingEnemies>();
-
+        
+        //if I'm a companion
         if (GetComponent<CompanionFollowScript>())
         {
             companionAI = GetComponent<CompanionFollowScript>();
@@ -32,29 +35,33 @@ public class NavMeshMovement : MonoBehaviour
     void Update()
     {
 
+        //if left mouse button is pressed
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-
+            
+            //if the area pressed has a collider
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
             {
+                //If im the player, move to the clicked point
                 if (gameObject.CompareTag("Player"))
                 {
                     meshAgent.destination = hit.point;
 
                 }
-                //if you clicked on an enemy
+
+                //if the area clicked was an enemy
                 if (hit.collider.gameObject.CompareTag("Enemy"))
                 {
                     //target the enemy you clicked on
                     target.target = hit.collider.gameObject;
+                   
+                    //attack the target
                     Attack();
-
-
 
                 }
 
-                //If you click on anything OTHER than an enemy
+                //If the area clicked was anything OTHER than an enemy
                 else
                 {
                     //if you are the player, disenage
@@ -63,8 +70,6 @@ public class NavMeshMovement : MonoBehaviour
                     {
                         Disengage();
                     }
-
-
 
                 }
             }
@@ -82,7 +87,7 @@ public class NavMeshMovement : MonoBehaviour
         if (GetComponent<PlayerAI>())
         {
             GetComponent<PlayerAI>().isAttacking = true;
-            // target.target.GetComponent<Material>().color = Color.red;
+
         }
     }
 

@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+[System.Serializable]
+
 public class AbilityClass
 {
-
     public string abilityName;
-    public string userClass;
+    public CharacterClass.Class usableBy;
+    public string abilityRange;
     public string abilityEffect;
-    public float cooldownTime;
-    public float useTime;
+    public float energyCost;
+    public float abilityCooldown;
+    public float abilityCastTime;
 
-
-    public AbilityClass(string newAbilityName, string newUserClass, string newAbilityEffect, float newCooldownTime, float newUseTime)
+    public AbilityClass(string name, CharacterClass.Class class_, string range, string effect, float cost, float cooldown, float castTime)
     {
-        abilityName = newAbilityName;
-        userClass = newUserClass;
-        abilityEffect = newAbilityEffect;
-        cooldownTime = newCooldownTime;
-        useTime = newUseTime;
+        abilityName = name;
+        usableBy = class_;
+        abilityRange = range;
+        abilityEffect = effect;
+        energyCost = cost;
+        abilityCooldown = cooldown;
+        abilityCastTime = castTime;
     }
 }
+
+

@@ -1,44 +1,5 @@
-// Format //
-// name
-// class
-// target
-// effect "Function()"
-// cooldown
-// use time
-
-#
-Basic Melee
-All
-one enemy (melee)
-damage
-1 sec
-instant
-#
-Shield
-Paladin, Polymath
-player
-protect from one hit
-5 sec
-instant
-#
-Wild Spin
-Barbarian, Polymath
-enemies within *range*
-damage
-5 sec
-3 sec
-#
-Firebolt
-Polymath, Enemy
-one enemy (ranged)
-damage
-3 sec
-1 sec
-#
-Elemental Bolt
-Sorcerer
-one enemy (ranged)
-damage
-3 sec
-1 sec
-#
+Melee/All/Melee 1/damage/0/1/0
+Revitalize/Paladin/Player/heal/10/5/0
+Wild Spin/Barbarian/enemies within *range*/damage/10/5/3
+Firebolt/Polymath/Range 1/damage/10/3/1
+Elemental Sphere/Sorcerer/Range 1/damage/10/3/1

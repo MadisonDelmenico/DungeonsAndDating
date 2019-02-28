@@ -6,15 +6,11 @@ public class CharacterClass : MonoBehaviour
 {
     public enum Class { Barbarian, Paladin, Polymath, Sorcerer }
     public Class currentClass = Class.Polymath;
-    CharacterActions actions;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (GetComponent<CharacterActions>() != null)
-        {
-            actions = GetComponent<CharacterActions>();
-        }
+
     }
 
     // Update is called once per frame
@@ -43,6 +39,21 @@ public class CharacterClass : MonoBehaviour
             }
 
             Debug.Log("Current class is " + classText);
+        }
+    }
+
+    public static Class StringToClass(string classString)
+    {
+        switch (classString)
+        {
+            case "Barbarian":
+                return Class.Barbarian;
+            case "Paladin":
+                return Class.Paladin;
+            case "Sorcerer":
+                return Class.Sorcerer;
+            default:
+                return Class.Polymath;
         }
     }
 }

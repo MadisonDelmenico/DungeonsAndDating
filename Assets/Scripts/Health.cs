@@ -14,12 +14,9 @@ public class Health : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        if (gameObject.tag == "Player")
-        {
-            isPlayer = true;
-        }
-        else isPlayer = false;
 
+        // Checks if the gameObject is the player
+        isPlayer = (gameObject.tag == "Player") ? true : false;
     }
 
     // Update is called once per frame

@@ -4,32 +4,54 @@ using UnityEngine;
 
 public class Abilities : MonoBehaviour
 {
+    public TextAsset abilityList;
+    public AbilityClass[] allAbilities;
+
     // Start is called before the first frame update
-    List<AbilityClass> abilities = new List<AbilityClass>();
     void Start()
     {
-
-
-        abilities.Add(new AbilityClass("melee", "all", "The user attacks one enemy with their weapon", 1, 0));
-        abilities.Add(new AbilityClass("shield", "Paladin & Polymath", "A magic barrier protects the Player from damage", 5, 0));
-        abilities.Add(new AbilityClass("wild spin", "Barbarian & Polymath", "The user spins, twirling their weapon around them and dealing damage to any enemies in range", 5, 3));
-        abilities.Add(new AbilityClass("firebolt", "Enemy & Polymath", "A ball of fire is flung in the direction the caster is facing, dealing fire damage on contact with an enemy", 3, 1));
-        abilities.Add(new AbilityClass("Element Sphere", "Sorcerer", "Fires an elemental ball of magic in a straight line, exploding on contact with an enemy", 3, 1));
+        UnpackAbilities();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+    void UnpackAbilities()
+    {
+        // Abilities.txt input format
+        // Name/Class/TargetRange/Effect/EnergyCost/Cooldown(sec)/CastTime(sec)
+
+        // Split the text from the file into lines
+        string[] abilities = abilityList.text.Split('\n');
+
+        // Create a local empty array of "AbilityClass" objects
+        AbilityClass[] abilityArray = new AbilityClass[abilities.Length];
+        
+        for (int i = 0; i < abilities.Length; i++)
         {
-            foreach (AbilityClass i in abilities)
-            {
-                Debug.Log(i.abilityName + ". " + i.abilityEffect + ". Usable by " + i.userClass);
-            }
+            Debug.Log(abilities[i]);
 
-                
+            // Split the current line into strings for each value the AbilityClass has
+            string[] abilityInfo = abilities[i].Split('/');
+
+            // Create local variables for each value of the ability
+            string name = abilityInfo[0];
+            CharacterClass.Class useClass = CharacterClass.StringToClass(abilityInfo[1]);
+            string range = abilityInfo[2];
+            string effect = abilityInfo[3];
+            float cost = float.Parse(abilityInfo[4]);
+            float cooldown = float.Parse(abilityInfo[5]);
+            float castTime = float.Parse(abilityInfo[6]);
+
+            // Create a new instance of the AbilityClass object using the appropriate variables and assign it to the local
+            AbilityClass ability = new AbilityClass(name, useClass, range, effect, cost, cooldown, castTime);
+            abilityArray[i] = ability;
         }
 
+        // Once the array is complete, assign the local array to the public one
+        allAbilities = abilityArray;
     }
 }

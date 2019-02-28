@@ -20,10 +20,10 @@ public class NavMeshMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
 
         //checking to see if I have all the components
-        
+
         //if I'm the player
         if (gameObject.CompareTag("Player"))
         {
@@ -31,7 +31,7 @@ public class NavMeshMovement : MonoBehaviour
             playerAI = GetComponent<PlayerAI>();
         }
         target = GetComponent<TargettingEnemies>();
-        
+
         //if I'm a companion
         if (GetComponent<CompanionAIScript>())
         {
@@ -50,10 +50,21 @@ public class NavMeshMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-            
+
             //if the area pressed has a collider
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
             {
+                if (GetComponent<PlayerAI>())
+                {
+                    if (hit.collider.gameObject.CompareTag("Companion"))
+                    {
+                        target.target = hit.collider.gameObject;
+                        target.enabled = false;
+
+                    }
+                }
+               
+
                 //If im the player, move to the clicked point
                 if (gameObject.CompareTag("Player"))
                 {
@@ -66,7 +77,7 @@ public class NavMeshMovement : MonoBehaviour
                 {
                     //target the enemy you clicked on
                     target.target = hit.collider.gameObject;
-                   
+
                     //attack the target
                     Attack();
 

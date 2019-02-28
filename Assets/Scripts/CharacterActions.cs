@@ -153,51 +153,75 @@ public class CharacterActions : MonoBehaviour
 
 
             case Action.Firebolt:
-                Debug.Log("Pew Pew Firebolt!");
-                target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
-                fireboltCooldown = fireboltCooldownReset;
+                if (fireboltCooldown <= 0)
+                {
+                    if (target.CompareTag("Enemy"))
+                    {
+                        Debug.Log("Pew Pew Firebolt!");
+                        target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
+                        fireboltCooldown = fireboltCooldownReset;
+                    }
+                    else
+                    {
+                        Debug.Log("I don't want to hurt the " + target.name);
+                    }
+                }
+
+
                 break;
 
             case Action.Revitalize:
-                Debug.Log("Healing Spell!");
-                if (target.CompareTag("Enemy"))
+                if (revitalizeCooldown <= 0)
                 {
-                    if (GetComponent<CompanionAIScript>())
+                    Debug.Log("Healing Spell!");
+                    if (target.CompareTag("Enemy"))
                     {
-                        gameObject.GetComponent<CompanionAIScript>().text.text = "I cant heal an enemy!";
+                        if (GetComponent<CompanionAIScript>())
+                        {
+                            gameObject.GetComponent<CompanionAIScript>().text.text = "I cant heal an enemy!";
+
+                        }
+                        Debug.Log("I cant heal an enemy!");
 
                     }
-                    Debug.Log("I cant heal an enemy!");
+                    else
+                    {
+                        target.GetComponent<Health>().health += affectionLevel * RevitalizeValue;
+                        Debug.Log(target.name);
+                        revitalizeCooldown = revitalizeCooldownReset;
 
+
+                    }
                 }
-                else
-                {
-                    target.GetComponent<Health>().health += affectionLevel * RevitalizeValue;
-                    Debug.Log(target.name);
-                    revitalizeCooldown = revitalizeCooldownReset;
 
-
-                }
 
                 break;
 
             case Action.WildSpin:
-                if (target.CompareTag("Enemy"))
+                if (wildSpinCooldown <= 0)
                 {
-                    Debug.Log("Beyblade time!");
-                    target.GetComponent<Health>().health -= (affectionLevel * wildspinValue);
-                    wildSpinCooldown = wildSpinCooldownReset;
+                    if (target.CompareTag("Enemy"))
+                    {
+                        Debug.Log("Beyblade time!");
+                        target.GetComponent<Health>().health -= (affectionLevel * wildspinValue);
+                        wildSpinCooldown = wildSpinCooldownReset;
+                    }
                 }
+
 
                 break;
 
             case Action.ElementalSphere:
-                if (target.CompareTag("Enemy"))
+                if (elementalSphereCooldown <= 0)
                 {
-                    Debug.Log("Elemental Sphere attack!");
-                    target.GetComponent<Health>().health -= (affectionLevel * elementalsphereValue);
-                    elementalSphereCooldown = elementalSphereCooldownReset;
+                    if (target.CompareTag("Enemy"))
+                    {
+                        Debug.Log("Elemental Sphere attack!");
+                        target.GetComponent<Health>().health -= (affectionLevel * elementalsphereValue);
+                        elementalSphereCooldown = elementalSphereCooldownReset;
+                    }
                 }
+
 
                 break;
             case Action.None:

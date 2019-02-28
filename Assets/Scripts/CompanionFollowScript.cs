@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Assertions.Comparers;
+using UnityEngine.UI;
 
 public class CompanionFollowScript : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class CompanionFollowScript : MonoBehaviour
     public float meleeDistance;
     public float rangedDistance;
     public float disengageDistance;
+    public Text text;
 
 
 
@@ -36,7 +38,7 @@ public class CompanionFollowScript : MonoBehaviour
         distanceFromPlayer = 0;
         meleeDistance = 0.5f;
         rangedDistance = 5f;
-        disengageDistance = 10f;
+        disengageDistance = 7f;
         meshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -119,7 +121,7 @@ public class CompanionFollowScript : MonoBehaviour
         //if im following the player, head towards my assigned waypoint
         if (isFollowingPlayer)
         {
-
+            text.text = "Following";
             switch (companionNumber)
             {
                 case 0:
@@ -179,7 +181,7 @@ public class CompanionFollowScript : MonoBehaviour
                 */
 
 
-                Debug.Log("Checking Health for healing");
+
 
                 //if my health is less than or equal to 1/4 my max health, HEAL MYSELF!
                 if (GetComponent<Health>().health <= (myMaxHealth / 4))
@@ -191,13 +193,13 @@ public class CompanionFollowScript : MonoBehaviour
 
                         //i'm casting a spell and no longer following the player
                         //do heal -> target = myself;
-                        Debug.Log("I'm healing myself!");
+                        text.text = "I'm healing myself!";
 
                     }
                     else
                     {
 
-                        Debug.Log("I'm still casting!");
+                        text.text = "I'm still casting!";
                     }
 
                 }
@@ -216,11 +218,11 @@ public class CompanionFollowScript : MonoBehaviour
 
                         //i'm casting a spell and no longer following the player
                         //do heal -> target = Player;
-                        Debug.Log("I'm healing the player!");
+                        text.text = "I'm healing the player!";
                     }
                     else
                     {
-                        Debug.Log("I'm still casting!");
+                        text.text = "I'm still casting!";
                     }
                 }
                 break;
@@ -271,7 +273,7 @@ public class CompanionFollowScript : MonoBehaviour
                 isAttacking = true;
 
                 //move to x meters away from the target
-                Debug.Log(gameObject.name + ":" + "I'm moving to melee distance");
+                text.text = "I'm moving to melee distance";
                 Vector3 direction = transform.position - GetComponent<TargettingEnemies>().target.transform.position;
                 direction.Normalize();
                 Vector3 targetPos = GetComponent<TargettingEnemies>().target.transform.position + direction * meleeDistance;
@@ -281,7 +283,7 @@ public class CompanionFollowScript : MonoBehaviour
                 transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
 
                 //attack the enemy
-                Debug.Log(gameObject.name + ":" + " I'm attacking " + GetComponent<TargettingEnemies>().target.name);
+                text.text = "I'm attacking " + GetComponent<TargettingEnemies>().target.name;
 
             }
         }
@@ -297,7 +299,7 @@ public class CompanionFollowScript : MonoBehaviour
                 isAttacking = true;
 
                 //move to x meters away from the target
-                Debug.Log(gameObject.name + ":" + "I'm moving to ranged distance");
+                text.text = "I'm moving to ranged distance";
                 Vector3 direction = transform.position - GetComponent<TargettingEnemies>().target.transform.position;
                 direction.Normalize();
                 Vector3 targetPos = GetComponent<TargettingEnemies>().target.transform.position + direction * rangedDistance;
@@ -305,9 +307,9 @@ public class CompanionFollowScript : MonoBehaviour
 
                 //look at the enemy
                 transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
-               
+
                 //attack the enemy
-                Debug.Log(gameObject.name + ":" + " I'm attacking " + GetComponent<TargettingEnemies>().target.name);
+                text.text = " I'm attacking " + GetComponent<TargettingEnemies>().target.name;
 
             }
         }

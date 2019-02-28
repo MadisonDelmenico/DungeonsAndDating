@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class NavMeshMovement : MonoBehaviour
 {
@@ -8,10 +9,13 @@ public class NavMeshMovement : MonoBehaviour
     public TargettingEnemies target;
     public CompanionFollowScript companionAI;
     public PlayerAI playerAI;
+    private Text text;
 
     // Start is called before the first frame update
     void Start()
     {
+        
+
         //checking to see if I have all the components
         
         //if I'm the player
@@ -27,6 +31,7 @@ public class NavMeshMovement : MonoBehaviour
         {
             companionAI = GetComponent<CompanionFollowScript>();
             playerAI = companionAI.player.GetComponent<PlayerAI>();
+            text = companionAI.text;
         }
 
     }
@@ -79,7 +84,6 @@ public class NavMeshMovement : MonoBehaviour
     {
         //turn on the targettingEnemies component
         target.enabled = true;
-        Debug.Log("The targettingEnemies script is now on");
 
 
 
@@ -105,7 +109,7 @@ public class NavMeshMovement : MonoBehaviour
             // target.target.GetComponent<Material>().color = new Color(0,0,0,0);
             companionAI.isAttacking = false;
             companionAI.isFollowingPlayer = true;
-            Debug.Log(gameObject.name + ":" + " I'm disengaging");
+            text.text = " I'm disengaging";
 
 
         }

@@ -88,19 +88,19 @@ public class CharacterActions : MonoBehaviour
     {
         if (Input.GetKeyDown(abilityOne))
         {
-            DoAction(actionOne);
+            DoAction(actionOne, gameObject.GetComponent<TargettingEnemies>().target);
         }
         if (Input.GetKeyDown(abilityTwo))
         {
-            DoAction(actionTwo);
+            DoAction(actionTwo, gameObject.GetComponent<TargettingEnemies>().target);
         }
         if (Input.GetKeyDown(abilityThree))
         {
-            DoAction(actionThree);
+            DoAction(actionThree, gameObject.GetComponent<TargettingEnemies>().target);
         }
         if (Input.GetKeyDown(abilityFour))
         {
-            DoAction(actionFour);
+            DoAction(actionFour, gameObject.GetComponent<TargettingEnemies>().target);
         }
     }
 
@@ -110,20 +110,40 @@ public class CharacterActions : MonoBehaviour
         {
             case Action.Basic:
                 Debug.Log("Boop!");
-               target.GetComponent<Health>().AlterHealth(-attackValue * affectionLevel);
+                target.GetComponent<Health>().health -= affectionLevel * attackValue;
+                Debug.Log(target.name);
                 break;
+
             case Action.Firebolt:
                 Debug.Log("Pew Pew Firebolt!");
+                target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
                 break;
+
             case Action.Revitalize:
                 Debug.Log("Healing Spell!");
-                target.GetComponent<Health>().AlterHealth(affectionLevel * RevitalizeValue);
+                if (target.CompareTag("Enemy"))
+                {
+                    if (GetComponent<CompanionAIScript>().text)
+                    {
+                        gameObject.GetComponent<CompanionAIScript>().text.text = "I cant heal an enemy!";
+                        Debug.Log("I cant heal an enemy!");
+
+                    }
+                }
+                else
+                {
+                    target.GetComponent<Health>().health +=(affectionLevel * RevitalizeValue);
+
+                }
                 break;
+
             case Action.WildSpin:
                 Debug.Log("Beyblade time!");
+                target.GetComponent<Health>().health -=(affectionLevel * wildspinValue);
                 break;
             case Action.ElementalSphere:
                 Debug.Log("Elemental Sphere attack!");
+                target.GetComponent<Health>().health -=(affectionLevel * elementalsphereValue);
                 break;
             case Action.None:
                 Debug.Log("No action assigned!");

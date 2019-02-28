@@ -184,7 +184,7 @@ public class CompanionAIScript : MonoBehaviour
                 //if i have more than 1/4 of my max health, ATTACK!
                 if (GetComponent<Health>().health > (myMaxHealth / 4))
                 {
-                    AttackMelee(attackValue);
+                    AttackMelee();
                 }
 
                 break;
@@ -330,8 +330,7 @@ public class CompanionAIScript : MonoBehaviour
 
                 //attack the enemy
                 text.text = " I'm attacking " + GetComponent<TargettingEnemies>().target.name;
-                GetComponent<CharacterActions>()
-                    .DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
+                GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
             }
         }
     }

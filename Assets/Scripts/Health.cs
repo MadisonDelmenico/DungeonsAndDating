@@ -21,7 +21,10 @@ public class Health : MonoBehaviour
         health = maxHealth;
 
         // Checks if the gameObject is the player
-        isPlayer = (gameObject.tag == "Player") ? true : false;
+      if (gameObject.CompareTag("Player"))
+      {
+          isPlayer = true;
+      }
     }
 
     // Update is called once per frame
@@ -50,15 +53,10 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
-        if (gameObject.tag != "Companion")
+        if (gameObject.CompareTag("Companion") == false)
         {
             Destroy(this.gameObject);
         }
     }
 
-    public void AlterHealth(int amount)
-    {
-        health += amount;
-
-    }
 }

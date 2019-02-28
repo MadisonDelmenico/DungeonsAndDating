@@ -16,6 +16,10 @@ public class CharacterActions : MonoBehaviour
     public KeyCode abilityThree = KeyCode.Alpha3;
     public KeyCode abilityFour = KeyCode.Alpha4;
 
+    public int attackValue;
+
+    public CharacterClass characterClass;
+
     public AbilityClass[] myAbilities = new AbilityClass[4];
 
 
@@ -23,7 +27,37 @@ public class CharacterActions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        characterClass = GetComponent<CharacterClass>();
         UnpackAbilities();
+        switch (characterClass.currentClass)
+        {
+            case CharacterClass.Class.Barbarian:
+
+                attackValue = 3;
+
+                break;
+
+            case CharacterClass.Class.Paladin:
+
+                attackValue = 2;
+
+                break;
+                ;
+            case CharacterClass.Class.Polymath:
+                attackValue = 2;
+
+                break;
+
+            case CharacterClass.Class.Sorcerer:
+                attackValue = 1;
+
+                break;
+
+            default:
+                break;
+
+        }
+
     }
 
     // Update is called once per frame

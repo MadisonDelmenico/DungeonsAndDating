@@ -25,6 +25,7 @@ public class CompanionFollowScript : MonoBehaviour
     public float meleeDistance;
     public float rangedDistance;
     public float disengageDistance;
+    private int attackValue;
     public Text text;
 
 
@@ -32,12 +33,14 @@ public class CompanionFollowScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attackValue = GetComponent<CharacterActions>().attackValue;
         isAttacking = false;
         isFollowingPlayer = true;
         rotspeed = 3f;
         distanceFromPlayer = 0;
         meleeDistance = 0.5f;
         rangedDistance = 5f;
+        disengageDistance = 5f;
         disengageDistance = 7f;
         meshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -166,7 +169,7 @@ public class CompanionFollowScript : MonoBehaviour
                 //if i have more than 1/4 of my max health, ATTACK!
                 if (GetComponent<Health>().health > (myMaxHealth / 4))
                 {
-                    AttackMelee();
+                    AttackMelee(attackValue);
                 }
 
                 break;
@@ -206,7 +209,7 @@ public class CompanionFollowScript : MonoBehaviour
                 //if the player has more than 1/4 of their max health and i have more than 1/4 of my max health, ATTACK!
                 if (player.GetComponent<Health>().health > (playerMaxHealth / 4) && GetComponent<Health>().health > (myMaxHealth / 4))
                 {
-                    AttackMelee();
+                    AttackMelee(attackValue);
                 }
                 //if the player has <= 1/4 of their max health and im not already casting, HEAL THE PLAYER!
                 if (player.GetComponent<Health>().health <= (playerMaxHealth / 4))
@@ -250,7 +253,7 @@ public class CompanionFollowScript : MonoBehaviour
                 //if i have more than 1/4 of my max health, ATTACK!
                 if (GetComponent<Health>().health > (myMaxHealth / 4))
                 {
-                    AttackRanged();
+                    AttackRanged(attackValue);
                 }
 
                 break;
@@ -263,7 +266,7 @@ public class CompanionFollowScript : MonoBehaviour
 
     }
 
-    public void AttackMelee()
+    public void AttackMelee(int damage)
     {
         if (GetComponent<TargettingEnemies>().enabled)
         {
@@ -289,7 +292,7 @@ public class CompanionFollowScript : MonoBehaviour
         }
     }
 
-    public void AttackRanged()
+    public void AttackRanged(int damage)
     {
         if (GetComponent<TargettingEnemies>().enabled)
         {

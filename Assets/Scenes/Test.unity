@@ -152,11 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bae269eb34f5469a0d3f0b3f7cf67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFollowingPlayer: 0
+  player: {fileID: 0}
   companionNumber: 0
   companionTarget: {fileID: 0}
   rotspeed: 3
   castTime: 0
+  isFollowingPlayer: 0
   isAttacking: 0
 --- !u!195 &97459452
 NavMeshAgent:
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97459450}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29b5b399788866b4e9f27cf3f8b5c2ab, type: 3}
   m_Name: 
@@ -447,7 +448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456141328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.23, y: 1.48, z: 5.22}
+  m_LocalPosition: {x: -3.23, y: 0.9, z: 5.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -659,11 +660,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bae269eb34f5469a0d3f0b3f7cf67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFollowingPlayer: 0
+  player: {fileID: 0}
   companionNumber: 0
   companionTarget: {fileID: 0}
   rotspeed: 3
   castTime: 0
+  isFollowingPlayer: 0
   isAttacking: 0
 --- !u!195 &766008054
 NavMeshAgent:
@@ -694,7 +696,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766008052}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29b5b399788866b4e9f27cf3f8b5c2ab, type: 3}
   m_Name: 
@@ -846,7 +848,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766008052}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e230d85138b81c4da45b1511097a2cf, type: 3}
   m_Name: 
@@ -1301,7 +1303,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d176d18f9b637ff4394fc055b1ff523e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   isAttacking: 0
+  Distance: 0
+  target: {fileID: 0}
+  timer: 0
 --- !u!1 &1160140803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,11 +1938,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bae269eb34f5469a0d3f0b3f7cf67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFollowingPlayer: 0
+  player: {fileID: 0}
   companionNumber: 0
   companionTarget: {fileID: 0}
   rotspeed: 3
   castTime: 0
+  isFollowingPlayer: 0
   isAttacking: 0
 --- !u!195 &1849465746
 NavMeshAgent:
@@ -1967,7 +1974,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849465744}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29b5b399788866b4e9f27cf3f8b5c2ab, type: 3}
   m_Name: 
@@ -2119,7 +2126,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849465744}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e230d85138b81c4da45b1511097a2cf, type: 3}
   m_Name: 
@@ -2417,7 +2424,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &2112476638
 MeshCollider:

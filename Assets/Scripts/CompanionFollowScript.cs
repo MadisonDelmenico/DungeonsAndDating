@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class CompanionFollowScript : MonoBehaviour
 {
-    public bool isFollowingPlayer;
+
     NavMeshAgent meshAgent;
-    private GameObject player;
+    public GameObject player;
     private GameObject[] NumberofCompanions;
     public int companionNumber;
 
@@ -18,7 +17,7 @@ public class CompanionFollowScript : MonoBehaviour
     private float myMaxHealth;
     private float playerMaxHealth;
     public float castTime;
-
+    public bool isFollowingPlayer;
     public bool isAttacking;
 
 
@@ -47,7 +46,7 @@ public class CompanionFollowScript : MonoBehaviour
         //setting the companion number for each companion, 0 by default
         for (int i = 0; i < NumberofCompanions.Length; i++)
         {
-            if (NumberofCompanions[i] == this.gameObject)
+            if (NumberofCompanions[i] == gameObject)
             {
                 companionNumber = i;
                 break;
@@ -91,12 +90,12 @@ public class CompanionFollowScript : MonoBehaviour
         {
             isFollowingPlayer = true;
         }
-        if (isAttacking == true)
+        if (isAttacking)
         {
             isFollowingPlayer = false;
         }
 
-        if (isFollowingPlayer == true)
+        if (isFollowingPlayer)
         {
 
             switch (companionNumber)
@@ -118,7 +117,7 @@ public class CompanionFollowScript : MonoBehaviour
         }
         if (isFollowingPlayer == false)
         {
-            if (GetComponent<TargettingEnemies>().enabled == true)
+            if (GetComponent<TargettingEnemies>().enabled)
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, GetComponent<TargettingEnemies>().target.transform.rotation, Time.deltaTime * rotspeed);
             }
@@ -154,7 +153,7 @@ public class CompanionFollowScript : MonoBehaviour
                 }
                 if (player.GetComponent<Health>().health > (playerMaxHealth / 4) && GetComponent<Health>().health > (myMaxHealth / 4))
                 {
-                    if (GetComponent<TargettingEnemies>().enabled == true)
+                    if (GetComponent<TargettingEnemies>().enabled)
                     {
                         if (player.GetComponent<TargettingEnemies>().target != null)
                         {
@@ -162,7 +161,8 @@ public class CompanionFollowScript : MonoBehaviour
                             isAttacking = true;
                             meshAgent.destination = GetComponent<TargettingEnemies>().target.transform.position;
                             transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
-                            Debug.Log("I'm attacking" + GetComponent<TargettingEnemies>().target.name);
+                            Debug.Log(gameObject.name + ":" + " I'm attacking " + GetComponent<TargettingEnemies>().target.name);
+
                         }
                     }
                 }

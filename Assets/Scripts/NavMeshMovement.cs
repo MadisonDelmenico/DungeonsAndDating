@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,18 +16,37 @@ public class NavMeshMovement : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             meshAgent = GetComponent<NavMeshAgent>();
+            playerAI = GetComponent<PlayerAI>();
         }
+        target = GetComponent<TargettingEnemies>();
 
         if (GetComponent<CompanionFollowScript>())
         {
             companionAI = GetComponent<CompanionFollowScript>();
+            playerAI = companionAI.player.GetComponent<PlayerAI>();
         }
-        target = GetComponent<TargettingEnemies>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (playerAI.Distance > 5f)
+        {
+            playerAI.timer -= Time.deltaTime;
+            if (playerAI.timer <= 0)
+            {
+                playerAI.timer = 3;
+                if (playerAI.Distance > 5f)
+                {
+                    GetComponent<TargettingEnemies>().enabled = false;
+                    Disengage();
+                    playerAI.target = playerAI.player;
+                }
+            }
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -42,18 +60,29 @@ public class NavMeshMovement : MonoBehaviour
                 //if you clicked on an enemy
                 if (hit.collider.gameObject.CompareTag("Enemy"))
                 {
-                    Attack();
+                    //if you are the player, update your target to calculate distance. Ignore for companions
+                    if (GetComponent<PlayerAI>())
+                    {
+                        playerAI.UpdateTarget(hit.collider.gameObject);
+                    }
                     //target the enemy you clicked on
                     target.target = hit.collider.gameObject;
+                    Attack();
+
+
+
                 }
 
                 //If you click on anything OTHER than an enemy
                 else
-                {   //if you're more than 5m away from the enemy, disengage & move on
-                    if (target.Distance > 5)
+                {
+                    //if the player is more than 5m away from the enemy, disengage & move on
+                    if (playerAI.Distance > 5)
                     {
                         Disengage();
                     }
+
+
 
                 }
             }
@@ -63,6 +92,7 @@ public class NavMeshMovement : MonoBehaviour
     {
         //turn on the targettingEnemies component
         target.enabled = true;
+        Debug.Log("The targettingEnemies script is now on");
 
 
 
@@ -81,16 +111,16 @@ public class NavMeshMovement : MonoBehaviour
         if (GetComponent<CompanionFollowScript>())
         {
             //if you are attacking
-            if (companionAI.isAttacking == true)
-            {
-                //you are no longer attacking. Disable the Targetting Enemies component and follow the player.
-                target.enabled = false;
-                // target.target.GetComponent<Material>().color = new Color(0,0,0,0);
-                companionAI.isAttacking = false;
-                companionAI.isFollowingPlayer = true;
-                Debug.Log("I'm no longer attacking");
 
-            }
+
+            //you are no longer attacking. Disable the Targetting Enemies component and follow the player.
+            target.enabled = false;
+            // target.target.GetComponent<Material>().color = new Color(0,0,0,0);
+            companionAI.isAttacking = false;
+            companionAI.isFollowingPlayer = true;
+            Debug.Log(gameObject.name + ":" + " I'm disengaging");
+
+
         }
         //if i have the targetting enemies component
         if (GetComponent<TargettingEnemies>())
@@ -100,7 +130,7 @@ public class NavMeshMovement : MonoBehaviour
             if (GetComponent<PlayerAI>())
             {
                 //if i am attacking
-                if (GetComponent<PlayerAI>().isAttacking == true)
+                if (GetComponent<PlayerAI>().isAttacking)
                 {
                     //stop attacking and disable the targetting enemies component
                     GetComponent<PlayerAI>().isAttacking = false;

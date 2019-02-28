@@ -47,10 +47,14 @@ public class NavMeshMovement : MonoBehaviour
                     target.target = hit.collider.gameObject;
                 }
 
-                //If you click on anything OTHER than an enemy, disengage and move.
+                //If you click on anything OTHER than an enemy
                 else
-                {
-                    Disengage();
+                {   //if you're more than 5m away from the enemy, disengage & move on
+                    if (target.Distance > 5)
+                    {
+                        Disengage();
+                    }
+
                 }
             }
         }
@@ -59,13 +63,14 @@ public class NavMeshMovement : MonoBehaviour
     {
         //turn on the targettingEnemies component
         target.enabled = true;
-       
-        
+
+
 
         //if you are the player, attack!
         if (GetComponent<PlayerAI>())
         {
             GetComponent<PlayerAI>().isAttacking = true;
+            // target.target.GetComponent<Material>().color = Color.red;
         }
     }
 
@@ -80,6 +85,7 @@ public class NavMeshMovement : MonoBehaviour
             {
                 //you are no longer attacking. Disable the Targetting Enemies component and follow the player.
                 target.enabled = false;
+                // target.target.GetComponent<Material>().color = new Color(0,0,0,0);
                 companionAI.isAttacking = false;
                 companionAI.isFollowingPlayer = true;
                 Debug.Log("I'm no longer attacking");

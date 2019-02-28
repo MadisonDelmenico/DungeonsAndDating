@@ -161,6 +161,7 @@ public class CompanionFollowScript : MonoBehaviour
                             GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
                             isAttacking = true;
                             meshAgent.destination = GetComponent<TargettingEnemies>().target.transform.position;
+                            transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
                             Debug.Log("I'm attacking" + GetComponent<TargettingEnemies>().target.name);
                         }
                     }

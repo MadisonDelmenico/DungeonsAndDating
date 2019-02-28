@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class CharacterActions : MonoBehaviour
 {
-    public enum Action { Melee, Firebolt, Revitalize, WildSpin, ElementalSphere, None }
-    public Action actionOne = Action.Melee;
+    public enum Action { Basic, Firebolt, Revitalize, WildSpin, ElementalSphere, None }
+    public Action actionOne = Action.Basic;
     public Action actionTwo = Action.Firebolt;
     public Action actionThree = Action.Revitalize;
     public Action actionFour = Action.WildSpin;
@@ -51,7 +51,7 @@ public class CharacterActions : MonoBehaviour
     {
         switch (action)
         {
-            case Action.Melee:
+            case Action.Basic:
                 Debug.Log("Boop!");
                 break;
             case Action.Firebolt:

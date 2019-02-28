@@ -32,21 +32,6 @@ public class NavMeshMovement : MonoBehaviour
     void Update()
     {
 
-        if (playerAI.Distance > 5f)
-        {
-            playerAI.timer -= Time.deltaTime;
-            if (playerAI.timer <= 0)
-            {
-                playerAI.timer = 3;
-                if (playerAI.Distance > 5f)
-                {
-                    GetComponent<TargettingEnemies>().enabled = false;
-                    Disengage();
-                    playerAI.target = playerAI.player;
-                }
-            }
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
@@ -56,15 +41,11 @@ public class NavMeshMovement : MonoBehaviour
                 if (gameObject.CompareTag("Player"))
                 {
                     meshAgent.destination = hit.point;
+
                 }
                 //if you clicked on an enemy
                 if (hit.collider.gameObject.CompareTag("Enemy"))
                 {
-                    //if you are the player, update your target to calculate distance. Ignore for companions
-                    if (GetComponent<PlayerAI>())
-                    {
-                        playerAI.UpdateTarget(hit.collider.gameObject);
-                    }
                     //target the enemy you clicked on
                     target.target = hit.collider.gameObject;
                     Attack();
@@ -76,8 +57,9 @@ public class NavMeshMovement : MonoBehaviour
                 //If you click on anything OTHER than an enemy
                 else
                 {
-                    //if the player is more than 5m away from the enemy, disengage & move on
-                    if (playerAI.Distance > 5)
+                    //if you are the player, disenage
+
+                    if (GetComponent<PlayerAI>())
                     {
                         Disengage();
                     }

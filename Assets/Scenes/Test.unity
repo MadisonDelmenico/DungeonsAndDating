@@ -159,6 +159,7 @@ MonoBehaviour:
   castTime: 0
   isFollowingPlayer: 0
   isAttacking: 0
+  distanceFromPlayer: 0
 --- !u!195 &97459452
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -667,6 +668,7 @@ MonoBehaviour:
   castTime: 0
   isFollowingPlayer: 0
   isAttacking: 0
+  distanceFromPlayer: 0
 --- !u!195 &766008054
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1307,7 +1309,6 @@ MonoBehaviour:
   isAttacking: 0
   Distance: 0
   target: {fileID: 0}
-  timer: 0
 --- !u!1 &1160140803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelGenerator_FinalArtAssets
       objectReference: {fileID: 0}
+    - target: {fileID: 2047984515, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2047984518, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1641,10 +1646,18 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 2800000, guid: 04c5bcaa356c2c14a91919001c2d466d, type: 3}
+    - target: {fileID: 2047984517, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2047984519, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: lightingMap
       value: 
       objectReference: {fileID: 2800000, guid: bab1e7dbdd5112b439f163c972b321b2, type: 3}
+    - target: {fileID: 2047984519, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
 --- !u!1 &1455651258
@@ -1945,6 +1958,7 @@ MonoBehaviour:
   castTime: 0
   isFollowingPlayer: 0
   isAttacking: 0
+  distanceFromPlayer: 0
 --- !u!195 &1849465746
 NavMeshAgent:
   m_ObjectHideFlags: 0

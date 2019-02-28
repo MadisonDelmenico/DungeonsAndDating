@@ -8,7 +8,6 @@ public class PlayerAI : MonoBehaviour
     public bool isAttacking;
     public float Distance;
     public GameObject target;
-    public float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +16,7 @@ public class PlayerAI : MonoBehaviour
         player = gameObject;
         target = gameObject;
         Distance = 0;
-        timer = 3;
+
     }
 
     // Update is called once per frame
@@ -25,11 +24,6 @@ public class PlayerAI : MonoBehaviour
     {
         Distance = Vector3.Distance(target.transform.position, player.transform.position);
 
-    }
-
-    public void UpdateTarget(GameObject newTarget)
-    {
-        target = newTarget;
     }
 
 

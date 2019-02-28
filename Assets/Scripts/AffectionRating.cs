@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargettingEnemies : MonoBehaviour
+public class AffectionRating : MonoBehaviour
 {
-    [Header("Target")]
-    public GameObject target;
-
+    public int affectionLevel;
+    
     // Start is called before the first frame update
     void Start()
     {
-    
+        affectionLevel = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

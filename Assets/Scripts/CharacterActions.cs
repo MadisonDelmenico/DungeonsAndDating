@@ -6,20 +6,41 @@ using UnityEngine.UI;
 public class CharacterActions : MonoBehaviour
 {
     public enum Action { Basic, Firebolt, Revitalize, WildSpin, ElementalSphere, None }
+
+    [HideInInspector]
+    public CharacterClass characterClass;
+
+    [Header("My Abilities")]
     public Action actionOne = Action.Basic;
     public Action actionTwo = Action.Firebolt;
     public Action actionThree = Action.Revitalize;
     public Action actionFour = Action.WildSpin;
-
+    [Header("Controls (PLAYER ONLY, set to none for companions)")]
     public KeyCode abilityOne = KeyCode.Alpha1;
     public KeyCode abilityTwo = KeyCode.Alpha2;
     public KeyCode abilityThree = KeyCode.Alpha3;
     public KeyCode abilityFour = KeyCode.Alpha4;
 
+    [Header("Attack values")]
     public int attackValue;
+    public int fireboltValue;
+    public int wildspinValue;
+    public int RevitalizeValue;
+    public int elementalsphereValue;
 
-    public CharacterClass characterClass;
+    [Header("Cooldown Values")]
+    public float abilityOneCooldown;
+    public float abilityTwoCooldown;
+    public float abilityThreeCooldown;
+    public float abilityFourCooldown;
 
+    [HideInInspector]
+    public AffectionRating affectionRating;
+
+    [HideInInspector]
+    public int affectionLevel;
+
+    [Header("Abilities")]
     public AbilityClass[] myAbilities = new AbilityClass[4];
 
 
@@ -27,6 +48,8 @@ public class CharacterActions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        affectionRating = GetComponent<AffectionRating>();
+        affectionLevel = affectionRating.affectionLevel;
         characterClass = GetComponent<CharacterClass>();
         UnpackAbilities();
         switch (characterClass.currentClass)
@@ -81,18 +104,20 @@ public class CharacterActions : MonoBehaviour
         }
     }
 
-    void DoAction(Action action)
+    public void DoAction(Action action, GameObject target)
     {
         switch (action)
         {
             case Action.Basic:
                 Debug.Log("Boop!");
+               target.GetComponent<Health>().AlterHealth(-attackValue * affectionLevel);
                 break;
             case Action.Firebolt:
                 Debug.Log("Pew Pew Firebolt!");
                 break;
             case Action.Revitalize:
                 Debug.Log("Healing Spell!");
+                target.GetComponent<Health>().AlterHealth(affectionLevel * RevitalizeValue);
                 break;
             case Action.WildSpin:
                 Debug.Log("Beyblade time!");

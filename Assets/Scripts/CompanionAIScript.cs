@@ -4,28 +4,44 @@ using UnityEngine.AI;
 using UnityEngine.Assertions.Comparers;
 using UnityEngine.UI;
 
-public class CompanionFollowScript : MonoBehaviour
+public class CompanionAIScript : MonoBehaviour
 {
 
+    [HideInInspector]
     NavMeshAgent meshAgent;
+    [HideInInspector]
     public GameObject player;
+    [HideInInspector]
     private GameObject[] NumberofCompanions;
+    [HideInInspector]
     public int companionNumber;
 
+    [HideInInspector]
     public GameObject companionTarget;
+    [HideInInspector]
     private Transform companionTargetTransform;
+    [HideInInspector]
     public float rotspeed;
+    [HideInInspector]
     CharacterClass companionClass;
+    [HideInInspector]
     private float myMaxHealth;
+    [HideInInspector]
     private float playerMaxHealth;
+    [HideInInspector]
     public float castTime;
+
+    [Header("Status")]
     public bool isFollowingPlayer;
     public bool isAttacking;
+    [Header("Distances")]
     public float distanceFromPlayer;
     public float meleeDistance;
     public float rangedDistance;
     public float disengageDistance;
+    [HideInInspector]
     private int attackValue;
+    [Header("Debug text item")]
     public Text text;
 
 
@@ -40,7 +56,6 @@ public class CompanionFollowScript : MonoBehaviour
         distanceFromPlayer = 0;
         meleeDistance = 0.5f;
         rangedDistance = 5f;
-        disengageDistance = 5f;
         disengageDistance = 7f;
         meshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -196,8 +211,8 @@ public class CompanionFollowScript : MonoBehaviour
 
                         //i'm casting a spell and no longer following the player
                         //do heal -> target = myself;
+                        GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Revitalize, gameObject);
                         text.text = "I'm healing myself!";
-
                     }
                     else
                     {
@@ -209,7 +224,7 @@ public class CompanionFollowScript : MonoBehaviour
                 //if the player has more than 1/4 of their max health and i have more than 1/4 of my max health, ATTACK!
                 if (player.GetComponent<Health>().health > (playerMaxHealth / 4) && GetComponent<Health>().health > (myMaxHealth / 4))
                 {
-                    AttackMelee(attackValue);
+                    AttackMelee();
                 }
                 //if the player has <= 1/4 of their max health and im not already casting, HEAL THE PLAYER!
                 if (player.GetComponent<Health>().health <= (playerMaxHealth / 4))
@@ -222,6 +237,7 @@ public class CompanionFollowScript : MonoBehaviour
                         //i'm casting a spell and no longer following the player
                         //do heal -> target = Player;
                         text.text = "I'm healing the player!";
+                        GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Revitalize,player.gameObject);
                     }
                     else
                     {
@@ -253,7 +269,7 @@ public class CompanionFollowScript : MonoBehaviour
                 //if i have more than 1/4 of my max health, ATTACK!
                 if (GetComponent<Health>().health > (myMaxHealth / 4))
                 {
-                    AttackRanged(attackValue);
+                    AttackRanged();
                 }
 
                 break;
@@ -266,7 +282,7 @@ public class CompanionFollowScript : MonoBehaviour
 
     }
 
-    public void AttackMelee(int damage)
+    public void AttackMelee()
     {
         if (GetComponent<TargettingEnemies>().enabled)
         {
@@ -287,12 +303,13 @@ public class CompanionFollowScript : MonoBehaviour
 
                 //attack the enemy
                 text.text = "I'm attacking " + GetComponent<TargettingEnemies>().target.name;
+                GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
 
             }
         }
     }
 
-    public void AttackRanged(int damage)
+    public void AttackRanged()
     {
         if (GetComponent<TargettingEnemies>().enabled)
         {
@@ -313,7 +330,8 @@ public class CompanionFollowScript : MonoBehaviour
 
                 //attack the enemy
                 text.text = " I'm attacking " + GetComponent<TargettingEnemies>().target.name;
-
+                GetComponent<CharacterActions>()
+                    .DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
             }
         }
     }

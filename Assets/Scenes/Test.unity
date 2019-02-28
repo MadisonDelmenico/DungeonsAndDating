@@ -121,19 +121,20 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 97459460}
+  - component: {fileID: 97459457}
   - component: {fileID: 97459459}
   - component: {fileID: 97459458}
-  - component: {fileID: 97459457}
+  - component: {fileID: 97459452}
   - component: {fileID: 97459456}
   - component: {fileID: 97459455}
   - component: {fileID: 97459454}
   - component: {fileID: 97459453}
-  - component: {fileID: 97459452}
-  - component: {fileID: 97459451}
   - component: {fileID: 97459461}
   - component: {fileID: 97459462}
   - component: {fileID: 97459463}
   - component: {fileID: 97459464}
+  - component: {fileID: 97459465}
+  - component: {fileID: 97459451}
   m_Layer: 8
   m_Name: Paladin
   m_TagString: Companion
@@ -156,7 +157,7 @@ MonoBehaviour:
   player: {fileID: 0}
   companionNumber: 0
   companionTarget: {fileID: 0}
-  rotspeed: 3
+  rotspeed: 0
   castTime: 0
   isFollowingPlayer: 0
   isAttacking: 0
@@ -200,9 +201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshAgent: {fileID: 0}
-  target: {fileID: 0}
   companionAI: {fileID: 0}
   playerAI: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &97459454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,10 +216,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbdfa7ed9c05824182296f3a6a84233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   health: 80
   maxHealth: 100
   fainted: 0
-  isPlayer: 0
 --- !u!114 &97459455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +284,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5e734e4601a491e4a9251d0423eab1df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -365,9 +366,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshAgent: {fileID: 0}
-  target: {fileID: 0}
   companionAI: {fileID: 0}
   playerAI: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &97459464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae514ff328b3cd440a3075e4789d019a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterClass: {fileID: 0}
   actionOne: 0
   actionTwo: 2
   actionThree: 5
@@ -388,6 +390,17 @@ MonoBehaviour:
   abilityTwo: 50
   abilityThree: 51
   abilityFour: 52
+  attackValue: 0
+  fireboltValue: 0
+  wildspinValue: 0
+  RevitalizeValue: 0
+  elementalsphereValue: 0
+  abilityOneCooldown: 0
+  abilityTwoCooldown: 0
+  abilityThreeCooldown: 0
+  abilityFourCooldown: 0
+  affectionRating: {fileID: 0}
+  affectionLevel: 0
   myAbilities:
   - abilityName: 
     usableBy: 0
@@ -418,6 +431,19 @@ MonoBehaviour:
     abilityCooldown: 0
     abilityCastTime: 0
   allAbilities: []
+--- !u!114 &97459465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97459450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ed53db5ea1e2741a8617f773b6d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affectionLevel: 0
 --- !u!1 &101535472
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +501,7 @@ GameObject:
   - component: {fileID: 456141331}
   - component: {fileID: 456141330}
   - component: {fileID: 456141329}
+  - component: {fileID: 456141333}
   m_Layer: 0
   m_Name: Enemy_Test
   m_TagString: Enemy
@@ -513,7 +540,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6c0212ef61b3eee45940e797c4b03bc8, type: 2}
+  - {fileID: 2100000, guid: e858dbfaf8eb294408f1ad478222b429, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -555,6 +582,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &456141333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456141328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdbdfa7ed9c05824182296f3a6a84233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  health: 100
+  maxHealth: 100
+  fainted: 0
 --- !u!1 &523569200
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,19 +773,20 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 766008062}
+  - component: {fileID: 766008059}
   - component: {fileID: 766008061}
   - component: {fileID: 766008060}
-  - component: {fileID: 766008059}
+  - component: {fileID: 766008054}
   - component: {fileID: 766008058}
   - component: {fileID: 766008057}
   - component: {fileID: 766008056}
   - component: {fileID: 766008055}
-  - component: {fileID: 766008054}
-  - component: {fileID: 766008053}
   - component: {fileID: 766008063}
   - component: {fileID: 766008064}
   - component: {fileID: 766008065}
   - component: {fileID: 766008066}
+  - component: {fileID: 766008067}
+  - component: {fileID: 766008053}
   m_Layer: 8
   m_Name: Sorcerer
   m_TagString: Companion
@@ -765,13 +809,13 @@ MonoBehaviour:
   player: {fileID: 0}
   companionNumber: 0
   companionTarget: {fileID: 0}
-  rotspeed: 3
+  rotspeed: 0
   castTime: 0
   isFollowingPlayer: 0
   isAttacking: 0
   distanceFromPlayer: 0
   meleeDistance: 0
-  rangedDistance: 5
+  rangedDistance: 0
   disengageDistance: 0
   text: {fileID: 773549516}
 --- !u!195 &766008054
@@ -809,9 +853,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshAgent: {fileID: 0}
-  target: {fileID: 0}
   companionAI: {fileID: 0}
   playerAI: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &766008056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,10 +868,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbdfa7ed9c05824182296f3a6a84233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   health: 80
   maxHealth: 100
   fainted: 0
-  isPlayer: 0
 --- !u!114 &766008057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,7 +936,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7001fc3566b3ac44598ada20b521de9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -974,9 +1018,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshAgent: {fileID: 0}
-  target: {fileID: 0}
   companionAI: {fileID: 0}
   playerAI: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &766008066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,6 +1033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae514ff328b3cd440a3075e4789d019a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterClass: {fileID: 0}
   actionOne: 0
   actionTwo: 1
   actionThree: 5
@@ -997,6 +1042,17 @@ MonoBehaviour:
   abilityTwo: 50
   abilityThree: 51
   abilityFour: 52
+  attackValue: 0
+  fireboltValue: 0
+  wildspinValue: 0
+  RevitalizeValue: 0
+  elementalsphereValue: 0
+  abilityOneCooldown: 0
+  abilityTwoCooldown: 0
+  abilityThreeCooldown: 0
+  abilityFourCooldown: 0
+  affectionRating: {fileID: 0}
+  affectionLevel: 0
   myAbilities:
   - abilityName: 
     usableBy: 0
@@ -1027,6 +1083,19 @@ MonoBehaviour:
     abilityCooldown: 0
     abilityCastTime: 0
   allAbilities: []
+--- !u!114 &766008067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766008052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ed53db5ea1e2741a8617f773b6d4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affectionLevel: 0
 --- !u!1 &773549514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,7 +1483,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4e253c655de4c224492ad38297b500da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1472,10 +1541,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbdfa7ed9c05824182296f3a6a84233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   health: 80
   maxHealth: 100
   fainted: 0
-  isPlayer: 0
 --- !u!195 &1117132040
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1511,9 +1580,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshAgent: {fileID: 0}
-  target: {fileID: 0}
   companionAI: {fileID: 0}
   playerAI: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1117132042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1929,7 +1998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2047984515, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2047984518, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1978,18 +2047,22 @@ PrefabInstance:
     - target: {fileID: 2047984517, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: map
       value: 
-      objectReference: {fileID: 2800000, guid: 04c5bcaa356c2c14a91919001c2d466d, type: 3}
+      objectReference: {fileID: 2800000, guid: aa62b963a27a20d46a642052235f17f7, type: 3}
     - target: {fileID: 2047984517, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2047984519, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: lightingMap
       value: 
-      objectReference: {fileID: 2800000, guid: bab1e7dbdd5112b439f163c972b321b2, type: 3}
+      objectReference: {fileID: 2800000, guid: 7f1f026cad0e4dd40851fd74146daed6, type: 3}
     - target: {fileID: 2047984519, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047984516, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
@@ -2476,19 +2549,18 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1849465754}
+  - component: {fileID: 1849465751}
   - component: {fileID: 1849465753}
   - component: {fileID: 1849465752}
-  - component: {fileID: 1849465751}
-  - component: {fileID: 1849465750}
-  - component: {fileID: 1849465749}
-  - component: {fileID: 1849465748}
-  - component: {fileID: 1849465747}
   - component: {fileID: 1849465746}
-  - component: {fileID: 1849465745}
   - component: {fileID: 1849465755}
+  - component: {fileID: 1849465748}
+  - component: {fileID: 1849465758}
+  - component: {fileID: 1849465747}
   - component: {fileID: 1849465756}
   - component: {fileID: 1849465757}
-  - component: {fileID: 1849465758}
+  - component: {fileID: 1849465749}
+  - component: {fileID: 1849465745}
   m_Layer: 8
   m_Name: Barbarian
   m_TagString: Companion
@@ -2511,7 +2583,7 @@ MonoBehaviour:
   player: {fileID: 0}
   companionNumber: 0
   companionTarget: {fileID: 0}
-  rotspeed: 3
+  rotspeed: 0
   castTime: 0
   isFollowingPlayer: 0
   isAttacking: 0
@@ -2555,9 +2627,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshAgent: {fileID: 0}
-  target: {fileID: 0}
   companionAI: {fileID: 0}
   playerAI: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1849465748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2570,10 +2642,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbdfa7ed9c05824182296f3a6a84233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   health: 80
   maxHealth: 100
   fainted: 0
-  isPlayer: 0
 --- !u!114 &1849465749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2581,32 +2653,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849465744}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6bfa20903991b489499deacc7bfd3a, type: 3}
+  m_Script: {fileID: 11500000, guid: e3ed53db5ea1e2741a8617f773b6d4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  gravity: 20
-  rotSpeed: 120
---- !u!143 &1849465750
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849465744}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  affectionLevel: 0
 --- !u!136 &1849465751
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2638,7 +2690,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a5b0e9618d8a0d04fbfc58009f550f77, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2720,9 +2772,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshAgent: {fileID: 0}
-  target: {fileID: 0}
   companionAI: {fileID: 0}
   playerAI: {fileID: 0}
+  target: {fileID: 0}
 --- !u!114 &1849465758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2735,14 +2787,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae514ff328b3cd440a3075e4789d019a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterClass: {fileID: 0}
   actionOne: 0
   actionTwo: 3
   actionThree: 5
-  actionFour: 3
-  abilityOne: 49
-  abilityTwo: 50
-  abilityThree: 51
-  abilityFour: 52
+  actionFour: 5
+  abilityOne: 0
+  abilityTwo: 0
+  abilityThree: 0
+  abilityFour: 0
+  attackValue: 0
+  fireboltValue: 0
+  wildspinValue: 0
+  RevitalizeValue: 0
+  elementalsphereValue: 0
+  abilityOneCooldown: 0
+  abilityTwoCooldown: 0
+  abilityThreeCooldown: 0
+  abilityFourCooldown: 0
+  affectionRating: {fileID: 0}
+  affectionLevel: 0
   myAbilities:
   - abilityName: 
     usableBy: 0

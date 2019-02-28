@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
+    [HideInInspector]
+    public bool isPlayer;
+    [Header("My Health")]
     public float health;
     public float maxHealth;
+
+    [Header("Status")]
     public bool fainted;
-    public bool isPlayer;
     
     // Start is called before the first frame update
     void Start()
@@ -49,5 +54,11 @@ public class Health : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    public void AlterHealth(int amount)
+    {
+        health += amount;
+
     }
 }

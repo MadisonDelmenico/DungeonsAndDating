@@ -5,10 +5,16 @@ using UnityEngine.UI;
 
 public class NavMeshMovement : MonoBehaviour
 {
+    [HideInInspector]
     public NavMeshAgent meshAgent;
-    public TargettingEnemies target;
-    public CompanionFollowScript companionAI;
+    [HideInInspector]
+    public CompanionAIScript companionAI;
+    [HideInInspector]
     public PlayerAI playerAI;
+    [HideInInspector]
+    public TargettingEnemies target;
+
+    [Header("Debug Text Object")]
     private Text text;
 
     // Start is called before the first frame update
@@ -27,9 +33,9 @@ public class NavMeshMovement : MonoBehaviour
         target = GetComponent<TargettingEnemies>();
         
         //if I'm a companion
-        if (GetComponent<CompanionFollowScript>())
+        if (GetComponent<CompanionAIScript>())
         {
-            companionAI = GetComponent<CompanionFollowScript>();
+            companionAI = GetComponent<CompanionAIScript>();
             playerAI = companionAI.player.GetComponent<PlayerAI>();
             text = companionAI.text;
         }
@@ -99,7 +105,7 @@ public class NavMeshMovement : MonoBehaviour
     {
 
         //if you are a companion
-        if (GetComponent<CompanionFollowScript>())
+        if (GetComponent<CompanionAIScript>())
         {
             //if you are attacking
 

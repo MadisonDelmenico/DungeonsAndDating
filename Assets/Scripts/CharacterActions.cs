@@ -69,38 +69,23 @@ public class CharacterActions : MonoBehaviour
         elementalSphereCooldownReset = elementalSphereCooldown;
 
         switch (characterClass.currentClass)
-
-
-
-
         {
             case CharacterClass.Class.Barbarian:
-
                 attackValue = 3;
-
                 break;
 
             case CharacterClass.Class.Paladin:
-
                 attackValue = 2;
-
                 break;
-                ;
             case CharacterClass.Class.Polymath:
                 attackValue = 2;
-
                 break;
-
             case CharacterClass.Class.Sorcerer:
                 attackValue = 1;
-
                 break;
-
             default:
                 break;
-
         }
-
     }
 
     // Update is called once per frame
@@ -111,8 +96,7 @@ public class CharacterActions : MonoBehaviour
         revitalizeCooldown -= Time.deltaTime;
         wildSpinCooldown -= Time.deltaTime;
         elementalSphereCooldown -= Time.deltaTime;
-
-
+        
         if (Input.GetKeyDown(abilityOne))
         {
             DoAction(actionOne, gameObject.GetComponent<TargettingEnemies>().target);
@@ -147,11 +131,7 @@ public class CharacterActions : MonoBehaviour
                 else
                 {
                     break;
-
                 }
-
-
-
             case Action.Firebolt:
                 if (fireboltCooldown <= 0)
                 {
@@ -166,10 +146,7 @@ public class CharacterActions : MonoBehaviour
                         Debug.Log("I don't want to hurt the " + target.name);
                     }
                 }
-
-
                 break;
-
             case Action.Revitalize:
                 if (revitalizeCooldown <= 0)
                 {
@@ -179,24 +156,17 @@ public class CharacterActions : MonoBehaviour
                         if (GetComponent<CompanionAIScript>())
                         {
                             gameObject.GetComponent<CompanionAIScript>().text.text = "I cant heal an enemy!";
-
                         }
                         Debug.Log("I cant heal an enemy!");
-
                     }
                     else
                     {
                         target.GetComponent<Health>().health += affectionLevel * RevitalizeValue;
                         Debug.Log(target.name);
                         revitalizeCooldown = revitalizeCooldownReset;
-
-
                     }
                 }
-
-
                 break;
-
             case Action.WildSpin:
                 if (wildSpinCooldown <= 0)
                 {
@@ -207,10 +177,7 @@ public class CharacterActions : MonoBehaviour
                         wildSpinCooldown = wildSpinCooldownReset;
                     }
                 }
-
-
                 break;
-
             case Action.ElementalSphere:
                 if (elementalSphereCooldown <= 0)
                 {
@@ -221,8 +188,6 @@ public class CharacterActions : MonoBehaviour
                         elementalSphereCooldown = elementalSphereCooldownReset;
                     }
                 }
-
-
                 break;
             case Action.None:
                 Debug.Log("No action assigned!");

@@ -16,7 +16,6 @@ public class PlayerAI : MonoBehaviour
         player = gameObject;
         target = gameObject;
         Distance = 0;
-
     }
 
     // Update is called once per frame
@@ -25,11 +24,7 @@ public class PlayerAI : MonoBehaviour
         if (target == null)
         {
             target = gameObject;
-
         }
         Distance = Vector3.Distance(target.transform.position, player.transform.position);
-
     }
-
-
 }

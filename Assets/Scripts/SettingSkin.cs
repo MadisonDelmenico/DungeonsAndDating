@@ -8,15 +8,13 @@ public class SettingSkin : MonoBehaviour
     public int skincolour;
     public GameObject skin;
     public Material[] skins;
+
     // Use this for initialization
     void Start()
     {
         skincolour = PlayerPrefs.GetInt("PSkin") -1;
-
-
+        
         skin.GetComponent<SkinnedMeshRenderer>().material = skins[skincolour];
-
-
     }
 
     // Update is called once per frame

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Pronouns : MonoBehaviour {
-
+public class Pronouns : MonoBehaviour
+{
 	public bool She;
 	public bool He;
 	public bool They;
@@ -20,8 +20,8 @@ public class Pronouns : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
 		if(She == true)
 		{
 			pronounSubjective = "She";
@@ -48,16 +48,12 @@ public class Pronouns : MonoBehaviour {
 			She = false;
 			He = false;
 		}
-
 	}
-
 
 	public void Null()
 	{
-
 		//if an option remains null, deny the user from proceeding, display an error message
 	}
-		
 }
 
 

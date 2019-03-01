@@ -6,6 +6,7 @@ public class TargettingEnemies : MonoBehaviour
 {
     [Header("Target")]
     public GameObject target;
+    public GameObject friendlyTarget;
 
     // Start is called before the first frame update
     void Start()

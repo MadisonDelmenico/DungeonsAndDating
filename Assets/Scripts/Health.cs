@@ -18,8 +18,6 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
         // Checks if the gameObject is the player
         if (gameObject.CompareTag("Player"))
         {
@@ -30,8 +28,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if (health <= 0)
         {
             if (isPlayer == true)
@@ -49,7 +45,6 @@ public class Health : MonoBehaviour
         {
             health = maxHealth;
         }
-
     }
 
     public void Die()
@@ -60,7 +55,6 @@ public class Health : MonoBehaviour
             foreach (var i in companions)
             {
                 i.GetComponent<NavMeshMovement>().Disengage();
-
             }
 
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -68,5 +62,4 @@ public class Health : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
 }

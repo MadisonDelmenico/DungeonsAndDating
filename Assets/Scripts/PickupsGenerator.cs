@@ -30,7 +30,6 @@ public class PickupsGenerator : MonoBehaviour
         Color pixelColor = PickupsMap.GetPixel(x, y);
         if (pixelColor.a == 0)
         {
-
             //the pixel is transparent, lets ignore it!
             return;
         }
@@ -39,7 +38,6 @@ public class PickupsGenerator : MonoBehaviour
         {
             if (colorMapping.Color.Equals(pixelColor))
             {
-
                 Vector3 position = new Vector3(x, 0, y);
                 Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
             }

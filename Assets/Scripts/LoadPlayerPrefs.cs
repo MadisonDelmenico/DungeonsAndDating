@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadPlayerPrefs : MonoBehaviour {
+public class LoadPlayerPrefs : MonoBehaviour
+{
     public string PlayerName;
     public string PlayerGender;
     public string PlayerClass;
@@ -10,19 +11,18 @@ public class LoadPlayerPrefs : MonoBehaviour {
     public int PlayerSkin;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+    {
         PlayerName = PlayerPrefs.GetString("PName");
-       PlayerGender = PlayerPrefs.GetString("PGender");
+        PlayerGender = PlayerPrefs.GetString("PGender");
         PlayerClass = PlayerPrefs.GetString("Pclass");
         PlayerDeity = PlayerPrefs.GetString("PDeity");
         PlayerSkin = PlayerPrefs.GetInt("PSkin");
-
-        
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 }

@@ -11,8 +11,7 @@ public class Movement : MonoBehaviour
     private CharacterController controller;
     private Vector3 moveRot;
     public float rotSpeed;
-
-
+    
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -25,10 +24,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (controller.isGrounded)
         {
-
             //rotate the player
             transform.Rotate(0, Input.GetAxis("Rotate") * rotSpeed * Time.deltaTime, 0);
 
@@ -36,7 +33,7 @@ public class Movement : MonoBehaviour
             //move directly from axis
 
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-           // moveRot = new Vector3(moveRot.x, moveRot.y + Input.GetAxis("Horizontal"), moveRot.z);
+            // moveRot = new Vector3(moveRot.x, moveRot.y + Input.GetAxis("Horizontal"), moveRot.z);
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection = moveDirection * speed;
         }

@@ -376,6 +376,16 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 458081751}
+    - target: {fileID: 7665315010070008433, guid: 570eb86f47364734cbcc613fb3e8a051,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665315010070008433, guid: 570eb86f47364734cbcc613fb3e8a051,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570eb86f47364734cbcc613fb3e8a051, type: 3}
 --- !u!1 &458081741
@@ -417,9 +427,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshAgent: {fileID: 0}
-  target: {fileID: 0}
   companionAI: {fileID: 0}
   playerAI: {fileID: 0}
+  target: {fileID: 0}
 --- !u!136 &458081743
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -529,10 +539,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbdfa7ed9c05824182296f3a6a84233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  isPlayer: 1
+  health: 100
   maxHealth: 100
   fainted: 0
-  isPlayer: 1
 --- !u!114 &458081749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae514ff328b3cd440a3075e4789d019a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterClass: {fileID: 0}
   actionOne: 0
   actionTwo: 1
   actionThree: 2
@@ -554,7 +565,17 @@ MonoBehaviour:
   abilityThree: 51
   abilityFour: 52
   attackValue: 0
-  characterClass: {fileID: 0}
+  fireboltValue: 0
+  wildspinValue: 0
+  RevitalizeValue: 0
+  elementalsphereValue: 0
+  basicCooldown: 0
+  fireboltCooldown: 0
+  revitalizeCooldown: 0
+  wildSpinCooldown: 0
+  elementalSphereCooldown: 0
+  affectionRating: {fileID: 0}
+  affectionLevel: 0
   myAbilities:
   - abilityName: 
     usableBy: 0
@@ -610,7 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef43e2005dfdda408c30ef8b1438144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energy: 0
+  energy: 100
   maxEnergy: 100
   isPlayer: 1
 --- !u!114 &458081752
@@ -796,7 +817,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724303188}
   m_LocalRotation: {x: 0.17493886, y: -0.37576038, z: 0.072462045, w: 0.9071659}
-  m_LocalPosition: {x: 13.91, y: 10.42, z: -13.35}
+  m_LocalPosition: {x: 14.19, y: 9.42, z: -13.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1716542208}

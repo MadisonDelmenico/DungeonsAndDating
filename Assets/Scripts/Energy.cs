@@ -12,8 +12,6 @@ public class Energy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        energy = maxEnergy;
-
         // Checks if the gameObject is the player
         isPlayer = (gameObject.tag == "Player") ? true : false;
     }

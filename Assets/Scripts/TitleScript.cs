@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class TitleScript : MonoBehaviour
 {
-
     // Use this for initialization
     public Scene StartScene;
 
@@ -17,14 +16,11 @@ public class TitleScript : MonoBehaviour
     public void Startgamebutton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
 
     public void QuitGame()
     {
-
         Application.Quit();
-
     }
 
 }

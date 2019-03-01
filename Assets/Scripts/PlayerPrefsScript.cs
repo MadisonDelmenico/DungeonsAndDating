@@ -47,9 +47,7 @@ public class PlayerPrefsScript : MonoBehaviour
 
         string PlayerClass = Manager.GetComponent<ExampleText>().Class;
         string PlayerDeity = Manager.GetComponent<ExampleText>().Deity;
-
-
-
+        
         PlayerPrefs.SetString("PName", PlayerName);
         PlayerPrefs.SetString("PGender", PlayerGender);
         PlayerPrefs.SetString("PClass", PlayerClass);
@@ -61,8 +59,6 @@ public class PlayerPrefsScript : MonoBehaviour
         PClass = PlayerClass;
         PDeity = PlayerDeity;
         PSkin = PlayerSkintone;
-
     }
-
 }
 

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DungeonMouseOver : MonoBehaviour
 {
-
-
 	public GameObject toTurnOn;
 	Ray ray;
 	RaycastHit hit;
@@ -24,21 +22,14 @@ public class DungeonMouseOver : MonoBehaviour
 			if (Physics.Raycast (ray, out hit)) {
 				if (hit.collider.CompareTag (gameObject.tag)) {
 					toTurnOn.SetActive (true);
-
 				}
-
 			}
-
 		}
-			
 	}
 
 	public void TurnOff()
 	{
 		toTurnOn.SetActive (false);
-
 	}
-
-
 }
 

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
-
 	public GameObject manager;
 	public Scene scene;
 	public Image characterpic;
@@ -16,6 +15,7 @@ public class ButtonScript : MonoBehaviour
 	public Sprite skin4;
 	public Sprite skin5;
 	public int skincolour;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -55,14 +55,11 @@ public class ButtonScript : MonoBehaviour
 		scene = SceneManager.GetActiveScene ();
 		SceneManager.LoadScene (scene.name);
 		print ("Reloaded");
-
 	}
 	public void Confirm()
 	{
 		SceneManager.LoadScene ("Map");
         print("Player Skin is" + PlayerPrefs.GetInt("PSkin"));
-
-
     }
 
 	public void SetSkinColour1 ()

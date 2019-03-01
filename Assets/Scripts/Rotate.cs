@@ -8,6 +8,7 @@ public class Rotate : MonoBehaviour
     /// add this script to an object and set a rotate speed to make it rotate in place
     /// </summary>
     public float rotSpeed;
+
     // Start is called before the first frame update
     void Start()
     {

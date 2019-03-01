@@ -119,8 +119,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.85882354, g: 0.61479694, b: 0.08627449, a: 1}
-  m_Intensity: 9.97
-  m_Range: 2.5
+  m_Intensity: 6
+  m_Range: 7
   m_SpotAngle: 139
   m_CookieSize: 10
   m_Shadows:
@@ -130,7 +130,7 @@ Light:
     m_Strength: 0.743
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.036
+    m_NearPlane: 0.07
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}

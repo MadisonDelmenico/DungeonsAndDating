@@ -8,6 +8,13 @@ public class CanvasRigMovement : MonoBehaviour
     
     void Update()
     {
-        transform.position = target.position;
+        if (target != null)
+        {
+            transform.position = target.position;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

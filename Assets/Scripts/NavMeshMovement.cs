@@ -46,7 +46,7 @@ public class NavMeshMovement : MonoBehaviour
             RaycastHit hit;
 
             // if the area pressed has a collider
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, 9))
             {
                 if (GetComponent<PlayerAI>())
                 {

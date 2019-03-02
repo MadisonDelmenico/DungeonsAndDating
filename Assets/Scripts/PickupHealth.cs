@@ -16,13 +16,4 @@ public class PickupHealth : MonoBehaviour
     {
 
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<Health>().health < other.GetComponent<Health>().maxHealth)
-        {
-            other.GetComponent<Health>().health += healAmount;
-            Destroy(this.gameObject);
-        }
-    }
 }

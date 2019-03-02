@@ -42,8 +42,9 @@ GameObject:
   - component: {fileID: 553457197606430103}
   - component: {fileID: 7392078160979969257}
   - component: {fileID: 6650271770943839923}
+  - component: {fileID: 6255016699647296864}
   m_Layer: 0
-  m_Name: Pillar2
+  m_Name: Doorway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,3 +109,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6255016699647296864
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7696690376794709896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: b1780e22bcb73ce4c8cbf35b5c3ca3ed, type: 3}

@@ -41,6 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 409185459710025424}
   - component: {fileID: 1969809000105605267}
+  - component: {fileID: 7950048714557001779}
+  - component: {fileID: 1166439536777849522}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -76,6 +78,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 3
+--- !u!135 &7950048714557001779
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3780772907211007372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &1166439536777849522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3780772907211007372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd7884a07925294299720eab904e7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 10
 --- !u!1 &8536257716901868077
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +115,6 @@ GameObject:
   - component: {fileID: 8191001643856942291}
   - component: {fileID: 2991805635507488344}
   - component: {fileID: 6779324699861034424}
-  - component: {fileID: 7566584070292762145}
   m_Layer: 0
   m_Name: FloatingCoin
   m_TagString: Untagged
@@ -154,17 +181,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &7566584070292762145
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8536257716901868077}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}

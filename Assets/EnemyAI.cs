@@ -26,13 +26,21 @@ public class EnemyAI : MonoBehaviour
     {
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, 2))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
             if (hit.transform.gameObject.CompareTag("Player") || hit.transform.gameObject.CompareTag("Companion"))
             {
-
+                Debug.Log(hit.transform.gameObject.name + " hit");
                 target = hit.transform.gameObject;
+                currentState = State.Attacking;
+            }
+            else
+            {
+                if (currentState == State.Patrolling)
+                {
+                    target = gameObject;
+                }
             }
         }
         else

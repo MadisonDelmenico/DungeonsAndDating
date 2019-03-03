@@ -20,10 +20,10 @@ public class NavMeshMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        meshAgent = GetComponent<NavMeshAgent>();
         // if I'm the player
         if (gameObject.CompareTag("Player"))
         {
-            meshAgent = GetComponent<NavMeshAgent>();
             playerAI = GetComponent<PlayerAI>();
         }
         target = GetComponent<TargettingEnemies>();

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using Boo.Lang.Environments;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyPatrols : MonoBehaviour
 {
     [Header("My patrol Route")]
     public GameObject[] Waypoints;
 
-    private NavMeshMovement navMesh;
+    private NavMeshAgent meshAgent;
 
     [Header("The waypoint I'm moving to")]
     public int waypointNumber;
@@ -16,16 +17,16 @@ public class EnemyPatrols : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        navMesh = GetComponent<NavMeshMovement>();
+        meshAgent = GetComponent<NavMeshAgent>();
         waypointNumber = 0;
-        navMesh.meshAgent.destination = Waypoints[waypointNumber].transform.position;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        foreach (var waypoint in Waypoints)
+        meshAgent.destination = Waypoints[waypointNumber].transform.position;
+        //foreach (var waypoint in Waypoints)
         {
 
             if (Vector3.Distance(gameObject.transform.position, Waypoints[waypointNumber].transform.position) <= 0.5f)
@@ -44,6 +45,6 @@ public class EnemyPatrols : MonoBehaviour
         {
             waypointNumber = 0;
         }
-        navMesh.meshAgent.destination = Waypoints[waypointNumber].transform.position;
+        meshAgent.destination = Waypoints[waypointNumber].transform.position;
     }
 }

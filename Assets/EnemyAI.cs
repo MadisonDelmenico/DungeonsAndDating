@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour
     public Text text;
     public GameObject[] Enemies;
     public float[] Distances;
-    private int arrayPosition;
+    public int arrayPosition;
     public bool helpMe;
     private float idleTimer;
 
@@ -27,6 +27,7 @@ public class EnemyAI : MonoBehaviour
     {
         //Enemies are aware of all other enemies in the scene
         Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        Distances = new float[Enemies.Length];
         if (GetComponent<EnemyPatrols>().Waypoints.Length > 0)
         {
             currentState = State.Patrolling;
@@ -48,12 +49,14 @@ public class EnemyAI : MonoBehaviour
             {
                 Distances[arrayPosition] =
                     Vector3.Distance(transform.position, Enemies[arrayPosition].transform.position);
+                if (i.gameObject.GetComponent<EnemyAI>().helpMe == true && Distances[arrayPosition] < 5f)
+                {
+                    Attack(i.gameObject.GetComponent<EnemyAI>().target);
+                }
+
             }
 
-            if (i.gameObject.GetComponent<EnemyAI>().helpMe == true && Distances[arrayPosition] < 5f)
-            {
-                Attack(i.gameObject.GetComponent<EnemyAI>().target);
-            }
+
         }
 
         //make a raycast, see if there are any players/companions around.
@@ -149,7 +152,9 @@ public class EnemyAI : MonoBehaviour
     {
         if (helpMe == false)
         {
-            Attack(attacker);
+            target = attacker;
+            currentState = State.Attacking;
+            
         }
         helpMe = true;
     }

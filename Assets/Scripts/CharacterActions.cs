@@ -126,6 +126,9 @@ public class CharacterActions : MonoBehaviour
                     target.GetComponent<Health>().health -= affectionLevel * attackValue;
                     Debug.Log(target.name);
                     basicCooldown = basicCooldownReset;
+                    sendAttackerInfo();
+
+
                     break;
                 }
                 else
@@ -140,6 +143,7 @@ public class CharacterActions : MonoBehaviour
                         Debug.Log("Pew Pew Firebolt!");
                         target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
                         fireboltCooldown = fireboltCooldownReset;
+                        sendAttackerInfo();
                     }
                     else
                     {
@@ -175,6 +179,7 @@ public class CharacterActions : MonoBehaviour
                         Debug.Log("Beyblade time!");
                         target.GetComponent<Health>().health -= (affectionLevel * wildspinValue);
                         wildSpinCooldown = wildSpinCooldownReset;
+                        sendAttackerInfo();
                     }
                 }
                 break;
@@ -186,6 +191,7 @@ public class CharacterActions : MonoBehaviour
                         Debug.Log("Elemental Sphere attack!");
                         target.GetComponent<Health>().health -= (affectionLevel * elementalsphereValue);
                         elementalSphereCooldown = elementalSphereCooldownReset;
+                        sendAttackerInfo();
                     }
                 }
                 break;
@@ -195,6 +201,12 @@ public class CharacterActions : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public GameObject sendAttackerInfo()
+    {
+        gameObject.GetComponent<TargettingEnemies>().target.GetComponent<EnemyAI>().helpMe = true;
+        return gameObject;
     }
 
     void UnpackAbilities()

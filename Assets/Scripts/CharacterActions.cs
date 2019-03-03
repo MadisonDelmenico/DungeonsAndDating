@@ -126,7 +126,7 @@ public class CharacterActions : MonoBehaviour
                     target.GetComponent<Health>().health -= affectionLevel * attackValue;
                     Debug.Log(target.name);
                     basicCooldown = basicCooldownReset;
-                    sendAttackerInfo();
+                    sendAttackerInfo(target);
 
 
                     break;
@@ -143,7 +143,7 @@ public class CharacterActions : MonoBehaviour
                         Debug.Log("Pew Pew Firebolt!");
                         target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
                         fireboltCooldown = fireboltCooldownReset;
-                        sendAttackerInfo();
+                        sendAttackerInfo(target);
                     }
                     else
                     {
@@ -179,7 +179,7 @@ public class CharacterActions : MonoBehaviour
                         Debug.Log("Beyblade time!");
                         target.GetComponent<Health>().health -= (affectionLevel * wildspinValue);
                         wildSpinCooldown = wildSpinCooldownReset;
-                        sendAttackerInfo();
+                        sendAttackerInfo(target);
                     }
                 }
                 break;
@@ -191,7 +191,7 @@ public class CharacterActions : MonoBehaviour
                         Debug.Log("Elemental Sphere attack!");
                         target.GetComponent<Health>().health -= (affectionLevel * elementalsphereValue);
                         elementalSphereCooldown = elementalSphereCooldownReset;
-                        sendAttackerInfo();
+                        sendAttackerInfo(target);
                     }
                 }
                 break;
@@ -203,10 +203,10 @@ public class CharacterActions : MonoBehaviour
         }
     }
 
-    public GameObject sendAttackerInfo()
+    public void sendAttackerInfo(GameObject TargetEnemy)
     {
-        gameObject.GetComponent<TargettingEnemies>().target.GetComponent<EnemyAI>().helpMe = true;
-        return gameObject;
+       TargetEnemy.GetComponent<EnemyAI>().ImBeingAttacked(gameObject);
+
     }
 
     void UnpackAbilities()

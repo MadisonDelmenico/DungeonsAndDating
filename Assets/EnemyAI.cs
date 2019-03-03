@@ -47,12 +47,19 @@ public class EnemyAI : MonoBehaviour
         {
             for (arrayPosition = 0; arrayPosition < Enemies.Length; arrayPosition++)
             {
-                Distances[arrayPosition] =
-                    Vector3.Distance(transform.position, Enemies[arrayPosition].transform.position);
-                if (i.gameObject.GetComponent<EnemyAI>().helpMe == true && Distances[arrayPosition] < 5f)
+                if (Enemies[arrayPosition] != null)
                 {
-                    Attack(i.gameObject.GetComponent<EnemyAI>().target);
+                    Distances[arrayPosition] = Vector3.Distance(transform.position, Enemies[arrayPosition].transform.position);
+                    if (i != null)
+                    {
+                        if (i.gameObject.GetComponent<EnemyAI>().helpMe == true && Distances[arrayPosition] < 5f)
+                        {
+                            Attack(i.gameObject.GetComponent<EnemyAI>().target);
+                        }
+                    }
+
                 }
+
 
             }
 
@@ -72,13 +79,13 @@ public class EnemyAI : MonoBehaviour
                 target = hit.transform.gameObject;
                 currentState = State.Attacking;
             }
-            else
-            {
-                if (currentState == State.Patrolling)
-                {
-                    target = gameObject;
-                }
-            }
+            //  else
+            //  {
+            //    if (currentState == State.Patrolling)
+            //   {
+            //       target = gameObject;
+            //   }
+            //  }
         }
         else
         {
@@ -124,6 +131,8 @@ public class EnemyAI : MonoBehaviour
 
     public void Attack(GameObject targetGameObject)
     {
+        target.gameObject.transform.LookAt(target.transform);
+
         //is the enemy is greater than 10m from the area im supposed to patrol
         if (Vector3.Distance(
                 GetComponent<EnemyPatrols>().Waypoints[GetComponent<EnemyPatrols>().waypointNumber].transform.position,
@@ -154,7 +163,7 @@ public class EnemyAI : MonoBehaviour
         {
             target = attacker;
             currentState = State.Attacking;
-            
+
         }
         helpMe = true;
     }

@@ -40,6 +40,7 @@ public class NavMeshMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //only players and companions need this stuff
         if (gameObject.CompareTag("Enemy") == false)
         {

@@ -19,27 +19,34 @@ public class EnemyPatrols : MonoBehaviour
     {
         meshAgent = GetComponent<NavMeshAgent>();
         waypointNumber = 0;
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
+    }
+
+    public void Patrol()
+    {
         meshAgent.destination = Waypoints[waypointNumber].transform.position;
         //foreach (var waypoint in Waypoints)
         {
 
-            if (Vector3.Distance(gameObject.transform.position, Waypoints[waypointNumber].transform.position) <= 0.5f)
+            if (Vector3.Distance(gameObject.transform.position, Waypoints[waypointNumber].transform.position) <= 1.0f)
             {
                 NextWaypoint();
-            } 
-          
+            }
+
+
         }
     }
 
     public void NextWaypoint()
     {
-      
+
         waypointNumber++;
         if (waypointNumber >= Waypoints.Length)
         {
@@ -47,4 +54,5 @@ public class EnemyPatrols : MonoBehaviour
         }
         meshAgent.destination = Waypoints[waypointNumber].transform.position;
     }
+
 }

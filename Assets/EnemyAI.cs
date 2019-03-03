@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
     public enum State { Patrolling, Attacking, Idle }
     public State currentState;
     public GameObject target;
+    public Text text;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +18,7 @@ public class EnemyAI : MonoBehaviour
             currentState = State.Patrolling;
         }
 
+        text.text = currentState.ToString();
     }
 
     // Update is called once per frame
@@ -23,7 +26,7 @@ public class EnemyAI : MonoBehaviour
     {
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 10f, 2))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, 2))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
             if (hit.transform.gameObject.CompareTag("Player") || hit.transform.gameObject.CompareTag("Companion"))

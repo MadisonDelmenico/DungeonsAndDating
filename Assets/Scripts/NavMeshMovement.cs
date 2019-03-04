@@ -109,9 +109,8 @@ public class NavMeshMovement : MonoBehaviour
             // you are no longer attacking. Disable the Targetting Enemies component and follow the player.
             target.enabled = false;
             // target.target.GetComponent<Material>().color = new Color(0,0,0,0);
-            companionAI.isAttacking = false;
-            companionAI.isFollowingPlayer = true;
-            text.text = " I'm disengaging";
+            companionAI.state = CompanionAIScript.CompanionState.Following;
+            text.text = "disengaging";
         }
 
         // if i am the player

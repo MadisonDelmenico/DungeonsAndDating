@@ -26,6 +26,10 @@ public class PlayerAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target == null)
+        {
+            target = gameObject;
+        }
         foreach (var i in Enemies)
         {
             if (i != null)
@@ -36,18 +40,14 @@ public class PlayerAI : MonoBehaviour
                     gameObject.GetComponent<TargettingEnemies>().enabled = true;
                     gameObject.GetComponent<TargettingEnemies>().target = i;
                     target = i;
-                    callForHelp(i);
+                    CallForHelp(i);
                 }
             }
-        }
-        if (target == null)
-        {
-            target = gameObject;
         }
         Distance = Vector3.Distance(target.transform.position, player.transform.position);
     }
 
-    public void callForHelp(GameObject attacker)
+    public void CallForHelp(GameObject attacker)
     {
         foreach (var i in Companions)
         {
@@ -55,14 +55,12 @@ public class PlayerAI : MonoBehaviour
             {
                 i.GetComponent<TargettingEnemies>().enabled = true;
                 i.GetComponent<TargettingEnemies>().target = attacker;
-                target = attacker;
-                orderToAttack();
-
+                OrderToAttack();
             }
         }
     }
 
-    public void orderToAttack()
+    public void OrderToAttack()
     {
         foreach (var i in Companions)
         {

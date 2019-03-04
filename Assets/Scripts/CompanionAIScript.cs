@@ -103,6 +103,11 @@ public class CompanionAIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player.GetComponent<PlayerAI>().beingattacked == true)
+        {
+            isAttacking = true;
+            GetComponent<NavMeshMovement>().Attack();
+        }
         // check the distance between myself and the player
         distanceFromPlayer = Vector3.Distance(gameObject.transform.position, player.transform.position);
         // if im attacking
@@ -267,7 +272,7 @@ public class CompanionAIScript : MonoBehaviour
     {
         if (GetComponent<TargettingEnemies>().enabled)
         {
-            if (gameObject.GetComponent<TargettingEnemies>().target != null)
+            if (GetComponent<TargettingEnemies>().target != null)
             {
                 if (player.GetComponent<TargettingEnemies>().target != player)
                 {

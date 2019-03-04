@@ -18,9 +18,14 @@ public class EnemyAI : MonoBehaviour
     public Text text;
     public GameObject[] Enemies;
     public float[] Distances;
-    public int arrayPosition;
+    public int enemiesArrayPosition;
     public bool helpMe;
     private float idleTimer;
+    public AudioSource alert;
+    public GameObject player;
+    public GameObject[] companions;
+    public float[] companionDistances;
+    public int companionArrayPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -28,46 +33,59 @@ public class EnemyAI : MonoBehaviour
         //Enemies are aware of all other enemies in the scene
         Enemies = GameObject.FindGameObjectsWithTag("Enemy");
         Distances = new float[Enemies.Length];
+        companions = GameObject.FindGameObjectsWithTag("Companion");
+        companionDistances = new float[companions.Length];
+
+        //patrol on start if you have patrol points
         if (GetComponent<EnemyPatrols>().Waypoints.Length > 0)
         {
             currentState = State.Patrolling;
         }
 
-        arrayPosition = 0;
+        enemiesArrayPosition = 0;
+        companionArrayPosition = 0;
         idleTimer = 0;
         text.text = currentState.ToString();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
         idleTimer -= Time.deltaTime;
+
+        //figuring out how far companions are from me
+        foreach (var i in companions)
+        {
+            for (companionArrayPosition = 0; companionArrayPosition < companions.Length; companionArrayPosition++)
+            {
+                if (companions[companionArrayPosition] != null)
+                {
+                    companionDistances[companionArrayPosition] = Vector3.Distance(transform.position, companions[companionArrayPosition].transform.position);
+                }
+            }
+        }
         //set all the distances from this enemy and the other enemies in the scene
         foreach (var i in Enemies)
         {
-            for (arrayPosition = 0; arrayPosition < Enemies.Length; arrayPosition++)
+            for (enemiesArrayPosition = 0; enemiesArrayPosition < Enemies.Length; enemiesArrayPosition++)
             {
-                if (Enemies[arrayPosition] != null)
+                if (Enemies[enemiesArrayPosition] != null)
                 {
-                    Distances[arrayPosition] = Vector3.Distance(transform.position, Enemies[arrayPosition].transform.position);
+                    Distances[enemiesArrayPosition] = Vector3.Distance(transform.position, Enemies[enemiesArrayPosition].transform.position);
                     if (i != null)
                     {
-                        if (i.gameObject.GetComponent<EnemyAI>().helpMe == true && Distances[arrayPosition] < 5f)
+                        if (i.gameObject.GetComponent<EnemyAI>().helpMe == true && Distances[enemiesArrayPosition] < 5f)
                         {
                             Attack(i.gameObject.GetComponent<EnemyAI>().target);
                         }
                     }
-
                 }
-
-
             }
-
-
         }
 
         //make a raycast, see if there are any players/companions around.
-        RaycastHit hit;
+        /*RaycastHit hit;
 
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
@@ -75,8 +93,10 @@ public class EnemyAI : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
             if (hit.transform.gameObject.CompareTag("Player") || hit.transform.gameObject.CompareTag("Companion"))
             {
-                Debug.Log(hit.transform.gameObject.name + " hit");
+
+                Debug.Log(gameObject.name + ": " + " hit " + transform.gameObject.name);
                 target = hit.transform.gameObject;
+                alert.Play();
                 currentState = State.Attacking;
             }
             //  else
@@ -91,7 +111,7 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.green);
             target = gameObject;
-        }
+        }*/
 
         switch (currentState)
         {
@@ -107,6 +127,10 @@ public class EnemyAI : MonoBehaviour
                 GetComponent<EnemyPatrols>().Patrol();
                 target = gameObject;
                 GetComponent<NavMeshAgent>().speed = 1.5f;
+
+                checkForEnemies();
+
+
                 break;
             case State.Attacking:
                 text.text = currentState.ToString();
@@ -115,7 +139,7 @@ public class EnemyAI : MonoBehaviour
                     GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
                     MoveTo(target.transform);
                     Attack(target);
-                    GetComponent<NavMeshAgent>().speed = 2f;
+                    GetComponent<NavMeshAgent>().speed = 3f;
                     if (target.GetComponent<Health>().health <= 0)
                     {
                         helpMe = false;
@@ -166,6 +190,29 @@ public class EnemyAI : MonoBehaviour
 
         }
         helpMe = true;
+    }
+
+    public void checkForEnemies()
+    {
+        foreach (var i in companions)
+        {
+            if (i != null)
+            {
+                if (Vector3.Distance(gameObject.transform.position, i.transform.position) < 5f)
+                {
+                    target = i;
+                    alert.Play();
+                    currentState = State.Attacking;
+                }
+            }
+        }
+       //if the player is within 5m of me, attack them
+        if (Vector3.Distance(gameObject.transform.position, player.transform.position) < 5f)
+        {
+            target = player;
+            alert.Play();
+            currentState = State.Attacking;
+        }
     }
 
 }

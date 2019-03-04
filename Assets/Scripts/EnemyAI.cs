@@ -83,36 +83,6 @@ public class EnemyAI : MonoBehaviour
                 }
             }
         }
-
-        //make a raycast, see if there are any players/companions around.
-        /*RaycastHit hit;
-
-        // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-            if (hit.transform.gameObject.CompareTag("Player") || hit.transform.gameObject.CompareTag("Companion"))
-            {
-
-                Debug.Log(gameObject.name + ": " + " hit " + transform.gameObject.name);
-                target = hit.transform.gameObject;
-                alert.Play();
-                currentState = State.Attacking;
-            }
-            //  else
-            //  {
-            //    if (currentState == State.Patrolling)
-            //   {
-            //       target = gameObject;
-            //   }
-            //  }
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.green);
-            target = gameObject;
-        }*/
-
         switch (currentState)
         {
             case State.Idle:
@@ -146,6 +116,7 @@ public class EnemyAI : MonoBehaviour
                         currentState = State.Idle;
                         idleTimer = 3f;
                     }
+
                 }
 
 

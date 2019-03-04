@@ -33,9 +33,10 @@ public class PlayerAI : MonoBehaviour
                 if (i.GetComponent<EnemyAI>().target == gameObject)
                 {
                     beingattacked = true;
-                    callForHelp(i);
                     gameObject.GetComponent<TargettingEnemies>().enabled = true;
+                    gameObject.GetComponent<TargettingEnemies>().target = i;
                     target = i;
+                    callForHelp(i);
                 }
             }
         }

@@ -117,6 +117,7 @@ public class NavMeshMovement : MonoBehaviour
         // if i am the player
         if (GetComponent<PlayerAI>())
         {
+            GetComponent<PlayerAI>().beingattacked = false;
             // if i am attacking
             if (GetComponent<PlayerAI>().isAttacking)
             {

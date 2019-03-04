@@ -138,6 +138,7 @@ public class CompanionAIScript : MonoBehaviour
         // if im following the player, head towards my assigned waypoint
         if (isFollowingPlayer)
         {
+            GetComponent<TargettingEnemies>().target = player;
             text.text = "Following";
             switch (companionNumber)
             {

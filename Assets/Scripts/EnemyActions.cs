@@ -7,7 +7,7 @@ public class EnemyActions : MonoBehaviour
     public enum Action { Basic, Firebolt, None }
 
     [HideInInspector]
-    public CharacterClass characterClass;
+    public EnemyClass enemyClass;
 
     [Header("My Abilities")]
     public Action actionOne = Action.Basic;
@@ -16,7 +16,6 @@ public class EnemyActions : MonoBehaviour
     [Header("Attack values")]
     public float attackValue;
     public float fireboltValue;
-    public float wildspinValue;
 
     [Header("Cooldown Values")]
     public float basicCooldown;
@@ -27,35 +26,26 @@ public class EnemyActions : MonoBehaviour
     private float fireboltCooldownReset;
 
 
-    [Header("Abilities")]
-    public AbilityClass[] myAbilities = new AbilityClass[4];
-    public AbilityClass[] allAbilities;
-
 
     // Start is called before the first frame update 
     void Start()
     {
-        characterClass = GetComponent<CharacterClass>();
+        enemyClass = GetComponent<EnemyClass>();
 
         basicCooldownReset = basicCooldown;
         fireboltCooldownReset = fireboltCooldown;
 
 
-        switch (characterClass.currentClass)
+        switch (enemyClass.currentClass)
         {
-            case CharacterClass.Class.Barbarian:
+            case EnemyClass.Class.Melee:
                 attackValue = 3;
                 break;
 
-            case CharacterClass.Class.Paladin:
+            case EnemyClass.Class.Ranged:
                 attackValue = 2;
                 break;
-            case CharacterClass.Class.Polymath:
-                attackValue = 2;
-                break;
-            case CharacterClass.Class.Sorcerer:
-                attackValue = 1;
-                break;
+            
             default:
                 break;
         }

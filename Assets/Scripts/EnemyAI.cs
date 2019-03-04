@@ -26,6 +26,8 @@ public class EnemyAI : MonoBehaviour
     public GameObject[] companions;
     public float[] companionDistances;
     public int companionArrayPosition;
+    public float rangedDistance;
+    public float meleeDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -117,6 +119,19 @@ public class EnemyAI : MonoBehaviour
                         idleTimer = 3f;
                     }
 
+                    if (GetComponent<EnemyClass>().currentClass == EnemyClass.Class.Melee )
+                    {
+                        MoveToDistance(meleeDistance);
+                    }
+                    else
+                    {
+                        MoveToDistance(rangedDistance);
+                    }
+
+                    // Look at the enemy
+                    transform.LookAt(target.transform);
+                    //do the basic attack on the target
+                    GetComponent<EnemyActions>().DoAction(EnemyActions.Action.Basic, target);
                 }
 
 
@@ -184,6 +199,14 @@ public class EnemyAI : MonoBehaviour
             alert.Play();
             currentState = State.Attacking;
         }
+    }
+    public void MoveToDistance(float distance)
+    {
+        text.text = "Moving for Attack";
+        Vector3 direction = transform.position - target.transform.position;
+        direction.Normalize();
+        Vector3 targetPos = target.transform.position + direction * distance;
+        GetComponent<NavMeshMovement>().meshAgent.destination = targetPos;
     }
 
 }

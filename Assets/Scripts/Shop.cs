@@ -5,6 +5,10 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public PlayerInventory player;
+    
+    public int commonTreasureValue;
+    public int uncommonTreasureValue;
+    public int rareTreasureValue;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +35,39 @@ public class Shop : MonoBehaviour
         }
     }
 
-    public void SellItem(int value)
+    public void SellItem(int rarity)
     {
-        player.money += value;
-        Debug.Log("Player sold an item for " + value + "gp, and now has " + player.money + "gp.");
+        switch (rarity)
+        {
+            // Common Treasure
+            case 0:
+                if (player.commonTreasure > 0)
+                {
+                    player.commonTreasure--;
+                    player.money += commonTreasureValue;
+                    Debug.Log("Player sold an item for " + commonTreasureValue + "gp, and now has " + player.money + "gp.");
+                }
+                break;
+            // Uncommon Treasure
+            case 1:
+                if (player.uncommonTreasure > 0)
+                {
+                    player.uncommonTreasure--;
+                    player.money += uncommonTreasureValue;
+                    Debug.Log("Player sold an item for " + uncommonTreasureValue + "gp, and now has " + player.money + "gp.");
+                }
+                break;
+            // Rare Treasure
+            case 2:
+                if (player.rareTreasure > 0)
+                {
+                    player.rareTreasure--;
+                    player.money += rareTreasureValue;
+                    Debug.Log("Player sold an item for " + rareTreasureValue + "gp, and now has " + player.money + "gp.");
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

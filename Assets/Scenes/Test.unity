@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bae269eb34f5469a0d3f0b3f7cf67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRecruited: 0
   player: {fileID: 0}
   companionNumber: 0
   companionTarget: {fileID: 0}
@@ -903,6 +904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bae269eb34f5469a0d3f0b3f7cf67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRecruited: 0
   player: {fileID: 0}
   companionNumber: 0
   companionTarget: {fileID: 0}
@@ -1930,6 +1932,8 @@ MonoBehaviour:
   target: {fileID: 0}
   beingattacked: 0
   Enemies: []
+  isTalking: 0
+  name: 
 --- !u!114 &1117132044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2314,7 +2318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2047984515, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2047984518, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2361,10 +2365,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2047984517, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
-      propertyPath: map
-      value: 
-      objectReference: {fileID: 2800000, guid: 38511c0be456fb845b577ef41e1ee950, type: 3}
-    - target: {fileID: 2047984517, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -2373,14 +2373,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3014794777798521384, guid: 9179443ad38841840bf38fffd953db0d,
         type: 3}
-    - target: {fileID: 2047984519, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
-      propertyPath: lightingMap
+    - target: {fileID: 2047984517, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
+      propertyPath: map
       value: 
-      objectReference: {fileID: 2800000, guid: a3e3812841b15824891ccea459160304, type: 3}
-    - target: {fileID: 2047984519, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 04c5bcaa356c2c14a91919001c2d466d, type: 3}
     - target: {fileID: 2047984516, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2388,7 +2384,15 @@ PrefabInstance:
     - target: {fileID: 2047984516, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
       propertyPath: PickupsMap
       value: 
-      objectReference: {fileID: 2800000, guid: b31da8a9d1ff5c74d912c982c7cef89b, type: 3}
+      objectReference: {fileID: 2800000, guid: d23707f5c1bb8e34598c2fe705bb1ed8, type: 3}
+    - target: {fileID: 2047984519, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
+      propertyPath: lightingMap
+      value: 
+      objectReference: {fileID: 2800000, guid: bab1e7dbdd5112b439f163c972b321b2, type: 3}
+    - target: {fileID: 2047984519, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ca00a73c25e5394bb32470429eb2581, type: 3}
 --- !u!1 &1455651258
@@ -2917,6 +2921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bae269eb34f5469a0d3f0b3f7cf67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRecruited: 0
   player: {fileID: 0}
   companionNumber: 0
   companionTarget: {fileID: 0}
@@ -3622,7 +3627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &2112476638
 MeshCollider:
   m_ObjectHideFlags: 0

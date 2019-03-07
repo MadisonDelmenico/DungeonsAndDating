@@ -110,7 +110,11 @@ public class NavMeshMovement : MonoBehaviour
             target.enabled = false;
             // target.target.GetComponent<Material>().color = new Color(0,0,0,0);
             companionAI.state = CompanionAIScript.CompanionState.Following;
-            text.text = "disengaging";
+            if (text != null) 
+            {
+                text.text = "disengaging";
+            }
+            
         }
 
         // if i am the player

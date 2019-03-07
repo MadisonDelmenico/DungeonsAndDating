@@ -1,11 +1,16 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Assertions.Comparers;
 using UnityEngine.UI;
+using VIDE_Data;
+using MiniJSON_VIDE;
 
 public class CompanionAIScript : MonoBehaviour
 {
+    public bool isRecruited;
+
     [HideInInspector]
     NavMeshAgent meshAgent;
     [HideInInspector]
@@ -45,9 +50,13 @@ public class CompanionAIScript : MonoBehaviour
     [Header("Debug text item")]
     public Text text;
 
+
     // Start is called before the first frame update
     void Start()
     {
+
+
+        isRecruited = false;
         isAttacking = false;
         isFollowingPlayer = true;
         state = CompanionState.Following;
@@ -66,6 +75,12 @@ public class CompanionAIScript : MonoBehaviour
 
         // Finding the number of companions currently in the dungeon, adding them to an array of companions
         NumberofCompanions = GameObject.FindGameObjectsWithTag("Companion");
+
+        if (GetComponent<VIDE_Assign>())
+        {
+
+        }
+
 
         // Setting the companion number for each companion, 0 by default
         for (int i = 0; i < NumberofCompanions.Length; i++)
@@ -122,7 +137,11 @@ public class CompanionAIScript : MonoBehaviour
         {
             // If i'm attacking
             case CompanionState.Attacking:
-                text.text = "Attacking";
+                if (text != null)
+                {
+                    text.text = "Attacking";
+                }
+
 
                 // If the player is past my disengage distance
                 if (distanceFromPlayer > disengageDistance)
@@ -219,7 +238,11 @@ public class CompanionAIScript : MonoBehaviour
 
             // If i'm casting
             case CompanionState.Casting:
-                text.text = "Casting";
+                if (text != null)
+                {
+                    text.text = "Casting";
+                }
+
                 if (castTime <= 0)
                 {
                     state = CompanionState.Attacking;
@@ -228,7 +251,11 @@ public class CompanionAIScript : MonoBehaviour
 
             // If i'm following the player
             case CompanionState.Following:
-                text.text = "Following";
+                if (text != null)
+                {
+                    text.text = "Following";
+                }
+
                 // If my target isnt the player, then it must be an enemy
                 if (GetComponent<TargettingEnemies>().target != player)
                 {
@@ -261,7 +288,10 @@ public class CompanionAIScript : MonoBehaviour
 
             // If i'm idle
             case CompanionState.Idle:
-                text.text = "Idle";
+                if (text != null)
+                {
+                    text.text = "Idle";
+                }
                 state = CompanionState.Following;
                 break;
             default:
@@ -287,7 +317,11 @@ public class CompanionAIScript : MonoBehaviour
                     transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
 
                     // Attack the enemy
-                    text.text = "I'm attacking " + GetComponent<TargettingEnemies>().target.name;
+                    if (text != null)
+                    {
+                        text.text = "I'm attacking " + GetComponent<TargettingEnemies>().target.name;
+                    }
+
                     GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
                 }
             }
@@ -312,7 +346,11 @@ public class CompanionAIScript : MonoBehaviour
                     transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
 
                     // Attack the enemy
-                    text.text = " I'm attacking " + GetComponent<TargettingEnemies>().target.name;
+                    if (text != null)
+                    {
+                        text.text = " I'm attacking " + GetComponent<TargettingEnemies>().target.name;
+                    }
+
                     GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
                 }
             }
@@ -321,7 +359,11 @@ public class CompanionAIScript : MonoBehaviour
 
     public void MoveToDistance(float distance)
     {
-        text.text = "Moving for Attack";
+        if (text != null)
+        {
+            text.text = "Moving for Attack";
+        }
+
         Vector3 direction = transform.position - GetComponent<TargettingEnemies>().target.transform.position;
         direction.Normalize();
         Vector3 targetPos = GetComponent<TargettingEnemies>().target.transform.position + direction * distance;

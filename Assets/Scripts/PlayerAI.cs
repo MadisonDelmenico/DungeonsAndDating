@@ -11,6 +11,10 @@ public class PlayerAI : MonoBehaviour
     public bool beingattacked;
     public GameObject[] Enemies;
     private GameObject[] Companions;
+    [HideInInspector]
+    public bool isTalking;
+
+    public string name;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +25,32 @@ public class PlayerAI : MonoBehaviour
         player = gameObject;
         target = gameObject;
         Distance = 0;
+        isTalking = false;
+        name = PlayerPrefs.GetString("PName");
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        #region talking
+
+        //disable movement when talking
+        if (isTalking)
+        {
+            GetComponent<NavMeshMovement>().enabled = false;
+        }
+        //enable movement if not talking
+        if (isTalking == false)
+        {
+            GetComponent<NavMeshMovement>().enabled = true;
+        }
+
+        #endregion
+
+
+
         if (target == null)
         {
             target = gameObject;

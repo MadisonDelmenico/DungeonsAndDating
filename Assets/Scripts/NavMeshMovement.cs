@@ -8,33 +8,14 @@ public class NavMeshMovement : MonoBehaviour
     [HideInInspector]
     public NavMeshAgent meshAgent;
     [HideInInspector]
-    public CompanionAIScript companionAI;
-    [HideInInspector]
-    public PlayerAI playerAI;
-    [HideInInspector]
     public TargettingEnemies target;
-
-    [Header("Debug Text Object")]
-    private Text text;
-
+    
     // Start is called before the first frame update
     void Start()
     {
         meshAgent = GetComponent<NavMeshAgent>();
-        // if I'm the player
-        if (gameObject.CompareTag("Player"))
-        {
-            playerAI = GetComponent<PlayerAI>();
-        }
         target = GetComponent<TargettingEnemies>();
-
-        // if I'm a companion
-        if (GetComponent<CompanionAIScript>())
-        {
-            companionAI = GetComponent<CompanionAIScript>();
-            playerAI = companionAI.player.GetComponent<PlayerAI>();
-            text = companionAI.text;
-        }
+        
     }
 
     // Update is called once per frame
@@ -109,12 +90,7 @@ public class NavMeshMovement : MonoBehaviour
             // you are no longer attacking. Disable the Targetting Enemies component and follow the player.
             target.enabled = false;
             // target.target.GetComponent<Material>().color = new Color(0,0,0,0);
-            companionAI.state = CompanionAIScript.CompanionState.Following;
-            if (text != null) 
-            {
-                text.text = "disengaging";
-            }
-            
+            GetComponent<CompanionAIScript>().state = CompanionAIScript.CompanionState.Following;
         }
 
         // if i am the player

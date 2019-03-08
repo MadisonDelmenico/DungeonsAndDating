@@ -39,8 +39,6 @@ public class CompanionAIScript : MonoBehaviour
 
     [Header("Status")]
     public CompanionState state;
-    public bool isFollowingPlayer;
-    public bool isAttacking;
 
     [Header("Distances")]
     public float distanceFromPlayer;
@@ -57,8 +55,6 @@ public class CompanionAIScript : MonoBehaviour
 
 
         isRecruited = false;
-        isAttacking = false;
-        isFollowingPlayer = true;
         state = CompanionState.Following;
         rotspeed = 3f;
         distanceFromPlayer = 0;

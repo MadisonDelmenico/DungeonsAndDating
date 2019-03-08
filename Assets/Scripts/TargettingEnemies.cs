@@ -11,12 +11,16 @@ public class TargettingEnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+        if (GetComponent<PlayerAI>())
+        {
+            target = gameObject;
+            friendlyTarget = gameObject;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

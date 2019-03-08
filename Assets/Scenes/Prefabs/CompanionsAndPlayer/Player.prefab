@@ -233,7 +233,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -269,6 +269,8 @@ MonoBehaviour:
   target: {fileID: 0}
   beingattacked: 0
   Enemies: []
+  isTalking: 0
+  name: 
 --- !u!114 &8685263210796287129
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -88,27 +88,25 @@ public class EnemyAI : MonoBehaviour
         switch (currentState)
         {
             case State.Idle:
-                text.text = currentState.ToString();
                 if (idleTimer <= 0)
                 {
                     currentState = State.Patrolling;
                 }
+
+                text.text = currentState.ToString();
                 break;
             case State.Patrolling:
-                text.text = currentState.ToString();
                 GetComponent<EnemyPatrols>().Patrol();
                 target = gameObject;
                 GetComponent<NavMeshAgent>().speed = 1.5f;
-
                 checkForEnemies();
 
-
+                text.text = currentState.ToString();
                 break;
             case State.Attacking:
-                text.text = currentState.ToString();
                 if (target != gameObject)
                 {
-                    GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
+                    // GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
                     MoveTo(target.transform);
                     Attack(target);
                     GetComponent<NavMeshAgent>().speed = 3f;
@@ -119,7 +117,7 @@ public class EnemyAI : MonoBehaviour
                         idleTimer = 3f;
                     }
 
-                    if (GetComponent<EnemyClass>().currentClass == EnemyClass.Class.Melee )
+                    if (GetComponent<EnemyClass>().currentClass == EnemyClass.Class.Melee)
                     {
                         MoveToDistance(meleeDistance);
                     }
@@ -134,7 +132,7 @@ public class EnemyAI : MonoBehaviour
                     GetComponent<EnemyActions>().DoAction(EnemyActions.Action.Basic, target);
                 }
 
-
+                text.text = currentState.ToString();
                 break;
         }
     }
@@ -192,7 +190,7 @@ public class EnemyAI : MonoBehaviour
                 }
             }
         }
-       //if the player is within 5m of me, attack them
+        //if the player is within 5m of me, attack them
         if (Vector3.Distance(gameObject.transform.position, player.transform.position) < 5f)
         {
             target = player;
@@ -202,7 +200,6 @@ public class EnemyAI : MonoBehaviour
     }
     public void MoveToDistance(float distance)
     {
-        text.text = "Moving for Attack";
         Vector3 direction = transform.position - target.transform.position;
         direction.Normalize();
         Vector3 targetPos = target.transform.position + direction * distance;

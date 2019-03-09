@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1541052650580316900}
   - component: {fileID: 1541052650580316903}
   - component: {fileID: 1541052650580316902}
-  - component: {fileID: 1541052650580316901}
   m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
@@ -78,19 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1541052650580316901
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541052650580316899}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1541052650713270634
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +197,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 720
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -265,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  health: 80
+  health: 100
   maxHealth: 100
   fainted: 0
 --- !u!114 &1541052650713270628
@@ -281,8 +267,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshAgent: {fileID: 0}
-  companionAI: {fileID: 0}
-  playerAI: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &1541052650713270627
 MonoBehaviour:
@@ -324,8 +308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshAgent: {fileID: 0}
-  companionAI: {fileID: 0}
-  playerAI: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &1541052650713270624
 MonoBehaviour:
@@ -360,36 +342,6 @@ MonoBehaviour:
   elementalSphereCooldown: 3
   affectionRating: {fileID: 0}
   affectionLevel: 0
-  myAbilities:
-  - abilityName: 
-    usableBy: 0
-    abilityRange: 
-    abilityEffect: 
-    energyCost: 0
-    abilityCooldown: 0
-    abilityCastTime: 0
-  - abilityName: 
-    usableBy: 0
-    abilityRange: 
-    abilityEffect: 
-    energyCost: 0
-    abilityCooldown: 0
-    abilityCastTime: 0
-  - abilityName: 
-    usableBy: 0
-    abilityRange: 
-    abilityEffect: 
-    energyCost: 0
-    abilityCooldown: 0
-    abilityCastTime: 0
-  - abilityName: 
-    usableBy: 0
-    abilityRange: 
-    abilityEffect: 
-    energyCost: 0
-    abilityCooldown: 0
-    abilityCastTime: 0
-  allAbilities: []
 --- !u!114 &1541052650713270639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,17 +367,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bae269eb34f5469a0d3f0b3f7cf67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRecruited: 0
   player: {fileID: 0}
   companionNumber: 0
   companionTarget: {fileID: 0}
   rotspeed: 0
   castTime: 0
   state: 0
-  isFollowingPlayer: 0
-  isAttacking: 0
   distanceFromPlayer: 0
-  meleeDistance: 0
-  rangedDistance: 0
+  meleeDistance: 1
+  rangedDistance: 5
   disengageDistance: 0
   text: {fileID: 0}
 --- !u!114 &1541052650713270636

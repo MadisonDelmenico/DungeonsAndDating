@@ -123,6 +123,7 @@ public class CompanionAIScript : MonoBehaviour
         if (player.GetComponent<PlayerAI>().beingattacked == true)
         {
             state = CompanionState.Attacking;
+            MoveToAttackRange();
             GetComponent<NavMeshMovement>().Attack();
         }
 
@@ -166,6 +167,7 @@ public class CompanionAIScript : MonoBehaviour
                             // If i have more than 1/4 of my max health, ATTACK!
                             if (GetComponent<Health>().health > (myMaxHealth / 4))
                             {
+                                MoveToAttackRange();
                                 AttackMelee();
                             }
                             break;
@@ -192,6 +194,7 @@ public class CompanionAIScript : MonoBehaviour
                             // If neither the player or myself have low health, attack
                             else
                             {
+                                MoveToAttackRange();
                                 AttackMelee();
                             }
                             break;
@@ -212,6 +215,7 @@ public class CompanionAIScript : MonoBehaviour
                             // If i have more than 1/4 of my max health, ATTACK!
                             if (GetComponent<Health>().health > (myMaxHealth / 4))
                             {
+                                MoveToAttackRange();
                                 AttackMelee();
                             }
                             break;
@@ -242,6 +246,7 @@ public class CompanionAIScript : MonoBehaviour
                 if (castTime <= 0)
                 {
                     state = CompanionState.Attacking;
+                    MoveToAttackRange();
                 }
                 break;
 
@@ -257,6 +262,7 @@ public class CompanionAIScript : MonoBehaviour
                 {
                     // Then it must be an enemy, so switch to attacking
                     state = CompanionState.Attacking;
+                    MoveToAttackRange();
                 }
                 // Otherwise
                 else
@@ -304,11 +310,7 @@ public class CompanionAIScript : MonoBehaviour
                 if (player.GetComponent<TargettingEnemies>().target != player)
                 {
                     GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
-                    state = CompanionState.Attacking;
-
-                    // Move to x meters away from the target
-                    MoveToDistance(meleeDistance);
-
+                    
                     // Look at the enemy
                     transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
 
@@ -333,10 +335,6 @@ public class CompanionAIScript : MonoBehaviour
                 if (player.GetComponent<TargettingEnemies>().target != player)
                 {
                     GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
-                    state = CompanionState.Attacking;
-
-                    // Move to x meters away from the target
-                    MoveToDistance(rangedDistance);
 
                     // Look at the enemy
                     transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
@@ -353,11 +351,17 @@ public class CompanionAIScript : MonoBehaviour
         }
     }
 
-    public void MoveToDistance(float distance)
+    public void MoveToAttackRange()
     {
-        if (text != null)
+        float distance;
+
+        if (companionClass.currentClass == CharacterClass.Class.Sorcerer)
         {
-            text.text = "Moving for Attack";
+            distance = rangedDistance;
+        }
+        else
+        {
+            distance = meleeDistance;
         }
 
         Vector3 direction = transform.position - GetComponent<TargettingEnemies>().target.transform.position;

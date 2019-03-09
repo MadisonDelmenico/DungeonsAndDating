@@ -79,7 +79,7 @@ public class EnemyAI : MonoBehaviour
                     {
                         if (i.gameObject.GetComponent<EnemyAI>().helpMe == true && Distances[enemiesArrayPosition] < 5f)
                         {
-                            Attack(i.gameObject.GetComponent<EnemyAI>().target);
+                            MoveToAttackRange(i.gameObject.GetComponent<EnemyAI>().target);
                         }
                     }
                 }
@@ -107,62 +107,52 @@ public class EnemyAI : MonoBehaviour
                 if (target != gameObject)
                 {
                     // GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
-                    MoveTo(target.transform);
-                    Attack(target);
-                    GetComponent<NavMeshAgent>().speed = 3f;
+
+                    target.gameObject.transform.LookAt(target.transform);
+
+                    // Is the enemy is greater than 5m from me
+                    if (Vector3.Distance(transform.position, target.transform.position) > 5f)
+                    {
+                        currentState = State.Patrolling;
+                    }
+
+                    GetComponent<NavMeshAgent>().speed = 2.5f;
                     if (target.GetComponent<Health>().health <= 0)
                     {
                         helpMe = false;
                         currentState = State.Idle;
                         idleTimer = 3f;
                     }
-
                     if (GetComponent<EnemyClass>().currentClass == EnemyClass.Class.Melee)
                     {
-                        MoveToDistance(meleeDistance);
+                        MoveToAttackRange(target);
                     }
-                    else
-                    {
-                        MoveToDistance(rangedDistance);
-                    }
-
                     // Look at the enemy
                     transform.LookAt(target.transform);
                     //do the basic attack on the target
-                    GetComponent<EnemyActions>().DoAction(EnemyActions.Action.Basic, target);
+                    switch (GetComponent<EnemyClass>().currentClass)
+                    {
+                        case EnemyClass.Class.Ranged:
+                            if (Vector3.Distance(transform.position, target.transform.position) <= rangedDistance + 1)
+                            {
+                                GetComponent<EnemyActions>().DoAction(EnemyActions.Action.Basic, target);
+                            }
+
+                            break;
+                        case EnemyClass.Class.Melee:
+                            if (Vector3.Distance(transform.position, target.transform.position) <= meleeDistance + 1)
+                            {
+                                GetComponent<EnemyActions>().DoAction(EnemyActions.Action.Basic, target);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
                 text.text = currentState.ToString();
                 break;
         }
-    }
-
-    public void Attack(GameObject targetGameObject)
-    {
-        target.gameObject.transform.LookAt(target.transform);
-
-        //is the enemy is greater than 10m from the area im supposed to patrol
-        if (Vector3.Distance(
-                GetComponent<EnemyPatrols>().Waypoints[GetComponent<EnemyPatrols>().waypointNumber].transform.position,
-                target.transform.position) > 5f)
-        {
-            currentState = State.Patrolling;
-        }
-
-        //if the enemy is over 1m but less than 10m away from me
-        if (Vector3.Distance(gameObject.transform.position, target.transform.position) > 1f &&
-            Vector3.Distance(gameObject.transform.position, target.transform.position) <= 10f)
-        {
-            //move towards the target
-            MoveTo(target.transform);
-        }
-
-
-    }
-
-    public void MoveTo(Transform targetTransform)
-    {
-        GetComponent<NavMeshMovement>().meshAgent.destination = targetTransform.position;
     }
 
     public void ImBeingAttacked(GameObject attacker)
@@ -171,7 +161,7 @@ public class EnemyAI : MonoBehaviour
         {
             target = attacker;
             currentState = State.Attacking;
-
+            MoveToAttackRange(target);
         }
         helpMe = true;
     }
@@ -187,6 +177,7 @@ public class EnemyAI : MonoBehaviour
                     target = i;
                     alert.Play();
                     currentState = State.Attacking;
+                    MoveToAttackRange(target);
                 }
             }
         }
@@ -196,13 +187,26 @@ public class EnemyAI : MonoBehaviour
             target = player;
             alert.Play();
             currentState = State.Attacking;
+            MoveToAttackRange(target);
         }
     }
-    public void MoveToDistance(float distance)
+    public void MoveToAttackRange(GameObject attackTarget)
     {
-        Vector3 direction = transform.position - target.transform.position;
+        float distance;
+
+        if (GetComponent<EnemyClass>().currentClass == EnemyClass.Class.Melee)
+        {
+            distance = meleeDistance;
+        }
+        else
+        {
+            distance = rangedDistance;
+        }
+        Debug.Log("Moving to distance");
+
+        Vector3 direction = transform.position - attackTarget.transform.position;
         direction.Normalize();
-        Vector3 targetPos = target.transform.position + direction * distance;
+        Vector3 targetPos = attackTarget.transform.position + direction * distance;
         GetComponent<NavMeshMovement>().meshAgent.destination = targetPos;
     }
 

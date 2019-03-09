@@ -252,15 +252,11 @@ public class CompanionAIScript : MonoBehaviour
                     text.text = "Following";
                 }
 
-                // If i have a target
-                if (GetComponent<TargettingEnemies>().target != null)
+                // If my target isnt the player and my target isnt null
+                if (GetComponent<TargettingEnemies>().target != player && GetComponent<TargettingEnemies>().target != null)
                 {
-                    // And my target isnt the player
-                    if (GetComponent<TargettingEnemies>().target != player)
-                    {
-                        // Then it must be an enemy, so switch to attacking
-                        state = CompanionState.Attacking;
-                    }
+                    // Then it must be an enemy, so switch to attacking
+                    state = CompanionState.Attacking;
                 }
                 // Otherwise
                 else

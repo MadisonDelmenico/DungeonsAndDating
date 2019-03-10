@@ -25,7 +25,7 @@ public class CharacterActions : MonoBehaviour
     public float wildSpinValue;
     public float revitalizeValue;
     public float elementalSphereValue;
-    
+
     [Header("Cooldown Values")]
     public float basicCooldown;
     public float fireboltCooldown;
@@ -33,14 +33,19 @@ public class CharacterActions : MonoBehaviour
     public float wildSpinCooldown;
     public float elementalSphereCooldown;
 
+    public Action preparedAction = Action.None;
+    public GameObject preparedTarget;
+
     private float basicCooldownReset;
     private float fireboltCooldownReset;
     private float revitalizeCooldownReset;
     private float wildSpinCooldownReset;
     private float elementalSphereCooldownReset;
-    
+
     private AffectionRating affectionRating;
     private int affectionLevel;
+
+    private GameObject revitalizeParticleEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -81,6 +86,8 @@ public class CharacterActions : MonoBehaviour
             default:
                 break;
         }
+
+        LoadParticleEffects();
     }
 
     // Update is called once per frame
@@ -124,25 +131,24 @@ public class CharacterActions : MonoBehaviour
             case Action.Basic:
                 if (basicCooldown <= 0)
                 {
-                    Debug.Log("Boop!");
+                    if (target.CompareTag("Enemy"))
+                    {
+                        Debug.Log("Boop!");
 
-                    if (GetComponent<CompanionAIScript>())
-                    {
-                        target.GetComponent<Health>().health -= affectionLevel * attackValue;
+                        if (GetComponent<CompanionAIScript>())
+                        {
+                            target.GetComponent<Health>().health -= affectionLevel * attackValue;
+                        }
+                        else
+                        {
+                            target.GetComponent<Health>().health -= attackValue;
+                        }
+                        Debug.Log(target.name);
+                        basicCooldown = basicCooldownReset;
+                        SendAttackerInfo(target);
                     }
-                    else
-                    {
-                        target.GetComponent<Health>().health -= attackValue;
-                    }
-                    Debug.Log(target.name);
-                    basicCooldown = basicCooldownReset;
-                    SendAttackerInfo(target);
-                    break;
                 }
-                else
-                {
-                    break;
-                }
+                break;
             case Action.Firebolt:
                 if (fireboltCooldown <= 0)
                 {
@@ -158,8 +164,6 @@ public class CharacterActions : MonoBehaviour
                             target.GetComponent<Health>().health -= fireboltValue;
                         }
 
-                        fireboltCooldown = fireboltCooldownReset;
-                        GetComponent<Energy>().energy = 0;
                         SendAttackerInfo(target);
                     }
                     else
@@ -192,8 +196,10 @@ public class CharacterActions : MonoBehaviour
                         }
 
                         Debug.Log(target.name);
-                        revitalizeCooldown = revitalizeCooldownReset;
-                        GetComponent<Energy>().energy = 0;
+
+                        GameObject particle = Instantiate(revitalizeParticleEffect, target.transform.position, target.transform.rotation);
+                        particle.GetComponent<ParticleFollow>().target = target.transform;
+                        Destroy(particle, 5.5f);
                     }
                 }
                 break;
@@ -212,8 +218,6 @@ public class CharacterActions : MonoBehaviour
                             target.GetComponent<Health>().health -= (wildSpinValue);
                         }
 
-                        wildSpinCooldown = wildSpinCooldownReset;
-                        GetComponent<Energy>().energy = 0;
                         SendAttackerInfo(target);
                     }
                 }
@@ -233,8 +237,6 @@ public class CharacterActions : MonoBehaviour
                             target.GetComponent<Health>().health -= (elementalSphereValue);
                         }
 
-                        elementalSphereCooldown = elementalSphereCooldownReset;
-                        GetComponent<Energy>().energy = 0;
                         SendAttackerInfo(target);
                     }
                 }
@@ -247,8 +249,49 @@ public class CharacterActions : MonoBehaviour
         }
     }
 
+    public void FinishCasting()
+    {
+        DoAction(preparedAction, preparedTarget);
+        switch (preparedAction)
+        {
+            case Action.Basic:
+                break;
+            case Action.Firebolt:
+                fireboltCooldown = fireboltCooldownReset;
+                break;
+            case Action.Revitalize:
+                revitalizeCooldown = revitalizeCooldownReset;
+                break;
+            case Action.WildSpin:
+                wildSpinCooldown = wildSpinCooldownReset;
+                break;
+            case Action.ElementalSphere:
+                elementalSphereCooldown = elementalSphereCooldownReset;
+                break;
+            case Action.None:
+                break;
+            default:
+                break;
+        }
+        GetComponent<Energy>().SetEnergy(0);
+        preparedAction = Action.None;
+        preparedTarget = gameObject;
+
+    }
+
+    public void BeginCasting(Action action, GameObject target)
+    {
+        preparedAction = action;
+        preparedTarget = target;
+    }
+
     public void SendAttackerInfo(GameObject TargetEnemy)
     {
         TargetEnemy.GetComponent<EnemyAI>().ImBeingAttacked(gameObject);
+    }
+
+    private void LoadParticleEffects()
+    {
+        revitalizeParticleEffect = Resources.Load<GameObject>("ParticleEffects/RevitalizeParticle");
     }
 }

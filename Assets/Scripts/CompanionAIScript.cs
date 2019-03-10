@@ -82,7 +82,6 @@ public class CompanionAIScript : MonoBehaviour
                 break;
             }
         }
-
         // Setting the transforms for companion target for quick referencing
         switch (companionNumber)
         {
@@ -165,7 +164,7 @@ public class CompanionAIScript : MonoBehaviour
                                 MoveToAttackRange();
                                 if (companionActions.wildSpinCooldown <= 0)
                                 {
-                                    companionActions.DoAction(CharacterActions.Action.WildSpin, GetComponent<TargettingEnemies>().target);
+                                    companionActions.BeginCasting(CharacterActions.Action.WildSpin, GetComponent<TargettingEnemies>().target);
                                 }
                                 else
                                 {
@@ -182,11 +181,12 @@ public class CompanionAIScript : MonoBehaviour
                             GameObject healTarget;
 
                             // If any of my allies have low health
-                            if (CheckAllyHealth(out healTarget, 0.25f))
+                            if (CheckAllyHealth(out healTarget, 0.25f) && companionActions.revitalizeCooldown <= 0)
                             {
                                 state = CompanionState.Casting;
-                                castTime = 5;
-                                companionActions.DoAction(CharacterActions.Action.Revitalize, healTarget);
+                                castTime = 3;
+                                companionActions.BeginCasting(CharacterActions.Action.Revitalize, healTarget);
+                                // companionActions.DoAction(CharacterActions.Action.Revitalize, healTarget);
                             }
                             // If neither the player or myself have low health, attack
                             else
@@ -207,7 +207,7 @@ public class CompanionAIScript : MonoBehaviour
                             {
                                 if (companionActions.elementalSphereCooldown <= 0)
                                 {
-                                    companionActions.DoAction(CharacterActions.Action.ElementalSphere, GetComponent<TargettingEnemies>().target);
+                                    companionActions.BeginCasting(CharacterActions.Action.ElementalSphere, GetComponent<TargettingEnemies>().target);
                                 }
                                 else
                                 {
@@ -249,9 +249,12 @@ public class CompanionAIScript : MonoBehaviour
 
                 if (castTime <= 0)
                 {
+                    if (companionActions.preparedAction != CharacterActions.Action.None)
+                    {
+                        companionActions.FinishCasting();
+                    }
                     if (GetComponent<TargettingEnemies>().target != player && GetComponent<TargettingEnemies>().target != null)
                     {
-                        // Then it must be an enemy, so switch to attacking
                         state = CompanionState.Attacking;
                         MoveToAttackRange();
                     }
@@ -301,11 +304,11 @@ public class CompanionAIScript : MonoBehaviour
                         {
                             GameObject healTarget;
                             // If i have low health, heal myself
-                            if (CheckAllyHealth(out healTarget, 1.0f))
+                            if (CheckAllyHealth(out healTarget, 1.0f) && companionActions.revitalizeCooldown <= 0)
                             {
                                 state = CompanionState.Casting;
-                                castTime = 5;
-                                companionActions.DoAction(CharacterActions.Action.Revitalize, healTarget);
+                                castTime = 3;
+                                companionActions.BeginCasting(CharacterActions.Action.Revitalize, healTarget);
                             }
                         }
                         // Look in the same direction as the player

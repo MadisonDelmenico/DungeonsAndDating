@@ -47,6 +47,7 @@ public class PlayerAI : MonoBehaviour
             GetComponent<NavMeshMovement>().enabled = true;
         }
 
+
         #endregion
 
 
@@ -103,7 +104,9 @@ public class PlayerAI : MonoBehaviour
         {
             isTalking = true;
         }
-       
+
+        GameObject.Find("DialogueManager").GetComponent<Template_UIManager>().Blur();
+
     }
 }
 

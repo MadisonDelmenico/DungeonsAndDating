@@ -415,7 +415,7 @@ Canvas:
   m_GameObject: {fileID: 177344697}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1132607182}
   m_PlaneDistance: 1
   m_PixelPerfect: 1
@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d060accfa7dbe8d4d9279be369bef4e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderMode: 0
+  renderMode: 1
   kernelSize: 0
   interpolation: 1
   downsample: 1
@@ -1541,6 +1541,7 @@ MonoBehaviour:
   NPCSprite: {fileID: 1311604219}
   playerSprite: {fileID: 1599999965}
   playerLabel: {fileID: 4338092}
+  blur: {fileID: 1512545593}
   maxPlayerChoices:
   - {fileID: 1287022393}
   - {fileID: 829664547}
@@ -2726,7 +2727,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512545591}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 

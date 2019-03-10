@@ -11,8 +11,13 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Experimental.UIElements;
 using UnityEngine.UI;
-using VIDE_Data; //<--- Import to use VD class
+using VIDE_Data;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
+
+//<--- Import to use VD class
 
 public class Template_UIManager : MonoBehaviour
 {
@@ -29,6 +34,8 @@ public class Template_UIManager : MonoBehaviour
     public Image NPCSprite;
     public Image playerSprite;
     public Text playerLabel;
+
+    public RawImage blur;
 
     public List<Button> maxPlayerChoices = new List<Button>();
 
@@ -75,6 +82,7 @@ public class Template_UIManager : MonoBehaviour
         if (!VD.isActive)
         {
             Begin(dialogue);
+           
         }
         else
         {
@@ -301,6 +309,7 @@ public class Template_UIManager : MonoBehaviour
         if (dialogueContainer != null)
             dialogueContainer.SetActive(false);
         VD.EndDialogue();
+
     }
 
     //To prevent errors
@@ -489,6 +498,18 @@ public class Template_UIManager : MonoBehaviour
         animatingText = false;
     }
 
+    public void Blur()
+    {
+        if (blur.enabled)
+        {
+            blur.enabled = false;
+        }
+        else
+        {
+            blur.enabled = true;
+        }
+        
+    }
 
     #endregion
 

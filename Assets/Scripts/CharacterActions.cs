@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class CharacterActions : MonoBehaviour
 {
@@ -15,21 +12,20 @@ public class CharacterActions : MonoBehaviour
     public Action actionTwo = Action.Firebolt;
     public Action actionThree = Action.Revitalize;
     public Action actionFour = Action.WildSpin;
+
     [Header("Controls (PLAYER ONLY, set to none for companions)")]
     public KeyCode abilityOne = KeyCode.Alpha1;
     public KeyCode abilityTwo = KeyCode.Alpha2;
     public KeyCode abilityThree = KeyCode.Alpha3;
     public KeyCode abilityFour = KeyCode.Alpha4;
 
-    [Header("Attack values")]
+    [Header("Attack Values")]
     public float attackValue;
     public float fireboltValue;
-    public float wildspinValue;
-    public float RevitalizeValue;
-    public float elementalsphereValue;
-
-
-
+    public float wildSpinValue;
+    public float revitalizeValue;
+    public float elementalSphereValue;
+    
     [Header("Cooldown Values")]
     public float basicCooldown;
     public float fireboltCooldown;
@@ -42,18 +38,21 @@ public class CharacterActions : MonoBehaviour
     private float revitalizeCooldownReset;
     private float wildSpinCooldownReset;
     private float elementalSphereCooldownReset;
-
-    [HideInInspector]
-    public AffectionRating affectionRating;
-
-    [HideInInspector]
-    public int affectionLevel;
     
+    private AffectionRating affectionRating;
+    private int affectionLevel;
+
     // Start is called before the first frame update
     void Start()
     {
-        affectionRating = GetComponent<AffectionRating>();
-        affectionLevel = affectionRating.affectionLevel;
+        // If the character is a companion
+        if (GetComponent<CompanionAIScript>())
+        {
+            // Assign the AffectionRating variables
+            affectionRating = GetComponent<AffectionRating>();
+            affectionLevel = affectionRating.affectionLevel;
+        }
+
         characterClass = GetComponent<CharacterClass>();
 
         basicCooldownReset = basicCooldown;
@@ -66,16 +65,18 @@ public class CharacterActions : MonoBehaviour
         {
             case CharacterClass.Class.Barbarian:
                 attackValue = 3;
+                GetComponent<Energy>().maxEnergy = wildSpinCooldownReset;
                 break;
-
             case CharacterClass.Class.Paladin:
                 attackValue = 2;
+                GetComponent<Energy>().maxEnergy = revitalizeCooldownReset;
                 break;
             case CharacterClass.Class.Polymath:
                 attackValue = 2;
                 break;
             case CharacterClass.Class.Sorcerer:
                 attackValue = 1;
+                GetComponent<Energy>().maxEnergy = elementalSphereCooldownReset;
                 break;
             default:
                 break;
@@ -90,23 +91,30 @@ public class CharacterActions : MonoBehaviour
         revitalizeCooldown -= Time.deltaTime;
         wildSpinCooldown -= Time.deltaTime;
         elementalSphereCooldown -= Time.deltaTime;
-        
-        if (Input.GetKeyDown(abilityOne))
+
+        // If the character is the player,
+        if (gameObject.CompareTag("Player"))
         {
-            DoAction(actionOne, gameObject.GetComponent<TargettingEnemies>().target);
+            // Check the ability inputs
+
+            if (Input.GetKeyDown(abilityOne))
+            {
+                DoAction(actionOne, gameObject.GetComponent<TargettingEnemies>().target);
+            }
+            if (Input.GetKeyDown(abilityTwo))
+            {
+                DoAction(actionTwo, gameObject.GetComponent<TargettingEnemies>().target);
+            }
+            if (Input.GetKeyDown(abilityThree))
+            {
+                DoAction(actionThree, gameObject.GetComponent<TargettingEnemies>().target);
+            }
+            if (Input.GetKeyDown(abilityFour))
+            {
+                DoAction(actionFour, gameObject.GetComponent<TargettingEnemies>().target);
+            }
         }
-        if (Input.GetKeyDown(abilityTwo))
-        {
-            DoAction(actionTwo, gameObject.GetComponent<TargettingEnemies>().target);
-        }
-        if (Input.GetKeyDown(abilityThree))
-        {
-            DoAction(actionThree, gameObject.GetComponent<TargettingEnemies>().target);
-        }
-        if (Input.GetKeyDown(abilityFour))
-        {
-            DoAction(actionFour, gameObject.GetComponent<TargettingEnemies>().target);
-        }
+
     }
 
     public void DoAction(Action action, GameObject target)
@@ -117,12 +125,18 @@ public class CharacterActions : MonoBehaviour
                 if (basicCooldown <= 0)
                 {
                     Debug.Log("Boop!");
-                    target.GetComponent<Health>().health -= affectionLevel * attackValue;
+
+                    if (GetComponent<CompanionAIScript>())
+                    {
+                        target.GetComponent<Health>().health -= affectionLevel * attackValue;
+                    }
+                    else
+                    {
+                        target.GetComponent<Health>().health -= attackValue;
+                    }
                     Debug.Log(target.name);
                     basicCooldown = basicCooldownReset;
-                    sendAttackerInfo(target);
-
-
+                    SendAttackerInfo(target);
                     break;
                 }
                 else
@@ -135,9 +149,18 @@ public class CharacterActions : MonoBehaviour
                     if (target.CompareTag("Enemy"))
                     {
                         Debug.Log("Pew Pew Firebolt!");
-                        target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
+                        if (GetComponent<CompanionAIScript>())
+                        {
+                            target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
+                        }
+                        else
+                        {
+                            target.GetComponent<Health>().health -= fireboltValue;
+                        }
+
                         fireboltCooldown = fireboltCooldownReset;
-                        sendAttackerInfo(target);
+                        GetComponent<Energy>().energy = 0;
+                        SendAttackerInfo(target);
                     }
                     else
                     {
@@ -159,9 +182,18 @@ public class CharacterActions : MonoBehaviour
                     }
                     else
                     {
-                        target.GetComponent<Health>().health += affectionLevel * RevitalizeValue;
+                        if (GetComponent<CompanionAIScript>())
+                        {
+                            target.GetComponent<Health>().health += affectionLevel * revitalizeValue;
+                        }
+                        else
+                        {
+                            target.GetComponent<Health>().health += revitalizeValue;
+                        }
+
                         Debug.Log(target.name);
                         revitalizeCooldown = revitalizeCooldownReset;
+                        GetComponent<Energy>().energy = 0;
                     }
                 }
                 break;
@@ -171,9 +203,18 @@ public class CharacterActions : MonoBehaviour
                     if (target.CompareTag("Enemy"))
                     {
                         Debug.Log("Beyblade time!");
-                        target.GetComponent<Health>().health -= (affectionLevel * wildspinValue);
+                        if (GetComponent<CompanionAIScript>())
+                        {
+                            target.GetComponent<Health>().health -= (affectionLevel * wildSpinValue);
+                        }
+                        else
+                        {
+                            target.GetComponent<Health>().health -= (wildSpinValue);
+                        }
+
                         wildSpinCooldown = wildSpinCooldownReset;
-                        sendAttackerInfo(target);
+                        GetComponent<Energy>().energy = 0;
+                        SendAttackerInfo(target);
                     }
                 }
                 break;
@@ -183,9 +224,18 @@ public class CharacterActions : MonoBehaviour
                     if (target.CompareTag("Enemy"))
                     {
                         Debug.Log("Elemental Sphere attack!");
-                        target.GetComponent<Health>().health -= (affectionLevel * elementalsphereValue);
+                        if (GetComponent<CompanionAIScript>())
+                        {
+                            target.GetComponent<Health>().health -= (affectionLevel * elementalSphereValue);
+                        }
+                        else
+                        {
+                            target.GetComponent<Health>().health -= (elementalSphereValue);
+                        }
+
                         elementalSphereCooldown = elementalSphereCooldownReset;
-                        sendAttackerInfo(target);
+                        GetComponent<Energy>().energy = 0;
+                        SendAttackerInfo(target);
                     }
                 }
                 break;
@@ -197,9 +247,8 @@ public class CharacterActions : MonoBehaviour
         }
     }
 
-    public void sendAttackerInfo(GameObject TargetEnemy)
+    public void SendAttackerInfo(GameObject TargetEnemy)
     {
-       TargetEnemy.GetComponent<EnemyAI>().ImBeingAttacked(gameObject);
-
+        TargetEnemy.GetComponent<EnemyAI>().ImBeingAttacked(gameObject);
     }
 }

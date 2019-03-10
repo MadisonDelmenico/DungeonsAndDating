@@ -89,18 +89,7 @@ public class PlayerAI : MonoBehaviour
     {
         foreach (var i in Companions)
         {
-            switch (i.GetComponent<CharacterClass>().currentClass)
-            {
-                case CharacterClass.Class.Barbarian:
-                    i.GetComponent<CompanionAIScript>().AttackMelee();
-                    break;
-                case CharacterClass.Class.Paladin:
-                    i.GetComponent<CompanionAIScript>().AttackMelee();
-                    break;
-                case CharacterClass.Class.Sorcerer:
-                    i.GetComponent<CompanionAIScript>().AttackRanged();
-                    break;
-            }
+            i.GetComponent<CompanionAIScript>().state = CompanionAIScript.CompanionState.Attacking;
         }
     }
 }

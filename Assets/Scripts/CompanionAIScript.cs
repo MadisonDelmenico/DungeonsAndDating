@@ -16,7 +16,7 @@ public class CompanionAIScript : MonoBehaviour
     [HideInInspector]
     public GameObject player;
     [HideInInspector]
-    private GameObject[] NumberofCompanions;
+    private GameObject[] AllCompanions;
     [HideInInspector]
     public int companionNumber;
 
@@ -70,7 +70,7 @@ public class CompanionAIScript : MonoBehaviour
         companionClass = GetComponent<CharacterClass>();
 
         // Finding the number of companions currently in the dungeon, adding them to an array of companions
-        NumberofCompanions = GameObject.FindGameObjectsWithTag("Companion");
+        AllCompanions = GameObject.FindGameObjectsWithTag("Companion");
 
         if (GetComponent<VIDE_Assign>())
         {
@@ -79,9 +79,9 @@ public class CompanionAIScript : MonoBehaviour
 
 
         // Setting the companion number for each companion, 0 by default
-        for (int i = 0; i < NumberofCompanions.Length; i++)
+        for (int i = 0; i < AllCompanions.Length; i++)
         {
-            if (NumberofCompanions[i] == gameObject)
+            if (AllCompanions[i] == gameObject)
             {
                 companionNumber = i;
                 break;
@@ -92,7 +92,7 @@ public class CompanionAIScript : MonoBehaviour
         switch (companionNumber)
         {
             case 0:
-                if (NumberofCompanions.Length == 2)
+                if (AllCompanions.Length == 2)
                 {
                     companionTarget = GameObject.Find("CompanionTarget2");
                     break;
@@ -177,19 +177,14 @@ public class CompanionAIScript : MonoBehaviour
                             // |  _/ _ \| |__ / _ \| |) | || .` |  / _ \| _ \| || |__ | |  | |  | || _|\__ \
                             // |_|/_/ \_\____/_/ \_\___/___|_|\_| /_/ \_\___/___|____|___| |_| |___|___|___/
 
-                            // If i have low health, heal myself
-                            if (GetComponent<Health>().health <= (myMaxHealth / 4))
+                            GameObject healTarget;
+
+                            // If any of my allies have low health
+                            if (CheckAllyHealth(out healTarget, 0.25f))
                             {
                                 state = CompanionState.Casting;
-                                castTime = 3;
-                                GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Revitalize, gameObject);
-                            }
-                            // If i dont have low health, but the player does, heal the player
-                            else if (player.GetComponent<Health>().health <= (playerMaxHealth / 4))
-                            {
-                                state = CompanionState.Casting;
-                                castTime = 3;
-                                GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Revitalize, player.gameObject);
+                                castTime = 5;
+                                GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Revitalize, healTarget);
                             }
                             // If neither the player or myself have low health, attack
                             else
@@ -245,8 +240,16 @@ public class CompanionAIScript : MonoBehaviour
 
                 if (castTime <= 0)
                 {
-                    state = CompanionState.Attacking;
-                    MoveToAttackRange();
+                    if (GetComponent<TargettingEnemies>().target != player && GetComponent<TargettingEnemies>().target != null)
+                    {
+                        // Then it must be an enemy, so switch to attacking
+                        state = CompanionState.Attacking;
+                        MoveToAttackRange();
+                    }
+                    else
+                    {
+                        state = CompanionState.Following;
+                    }
                 }
                 break;
 
@@ -285,6 +288,17 @@ public class CompanionAIScript : MonoBehaviour
                                 break;
                         }
 
+                        if (companionClass.currentClass == CharacterClass.Class.Paladin)
+                        {
+                            GameObject healTarget;
+                            // If i have low health, heal myself
+                            if (CheckAllyHealth(out healTarget, 1.0f))
+                            {
+                                state = CompanionState.Casting;
+                                castTime = 5;
+                                GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Revitalize, healTarget);
+                            }
+                        }
                         // Look in the same direction as the player
                         transform.rotation = Quaternion.Lerp(transform.rotation, player.transform.rotation, Time.deltaTime * rotspeed);
                     }
@@ -304,7 +318,40 @@ public class CompanionAIScript : MonoBehaviour
         }
     }
 
-    public void AttackMelee()
+    /// <summary>
+    /// Returns true if an ally needs healing
+    /// </summary>
+    /// <param name="toHeal">The GameObject that will be healed if its health is low</param>
+    /// <param name="healLimit">What percentage of health the character must be under to be healed (Value 0 to 1)</param>
+    /// <returns></returns>
+    private bool CheckAllyHealth(out GameObject toHeal, float healLimit)
+    {
+        if (GetComponent<Health>().health < GetComponent<Health>().maxHealth * healLimit)
+        {
+            Debug.Log("I need to heal myself");
+            toHeal = gameObject;
+            return true;
+        }
+        if (player.GetComponent<Health>().health < player.GetComponent<Health>().maxHealth * healLimit)
+        {
+            Debug.Log("I need to heal the player");
+            toHeal = player;
+            return true;
+        }
+        foreach (GameObject i in AllCompanions)
+        {
+            if (i.GetComponent<Health>().health < i.GetComponent<Health>().maxHealth * healLimit)
+            {
+                Debug.Log("I need to heal " + i.name);
+                toHeal = i;
+                return true;
+            }
+        }
+        toHeal = gameObject;
+        return false;
+    }
+
+    private void AttackMelee()
     {
         if (GetComponent<TargettingEnemies>().enabled)
         {
@@ -329,7 +376,7 @@ public class CompanionAIScript : MonoBehaviour
         }
     }
 
-    public void AttackRanged()
+    private void AttackRanged()
     {
         if (GetComponent<TargettingEnemies>().enabled)
         {

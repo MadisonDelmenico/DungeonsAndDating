@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 5039969768973609070}
   - component: {fileID: 5039969768973609071}
   - component: {fileID: 5039969768973609064}
-  - component: {fileID: 5039969768973609065}
   - component: {fileID: 5039969768973609066}
   - component: {fileID: 5039969768973609067}
   - component: {fileID: 5039969768973609060}
@@ -255,16 +254,14 @@ MonoBehaviour:
   abilityFour: 0
   attackValue: 3
   fireboltValue: 5
-  wildspinValue: 10
-  RevitalizeValue: 20
-  elementalsphereValue: 10
+  wildSpinValue: 10
+  revitalizeValue: 10
+  elementalSphereValue: 10
   basicCooldown: 3
   fireboltCooldown: 3
   revitalizeCooldown: 5
   wildSpinCooldown: 5
   elementalSphereCooldown: 3
-  affectionRating: {fileID: 0}
-  affectionLevel: 0
 --- !u!114 &5039969768973609071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,20 +290,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   friendlyTarget: {fileID: 0}
---- !u!114 &5039969768973609065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5039969768973609061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29b5b399788866b4e9f27cf3f8b5c2ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshAgent: {fileID: 0}
-  target: {fileID: 0}
 --- !u!114 &5039969768973609066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,8 +339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef43e2005dfdda408c30ef8b1438144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energy: 100
-  maxEnergy: 100
+  energy: 0
+  maxEnergy: 1
   isPlayer: 0
 --- !u!54 &5039969768973609078
 Rigidbody:

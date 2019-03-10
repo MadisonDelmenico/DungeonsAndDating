@@ -20,20 +20,21 @@ public class UIBlurToggle : MonoBehaviour
         if (targetBlur == 0 && blur.interpolation > 0.0f)
         {
             blur.interpolation -= Time.deltaTime;
-            blur.downsample = 0;
         }
         if (targetBlur == 1 && blur.interpolation < 1.0f)
         {
             blur.interpolation += Time.deltaTime;
+            blur.downsample = 1;
         }
         if (blur.interpolation < 0)
         {
             blur.interpolation = 0;
+            blur.downsample = 0;
+            blur.iterations = 1;
         }
         if (blur.interpolation > 1)
         {
             blur.interpolation = 1;
-            blur.downsample = 2;
         }
     }
 
@@ -46,6 +47,7 @@ public class UIBlurToggle : MonoBehaviour
         else
         {
             targetBlur = 1.0f;
+            blur.iterations = 2;
         }
     }
 }

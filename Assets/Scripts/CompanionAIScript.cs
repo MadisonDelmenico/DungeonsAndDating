@@ -11,26 +11,22 @@ public class CompanionAIScript : MonoBehaviour
 {
     public bool isRecruited;
 
-    [HideInInspector]
-    NavMeshAgent meshAgent;
+    private NavMeshAgent meshAgent;
     [HideInInspector]
     public GameObject player;
-    [HideInInspector]
     private GameObject[] AllCompanions;
     [HideInInspector]
     public int companionNumber;
 
     [HideInInspector]
     public GameObject companionTarget;
-    [HideInInspector]
     private Transform companionTargetTransform;
     [HideInInspector]
     public float rotspeed;
-    [HideInInspector]
-    CharacterClass companionClass;
-    [HideInInspector]
+
+    private CharacterClass companionClass;
+    private CharacterActions companionActions;
     private float myMaxHealth;
-    [HideInInspector]
     private float playerMaxHealth;
 
     public float castTime;
@@ -52,8 +48,6 @@ public class CompanionAIScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
         isRecruited = false;
         state = CompanionState.Following;
         rotspeed = 3f;
@@ -68,6 +62,7 @@ public class CompanionAIScript : MonoBehaviour
         myMaxHealth = GetComponent<Health>().maxHealth;
         playerMaxHealth = player.GetComponent<Health>().maxHealth;
         companionClass = GetComponent<CharacterClass>();
+        companionActions = GetComponent<CharacterActions>();
 
         // Finding the number of companions currently in the dungeon, adding them to an array of companions
         AllCompanions = GameObject.FindGameObjectsWithTag("Companion");
@@ -147,8 +142,8 @@ public class CompanionAIScript : MonoBehaviour
                     GetComponent<NavMeshMovement>().Disengage();
                 }
 
-                // If i have a target
-                if (GetComponent<TargettingEnemies>().target != null)
+                // If i have a target and its an enemy
+                if (GetComponent<TargettingEnemies>().target != null && GetComponent<TargettingEnemies>().target.CompareTag("Enemy"))
                 {
                     if (GetComponent<TargettingEnemies>().enabled)
                     {
@@ -168,7 +163,14 @@ public class CompanionAIScript : MonoBehaviour
                             if (GetComponent<Health>().health > (myMaxHealth / 4))
                             {
                                 MoveToAttackRange();
-                                AttackMelee();
+                                if (companionActions.wildSpinCooldown <= 0)
+                                {
+                                    companionActions.DoAction(CharacterActions.Action.WildSpin, GetComponent<TargettingEnemies>().target);
+                                }
+                                else
+                                {
+                                    AttackMelee();
+                                }
                             }
                             break;
                         case CharacterClass.Class.Paladin:
@@ -184,7 +186,7 @@ public class CompanionAIScript : MonoBehaviour
                             {
                                 state = CompanionState.Casting;
                                 castTime = 5;
-                                GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Revitalize, healTarget);
+                                companionActions.DoAction(CharacterActions.Action.Revitalize, healTarget);
                             }
                             // If neither the player or myself have low health, attack
                             else
@@ -203,7 +205,14 @@ public class CompanionAIScript : MonoBehaviour
                             // If i have more than 1/4 of my max health, ATTACK!
                             if (GetComponent<Health>().health > (myMaxHealth / 4))
                             {
-                                AttackRanged();
+                                if (companionActions.elementalSphereCooldown <= 0)
+                                {
+                                    companionActions.DoAction(CharacterActions.Action.ElementalSphere, GetComponent<TargettingEnemies>().target);
+                                }
+                                else
+                                {
+                                    AttackRanged();
+                                }
                             }
                             break;
                         default:
@@ -296,7 +305,7 @@ public class CompanionAIScript : MonoBehaviour
                             {
                                 state = CompanionState.Casting;
                                 castTime = 5;
-                                GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Revitalize, healTarget);
+                                companionActions.DoAction(CharacterActions.Action.Revitalize, healTarget);
                             }
                         }
                         // Look in the same direction as the player
@@ -370,7 +379,7 @@ public class CompanionAIScript : MonoBehaviour
                         text.text = "I'm attacking " + GetComponent<TargettingEnemies>().target.name;
                     }
 
-                    GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
+                    companionActions.DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
                 }
             }
         }
@@ -395,7 +404,7 @@ public class CompanionAIScript : MonoBehaviour
                         text.text = " I'm attacking " + GetComponent<TargettingEnemies>().target.name;
                     }
 
-                    GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
+                    companionActions.DoAction(CharacterActions.Action.Basic, GetComponent<TargettingEnemies>().target);
                 }
             }
         }

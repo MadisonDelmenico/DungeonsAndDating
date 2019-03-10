@@ -267,24 +267,27 @@ public class CompanionAIScript : MonoBehaviour
                 // Otherwise
                 else
                 {
-                    // Follow the player
-                    switch (companionNumber)
+                    if (GetComponent<NavMeshAgent>().enabled)
                     {
-                        case 0:
-                            meshAgent.destination = companionTargetTransform.transform.position;
-                            break;
-                        case 1:
-                            meshAgent.destination = companionTargetTransform.transform.position;
-                            break;
-                        case 2:
-                            meshAgent.destination = companionTargetTransform.transform.position;
-                            break;
-                        default:
-                            break;
-                    }
+                        // Follow the player
+                        switch (companionNumber)
+                        {
+                            case 0:
+                                meshAgent.destination = companionTargetTransform.transform.position;
+                                break;
+                            case 1:
+                                meshAgent.destination = companionTargetTransform.transform.position;
+                                break;
+                            case 2:
+                                meshAgent.destination = companionTargetTransform.transform.position;
+                                break;
+                            default:
+                                break;
+                        }
 
-                    // Look in the same direction as the player
-                    transform.rotation = Quaternion.Lerp(transform.rotation, player.transform.rotation, Time.deltaTime * rotspeed);
+                        // Look in the same direction as the player
+                        transform.rotation = Quaternion.Lerp(transform.rotation, player.transform.rotation, Time.deltaTime * rotspeed);
+                    }
                 }
                 break;
 
@@ -310,7 +313,7 @@ public class CompanionAIScript : MonoBehaviour
                 if (player.GetComponent<TargettingEnemies>().target != player)
                 {
                     GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
-                    
+
                     // Look at the enemy
                     transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
 

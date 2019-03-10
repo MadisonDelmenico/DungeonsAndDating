@@ -9,61 +9,48 @@ public class NavMeshMovement : MonoBehaviour
     public NavMeshAgent meshAgent;
     [HideInInspector]
     public TargettingEnemies target;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         meshAgent = GetComponent<NavMeshAgent>();
         target = GetComponent<TargettingEnemies>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        //only players and companions need this stuff
-        if (gameObject.CompareTag("Enemy") == false)
+        // Only the player needs this stuff
+        if (gameObject.CompareTag("Player"))
         {
-            // if left mouse button is pressed
+            // If left mouse button is clicked
             if (Input.GetMouseButtonDown(0))
             {
                 RaycastHit hit;
 
-                // if the area pressed has a collider
+                // If the area clicked has a collider
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, 9))
                 {
-                    if (GetComponent<PlayerAI>())
+                    // If it was a companion that was clicked
+                    if (hit.collider.gameObject.CompareTag("Companion"))
                     {
-                        if (hit.collider.gameObject.CompareTag("Companion"))
-                        {
-                            target.friendlyTarget = hit.collider.gameObject;
-                            target.enabled = false;
-                        }
+                        target.friendlyTarget = hit.collider.gameObject;
+                        target.enabled = false;
                     }
-
-                    // If im the player, move to the clicked point
-                    if (gameObject.CompareTag("Player"))
-                    {
-                        meshAgent.destination = hit.point;
-                    }
-
-                    // if the area clicked was an enemy
+                    // If the area clicked was an enemy
                     if (hit.collider.gameObject.CompareTag("Enemy"))
                     {
-                        // target the enemy you clicked on
+                        // Target the enemy you clicked on
                         target.target = hit.collider.gameObject;
 
-                        // attack the target
+                        // Attack the target
                         Attack();
                     }
                     else // If the area clicked was anything OTHER than an enemy
                     {
-                        // if you are the player, disenage
-                        if (GetComponent<PlayerAI>())
-                        {
-                            Disengage();
-                        }
+                        // Disengage
+                        Disengage();
                     }
                 }
             }
@@ -74,7 +61,7 @@ public class NavMeshMovement : MonoBehaviour
     {
         // turn on the targettingEnemies component
         target.enabled = true;
-        
+
         // if you are the player, attack!
         if (GetComponent<PlayerAI>())
         {

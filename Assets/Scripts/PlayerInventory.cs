@@ -6,9 +6,25 @@ public class PlayerInventory : MonoBehaviour
 {
     public int money;
 
+    [Header("Treasure")]
     public int commonTreasure;
     public int uncommonTreasure;
     public int rareTreasure;
+
+    [Header("Tier 1 Gifts")]
+    public int steakOfStrength;
+    public int snakeShapedWand;
+    public int holyOrderEnlistment;
+
+    [Header("Tier 2 Gifts")]
+    public int halberdWhetstone;
+    public int spikedBoots;
+    public int rangerScoutCookies;
+
+    [Header("Tier 3 Gifts")]
+    public int scaleRepairKit;
+    public int hauntedDagger;
+    public int localCharityReciept;
 
     // Start is called before the first frame update
     void Start()
@@ -29,5 +45,10 @@ public class PlayerInventory : MonoBehaviour
             money += other.GetComponent<PickupCoin>().value;
             Destroy(other.gameObject);
         }   
+    }
+
+    public void AddItem(int item)    
+    {
+
     }
 }

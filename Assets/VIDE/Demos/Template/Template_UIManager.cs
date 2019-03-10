@@ -72,8 +72,6 @@ public class Template_UIManager : MonoBehaviour
         var doNotInteract = PreConditions(dialogue);
         if (doNotInteract) return;
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAI>().isTalking = true;
-
         if (!VD.isActive)
         {
             Begin(dialogue);
@@ -101,7 +99,7 @@ public class Template_UIManager : MonoBehaviour
 
         dialogueContainer.SetActive(true); //Let's make our dialogue container visible
     }
-
+    
     //Calls next node in the dialogue
     public void CallNext()
     {
@@ -114,7 +112,6 @@ public class Template_UIManager : MonoBehaviour
         }
         else
         {
-          
             //Stuff we can do instead if dialogue is paused
         }
     }
@@ -244,12 +241,11 @@ public class Template_UIManager : MonoBehaviour
                 //This coroutine animates the NPC text instead of displaying it all at once
                 TextAnimator = AnimateNPCText(data.comments[data.commentIndex]);
                 StartCoroutine(TextAnimator);
-            }
-            else
+            } else
             {
                 NPC_Text.text = data.comments[data.commentIndex];
             }
-
+            
             if (data.audios[data.commentIndex] != null)
             {
                 audioSource.clip = data.audios[data.commentIndex];
@@ -281,8 +277,7 @@ public class Template_UIManager : MonoBehaviour
             //This coroutine animates the Player choices instead of displaying it all at once
             TextAnimator = AnimatePlayerText(choices);
             StartCoroutine(TextAnimator);
-        }
-        else
+        } else
         {
             for (int i = 0; i < choices.Length; i++)
             {
@@ -306,7 +301,6 @@ public class Template_UIManager : MonoBehaviour
         if (dialogueContainer != null)
             dialogueContainer.SetActive(false);
         VD.EndDialogue();
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAI>().isTalking = false;
     }
 
     //To prevent errors
@@ -334,12 +328,11 @@ public class Template_UIManager : MonoBehaviour
             {
 
             }
-        }
-        else
+        } else
         {
 
         }
-
+        
         return false;
     }
 
@@ -366,8 +359,7 @@ public class Template_UIManager : MonoBehaviour
             {
                 NPC_Text.fontSize = 14;
             }
-        }
-        else
+        } else
         {
 
         }
@@ -375,10 +367,12 @@ public class Template_UIManager : MonoBehaviour
 
     void ReplaceWord(VD.NodeData data)
     {
-        if (data.comments[data.commentIndex].Contains("[CNAME]"))
-            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[CNAME]", VD.assigned.gameObject.name);
-        if (data.comments[data.commentIndex].Contains("[PNAME]"))
-            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[PNAME]", PlayerPrefs.GetString("PName"));
+        if (data.comments[data.commentIndex].Contains("[NAME]"))
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[NAME]", VD.assigned.gameObject.name);
+        if (data.comments[data.commentIndex].Contains("[CName]"))
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[CName]",  VD.assigned.assignedDialogue);
+        if (data.comments[data.commentIndex].Contains("[PName]"))
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[PName]", PlayerPrefs.GetString("PName"));
 
         if (data.comments[data.commentIndex].Contains("[WEAPON]"))
             data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[WEAPON]", "sword");
@@ -398,11 +392,8 @@ public class Template_UIManager : MonoBehaviour
     //Another way to handle Action Nodes is to listen to the OnActionNode event, which sends the ID of the action node
     void ActionHandler(int actionNodeID)
     {
-
-       //Debug.Log("ACTION TRIGGERED: " + actionNodeID.ToString());
+        //Debug.Log("ACTION TRIGGERED: " + actionNodeID.ToString());
     }
-
-    
 
     IEnumerator AnimatePlayerText(string[] choices)
     {
@@ -481,7 +472,7 @@ public class Template_UIManager : MonoBehaviour
         StopCoroutine(TextAnimator);
         if (VD.nodeData.isPlayer)
         {
-            availableChoices = 0;
+                availableChoices = 0;
             for (int i = 0; i < VD.nodeData.comments.Length; i++)
             {
                 maxPlayerChoices[i].transform.GetChild(0).GetComponent<Text>().text = VD.nodeData.comments[i]; //Assumes first child of button gameobject is text gameobject
@@ -498,18 +489,9 @@ public class Template_UIManager : MonoBehaviour
         animatingText = false;
     }
 
-    public void RecruitCompanion()
-    {
-        gameObject.GetComponent<CompanionAIScript>().isRecruited = true;
-        GetComponent<AffectionRating>().affectionLevel = 1;
-        gameObject.GetComponent<VIDE_Assign>().overrideStartNode = 10;
-    }
-
-   
 
     #endregion
 
     //Utility note: If you're on MonoDevelop. Go to Tools > Options > General and enable code folding.
     //That way you can exapnd and collapse the regions and methods
-
 }

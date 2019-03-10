@@ -92,4 +92,18 @@ public class PlayerAI : MonoBehaviour
             i.GetComponent<CompanionAIScript>().state = CompanionAIScript.CompanionState.Attacking;
         }
     }
+
+    public void Talking()
+    {
+        if (isTalking == true)
+        {
+            isTalking = false;
+        }
+        else
+        {
+            isTalking = true;
+        }
+       
+    }
 }
+

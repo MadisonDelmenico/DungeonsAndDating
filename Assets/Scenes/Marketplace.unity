@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da21d1e296e35e24c9776f12bb86c8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerName: 
+  PlayerName: Dude
   PlayerGender: 
   PlayerClass: 
   PlayerDeity: 
@@ -1141,7 +1141,9 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1541052650713270630, guid: c646b3c7603e86840a5e456f4039b42d, type: 3}
+    - {fileID: 1541052650713270629, guid: c646b3c7603e86840a5e456f4039b42d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c646b3c7603e86840a5e456f4039b42d, type: 3}
 --- !u!1 &829664545
 GameObject:
@@ -1360,8 +1362,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1034689393}
+  - component: {fileID: 1034689394}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DialogueManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1381,6 +1384,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1034689394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034689392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77d6d335b46cb642b513b40738603f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueContainer: {fileID: 1371016018}
+  NPC_Container: {fileID: 1175957915}
+  playerContainer: {fileID: 1346663482}
+  NPC_Text: {fileID: 1330179908}
+  NPC_label: {fileID: 247721251}
+  NPCSprite: {fileID: 1311604219}
+  playerSprite: {fileID: 1599999965}
+  playerLabel: {fileID: 4338092}
+  maxPlayerChoices:
+  - {fileID: 1287022393}
+  - {fileID: 829664547}
+  - {fileID: 1895442780}
+  - {fileID: 1232480049}
+  audioSource: {fileID: 0}
+  interactionKey: 13
+  NPC_animateText: 1
+  player_animateText: 1
+  NPC_secsPerLetter: 0.025
+  player_secsPerLetter: 0.025
+  choiceInterval: 0.1
+  useNavigation: 0
 --- !u!20 &1132607182 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8516401505605355091, guid: c8ec7884840d3d142907a018ff5e4e75,
@@ -1591,7 +1627,23 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5039969768973609075, guid: 9600d8c99dff1984a939d267525f3a82,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039969768973609070, guid: 9600d8c99dff1984a939d267525f3a82,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039969768973609071, guid: 9600d8c99dff1984a939d267525f3a82,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5039969768973609065, guid: 9600d8c99dff1984a939d267525f3a82, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9600d8c99dff1984a939d267525f3a82, type: 3}
 --- !u!1 &1232480047
 GameObject:
@@ -2781,13 +2833,13 @@ MonoBehaviour:
   assignedIndex: 8
   assignedID: 65095
   assignedDialogue: Kallista
-  interactionCount: 2
+  interactionCount: 0
   alias: 
   overrideStartNode: -1
   defaultNPCSprite: {fileID: 21300000, guid: 372f839fa3c6fa74c813497333b47ad9, type: 3}
   defaultPlayerSprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289,
     type: 3}
-  targetManager: {fileID: 1985311782}
+  targetManager: {fileID: 0}
   preload: 1
   notuptodate: 0
   startp: 0
@@ -2796,8 +2848,8 @@ MonoBehaviour:
   S_playerDiags:
   - commentCount: 3
     s_comment:
-    - text: Hi there, my name is [PNAME]. I'm new in town, what do you do for fun
-        around here?...
+    - text: Hey, I'm new in town. My name's [PName]. what is there to do for fun around
+        here?
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: 1
@@ -2805,7 +2857,7 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: Excuse me, I couldn't resist your charm, your charisma is so high.
+    - text: You'll have to excuse me. I have trouble ignoring such alluring people.
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: 4
@@ -2813,11 +2865,11 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: h..h.. hot... I mean... my stew is hot, not you....I'm gonna leave now....
+    - text: Hey, I'm... I mean, uhh, you'll... never mind.
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 3
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -2829,8 +2881,8 @@ MonoBehaviour:
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: I am Kallista, a daughter of the light, sworn to protect. I like to train
-        with my shield and mace.
+    - text: ' I occasionally volunteer helping out at the church or the markets...
+        Oh! And my name is Kallista.'
       extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: 2
@@ -2846,8 +2898,7 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: 'Well, I am thinking about exploring the dungeon nearby. I have heard
-        of the creatures that have been attacking the town. '
+    - text: 'I have noticed the nearby dungeons just off of the town. '
       extraData: ExtraData
       inputSetIndex: 2
       outputNodeIndex: 7
@@ -2863,9 +2914,9 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: 'I can call on the light to protect us. I''m a holy paladin, proficient
-        in the revitalize spell! You seem like a strong fighter with your heart in
-        the right place. I think we would make a splendid team. '
+    - text: 'Dont worry, my friend, I can be your shield! I''m a paladin of Torm,
+        and proficient in the revitalize spell. If you can pull your weight, I think
+        we could make a suitable team.  '
       extraData: ExtraData
       inputSetIndex: 3
       outputNodeIndex: 5
@@ -2881,7 +2932,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: What do you mean? I only use charisma for smiting evil.
+    - text: I apologise. Charisma helps me access divine magic... My name is Kallista
+        by the way.
       extraData: ExtraData
       inputSetIndex: 4
       outputNodeIndex: 2
@@ -2890,15 +2942,15 @@ MonoBehaviour:
       audios: {fileID: 0}
       visible: 1
     ID: 4
-    pTag: Kallista
+    pTag: ???
     sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: That sounds like you have just what I am looking for. Will you come join
-        me on this adventure?
+    - text: You sound like a valuable ally. I could use your help exploring the dungeons
+        if you'd assist me?
       extraData: ExtraData
       inputSetIndex: 5
       outputNodeIndex: 6
@@ -2914,7 +2966,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: I would relish the opportunity to smite evil and protect the town.
+    - text: You're asking if I want to help protect the town...AND smite evil? Lets
+        go!
       extraData: ExtraData
       inputSetIndex: 6
       outputNodeIndex: -1
@@ -2930,8 +2983,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: I would like to help protect the town. It could be dangerous to go alone,
-        and there is safety in numbers.
+    - text: 'If the rumours are true, the monsters that dwell within them have even
+        been posing a threat to the village. '
       extraData: ExtraData
       inputSetIndex: 7
       outputNodeIndex: 8
@@ -2947,8 +3000,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: If I were to bring you along, could you help me? Do you think I would
-        be a suitable dungeoneering partner?
+    - text: If I see to it to venture into the dungeons would you be able to help
+        me? It's dangerous to go alone after all.
       extraData: ExtraData
       inputSetIndex: 8
       outputNodeIndex: 3
@@ -2964,7 +3017,7 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 3
     s_comment:
-    - text: Talk to [CNAME]
+    - text: Talk to [CName].
       extraData: ExtraData
       inputSetIndex: 9
       outputNodeIndex: 10
@@ -2972,7 +3025,7 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: Give Gift
+    - text: Give Gift.
       extraData: ExtraData
       inputSetIndex: 9
       outputNodeIndex: -1
@@ -2980,11 +3033,11 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: Leave
+    - text: Leave.
       extraData: ExtraData
       inputSetIndex: 9
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 3
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -3007,7 +3060,7 @@ MonoBehaviour:
     - text: Ask about Affection Level
       extraData: ExtraData
       inputSetIndex: 10
-      outputNodeIndex: 14
+      outputNodeIndex: 15
       outActionIndex: -1
       sprites: {fileID: 0}
       audios: {fileID: 0}
@@ -3023,8 +3076,8 @@ MonoBehaviour:
     - text: Return
       extraData: ExtraData
       inputSetIndex: 10
-      outputNodeIndex: 9
-      outActionIndex: -1
+      outputNodeIndex: -1
+      outActionIndex: 7
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -3063,8 +3116,8 @@ MonoBehaviour:
     - text: Nothing, sorry
       extraData: ExtraData
       inputSetIndex: 11
-      outputNodeIndex: 10
-      outActionIndex: -1
+      outputNodeIndex: -1
+      outActionIndex: 5
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -3112,23 +3165,7 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 14
       outputNodeIndex: -1
-      outActionIndex: -1
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 15
-    pTag: 
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: Comment...
-      extraData: ExtraData
-      inputSetIndex: 15
-      outputNodeIndex: 11
-      outActionIndex: -1
+      outActionIndex: 6
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -3144,6 +3181,86 @@ MonoBehaviour:
     - Key2
     - Key3
     isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: How do you feel about us?
+      extraData: ExtraData
+      inputSetIndex: 15
+      outputNodeIndex: -1
+      outActionIndex: 2
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 15
+    pTag: Player
+    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: below 25% comment
+      extraData: ExtraData
+      inputSetIndex: 16
+      outputNodeIndex: -1
+      outActionIndex: 4
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 19
+    pTag: Kallista
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: below 50% comment
+      extraData: ExtraData
+      inputSetIndex: 17
+      outputNodeIndex: -1
+      outActionIndex: 4
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 20
+    pTag: Kallista
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: below 75% comment
+      extraData: ExtraData
+      inputSetIndex: 18
+      outputNodeIndex: -1
+      outActionIndex: 4
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 21
+    pTag: Kallista
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: below 100% comment
+      extraData: ExtraData
+      inputSetIndex: 19
+      outputNodeIndex: -1
+      outActionIndex: 4
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 22
+    pTag: Kallista
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
     gameObjectName: Paladin
@@ -3157,55 +3274,106 @@ MonoBehaviour:
     ID: 7
     outPlayerIndex: -1
     outActionIndex: -1
-    ovrStartNode: -1
+    ovrStartNode: 10
     renameDialogue: 
   - pauseHere: 0
     gameObjectName: Paladin
     methodName: Hobbies
     paramType: 0
-    gotoNode: 17
+    gotoNode: -1
     param_bool: 0
     param_string: 
     param_int: 0
     param_float: 0
     ID: 16
-    outPlayerIndex: 15
+    outPlayerIndex: 14
     outActionIndex: -1
     ovrStartNode: -1
     renameDialogue: 
---- !u!114 &1985311784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985311782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e77d6d335b46cb642b513b40738603f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueContainer: {fileID: 1371016018}
-  NPC_Container: {fileID: 1175957915}
-  playerContainer: {fileID: 1346663482}
-  NPC_Text: {fileID: 1330179908}
-  NPC_label: {fileID: 247721251}
-  NPCSprite: {fileID: 1311604219}
-  playerSprite: {fileID: 1599999965}
-  playerLabel: {fileID: 4338092}
-  maxPlayerChoices:
-  - {fileID: 1287022393}
-  - {fileID: 829664547}
-  - {fileID: 1895442780}
-  - {fileID: 1232480049}
-  audioSource: {fileID: 0}
-  interactionKey: 13
-  NPC_animateText: 1
-  player_animateText: 1
-  NPC_secsPerLetter: 0.02
-  player_secsPerLetter: 0.02
-  choiceInterval: 0.1
-  useNavigation: 0
+  - pauseHere: 0
+    gameObjectName: Paladin
+    methodName: AffectionLevel
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 18
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Paladin
+    methodName: EndConversation
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 23
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: 11
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 24
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: 11
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 25
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: 12
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 26
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: 10
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 27
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!135 &1985311785
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3261,6 +3429,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06248a9d48e91cf4aa54fd6d4c354500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelOneBelow25: Level one, below 25%
+  levelOneBelow50: Level one, below 50%
+  levelOneBelow75: Level one, below 75%
+  levelOneBelow100: Level one, below 100%
+  levelTwoBelow25: Level two, below 25%
+  levelTwoBelow50: Level two, below 50%
+  levelTwoBelow75: Level two, below 75%
+  levelTwoBelow100: Level two, below 100%
+  levelThreeBelow25: Level three, below 25%
+  levelThreeBelow50: Level three, below 50%
+  levelThreeBelow75: Level three, below 75%
+  levelThreeBelow100: Level three, below 100%
+  levelFourBelow25: Level four, below 25%
+  levelFourBelow50: Level four, below 50%
+  levelFourBelow75: Level four, below 75%
+  levelFourBelow100: Level four, below 100%
 --- !u!1 &2005317048 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5039969768973609061, guid: 9600d8c99dff1984a939d267525f3a82,
@@ -3310,39 +3494,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1228519794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2005317065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005317048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e77d6d335b46cb642b513b40738603f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueContainer: {fileID: 1371016018}
-  NPC_Container: {fileID: 1175957915}
-  playerContainer: {fileID: 1346663482}
-  NPC_Text: {fileID: 1330179908}
-  NPC_label: {fileID: 247721251}
-  NPCSprite: {fileID: 1311604219}
-  playerSprite: {fileID: 1599999965}
-  playerLabel: {fileID: 4338092}
-  maxPlayerChoices:
-  - {fileID: 1287022393}
-  - {fileID: 829664547}
-  - {fileID: 1895442780}
-  - {fileID: 1232480049}
-  audioSource: {fileID: 0}
-  interactionKey: 0
-  NPC_animateText: 1
-  player_animateText: 1
-  NPC_secsPerLetter: 0.02
-  player_secsPerLetter: 0.02
-  choiceInterval: 0.1
-  useNavigation: 0
 --- !u!114 &2005317066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3378,18 +3529,19 @@ MonoBehaviour:
   interactionCount: 0
   alias: 
   overrideStartNode: -1
-  defaultNPCSprite: {fileID: 0}
-  defaultPlayerSprite: {fileID: 0}
+  defaultNPCSprite: {fileID: 21300000, guid: 643a201018120244aa7208cd628c5141, type: 3}
+  defaultPlayerSprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289,
+    type: 3}
   targetManager: {fileID: 2005317048}
   preload: 1
-  notuptodate: 1
+  notuptodate: 0
   startp: 0
   loadtag: 
   langs: []
   S_playerDiags:
   - commentCount: 3
     s_comment:
-    - text: Hi there, my name is <name>. I'm new in town, what do you do for fun around
+    - text: Hey, I'm new in town. My name's [PName]. what is there to do for fun around
         here?
       extraData: ExtraData
       inputSetIndex: 0
@@ -3398,7 +3550,7 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: 'Excuse me, I couldn''t resist your charm, your charisma is so high. '
+    - text: You'll have to excuse me. I have trouble ignoring such alluring people.
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: 3
@@ -3406,11 +3558,11 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: h..h.. hot... I mean... my stew is hot, not you....I'm gonna leave now....
+    - text: Hey, I'm... I mean, uhh, you'll... never mind.
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 3
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -3422,9 +3574,7 @@ MonoBehaviour:
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: 'Oh, hi. I''m Strannik. I Like to eat and maintain my weapons, mostly
-
-'
+    - text: Oh, hello. I am Strannik. I eat and wander.
       extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: 2
@@ -3440,8 +3590,7 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: "Well, I am thinking about exploring the dungeon nearby. \nI have heard
-        of the creatures that have been attacking the town. "
+    - text: I have noticed the nearby dungeons just off of the town.
       extraData: ExtraData
       inputSetIndex: 2
       outputNodeIndex: 4
@@ -3451,13 +3600,13 @@ MonoBehaviour:
       visible: 1
     ID: 2
     pTag: Player
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: Oh, thank you, it is my Dragonborn heritage. I'm Strannik, by the way.
+    - text: Then why are you here? Oh, you mean... me? Well, I am Strannik.
       extraData: ExtraData
       inputSetIndex: 3
       outputNodeIndex: 2
@@ -3473,8 +3622,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: I would like to help protect the town. It could be dangerous to go alone,
-        and there is safety in numbers.
+    - text: ' If the rumours are true, the monsters that dwell within them have even
+        been posing a threat to the village. '
       extraData: ExtraData
       inputSetIndex: 4
       outputNodeIndex: 5
@@ -3484,14 +3633,14 @@ MonoBehaviour:
       visible: 1
     ID: 4
     pTag: Player
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: If I were to bring you along, could you help me? Do you think I would
-        be a suitable dungeoneering partner?
+    - text: If I see to it to venture into the dungeons would you be able to help
+        me? It's dangerous to go alone after all.
       extraData: ExtraData
       inputSetIndex: 5
       outputNodeIndex: 6
@@ -3501,15 +3650,14 @@ MonoBehaviour:
       visible: 1
     ID: 5
     pTag: Player
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: 'I''m the third strongest barbarian of my tribe. I mostly hit things with
-        my halberd. Sometimes I hit them whilst spinning. You seem a bit chatty, but
-        that''s ok. '
+    - text: 'I hit things with my halberd. I go where there are sights to see. It
+        takes a lot to hurt me. '
       extraData: ExtraData
       inputSetIndex: 6
       outputNodeIndex: 7
@@ -3525,8 +3673,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: That sounds like you have just what I am looking for. Will you come join
-        me on this adventure?
+    - text: You sound like a valuable ally. I could use your help exploring the dungeons
+        if you'd assist me?
       extraData: ExtraData
       inputSetIndex: 7
       outputNodeIndex: 8
@@ -3536,13 +3684,14 @@ MonoBehaviour:
       visible: 1
     ID: 7
     pTag: Player
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: I suppose there could be some gold in there. We Dragonborn do like gold.
+    - text: I care little for money, but food is important. I will follow you if you
+        promise such things.
       extraData: ExtraData
       inputSetIndex: 8
       outputNodeIndex: 9
@@ -3556,14 +3705,21 @@ MonoBehaviour:
     vars: []
     varKeys: []
     isPlayer: 0
-  - commentCount: 1
+  - commentCount: 2
     s_comment:
-    - text: Of course! The profits will be shared fairly. It's settled then. Let's
-        go!
+    - text: How about this? Whatever you find in the dungeon, you get to keep.
       extraData: ExtraData
       inputSetIndex: 9
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 0
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Sorry, that's a little steep for me.
+      extraData: ExtraData
+      inputSetIndex: 9
+      outputNodeIndex: -1
+      outActionIndex: 4
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -3572,8 +3728,338 @@ MonoBehaviour:
     sprite: {fileID: 0}
     vars: []
     varKeys: []
+    isPlayer: 1
+  - commentCount: 3
+    s_comment:
+    - text: Talk to [CName].
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: 11
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Give Gift.
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Leave.
+      extraData: ExtraData
+      inputSetIndex: 10
+      outputNodeIndex: -1
+      outActionIndex: 3
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 12
+    pTag: Player
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 4
+    s_comment:
+    - text: Tell me something about yourself
+      extraData: ExtraData
+      inputSetIndex: 11
+      outputNodeIndex: 14
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Ask about affection Level
+      extraData: ExtraData
+      inputSetIndex: 11
+      outputNodeIndex: 16
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Ask about Character Stats
+      extraData: ExtraData
+      inputSetIndex: 11
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Return
+      extraData: ExtraData
+      inputSetIndex: 11
+      outputNodeIndex: 10
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 10
+    pTag: Player
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: What's on your mind?
+      extraData: ExtraData
+      inputSetIndex: 12
+      outputNodeIndex: 13
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 13
+    pTag: Strannik
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
     isPlayer: 0
-  S_actionNodes: []
+  - commentCount: 4
+    s_comment:
+    - text: Tell me about your hobbies
+      extraData: ExtraData
+      inputSetIndex: 13
+      outputNodeIndex: -1
+      outActionIndex: 1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Tell me about your past
+      extraData: ExtraData
+      inputSetIndex: 13
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Tell me about your likes / dislikes
+      extraData: ExtraData
+      inputSetIndex: 13
+      outputNodeIndex: -1
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Nothing, sorry
+      extraData: ExtraData
+      inputSetIndex: 13
+      outputNodeIndex: 11
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 14
+    pTag: Player
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: Could you tell me something about yourself?
+      extraData: ExtraData
+      inputSetIndex: 14
+      outputNodeIndex: 12
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 15
+    pTag: Player
+    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Comment...
+      extraData: ExtraData
+      inputSetIndex: 15
+      outputNodeIndex: 13
+      outActionIndex: -1
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 17
+    pTag: Strannik
+    sprite: {fileID: 0}
+    vars:
+    - Hobby 1
+    - Hobby 2
+    - Hobby 3
+    varKeys:
+    - Key1
+    - Key2
+    - Key3
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: How do you feel about us?
+      extraData: ExtraData
+      inputSetIndex: 16
+      outputNodeIndex: -1
+      outActionIndex: 2
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 18
+    pTag: Player
+    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: <25% comment
+      extraData: ExtraData
+      inputSetIndex: 17
+      outputNodeIndex: -1
+      outActionIndex: 5
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 19
+    pTag: Strannik
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "<50% comment\t"
+      extraData: ExtraData
+      inputSetIndex: 18
+      outputNodeIndex: -1
+      outActionIndex: 5
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 20
+    pTag: Strannik
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: <75% comment
+      extraData: ExtraData
+      inputSetIndex: 19
+      outputNodeIndex: -1
+      outActionIndex: 5
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 21
+    pTag: Strannik
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: <100% comment
+      extraData: ExtraData
+      inputSetIndex: 20
+      outputNodeIndex: -1
+      outActionIndex: 5
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 22
+    pTag: Strannik
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  S_actionNodes:
+  - pauseHere: 0
+    gameObjectName: Barbarian
+    methodName: RecruitCompanion
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 11
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 12
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Barbarian
+    methodName: Hobbies
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 16
+    outPlayerIndex: 15
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Barbarian
+    methodName: AffectionLevel
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 23
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Barbarian
+    methodName: EndConversation
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 24
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Barbarian
+    methodName: EndConversation
+    paramType: 0
+    gotoNode: -1
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 25
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: 7
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    paramType: -1
+    gotoNode: 10
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    ID: 26
+    outPlayerIndex: -1
+    outActionIndex: -1
+    ovrStartNode: -1
+    renameDialogue: 
 --- !u!114 &2005317067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3586,3 +4072,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06248a9d48e91cf4aa54fd6d4c354500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelOneBelow25: Level one, below 25%
+  levelOneBelow50: Level one, below 50%
+  levelOneBelow75: Level one, below 75%
+  levelOneBelow100: Level one, below 100%
+  levelTwoBelow25: Level two, below 25%
+  levelTwoBelow50: Level two, below 50%
+  levelTwoBelow75: Level two, below 75%
+  levelTwoBelow100: Level two, below 100%
+  levelThreeBelow25: Level three, below 25%
+  levelThreeBelow50: Level three, below 50%
+  levelThreeBelow75: Level three, below 75%
+  levelThreeBelow100: Level three, below 100%
+  levelFourBelow25: Level four, below 25%
+  levelFourBelow50: Level four, below 50%
+  levelFourBelow75: Level four, below 75%
+  levelFourBelow100: Level four, below 100%

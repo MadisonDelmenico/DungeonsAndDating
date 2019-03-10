@@ -32,25 +32,25 @@ public class NavMeshMovement : MonoBehaviour
                 // If the area clicked has a collider
                 if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100, 9))
                 {
-                    // If it was a companion that was clicked
-                    if (hit.collider.gameObject.CompareTag("Companion"))
+                    switch (hit.collider.gameObject.tag)
                     {
-                        target.friendlyTarget = hit.collider.gameObject;
-                        target.enabled = false;
-                    }
-                    // If the area clicked was an enemy
-                    if (hit.collider.gameObject.CompareTag("Enemy"))
-                    {
-                        // Target the enemy you clicked on
-                        target.target = hit.collider.gameObject;
-
-                        // Attack the target
-                        Attack();
-                    }
-                    else // If the area clicked was anything OTHER than an enemy
-                    {
-                        // Disengage
-                        Disengage();
+                        // If it was a companion that was clicked
+                        case "Companion":
+                            target.friendlyTarget = hit.collider.gameObject;
+                            target.enabled = false;
+                            break;
+                        // If it was an enemy that was clicked
+                        case "Enemy":
+                            // Target the enemy you clicked on
+                            target.target = hit.collider.gameObject;
+                            // Attack the target
+                            Attack();
+                            break;
+                        // Otherwise
+                        default:
+                            Disengage();
+                            meshAgent.destination = hit.point;
+                            break;
                     }
                 }
             }

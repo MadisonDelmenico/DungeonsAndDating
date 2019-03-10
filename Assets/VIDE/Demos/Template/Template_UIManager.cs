@@ -500,15 +500,7 @@ public class Template_UIManager : MonoBehaviour
 
     public void Blur()
     {
-        if (blur.enabled)
-        {
-            blur.enabled = false;
-        }
-        else
-        {
-            blur.enabled = true;
-        }
-        
+        Camera.main.GetComponent<UIBlurToggle>().ToggleBlur();
     }
 
     #endregion

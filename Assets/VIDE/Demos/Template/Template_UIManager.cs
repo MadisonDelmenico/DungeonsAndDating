@@ -106,6 +106,7 @@ public class Template_UIManager : MonoBehaviour
         VD.BeginDialogue(dialogue); //Begins dialogue, will call the first OnNodeChange
 
         dialogueContainer.SetActive(true); //Let's make our dialogue container visible
+
     }
     
     //Calls next node in the dialogue

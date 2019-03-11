@@ -7,18 +7,8 @@ public class CharacterActions : MonoBehaviour
     [HideInInspector]
     public CharacterClass characterClass;
 
-    [Header("My Abilities")]
-    public Action actionOne = Action.Basic;
-    public Action actionTwo = Action.Firebolt;
-    public Action actionThree = Action.Revitalize;
-    public Action actionFour = Action.WildSpin;
-
-    [Header("Controls (PLAYER ONLY, set to none for companions)")]
-    public KeyCode abilityOne = KeyCode.Alpha1;
-    public KeyCode abilityTwo = KeyCode.Alpha2;
-    public KeyCode abilityThree = KeyCode.Alpha3;
-    public KeyCode abilityFour = KeyCode.Alpha4;
-
+    private GameObject[] enemies;
+    
     [Header("Attack Values")]
     public float attackValue;
     public float fireboltValue;
@@ -50,6 +40,8 @@ public class CharacterActions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
         // If the character is a companion
         if (GetComponent<CompanionAIScript>())
         {
@@ -98,30 +90,6 @@ public class CharacterActions : MonoBehaviour
         revitalizeCooldown -= Time.deltaTime;
         wildSpinCooldown -= Time.deltaTime;
         elementalSphereCooldown -= Time.deltaTime;
-
-        // If the character is the player,
-        if (gameObject.CompareTag("Player"))
-        {
-            // Check the ability inputs
-
-            if (Input.GetKeyDown(abilityOne))
-            {
-                DoAction(actionOne, gameObject.GetComponent<TargettingEnemies>().target);
-            }
-            if (Input.GetKeyDown(abilityTwo))
-            {
-                DoAction(actionTwo, gameObject.GetComponent<TargettingEnemies>().target);
-            }
-            if (Input.GetKeyDown(abilityThree))
-            {
-                DoAction(actionThree, gameObject.GetComponent<TargettingEnemies>().target);
-            }
-            if (Input.GetKeyDown(abilityFour))
-            {
-                DoAction(actionFour, gameObject.GetComponent<TargettingEnemies>().target);
-            }
-        }
-
     }
 
     public void DoAction(Action action, GameObject target)
@@ -206,20 +174,37 @@ public class CharacterActions : MonoBehaviour
             case Action.WildSpin:
                 if (wildSpinCooldown <= 0)
                 {
-                    if (target.CompareTag("Enemy"))
+                    Debug.Log("Beyblade time!");
+                    if (GetComponent<CompanionAIScript>())
                     {
-                        Debug.Log("Beyblade time!");
-                        if (GetComponent<CompanionAIScript>())
+                        foreach (GameObject enemy in enemies)
                         {
-                            target.GetComponent<Health>().health -= (affectionLevel * wildSpinValue);
+                            if (enemy != null)
+                            {
+                                if (Vector3.Distance(gameObject.transform.position, enemy.transform.position) < 1.0f)
+                                {
+                                    enemy.GetComponent<Health>().health -= (affectionLevel * wildSpinValue);
+                                    SendAttackerInfo(enemy);
+                                }
+                            }
                         }
-                        else
-                        {
-                            target.GetComponent<Health>().health -= (wildSpinValue);
-                        }
-
-                        SendAttackerInfo(target);
                     }
+                    else
+                    {
+                        foreach (GameObject enemy in enemies)
+                        {
+                            if (enemy != null)
+                            {
+                                if (Vector3.Distance(gameObject.transform.position, enemy.transform.position) < 1.0f)
+                                {
+                                    enemy.GetComponent<Health>().health -= (wildSpinValue);
+                                    SendAttackerInfo(enemy);
+                                }
+                            }
+                        }
+                    }
+
+                    
                 }
                 break;
             case Action.ElementalSphere:

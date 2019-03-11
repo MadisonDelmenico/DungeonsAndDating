@@ -14,7 +14,7 @@ public class CompanionAIScript : MonoBehaviour
     private NavMeshAgent meshAgent;
     [HideInInspector]
     public GameObject player;
-    private GameObject[] AllCompanions;
+    private GameObject[] allCompanions;
     [HideInInspector]
     public int companionNumber;
 
@@ -27,7 +27,6 @@ public class CompanionAIScript : MonoBehaviour
     private CharacterClass companionClass;
     private CharacterActions companionActions;
     private float myMaxHealth;
-    private float playerMaxHealth;
 
     public float castTime;
 
@@ -60,12 +59,11 @@ public class CompanionAIScript : MonoBehaviour
 
         // Making sure the companions know what their health is
         myMaxHealth = GetComponent<Health>().maxHealth;
-        playerMaxHealth = player.GetComponent<Health>().maxHealth;
         companionClass = GetComponent<CharacterClass>();
         companionActions = GetComponent<CharacterActions>();
 
         // Finding the number of companions currently in the dungeon, adding them to an array of companions
-        AllCompanions = GameObject.FindGameObjectsWithTag("Companion");
+        allCompanions = GameObject.FindGameObjectsWithTag("Companion");
 
         if (GetComponent<VIDE_Assign>())
         {
@@ -74,9 +72,9 @@ public class CompanionAIScript : MonoBehaviour
 
 
         // Setting the companion number for each companion, 0 by default
-        for (int i = 0; i < AllCompanions.Length; i++)
+        for (int i = 0; i < allCompanions.Length; i++)
         {
-            if (AllCompanions[i] == gameObject)
+            if (allCompanions[i] == gameObject)
             {
                 companionNumber = i;
                 break;
@@ -86,7 +84,7 @@ public class CompanionAIScript : MonoBehaviour
         switch (companionNumber)
         {
             case 0:
-                if (AllCompanions.Length == 2)
+                if (allCompanions.Length == 2)
                 {
                     companionTarget = GameObject.Find("CompanionTarget2");
                     break;
@@ -350,7 +348,7 @@ public class CompanionAIScript : MonoBehaviour
             toHeal = player;
             return true;
         }
-        foreach (GameObject i in AllCompanions)
+        foreach (GameObject i in allCompanions)
         {
             if (i.GetComponent<Health>().health < i.GetComponent<Health>().maxHealth * healLimit)
             {

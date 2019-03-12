@@ -44,7 +44,24 @@ public class PlayerInventory : MonoBehaviour
         {
             money += other.GetComponent<PickupCoin>().value;
             Destroy(other.gameObject);
-        }   
+        }
+        if (other.GetComponent<PickupTreasure>())
+        {
+            switch (other.GetComponent<PickupTreasure>().rarity)
+            {
+                case PickupTreasure.TreasureRarity.Common:
+                    commonTreasure++;
+                    break;
+                case PickupTreasure.TreasureRarity.Uncommon:
+                    uncommonTreasure++;
+                    break;
+                case PickupTreasure.TreasureRarity.Rare:
+                    rareTreasure++;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public void AddItem(int item)    

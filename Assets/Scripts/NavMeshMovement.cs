@@ -93,4 +93,9 @@ public class NavMeshMovement : MonoBehaviour
             }
         }
     }
+
+    public void StopMoving()
+    {
+        meshAgent.destination = transform.position;
+    }
 }

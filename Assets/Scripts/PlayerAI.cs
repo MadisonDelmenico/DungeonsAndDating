@@ -55,6 +55,7 @@ public class PlayerAI : MonoBehaviour
     {
         if (castTime > 0)
         {
+            GetComponent<NavMeshMovement>().StopMoving();
             GetComponent<NavMeshMovement>().enabled = false;
             castTime -= Time.deltaTime;
         }

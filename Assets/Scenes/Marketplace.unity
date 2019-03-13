@@ -3819,7 +3819,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 2.5
   m_Center: {x: 0, y: -1, z: 0}
 --- !u!114 &1985311787 stripped
 MonoBehaviour:
@@ -3896,7 +3896,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 2.5
   m_Center: {x: 0, y: -1, z: 0}
 --- !u!114 &2005317051 stripped
 MonoBehaviour:
@@ -3968,7 +3968,7 @@ MonoBehaviour:
     type: 3}
   targetManager: {fileID: 2005317048}
   preload: 1
-  notuptodate: 0
+  notuptodate: 1
   startp: 0
   loadtag: 
   langs: []

@@ -351,18 +351,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 357bb15f97076bc4b8f5705647548fc7, type: 3}
---- !u!114 &61743610 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8685263210796287140, guid: 357bb15f97076bc4b8f5705647548fc7,
-    type: 3}
-  m_PrefabInstance: {fileID: 61743609}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68f84885f563e6841a65acd7a6a2611a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &69607830
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,12 +620,12 @@ RectTransform:
   m_Children:
   - {fileID: 909057177}
   m_Father: {fileID: 1645012628}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 144, y: 143}
-  m_SizeDelta: {x: 153, y: 35}
+  m_SizeDelta: {x: 165, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &79958379
 MonoBehaviour:
@@ -681,13 +669,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2068475516}
         m_MethodName: BuyItem
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 50
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 3P
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1031,7 +1019,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -192, y: 217}
-  m_SizeDelta: {x: 153, y: 35}
+  m_SizeDelta: {x: 165, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467377220
 MonoBehaviour:
@@ -1073,15 +1061,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 61743610}
-        m_MethodName: AddItem
-        m_Mode: 3
+      - m_Target: {fileID: 2068475516}
+        m_MethodName: BuyItem
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 20
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1B
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1239,7 +1227,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -192, y: 143}
-  m_SizeDelta: {x: 153, y: 35}
+  m_SizeDelta: {x: 165, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613570010
 MonoBehaviour:
@@ -1283,13 +1271,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2068475516}
         m_MethodName: BuyItem
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 50
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 3B
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1447,7 +1435,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -192, y: 180}
-  m_SizeDelta: {x: 153, y: 35}
+  m_SizeDelta: {x: 165, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &901554579
 MonoBehaviour:
@@ -1491,13 +1479,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2068475516}
         m_MethodName: BuyItem
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 35
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 2B
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1987,12 +1975,12 @@ RectTransform:
   m_Children:
   - {fileID: 540343099}
   m_Father: {fileID: 1645012628}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -21, y: 180}
-  m_SizeDelta: {x: 153, y: 35}
+  m_AnchoredPosition: {x: -23.5, y: 180}
+  m_SizeDelta: {x: 165, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1025602983
 MonoBehaviour:
@@ -2036,13 +2024,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2068475516}
         m_MethodName: BuyItem
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 35
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 2S
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2116,12 +2104,12 @@ RectTransform:
   m_Children:
   - {fileID: 2099933378}
   m_Father: {fileID: 1645012628}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -21, y: 143}
-  m_SizeDelta: {x: 153, y: 35}
+  m_AnchoredPosition: {x: -23.5, y: 143}
+  m_SizeDelta: {x: 165, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053079635
 MonoBehaviour:
@@ -2165,13 +2153,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2068475516}
         m_MethodName: BuyItem
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 50
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 3S
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2245,12 +2233,12 @@ RectTransform:
   m_Children:
   - {fileID: 1847104524}
   m_Father: {fileID: 1645012628}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 144, y: 180}
-  m_SizeDelta: {x: 153, y: 35}
+  m_SizeDelta: {x: 165, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129259140
 MonoBehaviour:
@@ -2294,13 +2282,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2068475516}
         m_MethodName: BuyItem
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 35
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 2P
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2952,12 +2940,12 @@ RectTransform:
   m_Children:
   - {fileID: 73552739}
   m_Father: {fileID: 1645012628}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 144, y: 217}
-  m_SizeDelta: {x: 153, y: 35}
+  m_SizeDelta: {x: 165, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1279026440
 MonoBehaviour:
@@ -3001,13 +2989,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2068475516}
         m_MethodName: BuyItem
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 20
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1P
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3383,14 +3371,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 467377219}
-  - {fileID: 2063009503}
   - {fileID: 1279026439}
+  - {fileID: 2063009503}
   - {fileID: 901554578}
-  - {fileID: 1025602982}
   - {fileID: 1129259139}
+  - {fileID: 1025602982}
   - {fileID: 613570009}
-  - {fileID: 1053079634}
   - {fileID: 79958378}
+  - {fileID: 1053079634}
   m_Father: {fileID: 1690147653}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4146,12 +4134,12 @@ RectTransform:
   m_Children:
   - {fileID: 403818278}
   m_Father: {fileID: 1645012628}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -21, y: 217}
-  m_SizeDelta: {x: 153, y: 35}
+  m_AnchoredPosition: {x: -23.5, y: 217}
+  m_SizeDelta: {x: 165, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2063009504
 MonoBehaviour:
@@ -4195,13 +4183,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2068475516}
         m_MethodName: BuyItem
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 20
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1S
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -4275,6 +4263,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  tier1ItemPrice: 20
+  tier2ItemPrice: 35
+  tier3ItemPrice: 50
   commonTreasureValue: 5
   uncommonTreasureValue: 10
   rareTreasureValue: 20

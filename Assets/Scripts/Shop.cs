@@ -5,7 +5,11 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public PlayerInventory player;
-    
+
+    public int tier1ItemPrice;
+    public int tier2ItemPrice;
+    public int tier3ItemPrice;
+
     public int commonTreasureValue;
     public int uncommonTreasureValue;
     public int rareTreasureValue;
@@ -19,15 +23,54 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void BuyItem(int value)
+    /// <summary>
+    /// Buying an item from the shop
+    /// </summary>
+    /// <param name="item">Item tier (1, 2, 3) and item class (B, P, S) as a string. (eg: "3B" or "1P")</param>
+    public void BuyItem(string item)
     {
+        int value = 0;
+        int itemCode = 0;
+
+        foreach (char i in item)
+        {
+            switch (i)
+            {
+                case '1':
+                    value = tier1ItemPrice;
+                    break;
+                case '2':
+                    value = tier2ItemPrice;
+                    itemCode += 3;
+                    break;
+                case '3':
+                    value = tier3ItemPrice;
+                    itemCode += 6;
+                    break;
+                case 'B':
+                    itemCode += 1;
+                    break;
+                case 'S':
+                    itemCode += 2;
+                    break;
+                case 'P':
+                    itemCode += 3;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        Debug.Log("ItemCode = " + itemCode);
+
         if (player.money >= value)
         {
             player.money -= value;
-            Debug.Log("Player bought an item for " + value + "gp");
+            player.AddItem(itemCode);
+            Debug.Log("Player bought item " + item + " for " + value + "gp");
         }
         else
         {

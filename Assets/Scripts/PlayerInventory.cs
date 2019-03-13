@@ -64,8 +64,46 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Add an item to the players inventory
+    /// </summary>
+    /// <param name="item"> Item code of the item to add: 
+    ///                     1 = Steak of Strength, 2 = Snake Shaped Wand, 3 = Holy Order Enlistment, 
+    ///                     4 = Halberd Whetstone, 5 = Spiked Boots, 6 = Ranger Scout Cookies, 
+    ///                     7 = Scale Repair Kit, 8 = Haunted Dagger, 9 = Local Charity Reciept</param>
     public void AddItem(int item)    
     {
-
+        switch (item)
+        {
+            case 1:
+                steakOfStrength++;
+                break;
+            case 2:
+                snakeShapedWand++;
+                break;
+            case 3:
+                holyOrderEnlistment++;
+                break;
+            case 4:
+                halberdWhetstone++;
+                break;
+            case 5:
+                spikedBoots++;
+                break;
+            case 6:
+                rangerScoutCookies++;
+                break;
+            case 7:
+                scaleRepairKit++;
+                break;
+            case 8:
+                hauntedDagger++;
+                break;
+            case 9:
+                localCharityReciept++;
+                break;
+            default:
+                break;
+        }
     }
 }

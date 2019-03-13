@@ -5,6 +5,8 @@ using VIDE_Data;
 
 public class DialogueScript : MonoBehaviour
 {
+    private GameObject player;
+
     #region affection lines
     [Header("Affection Level Lines")]
     public string levelOneBelow25;
@@ -37,6 +39,7 @@ public class DialogueScript : MonoBehaviour
     {
         currentXP = 0;
         totalXP = 0;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -47,9 +50,19 @@ public class DialogueScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //if the player moves into my collider
         if (other.gameObject == GameObject.FindWithTag("Player"))
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAI>().Talking();
+            //tell the player to stop moving
+            player.GetComponent<NavMeshMovement>().meshAgent.destination = player.transform.position;
+
+            //tell the player to look at me
+            player.GetComponent<PlayerAI>().LookAt(transform.position);
+
+            //tell the player to talk to me
+            player.GetComponent<PlayerAI>().Talking();
+           
+            //initiate my dialogue script
             GameObject.Find("DialogueManager").GetComponent<Template_UIManager>().Interact(GetComponent<VIDE_Assign>());
 
         }
@@ -64,22 +77,30 @@ public class DialogueScript : MonoBehaviour
         VD.SetComment(VD.assigned.assignedDialogue, 17, 0, newText);
 
     }
+   
+    //if im able to be recruited via the dialogue
     public void RecruitCompanion()
     {
+        //i am recruited, set my affection from 0 to 1
         gameObject.GetComponent<CompanionAIScript>().isRecruited = true;
         GetComponent<AffectionRating>().affectionLevel = 1;
+        //tell the player to stop talking to me
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAI>().Talking();
     }
+   
+    //if the dialogue chain has ended, stop talking to me
     public void EndConversation()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAI>().Talking();
     }
+   
+    //Give a response in the dialogue based on my current affection level
     public void AffectionLevel()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<AffectionRating>().CalculateQuarters();
         switch (GameObject.FindGameObjectWithTag("Player").GetComponent<AffectionRating>().quarters)
         {
-               
+
             case 0:
                 VD.SetNode(19);
                 break;
@@ -94,7 +115,7 @@ public class DialogueScript : MonoBehaviour
                 break;
         }
     }
-   
+
     /*
     public void l()
     {

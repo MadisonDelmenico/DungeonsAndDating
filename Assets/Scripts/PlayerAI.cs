@@ -175,5 +175,11 @@ public class PlayerAI : MonoBehaviour
         }
         GameObject.Find("DialogueManager").GetComponent<Template_UIManager>().Blur();
     }
+
+    public void LookAt(Vector3 lookingAt)
+    {
+        transform.LookAt(lookingAt);
+
+    }
 }
 

@@ -12,12 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterCreation.unity
     guid: dd485a155417a184199c1e513f79b62d
   - enabled: 1
-    path: Assets/Scenes/Map.unity
-    guid: ebdfe5395d3ab044c94e17b9a2d13efa
+    path: Assets/Scenes/Marketplace.unity
+    guid: 2dc153c04b164654198e4f1c8db00dee
   - enabled: 1
     path: Assets/Scenes/Dungeon_Madison_2.unity
     guid: 72818e3d8a22f6344bec1549aa330849
-  - enabled: 1
-    path: Assets/Scenes/Marketplace.unity
-    guid: 2dc153c04b164654198e4f1c8db00dee
   m_configObjects: {}

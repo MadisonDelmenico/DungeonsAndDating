@@ -58,7 +58,7 @@ public class ButtonScript : MonoBehaviour
 	}
 	public void Confirm()
 	{
-		SceneManager.LoadScene ("Map");
+		SceneManager.LoadScene ("Marketplace");
         print("Player Skin is" + PlayerPrefs.GetInt("PSkin"));
     }
 

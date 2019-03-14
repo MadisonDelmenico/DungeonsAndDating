@@ -12,7 +12,7 @@ public class PlayerAI : MonoBehaviour
     public GameObject[] enemies;
     private GameObject[] companions;
     [HideInInspector]
-    public bool isTalking;
+    public bool isInteracting;
     [SerializeField]
     private float castTime;
     private CharacterActions characterActions;
@@ -44,7 +44,7 @@ public class PlayerAI : MonoBehaviour
         player = gameObject;
         target = gameObject;
         targetDistance = 0;
-        isTalking = false;
+        isInteracting = false;
         name = PlayerPrefs.GetString("PName");
         characterActions = GetComponent<CharacterActions>();
 
@@ -71,12 +71,12 @@ public class PlayerAI : MonoBehaviour
         #region talking
 
         //disable movement when talking
-        if (isTalking)
+        if (isInteracting)
         {
             GetComponent<NavMeshMovement>().enabled = false;
         }
         //enable movement if not talking
-        if (isTalking == false)
+        if (isInteracting == false)
         {
             GetComponent<NavMeshMovement>().enabled = true;
         }
@@ -165,15 +165,27 @@ public class PlayerAI : MonoBehaviour
 
     public void Talking()
     {
-        if (isTalking == true)
+        if (isInteracting == true)
         {
-            isTalking = false;
+            isInteracting = false;
         }
         else
         {
-            isTalking = true;
+            isInteracting = true;
         }
         GameObject.Find("DialogueManager").GetComponent<Template_UIManager>().Blur();
+    }
+
+    public void UIPopUp()
+    {
+        if (isInteracting == true)
+        {
+            isInteracting = false;
+        }
+        else
+        {
+            isInteracting = true;
+        }
     }
 
     public void LookAt(Vector3 lookingAt)

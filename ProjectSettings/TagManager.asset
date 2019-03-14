@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Companion
   - Enemy
+  - DungeonExit
   layers:
   - Default
   - TransparentFX

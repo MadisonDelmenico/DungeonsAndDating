@@ -21,7 +21,8 @@ public class EnemyAI : MonoBehaviour
     public int enemiesArrayPosition;
     public bool helpMe;
     private float idleTimer;
-    public AudioSource alert;
+    [FMODUnity.EventRef]
+    public string alertSound;
     public GameObject player;
     public GameObject[] companions;
     public float[] companionDistances;
@@ -175,7 +176,7 @@ public class EnemyAI : MonoBehaviour
                 if (Vector3.Distance(gameObject.transform.position, i.transform.position) < 5f)
                 {
                     target = i;
-                    alert.Play();
+                    FMODUnity.RuntimeManager.PlayOneShot(alertSound, GetComponent<Transform>().position); // play test sound
                     currentState = State.Attacking;
                     MoveToAttackRange(target);
                 }
@@ -185,7 +186,7 @@ public class EnemyAI : MonoBehaviour
         if (Vector3.Distance(gameObject.transform.position, player.transform.position) < 5f)
         {
             target = player;
-            alert.Play();
+            FMODUnity.RuntimeManager.PlayOneShot(alertSound, GetComponent<Transform>().position); // play test sound    
             currentState = State.Attacking;
             MoveToAttackRange(target);
         }

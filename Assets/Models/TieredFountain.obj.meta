@@ -9,6 +9,7 @@ ModelImporter:
     400002: //RootNode
     2100000: FountainSG
     2100002: Top_waterSG
+    2100004: FountainMat
     2300000: Fountain
     3300000: Fountain
     4300000: Fountain

@@ -42,8 +42,10 @@ public class PlayerInventory : MonoBehaviour
     {
         if (other.GetComponent<PickupCoin>())
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Coin_Pickup", GetComponent<Transform>().position); // play test sound
             money += other.GetComponent<PickupCoin>().value;
             Destroy(other.gameObject);
+            
         }
         if (other.GetComponent<PickupTreasure>())
         {

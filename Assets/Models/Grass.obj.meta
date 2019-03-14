@@ -8,6 +8,7 @@ ModelImporter:
     400000: Grass
     400002: //RootNode
     2100000: GrassSG
+    2100002: GrassMat
     2300000: Grass
     3300000: Grass
     4300000: Grass

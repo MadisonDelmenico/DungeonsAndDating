@@ -26,9 +26,9 @@ MonoBehaviour:
   - Platform: 2
     Value: 3
   SampleRateSettings:
-  - Platform: 1
-    Value: 44100
   - Platform: 2
+    Value: 44100
+  - Platform: 1
     Value: 44100
   LiveUpdateSettings:
   - Platform: 1
@@ -37,9 +37,9 @@ MonoBehaviour:
     Value: 0
   OverlaySettings:
   - Platform: 1
-    Value: 1
+    Value: 0
   - Platform: 2
-    Value: 1
+    Value: 0
   LoggingSettings:
   - Platform: 1
     Value: 1

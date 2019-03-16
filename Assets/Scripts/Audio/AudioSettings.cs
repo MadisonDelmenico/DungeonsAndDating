@@ -52,6 +52,11 @@ public class AudioBusSettings : MonoBehaviour
         Master.setVolume(MasterVolume);
     }
 
+    private void OnDestroy()
+    {
+        SFXVolumeTestEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //Destroy event
+    }
+
     public void MasterVolumeLevel(float newMasterVolume)
     {
         MasterVolume = newMasterVolume;
@@ -71,6 +76,7 @@ public class AudioBusSettings : MonoBehaviour
         if (PbState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
         {
             SFXVolumeTestEvent.start();
+            SFXVolumeTestEvent.release();
         }
     }
 

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 8685263210796287126}
   - component: {fileID: 8685263210796287141}
   - component: {fileID: 8685263210796287140}
+  - component: {fileID: 6864506289392522019}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -149,14 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterClass: {fileID: 0}
-  actionOne: 0
-  actionTwo: 1
-  actionThree: 2
-  actionFour: 3
-  abilityOne: 0
-  abilityTwo: 49
-  abilityThree: 50
-  abilityFour: 51
   attackValue: 1.5
   fireboltValue: 5
   wildSpinValue: 0
@@ -167,6 +160,8 @@ MonoBehaviour:
   revitalizeCooldown: 5
   wildSpinCooldown: 5
   elementalSphereCooldown: 3
+  preparedAction: 5
+  preparedTarget: {fileID: 0}
 --- !u!114 &8685263210796287133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,11 +226,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   isAttacking: 0
-  Distance: 0
   target: {fileID: 0}
+  targetDistance: 0
   beingattacked: 0
-  Enemies: []
-  isTalking: 0
+  enemies: []
+  isInteracting: 0
+  castTime: 0
+  actionOne: 0
+  actionTwo: 0
+  actionThree: 0
+  abilityOne: 49
+  abilityTwo: 50
+  abilityThree: 51
+  defaultCastTime: 0
+  fireboltCastTime: 0
+  revitalizeCastTime: 0
+  wildSpinCastTime: 0
   name: 
 --- !u!114 &8685263210796287129
 MonoBehaviour:
@@ -250,6 +256,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectionLevel: 1
+  currentXP: 0
+  currentlevelTotalXP: 0
+  levelOneXP: 0
+  levelTwoXP: 0
+  levelThreeXP: 0
+  levelFourXP: 0
+  quarters: 0
 --- !u!114 &8685263210796287126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +278,7 @@ MonoBehaviour:
   energy: 0
   maxEnergy: 1
   isPlayer: 0
+  isReducing: 0
 --- !u!54 &8685263210796287141
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -297,6 +311,28 @@ MonoBehaviour:
   commonTreasure: 0
   uncommonTreasure: 0
   rareTreasure: 0
+  steakOfStrength: 0
+  snakeShapedWand: 0
+  holyOrderEnlistment: 0
+  halberdWhetstone: 0
+  spikedBoots: 0
+  rangerScoutCookies: 0
+  scaleRepairKit: 0
+  hauntedDagger: 0
+  localCharityReciept: 0
+--- !u!114 &6864506289392522019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8685263210796287127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625f3d50205fbb740a4cf27dbec5f1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioLocation: event:/Characters/Kallista/Kallista_Footsteps
 --- !u!1 &8685263211057667450
 GameObject:
   m_ObjectHideFlags: 0

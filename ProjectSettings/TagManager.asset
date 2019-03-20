@@ -7,6 +7,9 @@ TagManager:
   - Companion
   - Enemy
   - DungeonExit
+  - 'Material: Stone'
+  - 'Material: Wood'
+  - 'Material: Grass'
   layers:
   - Default
   - TransparentFX
@@ -39,7 +42,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - AudioFloor
   m_SortingLayers:
   - name: Default
     uniqueID: 0

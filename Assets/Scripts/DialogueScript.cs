@@ -115,6 +115,10 @@ public class DialogueScript : MonoBehaviour
                 break;
         }
     }
+    public void EnableShopUI()
+    {
+        GetComponent<Shop>
+    }
 
     /*
     public void l()

@@ -109,6 +109,13 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Removes an item from the players inventory
+    /// </summary>
+    /// <param name="item"> Item code of the item to add: 
+    ///                     1 = Steak of Strength, 2 = Snake Shaped Wand, 3 = Holy Order Enlistment, 
+    ///                     4 = Halberd Whetstone, 5 = Spiked Boots, 6 = Ranger Scout Cookies, 
+    ///                     7 = Scale Repair Kit, 8 = Haunted Dagger, 9 = Local Charity Reciept</param>
     public void RemoveItem(int item)
     {
         switch (item)

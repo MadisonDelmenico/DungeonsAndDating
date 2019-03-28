@@ -117,7 +117,7 @@ public class DialogueScript : MonoBehaviour
     }
     public void EnableShopUI()
     {
-        GetComponent<Shop>
+        GetComponent<Shop>();
     }
 
     /*

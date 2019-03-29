@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114472752537832508}
-  - {fileID: 114435073755662612}
-  - {fileID: 114033696839878730}
-  - {fileID: 114132041721335576}
-  - {fileID: 114749066389583360}
-  - {fileID: 114661172525290124}
-  - {fileID: 114945524999659926}
-  - {fileID: 114049780192078098}
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114288338942844526}
+  - {fileID: 114053676596359416}
+  - {fileID: 114680751415367578}
+  - {fileID: 114738005765743646}
+  - {fileID: 114979882533841684}
+  - {fileID: 114543229207572698}
+  - {fileID: 114826885439764454}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   EditorEvents:
   - {fileID: 114419877249937746}
   - {fileID: 114936541931126186}
@@ -136,10 +136,10 @@ MonoBehaviour:
   - {fileID: 114351178750980182}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 114661172525290124}
+  - {fileID: 114979882533841684}
   StringsBanks:
   - {fileID: 114472752537832508}
-  stringsBankWriteTime: 636886164427055516
+  stringsBankWriteTime: 636894519034924374
   cacheVersion: 3
 --- !u!114 &114003913205991716
 MonoBehaviour:
@@ -198,7 +198,7 @@ MonoBehaviour:
   Path: event:/Music/Companion Themes/Stannik/Music_General_Companion_Theme_Stannik
   guid: 3c76a089a2e90045a483ac945aeafb98
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -240,7 +240,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_Ability_ElementSphere_Misses
   guid: 35ec3ace1e94a04aae14b7717107df53
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -318,6 +318,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114030431523898750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\ldorman\Documents\DungeonsAndDating\Assets\StreamingAssets\Desktop\UI.bank
+  lastModified: 636894519034994285
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114031392422879024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +384,7 @@ MonoBehaviour:
   Path: event:/Music/Companion Themes/Sheva/Music_General_Companion_Theme_Sheva
   guid: da6b524a5c4fdb4e9aa4f81924a00a78
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -556,7 +573,7 @@ MonoBehaviour:
   Path: event:/Environment/Env_RoomTone_Inn
   guid: 06a866c44b078e49b3be612fbb21df42
   Banks:
-  - {fileID: 114132041721335576}
+  - {fileID: 114680751415367578}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -564,6 +581,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114053676596359416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\ldorman\Documents\DungeonsAndDating\Assets\StreamingAssets\Desktop\Enemys.bank
+  lastModified: 636894519034605035
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114056001889353964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +636,7 @@ MonoBehaviour:
   Path: event:/Enemys/Goblin/Enemy_Ranged_Firebolt_Fired
   guid: 7ef56f1c8787d7499ae0ea486eaca9be
   Banks:
-  - {fileID: 114033696839878730}
+  - {fileID: 114053676596359416}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -883,8 +917,8 @@ MonoBehaviour:
   Path: event:/Interface/Combat/UI_Main_Cooldown_Reset
   guid: c9de11c56dd82a4b92935f4eefe528e1
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -907,8 +941,8 @@ MonoBehaviour:
   Path: event:/Interface/General/UI_Main_Mouse_Hover
   guid: 696662fec0e57646a10bc733c934af43
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -971,7 +1005,7 @@ MonoBehaviour:
   Path: event:/Enemys/Goblin/Enemy_Ranged_Firebolt_Chant
   guid: b8f70f53ec89d84c9a26e7a2ab15f8d0
   Banks:
-  - {fileID: 114033696839878730}
+  - {fileID: 114053676596359416}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -994,7 +1028,7 @@ MonoBehaviour:
   Path: event:/Enemys/Goblin/Enemy_Death
   guid: 68a724b4fc93b942b313a94578d8b188
   Banks:
-  - {fileID: 114033696839878730}
+  - {fileID: 114053676596359416}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1074,7 +1108,7 @@ MonoBehaviour:
   Path: event:/Characters/Sendarr/Sendarr_Shop_Dialogue_3
   guid: 1975a6c251ba724093b759409c2620eb
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1116,7 +1150,7 @@ MonoBehaviour:
   Path: event:/Music/Companion Themes/Sheva/Music_Sad_Companion_Theme_Sheva
   guid: 8c20341d29400d45932c245abd89d110
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1139,7 +1173,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_AutoAttack_Sword_Striking_Metal
   guid: fa104bb72ca24f45b90d03fe0f89c3b0
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1162,7 +1196,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_Dialogue_TextScroll
   guid: 7f9aaa4ac1b7cf4592f4c699d758e101
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1248,7 +1282,7 @@ MonoBehaviour:
   Path: event:/Interactables/Interact_Game_ItemPickup
   guid: 5c65579cca7c954ea1ed1cf76cafa40a
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1271,7 +1305,7 @@ MonoBehaviour:
   Path: event:/Enemys/Goblin/Enemy_Ranged_Firebolt_HitsEnemy
   guid: e1eff9f4e3ea2c4eaf96c9b1e1a784f3
   Banks:
-  - {fileID: 114033696839878730}
+  - {fileID: 114053676596359416}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1328,7 +1362,7 @@ MonoBehaviour:
   Path: event:/Interactables/Romance/Interact_Romance_Gift_Open
   guid: cdbc407300e87b4b9f90ab8768ed9ad7
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1393,7 +1427,7 @@ MonoBehaviour:
   Path: event:/Environment/Env_Overworld_Atmos
   guid: 87b6c133f65b0944a2d4bf5326afad4a
   Banks:
-  - {fileID: 114132041721335576}
+  - {fileID: 114680751415367578}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1452,7 +1486,7 @@ MonoBehaviour:
   Path: event:/Enemys/Goblin/Enemy_Hurt
   guid: a1130fc0365cc34fbb48827bc1e0c87f
   Banks:
-  - {fileID: 114033696839878730}
+  - {fileID: 114053676596359416}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1563,7 +1597,7 @@ MonoBehaviour:
   Path: snapshot:/player_low_health
   guid: 1ddd5cb10515a44b8f371d1e339b2085
   Banks:
-  - {fileID: 114661172525290124}
+  - {fileID: 114979882533841684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1655,7 +1689,7 @@ MonoBehaviour:
   Path: event:/Music/Companion Themes/Stannik/Music_Sad_Companion_Theme_Stannik
   guid: b97315b694db3b4f9790ae34fd86db1a
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1747,7 +1781,7 @@ MonoBehaviour:
   Path: event:/Enemys/Goblin/Enemy_Attack_Yell
   guid: ec4e2fc1fc369844841a70d1a29d9709
   Banks:
-  - {fileID: 114033696839878730}
+  - {fileID: 114053676596359416}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1770,7 +1804,7 @@ MonoBehaviour:
   Path: event:/Music/Music_Dungeon_Combat
   guid: 67c2b8d477c10d46a2e0d617dbc91348
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1793,7 +1827,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_Ability_ElementSphere_HitsEnemy
   guid: 9417d85c1704994aafc683e9d3437732
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1930,7 +1964,7 @@ MonoBehaviour:
   Path: event:/Music/Music_Test
   guid: 7625dea351430d4295b020ae9b905e72
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1953,7 +1987,7 @@ MonoBehaviour:
   Path: snapshot:/music_all_mute
   guid: d870cb9e44e3f14da9b3c3cf849835e6
   Banks:
-  - {fileID: 114661172525290124}
+  - {fileID: 114979882533841684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2064,7 +2098,7 @@ MonoBehaviour:
   Path: event:/Music/Music_Dungeon_Exploration
   guid: 6f03ccc98665c34a82f98cf59029a52e
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2110,7 +2144,7 @@ MonoBehaviour:
   Path: event:/Characters/Stannik/Stannik_Footsteps
   guid: 0734e8fc76fd1543af15de7d458ea9cb
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2133,7 +2167,7 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_Dialogue_TextScroll
   guid: 33e45b5a7f66b7419a6a977127ac7c8d
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2222,7 +2256,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Ability_Firebolt_Chant
   guid: 82167b0c36929d4a92462bfd4458ab6b
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2249,6 +2283,23 @@ MonoBehaviour:
   - Name: 
     Value: 8278
   Exists: 0
+--- !u!114 &114288338942844526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\ldorman\Documents\DungeonsAndDating\Assets\StreamingAssets\Desktop\Characters.bank
+  lastModified: 636894519034585069
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114289799505403854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2330,7 +2381,7 @@ MonoBehaviour:
   Path: event:/Music/Music_Inn
   guid: 648fb2c29f15b5468f2030bcd34312fd
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2391,7 +2442,7 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_Ability_Shield_Destroyed
   guid: d2cfa0b1d2e8cd45bcf391b4ae468c5a
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2414,8 +2465,8 @@ MonoBehaviour:
   Path: event:/Interface/General/UI_Main_Pause_Init
   guid: 42f8fa2bca7daa48b2f656ce26d5f036
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2507,7 +2558,7 @@ MonoBehaviour:
   Path: event:/Interactables/Interact_Game_Chest_Opening
   guid: ba4c853418d5d0458fa77f27f40a636c
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2530,7 +2581,7 @@ MonoBehaviour:
   Path: event:/Music/Companion Themes/Stannik/Music_Happy_Companion_Theme_Stannik
   guid: 4f2974f6799e4f488e4576988b3feb76
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2553,12 +2604,12 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_Footsteps
   guid: a80eb10d58eeb84394b94e9471b069e1
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114108305485633178}
+  - {fileID: 114731208977706042}
   MinDistance: 1
   MaxDistance: 60
   Length: 623
@@ -2577,7 +2628,7 @@ MonoBehaviour:
   Path: event:/Characters/Stannik/Stannik_Ability_Wild_Spin
   guid: c778e5f9b29c5349a87df38b7a0da240
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2688,6 +2739,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114374323858777418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\ldorman\Documents\DungeonsAndDating\Assets\StreamingAssets\Desktop\VO_Dialouge.bank
+  lastModified: 636894519035004107
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114376999249225026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2703,7 +2771,7 @@ MonoBehaviour:
   Path: snapshot:/market_verb
   guid: 5992e9f683d5eb4282f9cd725745a563
   Banks:
-  - {fileID: 114661172525290124}
+  - {fileID: 114979882533841684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2726,7 +2794,7 @@ MonoBehaviour:
   Path: event:/Enemys/Goblin/Enemy_Ranged_Firebolt_Missed
   guid: 86339522ae78f2418f25ff9b246d9afd
   Banks:
-  - {fileID: 114033696839878730}
+  - {fileID: 114053676596359416}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2772,7 +2840,7 @@ MonoBehaviour:
   Path: event:/Music/Music_Death
   guid: 24ab13994269b2489dd1d3fbfe98ab79
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2846,7 +2914,7 @@ MonoBehaviour:
   Path: event:/Environment/Env_Overworld_Wind
   guid: adeb9efe5aaba64d83b7fee5f9eb1636
   Banks:
-  - {fileID: 114132041721335576}
+  - {fileID: 114680751415367578}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2892,7 +2960,7 @@ MonoBehaviour:
   Path: event:/Interface/Combat/UI_Game_Healed
   guid: 74d33bbcd2987b41967d8e2a29ba07fa
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2915,7 +2983,7 @@ MonoBehaviour:
   Path: event:/Environment/Env_Water_Dripping
   guid: 6efc6f0ddc54da4990ed16247b8d564e
   Banks:
-  - {fileID: 114132041721335576}
+  - {fileID: 114680751415367578}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2938,7 +3006,7 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_Ability_Revitalize_Chanting
   guid: 056ee9c3cebb1e498af204773cc63a10
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2961,7 +3029,7 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_Ability_Shield_Active
   guid: b78e93a020dea043b939748325a9a0c4
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2984,8 +3052,8 @@ MonoBehaviour:
   Path: event:/Interface/Dialogue/UI_Dialoue_Hover
   guid: d00bf169e1dfcf44afec7bead3447920
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3050,7 +3118,7 @@ MonoBehaviour:
   Path: snapshot:/pause_menu
   guid: 27d731ac7e6fa34ea15649ee8b3f9bb1
   Banks:
-  - {fileID: 114661172525290124}
+  - {fileID: 114979882533841684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -3073,8 +3141,8 @@ MonoBehaviour:
   Path: event:/Interface/General/UI_Main_Button_Confirm
   guid: 85db247f53126a4d9a579fd8a5959d29
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3097,7 +3165,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Ability_Firebolt_HitsEnemy
   guid: 475fdc5d99f0f6418f9610fff07085b2
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3183,7 +3251,7 @@ MonoBehaviour:
   Path: event:/Characters/Sendarr/Sendarr_Shop_Dialogue_1
   guid: fd4d5f5cec9d844084258e8a0c047596
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3206,7 +3274,7 @@ MonoBehaviour:
   Path: event:/Enemys/Goblin/Enemy_Attack_Melee_Missed
   guid: f5ee8b144794e3418740e7aa52fd475c
   Banks:
-  - {fileID: 114033696839878730}
+  - {fileID: 114053676596359416}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3229,7 +3297,7 @@ MonoBehaviour:
   Path: event:/Music/Companion Themes/Kallista/Music_Sad_Companion_Theme_Kallista
   guid: a5fe7b47d7aa934a82f913e941c4f579
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3317,7 +3385,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_Ability_ElementSphere_Fired
   guid: 2b240d98424beb4c84b38c13bde24be3
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3340,7 +3408,7 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_AutoAttack_Mace_Striking
   guid: c3fd0c9d5f7f7b4cad3b27321783bfba
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3363,7 +3431,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Combat_Hurt
   guid: e1f2b25547cba043b65ce07425d4ba32
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3386,7 +3454,7 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_AutoAttack_Mace_Missed
   guid: f0003b1cfb462141a3b3108c87876a7c
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3407,7 +3475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\StreamingAssets\Desktop\Master Bank.strings.bank
-  lastModified: 636886164427055516
+  lastModified: 636894519034924374
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -3428,7 +3496,7 @@ MonoBehaviour:
   Path: event:/Environment/Env_RoomTone_Dungeon
   guid: e1d02ae8633adc4daf141a7c878061e3
   Banks:
-  - {fileID: 114132041721335576}
+  - {fileID: 114680751415367578}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -3451,8 +3519,8 @@ MonoBehaviour:
   Path: event:/Interface/Shop/UI_Main_Shop_Item_Hover
   guid: a978fa4a844e994a93a9df1e7f1550ab
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3475,7 +3543,7 @@ MonoBehaviour:
   Path: event:/Music/Music_MainMenu
   guid: 70351ee7d99c8945947eabf783cef87d
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3557,7 +3625,7 @@ MonoBehaviour:
   Path: event:/Interactables/Interact_Game_Gold_Collect
   guid: 4809b83f2e21574c8050b3fd5a439bec
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3599,7 +3667,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_Ability_ElementSphere_Chant
   guid: 9a64606615401145959c4dcdf92c7b2f
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3641,7 +3709,7 @@ MonoBehaviour:
   Path: snapshot:/inn_verb
   guid: 7ac7413cea0d484797c8e7b1dd3ef5cf
   Banks:
-  - {fileID: 114661172525290124}
+  - {fileID: 114979882533841684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -3664,7 +3732,7 @@ MonoBehaviour:
   Path: event:/Interface/General/UI_TestVolume
   guid: 310a7dc7d6f77245b66a2b26b4e737a9
   Banks:
-  - {fileID: 114999420374874730}
+  - {fileID: 114030431523898750}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3687,7 +3755,7 @@ MonoBehaviour:
   Path: event:/Characters/Sendarr/Sendarr_Shop_Dialogue_4
   guid: e8ba7f99e0dac749942b968f753ad596
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3829,8 +3897,8 @@ MonoBehaviour:
   Path: event:/Interface/Dialogue/UI_Dialogue_Select
   guid: 9137825de911aa4294946de4c82c84f2
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3838,6 +3906,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114543229207572698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\ldorman\Documents\DungeonsAndDating\Assets\StreamingAssets\Desktop\Master
+    Bank.strings.bank
+  lastModified: 636894519034924374
+  LoadResult: 70
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114548957662536936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3938,7 +4024,7 @@ MonoBehaviour:
   Path: event:/Characters/Stannik/Stannik_AutoAttack_Halberd_Missed
   guid: 8d416dd3fa775244a32b0a0645223e11
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4003,7 +4089,7 @@ MonoBehaviour:
   Path: event:/Characters/Stannik/Stannik_Dialogue_TextScroll
   guid: 3e6f5b4ecd281347b51af4657a1c2a55
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4045,7 +4131,7 @@ MonoBehaviour:
   Path: event:/Interface/Combat/UI_Game_Low_Health_Alert
   guid: 45b64b78636ee441ac713f230c1d58ea
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4091,8 +4177,8 @@ MonoBehaviour:
   Path: event:/Interface/General/UI_Main_Button_Decline
   guid: e81d0fa5593a3640bd94fe08b0a5dcc2
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4185,8 +4271,8 @@ MonoBehaviour:
   Path: event:/Interface/Shop/UI_Main_Shop_BuySell
   guid: 36a2b8901c8ea940995829a1b36522a2
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4301,7 +4387,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_AutoAttack_Sword_Blocked
   guid: 105b274e74241d40aec2297f6f6d3b65
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4341,7 +4427,7 @@ MonoBehaviour:
   Path: event:/Characters/Sendarr/Sendarr_Shop_Dialogue_2
   guid: d21a73d830c3c9419a2a905853822939
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4387,7 +4473,7 @@ MonoBehaviour:
   Path: snapshot:/dialogue_in_progress
   guid: 07a4fb9fa1df5041a5bcbc29be5a5e76
   Banks:
-  - {fileID: 114661172525290124}
+  - {fileID: 114979882533841684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -4456,7 +4542,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Ability_Firebolt_Missed
   guid: 57dd36f638538349bcdc40189a9bcb50
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4555,7 +4641,7 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_Death
   guid: 1cedc2c9cccae342af438b3b9af4247f
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4578,7 +4664,7 @@ MonoBehaviour:
   Path: event:/Interactables/Interact_Game_Healing
   guid: bb20e743bc136e43845c285cb4648ded
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4609,6 +4695,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114680751415367578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\ldorman\Documents\DungeonsAndDating\Assets\StreamingAssets\Desktop\Environment.bank
+  lastModified: 636894519034864349
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114684498319501266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4624,8 +4727,8 @@ MonoBehaviour:
   Path: event:/Interface/General/UI_Main_Button_Click
   guid: 7d143b8d91f7254c8be726daa1b3eef5
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4736,7 +4839,7 @@ MonoBehaviour:
   Path: event:/Characters/Stannik/Stannik_AutoAttack_Halberd_Striking
   guid: 9087a22fabd6d640818d06870b36b99d
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4759,7 +4862,7 @@ MonoBehaviour:
   Path: event:/Music/Music_Overworld
   guid: 0eb7c8000f95024c9a09b285ed8e67e6
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4782,7 +4885,7 @@ MonoBehaviour:
   Path: event:/Environment/Env_Door_Open
   guid: aa6a3c14c0312840b962b6976a84573c
   Banks:
-  - {fileID: 114132041721335576}
+  - {fileID: 114680751415367578}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4805,7 +4908,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Ability_Shield_Activate
   guid: 9df8f49f3501824f9388e527e0727f50
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4874,7 +4977,7 @@ MonoBehaviour:
   Path: event:/Characters/Stannik/Stannik_Combat_Hurt
   guid: 65ff90bdfbb6c84a8bbcd1260144a5f2
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4937,7 +5040,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Ability_Shield_Destroyed
   guid: 7faf71e9c2784f46ac4925f65b51b040
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -4962,6 +5065,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114731208977706042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114732141725719812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4985,6 +5105,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114738005765743646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\ldorman\Documents\DungeonsAndDating\Assets\StreamingAssets\Desktop\Interactables.bank
+  lastModified: 636894519034894261
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114739048431393404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5059,7 +5196,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_Combat_Hurt
   guid: 5314dada42a3c641ab0e9bf3c59f7321
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5082,7 +5219,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_AutoAttack_Lightning_Missed
   guid: 3243872581f0ae49876839887cde103e
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5122,7 +5259,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_AutoAttack_Sword_Missed
   guid: 86a81e9d78ee2448b54bb6fd734acc16
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5145,7 +5282,7 @@ MonoBehaviour:
   Path: snapshot:/overworld_verb
   guid: 5368d2c1624a804f927bb37c71aab51c
   Banks:
-  - {fileID: 114661172525290124}
+  - {fileID: 114979882533841684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -5168,7 +5305,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Ability_Firebolt_Fired
   guid: bee9ad10a75a914a8132368bc6623d6d
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5271,7 +5408,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_Footsteps
   guid: 2112dd62d67244458c69c507917959c8
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5336,8 +5473,8 @@ MonoBehaviour:
   Path: event:/Interface/Shop/UI_Main_Shop_Item_Click
   guid: d20b731bcbdf124fbf1b0ce2906709c5
   Banks:
-  - {fileID: 114999420374874730}
-  - {fileID: 114530368096623738}
+  - {fileID: 114030431523898750}
+  - {fileID: 114374323858777418}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5383,7 +5520,7 @@ MonoBehaviour:
   Path: event:/Characters/Stannik/Stannik_Death
   guid: daebec40bd6c604ab5321b16f04ea98a
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5446,7 +5583,7 @@ MonoBehaviour:
   Path: event:/Environment/Env_Barrels_Breaking
   guid: 72f89c04bc232e479d4a1b311deb0de0
   Banks:
-  - {fileID: 114132041721335576}
+  - {fileID: 114680751415367578}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5494,6 +5631,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &114826885439764454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\ldorman\Documents\DungeonsAndDating\Assets\StreamingAssets\Desktop\Music.bank
+  lastModified: 636894519034974105
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114827704557447958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5528,7 +5682,7 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_Combat_Hurt
   guid: 3a59c4441a9e4342821ce8448cec2f91
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5815,7 +5969,7 @@ MonoBehaviour:
   Path: event:/Interactables/Romance/Interact_Romance_Approval_Gained
   guid: d6a67c756ba1394c9db9cc4da9031f29
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -5838,7 +5992,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Footsteps
   guid: 4cea198e04b02b49858fc5ded602670f
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5920,7 +6074,7 @@ MonoBehaviour:
   Path: snapshot:/dungeon_verb
   guid: 08d28636754f5448a6d11964a144080d
   Banks:
-  - {fileID: 114661172525290124}
+  - {fileID: 114979882533841684}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -5966,7 +6120,7 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_Ability_Revitalize_Complete
   guid: 334acdf2cfa94e4783f62698ae184a33
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5989,7 +6143,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_AutoAttack_Lightning_Strike
   guid: 7c57516ecf2d534c9f5c5d95b43d53d6
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6115,7 +6269,7 @@ MonoBehaviour:
   Path: event:/Characters/Kallista/Kallista_Ability_Shield_Activate
   guid: 699eef040e888540808a7d8cd812c6d5
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6155,7 +6309,7 @@ MonoBehaviour:
   Path: event:/Interactables/Hum_Test
   guid: a7d2248591948449b6f79601d858b70c
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -6201,7 +6355,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Ability_Shield_Active
   guid: 09117d7169317e48a681bc2940931158
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6224,7 +6378,7 @@ MonoBehaviour:
   Path: event:/Music/Companion Themes/Kallista/Music_General_Companion_Theme_Kallista
   guid: 30736e9990fe3a43830b5e7d593eaaa7
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6311,7 +6465,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_Death
   guid: dfb64296b40cd74084bd0caebc80a53f
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6375,7 +6529,7 @@ MonoBehaviour:
   Path: event:/Music/Companion Themes/Sheva/Music_Happy_Companion_Theme_Sheva
   guid: e148daca6064e445bd3c299f06cf1ca5
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6417,7 +6571,7 @@ MonoBehaviour:
   Path: event:/Environment/Env_Torches_Burning_Loop
   guid: c1e3cfcb14da5345a34ea0768b81c351
   Banks:
-  - {fileID: 114132041721335576}
+  - {fileID: 114680751415367578}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6463,7 +6617,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Vocal_Effort
   guid: 2186743b909d0543bf0cc72e315674fb
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6536,6 +6690,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114979882533841684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\ldorman\Documents\DungeonsAndDating\Assets\StreamingAssets\Desktop\Master
+    Bank.bank
+  lastModified: 636894519034904231
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &114983336568919848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6574,7 +6746,7 @@ MonoBehaviour:
   Path: event:/Music/Companion Themes/Kallista/Music_Happy_Companion_Theme_Kallista
   guid: fd48cd070ba5824cb16c09b6aaa0c2f1
   Banks:
-  - {fileID: 114049780192078098}
+  - {fileID: 114826885439764454}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6597,7 +6769,7 @@ MonoBehaviour:
   Path: event:/Characters/Sheva/Sheva_AutoAttack_Lightning_Release
   guid: 236d4265c0e8a147aef115e71dd2913b
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -6620,7 +6792,7 @@ MonoBehaviour:
   Path: event:/Interactables/Coin_Pickup_Test
   guid: 2c90c767dcf1c4478b29ad478a6d1836
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6643,7 +6815,7 @@ MonoBehaviour:
   Path: event:/Interactables/Romance/Interact_Romance_Approval_Lost
   guid: d4d24669b8852a4390b10e8fea225acf
   Banks:
-  - {fileID: 114749066389583360}
+  - {fileID: 114738005765743646}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6666,7 +6838,7 @@ MonoBehaviour:
   Path: event:/Characters/Polymath/Polymath_Ability_Wild_Spin
   guid: a20cdedc72902c41823a268def424737
   Banks:
-  - {fileID: 114435073755662612}
+  - {fileID: 114288338942844526}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

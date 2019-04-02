@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-    string fileName = "player.json";
+    string fileName = "PlayerData.json";
     string filePath;
 
     public PlayerData playerData = new PlayerData();

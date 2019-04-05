@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd7884a07925294299720eab904e7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 10
+  value: 0
 --- !u!135 &133554447
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25a9d02af7168744946c1eac2164ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 3
+  rotSpeed: 0
 --- !u!1 &458081741
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,8 +781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbdfa7ed9c05824182296f3a6a84233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 1
-  health: 50
+  isPlayer: 0
+  health: 100
   maxHealth: 100
   fainted: 0
 --- !u!114 &458081749
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energy: 100
   maxEnergy: 100
-  isPlayer: 1
+  isPlayer: 0
   isReducing: 0
 --- !u!114 &458081752
 MonoBehaviour:
@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd7884a07925294299720eab904e7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 10
+  value: 0
 --- !u!135 &754401768
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1488,12 +1488,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData:
-    playerName: 
-    playerGender: 
-    playerClass: 
-    playerDeity: 
-    playerSkin: 0
-    playerSkinTone: 0
+    PlayerName: 
+    PlayerGender: 
+    PlayerClass: 
+    PlayerDeity: 
+    PlayerSkin: 0
+    PlayerSkintone: 0
     inventoryData:
       money: 0
       commonTreasure: 0
@@ -1809,7 +1809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0b05986da93dd479e33aea5929ff36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 20
+  healAmount: 0
 --- !u!135 &1618616099
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1944,7 +1944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25a9d02af7168744946c1eac2164ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 3
+  rotSpeed: 0
 --- !u!1 &1705995197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,7 +1989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25a9d02af7168744946c1eac2164ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 3
+  rotSpeed: 0
 --- !u!1 &1716542206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,7 +2019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81157647eb5d2f442a540ec5ba4774af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
 --- !u!4 &1716542208
 Transform:
   m_ObjectHideFlags: 0
@@ -2066,7 +2066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd7884a07925294299720eab904e7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 10
+  value: 0
 --- !u!135 &1727122877
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2277,7 +2277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25a9d02af7168744946c1eac2164ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 3
+  rotSpeed: 0
 --- !u!1 &2289336579732313673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,7 +2310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b25a9d02af7168744946c1eac2164ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 3
+  rotSpeed: 0
 --- !u!1 &2289336579732313675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,7 +2626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd7884a07925294299720eab904e7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 10
+  value: 0
 --- !u!135 &3152976217763573437
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2706,17 +2706,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/Interactables/Hum_Test
-  PlayEvent: 11
-  StopEvent: 7
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!223 &7665315009779369298
 Canvas:
   m_ObjectHideFlags: 0
@@ -2937,7 +2937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db79dc4db419213438a093d25b99ed17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 458081746}
+  target: {fileID: 0}
 --- !u!114 &7665315010852872964
 MonoBehaviour:
   m_ObjectHideFlags: 0

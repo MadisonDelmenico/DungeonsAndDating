@@ -179,6 +179,41 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    public void ReadFromPlayerData(PlayerInventoryData data)
+    {
+        // Read money value
+        money = data.money;
+
+        // Read treasure item values
+        commonTreasure = data.commonTreasure;
+        uncommonTreasure = data.uncommonTreasure;
+        rareTreasure = data.rareTreasure;
+
+        // Read tier 1 item values
+        steakOfStrength = data.steakOfStrength;
+        snakeShapedWand = data.steakOfStrength;
+        holyOrderEnlistment = data.holyOrderEnlistment;
+
+        // Read tier 2 item values
+        halberdWhetstone = data.halberdWhetstone;
+        spikedBoots = data.spikedBoots;
+        rangerScoutCookies = data.rangerScoutCookies;
+
+        // Read tier 3 item values
+        scaleRepairKit = data.scaleRepairKit;
+        hauntedDagger = data.hauntedDagger;
+        localCharityReciept = data.localCharityReciept;
+    }
+
+    public PlayerInventoryData SaveToPlayerData()
+    {
+        PlayerInventoryData data = new PlayerInventoryData();
+
+
+
+        return data;
+    }
+
     public void LoadFromPlayerPrefs()
     {
         money = PlayerPrefs.GetInt("Money");

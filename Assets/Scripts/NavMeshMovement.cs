@@ -37,6 +37,7 @@ public class NavMeshMovement : MonoBehaviour
                         // If it was a companion that was clicked
                         case "Companion":
                             target.friendlyTarget = hit.collider.gameObject;
+                            print("setting friendly target to" + hit.collider.name);
                             target.enabled = false;
                             break;
                         // If it was an enemy that was clicked
@@ -46,9 +47,15 @@ public class NavMeshMovement : MonoBehaviour
                             // Attack the target
                             Attack();
                             break;
-                        // Otherwise
+
+                        case "UI":
+                            target.enabled = false;
+                            print("Im hitting the UI");
+                            break;
+                            // Otherwise
                         default:
                             Disengage();
+                            print("I'm only doing the default because im a cunt");
                             meshAgent.destination = hit.point;
                             break;
                     }

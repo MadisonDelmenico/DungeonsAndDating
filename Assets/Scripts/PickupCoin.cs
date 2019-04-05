@@ -19,8 +19,8 @@ public class PickupCoin : MonoBehaviour
     {
         if (pickedUp)
         {
-            transform.position = Vector3.Lerp(transform.position, lerpTarget.position, Time.deltaTime * 1.5f);
-            if (Vector3.Distance(transform.position, lerpTarget.position) < 0.2f)
+            transform.position = Vector3.Lerp(transform.position, lerpTarget.position, Time.deltaTime * 2f);
+            if (Vector3.Distance(transform.position, lerpTarget.position) < 0.5f)
             {
                 Destroy(this.gameObject);
             }

@@ -8,7 +8,7 @@ public class CharacterActions : MonoBehaviour
     public CharacterClass characterClass;
 
     private GameObject[] enemies;
-    
+
     [Header("Attack Values")]
     public float attackValue;
     public float fireboltValue;
@@ -99,75 +99,85 @@ public class CharacterActions : MonoBehaviour
             case Action.Basic:
                 if (basicCooldown <= 0)
                 {
-                    if (target.CompareTag("Enemy"))
+                    if (target != null)
                     {
-                        Debug.Log("Boop!");
+                        if (target.CompareTag("Enemy"))
+                        {
+                            Debug.Log("Boop!");
 
-                        if (GetComponent<CompanionAIScript>())
-                        {
-                            target.GetComponent<Health>().health -= affectionLevel * attackValue;
+                            if (GetComponent<CompanionAIScript>())
+                            {
+                                target.GetComponent<Health>().health -= affectionLevel * attackValue;
+                            }
+                            else
+                            {
+                                target.GetComponent<Health>().health -= attackValue;
+                            }
+                            Debug.Log(target.name);
+                            basicCooldown = basicCooldownReset;
+                            SendAttackerInfo(target);
                         }
-                        else
-                        {
-                            target.GetComponent<Health>().health -= attackValue;
-                        }
-                        Debug.Log(target.name);
-                        basicCooldown = basicCooldownReset;
-                        SendAttackerInfo(target);
                     }
+
                 }
                 break;
             case Action.Firebolt:
                 if (fireboltCooldown <= 0)
                 {
-                    if (target.CompareTag("Enemy"))
+                    if (target != null)
                     {
-                        Debug.Log("Pew Pew Firebolt!");
-                        if (GetComponent<CompanionAIScript>())
+                        if (target.CompareTag("Enemy"))
                         {
-                            target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
+                            Debug.Log("Pew Pew Firebolt!");
+                            if (GetComponent<CompanionAIScript>())
+                            {
+                                target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
+                            }
+                            else
+                            {
+                                target.GetComponent<Health>().health -= fireboltValue;
+                            }
+
+                            SendAttackerInfo(target);
                         }
                         else
                         {
-                            target.GetComponent<Health>().health -= fireboltValue;
+                            Debug.Log("I don't want to hurt the " + target.name);
                         }
-
-                        SendAttackerInfo(target);
-                    }
-                    else
-                    {
-                        Debug.Log("I don't want to hurt the " + target.name);
                     }
                 }
                 break;
             case Action.Revitalize:
                 if (revitalizeCooldown <= 0)
                 {
-                    Debug.Log("Healing Spell!");
-                    if (target.CompareTag("Enemy"))
+                    if (target != null)
                     {
-                        if (GetComponent<CompanionAIScript>())
+                        Debug.Log("Healing Spell!");
+                        if (target.CompareTag("Enemy"))
                         {
-                            gameObject.GetComponent<CompanionAIScript>().text.text = "I cant heal an enemy!";
-                        }
-                        Debug.Log("I cant heal an enemy!");
-                    }
-                    else
-                    {
-                        if (GetComponent<CompanionAIScript>())
-                        {
-                            target.GetComponent<Health>().health += affectionLevel * revitalizeValue;
+                            if (GetComponent<CompanionAIScript>())
+                            {
+                                gameObject.GetComponent<CompanionAIScript>().text.text = "I cant heal an enemy!";
+                            }
+                            Debug.Log("I cant heal an enemy!");
                         }
                         else
                         {
-                            target.GetComponent<Health>().health += revitalizeValue;
+                            if (GetComponent<CompanionAIScript>())
+                            {
+                                target.GetComponent<Health>().health += affectionLevel * revitalizeValue;
+                            }
+                            else
+                            {
+                                target.GetComponent<Health>().health += revitalizeValue;
+                            }
+
+                            Debug.Log(target.name);
+
+                            GameObject particle = Instantiate(revitalizeParticleEffect, target.transform.position, target.transform.rotation);
+                            particle.GetComponent<ParticleFollow>().target = target.transform;
+                            Destroy(particle, 5.5f);
                         }
-
-                        Debug.Log(target.name);
-
-                        GameObject particle = Instantiate(revitalizeParticleEffect, target.transform.position, target.transform.rotation);
-                        particle.GetComponent<ParticleFollow>().target = target.transform;
-                        Destroy(particle, 5.5f);
                     }
                 }
                 break;
@@ -204,7 +214,7 @@ public class CharacterActions : MonoBehaviour
                         }
                     }
 
-                    
+
                 }
                 break;
             case Action.ElementalSphere:
@@ -278,5 +288,22 @@ public class CharacterActions : MonoBehaviour
     private void LoadParticleEffects()
     {
         revitalizeParticleEffect = Resources.Load<GameObject>("ParticleEffects/RevitalizeParticle");
+    }
+
+
+    public void Button1()
+    {
+        DoAction(Action.Revitalize, GetComponent<TargettingEnemies>().friendlyTarget);
+
+    }
+
+    public void Button2()
+    {
+        DoAction(Action.Firebolt, GetComponent<TargettingEnemies>().target);
+    }
+
+    public void Button3()
+    {
+        DoAction(Action.WildSpin, GetComponent<TargettingEnemies>().target);
     }
 }

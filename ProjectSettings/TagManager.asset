@@ -10,6 +10,7 @@ TagManager:
   - 'Material: Stone'
   - 'Material: Wood'
   - 'Material: Grass'
+  - UI
   layers:
   - Default
   - TransparentFX

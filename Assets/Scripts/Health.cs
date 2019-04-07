@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     [HideInInspector]
     public bool isPlayer;
     [Header("My Health")]
+    public bool canUseHealthPotions;
     public float health;
     public float maxHealth;
 
@@ -67,10 +68,16 @@ public class Health : MonoBehaviour
     {
         if (other.GetComponent<PickupHealth>())
         {
-            if (health < maxHealth)
+            if (canUseHealthPotions == true)
             {
-            health += other.GetComponent<PickupHealth>().healAmount;
-            Destroy(other.gameObject);
+                if (health < maxHealth)
+                {
+                    if (other.GetComponent<PickupHealth>().isSpawned)
+                    {
+                        health += other.GetComponent<PickupHealth>().healAmount;
+                        other.GetComponent<PickupHealth>().PickUp();
+                    }
+                }
             }
         }
     }

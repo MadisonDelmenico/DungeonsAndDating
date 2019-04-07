@@ -30,9 +30,13 @@ public class EnemyAI : MonoBehaviour
     public float rangedDistance;
     public float meleeDistance;
 
+    public GameObject[] healthpotions;
     // Start is called before the first frame update
     void Start()
     {
+        //Enemies are aware of the healthpotion locations
+        healthpotions = GameObject.FindGameObjectsWithTag("Healthpotion");
+
         //Enemies are aware of all other enemies in the scene
         Enemies = GameObject.FindGameObjectsWithTag("Enemy");
         Distances = new float[Enemies.Length];
@@ -57,6 +61,25 @@ public class EnemyAI : MonoBehaviour
     {
         idleTimer -= Time.deltaTime;
 
+        if (GetComponent<Health>().canUseHealthPotions == true)
+        {
+            if (GetComponent<Health>().health <= (GetComponent<Health>().maxHealth / 2))
+            {
+
+                foreach (var i in healthpotions)
+                {
+                    if (Vector3.Distance(gameObject.transform.position, i.transform.position) < 20f)
+                    {
+                        if (i.GetComponent<PickupHealth>().isSpawned == true)
+                        {
+                            GetComponent<EnemyActions>().DoAction(EnemyActions.Action.GetHealthPotion, i);
+                            break;
+                        }
+
+                    }
+                }
+            }
+        }
         //figuring out how far companions are from me
         foreach (var i in companions)
         {
@@ -111,10 +134,11 @@ public class EnemyAI : MonoBehaviour
 
                     target.gameObject.transform.LookAt(target.transform);
 
-                    // Is the enemy is greater than 5m from me
-                    if (Vector3.Distance(transform.position, target.transform.position) > 5f)
+                    // Is the enemy is greater than 5m from where im patrolling
+                    if (Vector3.Distance(GetComponent<EnemyPatrols>().Waypoints[GetComponent<EnemyPatrols>().waypointNumber].transform.position, target.transform.position) > 20f)
                     {
                         currentState = State.Patrolling;
+
                     }
 
                     GetComponent<NavMeshAgent>().speed = 2.5f;

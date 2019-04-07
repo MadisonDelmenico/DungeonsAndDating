@@ -35,7 +35,7 @@ public class EnemyPatrols : MonoBehaviour
         //foreach (var waypoint in Waypoints)
         {
 
-            if (Vector3.Distance(gameObject.transform.position, Waypoints[waypointNumber].transform.position) <= 1.0f)
+            if (Vector3.Distance(gameObject.transform.position, Waypoints[waypointNumber].transform.position) <= 1.5f)
             {
                 NextWaypoint();
             }

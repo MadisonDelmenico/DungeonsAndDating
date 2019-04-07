@@ -22,7 +22,7 @@ public class LightControl : MonoBehaviour
     {
         distanceToPlayer = Vector3.Distance(this.transform.position, player.position);
 
-        if (distanceToPlayer <= 3.0f)
+        if (distanceToPlayer <= 5.0f)
         {
             myLight.enabled = true;
         }

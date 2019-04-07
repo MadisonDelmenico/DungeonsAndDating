@@ -17,6 +17,8 @@ public class CompanionAIScript : MonoBehaviour
     private GameObject[] allCompanions;
     [HideInInspector]
     public int companionNumber;
+    [HideInInspector]
+    public GameObject[] healthpotions;
 
     [HideInInspector]
     public GameObject companionTarget;
@@ -47,6 +49,7 @@ public class CompanionAIScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         isRecruited = false;
         state = CompanionState.Following;
         rotspeed = 3f;
@@ -65,11 +68,8 @@ public class CompanionAIScript : MonoBehaviour
         // Finding the number of companions currently in the dungeon, adding them to an array of companions
         allCompanions = GameObject.FindGameObjectsWithTag("Companion");
 
-        if (GetComponent<VIDE_Assign>())
-        {
-
-        }
-
+        //companions know where the health potions are
+        healthpotions = GameObject.FindGameObjectsWithTag("Healthpotion");
 
         // Setting the companion number for each companion, 0 by default
         for (int i = 0; i < allCompanions.Length; i++)
@@ -223,7 +223,7 @@ public class CompanionAIScript : MonoBehaviour
                             break;
                     }
                 }
-                // If the player is targeting somehting other than itself
+                // If the player is targeting something other than itself
                 else if (player.GetComponent<TargettingEnemies>().target != player)
                 {
                     // Target the player's target
@@ -236,6 +236,27 @@ public class CompanionAIScript : MonoBehaviour
                     GetComponent<TargettingEnemies>().target = player;
                     state = CompanionState.Following;
                 }
+
+                if (GetComponent<Health>().canUseHealthPotions == true)
+                {
+                    if (GetComponent<Health>().health <= (GetComponent<Health>().maxHealth / 2))
+                    {
+
+                        foreach (var i in healthpotions)
+                        {
+                            if (Vector3.Distance(gameObject.transform.position, i.transform.position) < 20f)
+                            {
+                                if (i.GetComponent<PickupHealth>().isSpawned == true)
+                                {
+                                    GetComponent<CharacterActions>().DoAction(CharacterActions.Action.GetHealthPotion, i);
+                                    break;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
                 break;
 
             // If i'm casting
@@ -313,6 +334,28 @@ public class CompanionAIScript : MonoBehaviour
                         transform.rotation = Quaternion.Lerp(transform.rotation, player.transform.rotation, Time.deltaTime * rotspeed);
                     }
                 }
+
+
+                if (GetComponent<Health>().canUseHealthPotions == true)
+                {
+                    if (GetComponent<Health>().health <= (GetComponent<Health>().maxHealth / 2))
+                    {
+
+                        foreach (var i in healthpotions)
+                        {
+                            if (Vector3.Distance(gameObject.transform.position, i.transform.position) < 20f)
+                            {
+                                if (i.GetComponent<PickupHealth>().isSpawned == true)
+                                {
+                                    GetComponent<CharacterActions>().DoAction(CharacterActions.Action.GetHealthPotion, i);
+                                    break;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
                 break;
 
             // If i'm idle
@@ -321,6 +364,27 @@ public class CompanionAIScript : MonoBehaviour
                 {
                     text.text = "Idle";
                 }
+
+                if (GetComponent<Health>().canUseHealthPotions == true)
+                {
+                    if (GetComponent<Health>().health <= (GetComponent<Health>().maxHealth / 2))
+                    {
+
+                        foreach (var i in healthpotions)
+                        {
+                            if (Vector3.Distance(gameObject.transform.position, i.transform.position) < 20f)
+                            {
+                                if (i.GetComponent<PickupHealth>().isSpawned == true)
+                                {
+                                    GetComponent<CharacterActions>().DoAction(CharacterActions.Action.GetHealthPotion, i);
+                                    break;
+                                }
+
+                            }
+                        }
+                    }
+                }
+
                 state = CompanionState.Following;
                 break;
             default:

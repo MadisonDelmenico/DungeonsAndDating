@@ -10,12 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2289336578431346648}
   - component: {fileID: 2289336578431187963}
-  - component: {fileID: 512258706}
-  - component: {fileID: 512258707}
   - component: {fileID: 7454846091260993901}
   m_Layer: 0
   m_Name: health
-  m_TagString: Respawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,32 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 3
---- !u!135 &512258706
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2289336578431187960}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.2
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &512258707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2289336578431187960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0b05986da93dd479e33aea5929ff36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healAmount: 20
 --- !u!114 &7454846091260993901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,9 +83,11 @@ GameObject:
   - component: {fileID: 2289336578427922424}
   - component: {fileID: 2289336578428921144}
   - component: {fileID: 2289336578431187965}
+  - component: {fileID: 1716009489560053921}
+  - component: {fileID: 6998632223493842542}
   m_Layer: 0
   m_Name: pCone1
-  m_TagString: Untagged
+  m_TagString: Healthpotion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,6 +163,34 @@ Halo:
     serializedVersion: 2
     rgba: 4278585087
   m_Size: 2.14
+--- !u!135 &1716009489560053921
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2289336578431187962}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0.872465, z: -0.013050005}
+--- !u!114 &6998632223493842542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2289336578431187962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0b05986da93dd479e33aea5929ff36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healAmount: 20
+  respawnTime: 30
+  isSpawned: 1
 --- !u!1 &2289336578431187964
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 
 public class CharacterActions : MonoBehaviour
 {
-    public enum Action { Basic, Firebolt, Revitalize, WildSpin, ElementalSphere, None }
+    public enum Action { Basic, Firebolt, Revitalize, WildSpin, ElementalSphere, GetHealthPotion, None }
 
     [HideInInspector]
     public CharacterClass characterClass;
@@ -103,7 +103,7 @@ public class CharacterActions : MonoBehaviour
                     {
                         if (target.CompareTag("Enemy"))
                         {
-                            Debug.Log("Boop!");
+                           // Debug.Log("Boop!");
 
                             if (GetComponent<CompanionAIScript>())
                             {
@@ -113,9 +113,10 @@ public class CharacterActions : MonoBehaviour
                             {
                                 target.GetComponent<Health>().health -= attackValue;
                             }
-                            Debug.Log(target.name);
+                           // Debug.Log(target.name);
                             basicCooldown = basicCooldownReset;
                             SendAttackerInfo(target);
+                            GetComponent<PlayerAI>().LookAt(target.transform.position);
                         }
                     }
 
@@ -136,9 +137,12 @@ public class CharacterActions : MonoBehaviour
                             else
                             {
                                 target.GetComponent<Health>().health -= fireboltValue;
+                                GetComponent<PlayerAI>().LookAt(target.transform.position);
                             }
 
                             SendAttackerInfo(target);
+                            fireboltCooldown = fireboltCooldownReset;
+
                         }
                         else
                         {
@@ -170,9 +174,14 @@ public class CharacterActions : MonoBehaviour
                             else
                             {
                                 target.GetComponent<Health>().health += revitalizeValue;
+                                GetComponent<PlayerAI>().LookAt(target.transform.position);
                             }
 
+                            revitalizeCooldown = revitalizeCooldownReset;
+
+
                             Debug.Log(target.name);
+                           
 
                             GameObject particle = Instantiate(revitalizeParticleEffect, target.transform.position, target.transform.rotation);
                             particle.GetComponent<ParticleFollow>().target = target.transform;
@@ -214,6 +223,7 @@ public class CharacterActions : MonoBehaviour
                         }
                     }
 
+                    wildSpinCooldown = wildSpinCooldownReset;
 
                 }
                 break;
@@ -230,12 +240,21 @@ public class CharacterActions : MonoBehaviour
                         else
                         {
                             target.GetComponent<Health>().health -= (elementalSphereValue);
+                            GetComponent<PlayerAI>().LookAt(target.transform.position);
                         }
 
                         SendAttackerInfo(target);
+                        elementalSphereCooldown = elementalSphereCooldownReset;
                     }
                 }
                 break;
+
+            case Action.GetHealthPotion:
+
+                GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
+
+                break;
+
             case Action.None:
                 Debug.Log("No action assigned!");
                 break;

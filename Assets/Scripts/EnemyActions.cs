@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyActions : MonoBehaviour
 {
-    public enum Action { Basic, Firebolt, None }
+    public enum Action { Basic, Firebolt, GetHealthPotion, None }
 
     [HideInInspector]
     public EnemyClass enemyClass;
@@ -27,6 +27,9 @@ public class EnemyActions : MonoBehaviour
 
 
 
+
+
+
     // Start is called before the first frame update 
     void Start()
     {
@@ -34,6 +37,7 @@ public class EnemyActions : MonoBehaviour
 
         basicCooldownReset = basicCooldown;
         fireboltCooldownReset = fireboltCooldown;
+
 
 
         switch (enemyClass.currentClass)
@@ -45,7 +49,7 @@ public class EnemyActions : MonoBehaviour
             case EnemyClass.Class.Ranged:
                 attackValue = 2;
                 break;
-            
+
             default:
                 break;
         }
@@ -92,6 +96,10 @@ public class EnemyActions : MonoBehaviour
                         Debug.Log("I don't want to hurt the " + target.name);
                     }
                 }
+                break;
+            case Action.GetHealthPotion:
+
+                GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
 
                 break;
 

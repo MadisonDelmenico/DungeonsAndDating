@@ -46,6 +46,7 @@ public class NavMeshMovement : MonoBehaviour
                             target.target = hit.collider.gameObject;
                             // Attack the target
                             Attack();
+                            GetComponent<PlayerAI>().LookAt(target.transform.position);
                             break;
 
                         case "UI":

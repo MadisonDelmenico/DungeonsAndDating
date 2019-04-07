@@ -53,6 +53,10 @@ public class PlayerAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isAttacking == true)
+        {
+            GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, target);
+        }
         if (castTime > 0)
         {
             GetComponent<NavMeshMovement>().StopMoving();

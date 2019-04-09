@@ -48,15 +48,9 @@ public class NavMeshMovement : MonoBehaviour
                             Attack();
                             GetComponent<PlayerAI>().LookAt(target.transform.position);
                             break;
-
-                        case "UI":
-                            target.enabled = false;
-                            print("Im hitting the UI");
-                            break;
                             // Otherwise
                         default:
                             Disengage();
-                            print("I'm only doing the default because im a cunt");
                             meshAgent.destination = hit.point;
                             break;
                     }

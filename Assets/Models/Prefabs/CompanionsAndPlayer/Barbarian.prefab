@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  canUseHealthPotions: 1
   health: 100
   maxHealth: 100
   fainted: 0
@@ -244,14 +245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterClass: {fileID: 0}
-  actionOne: 0
-  actionTwo: 3
-  actionThree: 5
-  actionFour: 5
-  abilityOne: 0
-  abilityTwo: 0
-  abilityThree: 0
-  abilityFour: 0
   attackValue: 3
   fireboltValue: 5
   wildSpinValue: 10
@@ -262,6 +255,8 @@ MonoBehaviour:
   revitalizeCooldown: 5
   wildSpinCooldown: 5
   elementalSphereCooldown: 3
+  preparedAction: 6
+  preparedTarget: {fileID: 0}
 --- !u!114 &5039969768973609071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +298,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affectionLevel: 1
+  currentXP: 0
+  currentlevelTotalXP: 0
+  levelOneXP: 0
+  levelTwoXP: 0
+  levelThreeXP: 0
+  levelFourXP: 0
+  quarters: 0
 --- !u!114 &5039969768973609067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +320,7 @@ MonoBehaviour:
   isRecruited: 0
   player: {fileID: 0}
   companionNumber: 0
+  healthpotions: []
   companionTarget: {fileID: 0}
   rotspeed: 0
   castTime: 0
@@ -342,6 +345,7 @@ MonoBehaviour:
   energy: 0
   maxEnergy: 1
   isPlayer: 0
+  isReducing: 0
 --- !u!54 &5039969768973609078
 Rigidbody:
   m_ObjectHideFlags: 0

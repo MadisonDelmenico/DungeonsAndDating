@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  canUseHealthPotions: 1
   health: 100
   maxHealth: 100
   fainted: 0
@@ -333,6 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioLocation: event:/Characters/Kallista/Kallista_Footsteps
+  EnableFootstepsAudio: 1
 --- !u!1 &8685263211057667450
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,7 +48,7 @@ MonoBehaviour:
   map: {fileID: 2800000, guid: 1d2803a9308de2a45bbaae450cfc20b2, type: 3}
   colorMappings:
   - Color: {r: 0, g: 0, b: 0, a: 1}
-    prefab: {fileID: 3529555162081171239, guid: ef2800cab49a6af478a26e040f8dbd59,
+    prefab: {fileID: 3014794777798521384, guid: 9179443ad38841840bf38fffd953db0d,
       type: 3}
   - Color: {r: 0, g: 1, b: 0, a: 1}
     prefab: {fileID: 5879518754919682283, guid: a8747220051b4454991dbacbe38929e6,
@@ -89,7 +89,7 @@ MonoBehaviour:
   PickupsMap: {fileID: 2800000, guid: 26527b57cc50afd49970d41019501909, type: 3}
   colorMappings:
   - Color: {r: 1, g: 0, b: 0, a: 1}
-    prefab: {fileID: 4481450129622515374, guid: 2207a385ee675264aa85749be5412202,
+    prefab: {fileID: 2289336578431187960, guid: 9caf75eb4dcfd8d46b0806f321d0bd02,
       type: 3}
   - Color: {r: 1, g: 1, b: 0, a: 1}
     prefab: {fileID: 3152976217887124804, guid: 044f335f931eeb14c93a84a979e52c71,

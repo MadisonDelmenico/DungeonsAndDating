@@ -116,7 +116,8 @@ public class CharacterActions : MonoBehaviour
                            // Debug.Log(target.name);
                             basicCooldown = basicCooldownReset;
                             SendAttackerInfo(target);
-                            GetComponent<PlayerAI>().LookAt(target.transform.position);
+                            gameObject.transform.LookAt(target.transform);
+                            Debug.Log("basic attack");
                         }
                     }
 

@@ -10,11 +10,20 @@ public class NavMeshMovement : MonoBehaviour
     [HideInInspector]
     public TargettingEnemies target;
 
+
     // Start is called before the first frame update
     void Start()
     {
+
         meshAgent = GetComponent<NavMeshAgent>();
         target = GetComponent<TargettingEnemies>();
+        if (gameObject.CompareTag("Player"))
+        {
+            target.target = gameObject;
+            target.friendlyTarget = gameObject;
+
+        }
+
     }
 
     // Update is called once per frame
@@ -36,17 +45,60 @@ public class NavMeshMovement : MonoBehaviour
                     {
                         // If it was a companion that was clicked
                         case "Companion":
+                            //make sure you aren't actively targeting an enemy
+                            foreach (var i in gameObject.GetComponent<PlayerAI>().enemies)
+                            {
+                                if (i!= null)
+                                {
+                                    if (i.GetComponent<EnemyAI>().imTargetted == true)
+                                    {
+                                        i.GetComponent<EnemyAI>().DestroyTargetCircle();
+                                    }
+                                }
+                             
+                            }
+
+                            //if you haven't selected the same companion twice
+                            if (hit.collider.gameObject != target.friendlyTarget)
+                            {
+                                //spawn in the 'target' particles
+                                hit.collider.gameObject.GetComponent<CompanionAIScript>().SpawnTargetCircle();
+                            }
                             target.friendlyTarget = hit.collider.gameObject;
                             print("setting friendly target to" + hit.collider.name);
                             target.enabled = false;
+                          
                             break;
                         // If it was an enemy that was clicked
                         case "Enemy":
+
+                            foreach (var i in gameObject.GetComponent<PlayerAI>().enemies)
+                            {
+                                if (i != null)
+                                {
+                                    if (i.GetComponent<EnemyAI>().imTargetted == true)
+                                    {
+                                        i.GetComponent<EnemyAI>().DestroyTargetCircle();
+                                    }
+                                }
+                                
+                            }
+                            //turn off the targeting for friendlies
+                            if (target.friendlyTarget != gameObject)
+                            {
+                                target.friendlyTarget.GetComponent<CompanionAIScript>().DestroyTargetCircle();
+                                target.friendlyTarget = gameObject;
+                            }
+                            //spawn in the 'target' particles
+                            hit.collider.gameObject.GetComponent<EnemyAI>().SpawnTargetCircle();
+                         
                             // Target the enemy you clicked on
-                            target.target = hit.collider.gameObject;
+                            target.target = hit.collider.gameObject;  
+
                             // Attack the target
                             Attack();
                             GetComponent<PlayerAI>().LookAt(target.transform.position);
+
                             break;
 
                         case "UI":
@@ -56,8 +108,24 @@ public class NavMeshMovement : MonoBehaviour
                             // Otherwise
                         default:
                             Disengage();
-                            print("I'm only doing the default because im a cunt");
+                            print("I'm moving");
                             meshAgent.destination = hit.point;
+
+                            //if you were targeting a friendly, destroy the target particles
+                            if (target.friendlyTarget.gameObject != gameObject)
+                            {
+                                target.friendlyTarget.GetComponent<CompanionAIScript>().DestroyTargetCircle();
+
+                                //set the target back to yourself
+                                target.friendlyTarget = gameObject;
+                            }
+
+                            //if you were targeting an enemy, destroy the target particles
+                            if (target.target != gameObject && target.target != null)
+                            {
+                            target.target.GetComponent<EnemyAI>().DestroyTargetCircle();    
+                            }
+                          
                             break;
                     }
                 }
@@ -74,6 +142,7 @@ public class NavMeshMovement : MonoBehaviour
         if (GetComponent<PlayerAI>())
         {
             GetComponent<PlayerAI>().isAttacking = true;
+            gameObject.GetComponent<CharacterActions>().DoAction(CharacterActions.Action.Basic, target.target);
         }
     }
 

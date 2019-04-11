@@ -251,8 +251,11 @@ public class CharacterActions : MonoBehaviour
                 break;
 
             case Action.GetHealthPotion:
-
-                GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
+                if (target != null)
+                {
+                    GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
+                }
+                
 
                 break;
 

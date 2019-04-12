@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  canUseHealthPotions: 0
   health: 100
   maxHealth: 100
   fainted: 0
@@ -152,9 +153,9 @@ MonoBehaviour:
   characterClass: {fileID: 0}
   attackValue: 1.5
   fireboltValue: 5
-  wildSpinValue: 0
-  revitalizeValue: 0
-  elementalSphereValue: 0
+  wildSpinValue: 10
+  revitalizeValue: 10
+  elementalSphereValue: 10
   basicCooldown: 1.5
   fireboltCooldown: 3
   revitalizeCooldown: 5
@@ -230,18 +231,19 @@ MonoBehaviour:
   targetDistance: 0
   beingattacked: 0
   enemies: []
+  companions: []
   isInteracting: 0
   castTime: 0
-  actionOne: 0
-  actionTwo: 0
-  actionThree: 0
+  actionOne: 1
+  actionTwo: 2
+  actionThree: 3
   abilityOne: 49
   abilityTwo: 50
   abilityThree: 51
-  defaultCastTime: 0
-  fireboltCastTime: 0
-  revitalizeCastTime: 0
-  wildSpinCastTime: 0
+  defaultCastTime: 0.5
+  fireboltCastTime: 3
+  revitalizeCastTime: 3
+  wildSpinCastTime: 2
   name: 
 --- !u!114 &8685263210796287129
 MonoBehaviour:
@@ -333,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioLocation: event:/Characters/Kallista/Kallista_Footsteps
+  EnableFootstepsAudio: 1
 --- !u!1 &8685263211057667450
 GameObject:
   m_ObjectHideFlags: 0

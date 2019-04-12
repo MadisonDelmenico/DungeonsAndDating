@@ -867,6 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  canUseHealthPotions: 0
   health: 100
   maxHealth: 100
   fainted: 0
@@ -1024,6 +1025,8 @@ MonoBehaviour:
   companionArrayPosition: 0
   rangedDistance: 5
   meleeDistance: 1
+  healthpotions: []
+  imTargetted: 0
 --- !u!114 &761974688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,6 +2054,8 @@ MonoBehaviour:
   companionArrayPosition: 0
   rangedDistance: 5
   meleeDistance: 1
+  healthpotions: []
+  imTargetted: 0
 --- !u!114 &1257076477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2134,6 +2139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  canUseHealthPotions: 0
   health: 100
   maxHealth: 100
   fainted: 0
@@ -3307,11 +3313,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287135, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 8685263210796287138, guid: 357bb15f97076bc4b8f5705647548fc7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3367,58 +3368,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287132, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: wildSpinValue
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287132, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: revitalizeValue
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287132, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: elementalSphereValue
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287128, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: actionOne
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287128, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: actionTwo
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287128, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: actionThree
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287128, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: defaultCastTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287128, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: revitalizeCastTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287128, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: fireboltCastTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8685263210796287128, guid: 357bb15f97076bc4b8f5705647548fc7,
-        type: 3}
-      propertyPath: wildSpinCastTime
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8685263211377535382, guid: 357bb15f97076bc4b8f5705647548fc7, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 357bb15f97076bc4b8f5705647548fc7, type: 3}
 --- !u!1 &2133456102
 GameObject:
@@ -3584,6 +3534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
+  canUseHealthPotions: 0
   health: 100
   maxHealth: 100
   fainted: 0
@@ -3741,6 +3692,8 @@ MonoBehaviour:
   companionArrayPosition: 0
   rangedDistance: 5
   meleeDistance: 1
+  healthpotions: []
+  imTargetted: 0
 --- !u!114 &2142151134
 MonoBehaviour:
   m_ObjectHideFlags: 0

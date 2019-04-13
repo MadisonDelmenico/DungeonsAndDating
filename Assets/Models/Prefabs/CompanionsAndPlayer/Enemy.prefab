@@ -142,7 +142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6722940358951132583}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a43ccad455afd042ac2fb867ae9b32c, type: 3}
   m_Name: 
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6722940358951132583}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29b5b399788866b4e9f27cf3f8b5c2ab, type: 3}
   m_Name: 
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6722940358951132583}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7c255eea1391b546a3ba76680ef48f0, type: 3}
   m_Name: 
@@ -320,14 +320,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6722940358951132583}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 459a25539bbe5874a86b82538fde22ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyClass: {fileID: 0}
   actionOne: 0
-  actionTwo: 1
+  actionTwo: 3
   attackValue: 1
   fireboltValue: 5
   basicCooldown: 1
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6722940358951132583}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9537b8b7b2d559f4199021913107b856, type: 3}
   m_Name: 

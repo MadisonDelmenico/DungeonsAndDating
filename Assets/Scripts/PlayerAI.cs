@@ -10,7 +10,8 @@ public class PlayerAI : MonoBehaviour
     public float targetDistance;
     public bool beingattacked;
     public GameObject[] enemies;
-    private GameObject[] companions;
+    [HideInInspector]
+    public GameObject[] companions;
     [HideInInspector]
     public bool isInteracting;
     [SerializeField]
@@ -34,6 +35,7 @@ public class PlayerAI : MonoBehaviour
     public float wildSpinCastTime;
 
     public string name;
+
 
     // Start is called before the first frame update
     void Start()

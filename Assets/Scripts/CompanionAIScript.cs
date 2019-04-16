@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
@@ -44,6 +45,12 @@ public class CompanionAIScript : MonoBehaviour
     public float disengageDistance;
     [Header("Debug text item")]
     public Text text;
+
+
+
+    private GameObject friendlyTargetParticleEffect;
+
+    private GameObject particle;
 
 
     // Start is called before the first frame update
@@ -104,6 +111,10 @@ public class CompanionAIScript : MonoBehaviour
                 break;
         }
         companionTargetTransform = companionTarget.transform;
+
+
+        //setting particle effects
+        friendlyTargetParticleEffect = Resources.Load<GameObject>("ParticleEffects/ParticleFriendly");
     }
 
     // Update is called once per frame
@@ -493,4 +504,23 @@ public class CompanionAIScript : MonoBehaviour
         Vector3 targetPos = GetComponent<TargettingEnemies>().target.transform.position + direction * distance;
         meshAgent.destination = targetPos;
     }
+
+
+
+    #region Particles
+
+    public void SpawnTargetCircle()
+    {
+        particle = Instantiate(friendlyTargetParticleEffect, new Vector3(gameObject.transform.position.x, 0.05f, gameObject.transform.position.z), Quaternion.Euler(-90,0,0));
+        particle.GetComponent<ParticleFollow>().target = gameObject.transform;
+       
+    }
+
+    public void DestroyTargetCircle()
+    {
+        Destroy(particle, 0f);
+    }
+
+    #endregion
+
 }

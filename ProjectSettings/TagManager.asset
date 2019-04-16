@@ -11,6 +11,7 @@ TagManager:
   - 'Material: Wood'
   - 'Material: Grass'
   - UI
+  - Healthpotion
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Bottom&Right Walls
   - Minimap
   - Enemies
-  - 
+  - Particle Effects
   - 
   - 
   - 
@@ -47,4 +48,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Particles
+    uniqueID: 580137599
     locked: 0

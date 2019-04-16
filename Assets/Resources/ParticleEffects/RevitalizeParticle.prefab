@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 237445922199600931}
   - component: {fileID: 3259238245341336042}
   - component: {fileID: 4758674796928532158}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: RevitalizeParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4712,3 +4712,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  verticalOffset: 0.5

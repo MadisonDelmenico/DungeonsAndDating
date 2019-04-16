@@ -5,6 +5,7 @@ using UnityEngine;
 public class ParticleFollow : MonoBehaviour
 {
     public Transform target;
+    public float verticalOffset;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,6 @@ public class ParticleFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = target.position + (Vector3.up * 0.5f);
+        transform.position = target.position + (Vector3.up * verticalOffset);
     }
 }

@@ -60,6 +60,16 @@ public class Health : MonoBehaviour
 
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             player.GetComponent<NavMeshMovement>().Disengage();
+
+            //if the enemy dying is currently targeted by the player
+            if (gameObject.GetComponent<EnemyAI>().imTargetted == true)
+            {
+                gameObject.GetComponent<EnemyAI>().DestroyTargetCircle();
+
+                //the enemy is dying, set the target back to the player to avoid null reference
+                player.GetComponent<TargettingEnemies>().target = player;
+            }
+
             Destroy(this.gameObject);
         }
     }

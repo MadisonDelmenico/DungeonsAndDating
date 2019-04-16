@@ -31,6 +31,10 @@ public class EnemyAI : MonoBehaviour
     public float meleeDistance;
 
     public GameObject[] healthpotions;
+
+    private GameObject enemyTargetParticleEffect;
+    [HideInInspector] public bool imTargetted;
+    private GameObject particle;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +58,10 @@ public class EnemyAI : MonoBehaviour
         idleTimer = 0;
         text.text = currentState.ToString();
         player = GameObject.FindGameObjectWithTag("Player");
+
+
+        //setting particle effects
+        enemyTargetParticleEffect = Resources.Load<GameObject>("ParticleEffects/ParticleEnemy");
     }
 
     // Update is called once per frame
@@ -189,6 +197,7 @@ public class EnemyAI : MonoBehaviour
             MoveToAttackRange(target);
         }
         helpMe = true;
+
     }
 
     public void checkForEnemies()
@@ -234,5 +243,23 @@ public class EnemyAI : MonoBehaviour
         Vector3 targetPos = attackTarget.transform.position + direction * distance;
         GetComponent<NavMeshMovement>().meshAgent.destination = targetPos;
     }
+
+    #region Particles
+
+    public void SpawnTargetCircle()
+    {
+        particle = Instantiate(enemyTargetParticleEffect, new Vector3(gameObject.transform.position.x, 0.05f, gameObject.transform.position.z), Quaternion.Euler(-90, 0, 0));
+        particle.GetComponent<ParticleFollow>().target = gameObject.transform;
+        imTargetted = true;
+    }
+
+    public void DestroyTargetCircle()
+    {
+        Destroy(particle, 0f);
+        imTargetted = false;
+    }
+
+    #endregion
+
 
 }

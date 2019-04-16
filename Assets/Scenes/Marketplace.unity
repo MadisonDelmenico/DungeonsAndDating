@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -97,15 +97,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.75
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 1
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.25
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -347,6 +347,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1352903551376344439, guid: 1cddfbd938489df49b426d3c2b57e879,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1985311795}
+    - target: {fileID: 3842067530285523358, guid: 1cddfbd938489df49b426d3c2b57e879,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1985311802}
+    - target: {fileID: 4623227499613616938, guid: 1cddfbd938489df49b426d3c2b57e879,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1985311787}
     - target: {fileID: 6998739110896831394, guid: 1cddfbd938489df49b426d3c2b57e879,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -417,21 +432,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3842067530285523358, guid: 1cddfbd938489df49b426d3c2b57e879,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1985311802}
-    - target: {fileID: 1352903551376344439, guid: 1cddfbd938489df49b426d3c2b57e879,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1985311795}
-    - target: {fileID: 4623227499613616938, guid: 1cddfbd938489df49b426d3c2b57e879,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1985311787}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cddfbd938489df49b426d3c2b57e879, type: 3}
 --- !u!1 &137752892
@@ -2012,17 +2012,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1541052650713270624, guid: c646b3c7603e86840a5e456f4039b42d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1541052650713270631, guid: c646b3c7603e86840a5e456f4039b42d,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1541052650713270625, guid: c646b3c7603e86840a5e456f4039b42d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1541052650713270624, guid: c646b3c7603e86840a5e456f4039b42d,
         type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2742,7 +2742,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1034689394
 MonoBehaviour:
@@ -2777,7 +2777,7 @@ MonoBehaviour:
   NPC_secsPerLetter: 0.025
   player_secsPerLetter: 0.025
   choiceInterval: 0.1
-  useNavigation: 0
+  useNavigation: 1
 --- !u!1 &1099903067
 GameObject:
   m_ObjectHideFlags: 0
@@ -4005,6 +4005,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barbarian Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2476500921289469540, guid: 2186385066346044ba2a522574330f88,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2005317064}
+    - target: {fileID: 3758867264923828590, guid: 2186385066346044ba2a522574330f88,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 2005317058}
     - target: {fileID: 5162162724065788710, guid: 2186385066346044ba2a522574330f88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4075,16 +4085,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2476500921289469540, guid: 2186385066346044ba2a522574330f88,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 2005317064}
-    - target: {fileID: 3758867264923828590, guid: 2186385066346044ba2a522574330f88,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 2005317058}
     - target: {fileID: 7398164368942067335, guid: 2186385066346044ba2a522574330f88,
         type: 3}
       propertyPath: target
@@ -6454,7 +6454,7 @@ PrefabInstance:
     - target: {fileID: 4519960772314043132, guid: 6f87fc089cef03f42b69e6059177b586,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4519960772314043132, guid: 6f87fc089cef03f42b69e6059177b586,
         type: 3}

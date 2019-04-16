@@ -13,8 +13,17 @@ public class LightControl : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        myLight = gameObject.GetComponent<Light>();
-        myLight.enabled = false;
+        if (gameObject.name != "Lantern")
+        {
+            myLight = gameObject.GetComponent<Light>();
+            myLight.enabled = false;
+        }
+        else
+        {
+            gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", (Color.black ));
+        }
+
+       
     }
 
     // Update is called once per frame
@@ -22,9 +31,17 @@ public class LightControl : MonoBehaviour
     {
         distanceToPlayer = Vector3.Distance(this.transform.position, player.position);
 
-        if (distanceToPlayer <= 5.0f)
+        if (distanceToPlayer <= 4.0f)
         {
-            myLight.enabled = true;
+            if (gameObject.name != "Lantern")
+            {
+                myLight.enabled = true;
+            }
+            else
+            {
+                gameObject.GetComponent<Renderer>().material.SetColor("_EmissionColor", new Color(191, 154, 0, 100));
+            }     
+         
         }
     }
 }

@@ -116,7 +116,8 @@ public class CharacterActions : MonoBehaviour
                            // Debug.Log(target.name);
                             basicCooldown = basicCooldownReset;
                             SendAttackerInfo(target);
-                            GetComponent<PlayerAI>().LookAt(target.transform.position);
+                            gameObject.transform.LookAt(target.transform);
+                            Debug.Log("basic attack");
                         }
                     }
 
@@ -250,8 +251,11 @@ public class CharacterActions : MonoBehaviour
                 break;
 
             case Action.GetHealthPotion:
-
-                GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
+                if (target != null)
+                {
+                    GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
+                }
+                
 
                 break;
 

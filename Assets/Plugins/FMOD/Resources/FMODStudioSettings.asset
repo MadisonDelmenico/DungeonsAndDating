@@ -75,16 +75,7 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-  MasterBanks:
-  - Master Bank
-  Banks:
-  - Characters
-  - Enemys
-  - Environment
-  - Interactables
-  - Master Bank.strings
-  - Music
-  - UI
-  - VO_Dialouge
+  MasterBanks: []
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264

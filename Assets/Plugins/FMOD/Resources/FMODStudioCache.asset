@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   EditorBanks:
   - {fileID: 114472752537832508}
   - {fileID: 114310022154154186}
@@ -7723,3 +7724,12 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+=======
+  EditorBanks: []
+  EditorEvents: []
+  EditorParameters: []
+  MasterBanks: []
+  StringsBanks: []
+  stringsBankWriteTime: 0
+  cacheVersion: 3
+>>>>>>> Stashed changes

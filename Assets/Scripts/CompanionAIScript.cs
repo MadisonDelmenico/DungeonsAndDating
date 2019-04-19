@@ -505,15 +505,13 @@ public class CompanionAIScript : MonoBehaviour
         meshAgent.destination = targetPos;
     }
 
-
-
     #region Particles
 
     public void SpawnTargetCircle()
     {
-        particle = Instantiate(friendlyTargetParticleEffect, new Vector3(gameObject.transform.position.x, 0.05f, gameObject.transform.position.z), Quaternion.Euler(-90,0,0));
+        particle = Instantiate(friendlyTargetParticleEffect, new Vector3(gameObject.transform.position.x, 0.05f, gameObject.transform.position.z), Quaternion.Euler(-90, 0, 0));
         particle.GetComponent<ParticleFollow>().target = gameObject.transform;
-       
+
     }
 
     public void DestroyTargetCircle()
@@ -523,4 +521,51 @@ public class CompanionAIScript : MonoBehaviour
 
     #endregion
 
+    #region Data Saving
+
+    public void ReadFromPlayerData(PlayerCompanionData data)
+    {
+        switch (companionClass.currentClass)
+        {
+            case CharacterClass.Class.Barbarian:
+                isRecruited = data.strannikRecruited;
+                break;
+            case CharacterClass.Class.Paladin:
+                isRecruited = data.kalistaRecruited;
+                break;
+            case CharacterClass.Class.Sorcerer:
+                isRecruited = data.sheevaRecruited;
+                break;
+            default:
+                isRecruited = false;
+                break;
+        }
+    }
+
+    public PlayerCompanionData SaveToPlayerData()
+    {
+        PlayerCompanionData data = new PlayerCompanionData();
+
+        switch (companionClass.currentClass)
+        {
+            case CharacterClass.Class.Barbarian:
+                data.strannikRecruited = isRecruited;
+                break;
+            case CharacterClass.Class.Paladin:
+                data.kalistaRecruited = isRecruited;
+                break;
+            case CharacterClass.Class.Sorcerer:
+                data.sheevaRecruited = isRecruited;
+                break;
+            default:
+                data.kalistaRecruited = false;
+                data.sheevaRecruited = false;
+                data.strannikRecruited = false;
+                break;
+        }
+
+        return data;
+    }
+
+    #endregion
 }

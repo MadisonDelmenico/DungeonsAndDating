@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
-    string fileName = "PlayerData.json";
-    string filePath;
+    private const string fileName = "PlayerData.json";
+    private string filePath;
 
-    public PlayerData playerData = new PlayerData();
+    public PlayerData localPlayerData = new PlayerData();
 
     private GameObject player;
+    
+    private GameObject[] companions;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         player = GameObject.FindGameObjectWithTag("Player");
+        companions = GameObject.FindGameObjectsWithTag("Companion");
 
         filePath = Application.persistentDataPath + "/" + fileName;
         Debug.Log(filePath);
+        ReadDataLocal();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -35,25 +41,53 @@ public class DataManager : MonoBehaviour
     }
 
 
-    void SaveData()
+    private void SaveData()
     {
-        PlayerWrapper wrapper = new PlayerWrapper();
-        wrapper.playerData = playerData;
+        if (player.GetComponent<PlayerInventory>())
+        {
+            localPlayerData.inventoryData = player.GetComponent<PlayerInventory>().SaveToPlayerData();
+        }
+
+        foreach (GameObject companion in companions)
+        {
+            if (companion.GetComponent<CompanionAIScript>())
+            {
+                localPlayerData.companionData = companion.GetComponent<CompanionAIScript>().SaveToPlayerData();
+            }
+        }
+
+        PlayerWrapper wrapper = new PlayerWrapper
+        {
+            playerData = localPlayerData
+        };
 
         string contents = JsonUtility.ToJson(wrapper, true);
         System.IO.File.WriteAllText(filePath, contents);
     }
 
-    void ReadData()
+    private void ReadData()
+    {
+        ReadDataLocal();
+
+        if (player.GetComponent<PlayerInventory>())
+        {
+            player.GetComponent<PlayerInventory>().ReadFromPlayerData(localPlayerData.inventoryData);
+        }
+
+        foreach (GameObject companion in companions)
+        {
+            if (companion.GetComponent<CompanionAIScript>())
+            {
+                companion.GetComponent<CompanionAIScript>().ReadFromPlayerData(localPlayerData.companionData);
+            }
+        }
+    }
+
+    private void ReadDataLocal()
     {
         string contents = System.IO.File.ReadAllText(filePath);
         PlayerWrapper wrapper = JsonUtility.FromJson<PlayerWrapper>(contents);
 
-        playerData = wrapper.playerData;
-
-        if (player.GetComponent<PlayerInventory>())
-        {
-            player.GetComponent<PlayerInventory>().ReadFromPlayerData(playerData.inventoryData);
-        }
+        localPlayerData = wrapper.playerData;
     }
 }

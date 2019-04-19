@@ -129,6 +129,18 @@ public class PlayerAI : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "Portal":
+                other.gameObject.GetComponent<DungeonMouseOver>().TurnOn();
+                break;
+            default:
+                break;
+        }
+    }
+
     private void SetCastTime(CharacterActions.Action action)
     {
         switch (action)
@@ -192,6 +204,7 @@ public class PlayerAI : MonoBehaviour
         {
             isInteracting = true;
         }
+        GameObject.Find("DialogueManager").GetComponent<Template_UIManager>().Blur();
     }
 
     public void LookAt(Vector3 lookingAt)

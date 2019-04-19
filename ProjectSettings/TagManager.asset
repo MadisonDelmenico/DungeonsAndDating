@@ -12,6 +12,7 @@ TagManager:
   - 'Material: Grass'
   - UI
   - Healthpotion
+  - Portal
   layers:
   - Default
   - TransparentFX

@@ -230,29 +230,4 @@ public class PlayerInventory : MonoBehaviour
         hauntedDagger = int.Parse(items[7]);
         localCharityReciept = int.Parse(items[8]);
     }
-
-    public void SaveToPlayerPrefs()
-    {
-        string giftItems = "";
-        giftItems += steakOfStrength.ToString() + ",";
-        giftItems += snakeShapedWand.ToString() + ",";
-        giftItems += holyOrderEnlistment.ToString() + ",";
-        giftItems += halberdWhetstone.ToString() + ",";
-        giftItems += spikedBoots.ToString() + ",";
-        giftItems += rangerScoutCookies.ToString() + ",";
-        giftItems += scaleRepairKit.ToString() + ",";
-        giftItems += hauntedDagger.ToString() + ",";
-        giftItems += localCharityReciept.ToString();
-        Debug.Log(giftItems);
-
-        string treasure = "";
-        treasure += commonTreasure + ",";
-        treasure += uncommonTreasure + ",";
-        treasure += rareTreasure;
-        Debug.Log(treasure);
-
-        // PlayerPrefs.SetString("Gifts", giftItems);
-        // PlayerPrefs.SetString("Treasure", treasure);
-        // PlayerPrefs.SetInt("Money", money);
-    }
 }

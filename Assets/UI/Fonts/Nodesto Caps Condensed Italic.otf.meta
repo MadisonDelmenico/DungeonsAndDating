@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a2ab3be091d80f688067e8eabedb253bb0db645985b5eb3daa4ac7fd4d448a12
-size 544
+fileFormatVersion: 2
+guid: 032aedc3e365fc842986ca52c1ca6b0e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Nodesto Caps Condensed
+  fontNames:
+  - Nodesto Caps Condensed
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

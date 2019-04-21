@@ -42,12 +42,13 @@ public class PlayerInventory : MonoBehaviour
     {
         if (other.GetComponent<PickupCoin>())
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Interactables/Coin_Pickup_Test", GetComponent<Transform>().position); // play test sound
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interactables/Interact_Game_Gold_Collect", GetComponent<Transform>().position);
             money += other.GetComponent<PickupCoin>().value;
             other.GetComponent<PickupCoin>().PickUp(this.gameObject.transform);
         }
         if (other.GetComponent<PickupTreasure>())
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interactables/Interact_Game_ItemPickup", GetComponent<Transform>().position);
             switch (other.GetComponent<PickupTreasure>().rarity)
             {
                 case PickupTreasure.TreasureRarity.Common:

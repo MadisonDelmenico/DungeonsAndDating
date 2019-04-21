@@ -2,16 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioBusSettings : MonoBehaviour
+public class AudioSettings : MonoBehaviour
 {
-    //Created for the use of an audio slider menu, which is yet to be implimented
-    //Not too sure if PlayerPrefs will be needed, will see when interface is implimented
-    //Missing PlayerPref.Save - Not sure when its best to use that function.
-
-        // - Joel
-
-    FMOD.Studio.EventInstance SFXVolumeTestEvent;
-
     FMOD.Studio.Bus Music;
     FMOD.Studio.Bus SFX;
     FMOD.Studio.Bus UI;
@@ -21,13 +13,12 @@ public class AudioBusSettings : MonoBehaviour
     float InterfaceSFXVolume = 1f;
     float MasterVolume = 1f;
 
-    void Start()
+    void Awake()
     {
         Music = FMODUnity.RuntimeManager.GetBus("bus:/Master/music");
         SFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/gameplay_sfx");
         UI = FMODUnity.RuntimeManager.GetBus("bus:/Master/ui_sfx");
         Master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
-        SFXVolumeTestEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Interface/General/UI_TestVolume");
 
         if (PlayerPrefs.HasKey("AudioBusSettings")) // Check player save for previous audio settings
         {
@@ -52,11 +43,6 @@ public class AudioBusSettings : MonoBehaviour
         Master.setVolume(MasterVolume);
     }
 
-    private void OnDestroy()
-    {
-        SFXVolumeTestEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); //Destroy event
-    }
-
     public void MasterVolumeLevel(float newMasterVolume)
     {
         MasterVolume = newMasterVolume;
@@ -69,28 +55,31 @@ public class AudioBusSettings : MonoBehaviour
         PlayerPrefs.SetFloat("AudioBusSettings_Music", newMusicVolume);
     }
 
-    private void SFXTestSound() //Activate the demo sound to check for levels
-    {
-        FMOD.Studio.PLAYBACK_STATE PbState;
-        SFXVolumeTestEvent.getPlaybackState(out PbState);
-        if (PbState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-        {
-            SFXVolumeTestEvent.start();
-            SFXVolumeTestEvent.release();
-        }
-    }
-
     public void GameplaySFXVolumeLevel(float newGameplaySFXVolume)
     {
         GameplaySFXVolume = newGameplaySFXVolume;
-        SFXTestSound();
         PlayerPrefs.SetFloat("AudioBusSettings_GameplaySFX", newGameplaySFXVolume);
     }
 
     public void UISFXVolumeLevel(float newUISFXVolume)
     {
         InterfaceSFXVolume = newUISFXVolume;
-        SFXTestSound();
         PlayerPrefs.SetFloat("AudioBusSettings_UISFX", newUISFXVolume);
+    }
+
+    public void SaveSlider()
+    {
+        PlayerPrefs.Save();
+        Debug.Log("Saved");
+    }
+
+    public void AudioTest(string type)
+    {
+        if (type == "sfx")
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/General/SFX_TestVolume", GetComponent<Transform>().position);
+        if (type == "ui")
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/General/UI_TestVolume", GetComponent<Transform>().position);
+        if (type == "master")
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/General/Master_TestVolume", GetComponent<Transform>().position);
     }
 }

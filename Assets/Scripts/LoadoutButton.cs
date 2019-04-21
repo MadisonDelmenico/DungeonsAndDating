@@ -51,9 +51,11 @@ public class LoadoutButton : MonoBehaviour
             {
                 isSelected = true;
             }
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/General/UI_Main_Button_Confirm", GetComponent<Transform>().position);
         }
         else
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/General/UI_Main_Button_Decline", GetComponent<Transform>().position);
             print("Companion Not Recruited");
         }
     }

@@ -120,7 +120,6 @@ public class CharacterActions : MonoBehaviour
                             Debug.Log("basic attack");
                         }
                     }
-
                 }
                 break;
             case Action.Firebolt:
@@ -194,7 +193,7 @@ public class CharacterActions : MonoBehaviour
             case Action.WildSpin:
                 if (wildSpinCooldown <= 0)
                 {
-                    Debug.Log("Beyblade time!");
+                    //Debug.Log("Beyblade time!");
                     if (GetComponent<CompanionAIScript>())
                     {
                         foreach (GameObject enemy in enemies)
@@ -223,9 +222,7 @@ public class CharacterActions : MonoBehaviour
                             }
                         }
                     }
-
                     wildSpinCooldown = wildSpinCooldownReset;
-
                 }
                 break;
             case Action.ElementalSphere:
@@ -316,17 +313,27 @@ public class CharacterActions : MonoBehaviour
 
     public void Button1()
     {
+        PlayAudio("click");
         DoAction(Action.Revitalize, GetComponent<TargettingEnemies>().friendlyTarget);
-
     }
 
     public void Button2()
     {
+        PlayAudio("click");
         DoAction(Action.Firebolt, GetComponent<TargettingEnemies>().target);
     }
 
     public void Button3()
     {
+        PlayAudio("click");
         DoAction(Action.WildSpin, GetComponent<TargettingEnemies>().target);
+    }
+
+    public void PlayAudio(string type)
+    {
+        if (type == "click")
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/General/UI_Main_Button_Click", GetComponent<Transform>().position);
+        else
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Characters/Polymath/Polymath_Ability_Firebolt_Fired", GetComponent<Transform>().position); //temp till animations in
     }
 }

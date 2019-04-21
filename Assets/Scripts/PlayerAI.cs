@@ -114,16 +114,19 @@ public class PlayerAI : MonoBehaviour
         // Check the ability inputs
         if (Input.GetKeyDown(abilityOne))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/General/UI_Main_Button_Click", GetComponent<Transform>().position);
             characterActions.BeginCasting(actionOne, gameObject.GetComponent<TargettingEnemies>().target);
             SetCastTime(actionOne);
         }
         if (Input.GetKeyDown(abilityTwo))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/General/UI_Main_Button_Click", GetComponent<Transform>().position);
             characterActions.BeginCasting(actionTwo, gameObject.GetComponent<TargettingEnemies>().target);
             SetCastTime(actionTwo);
         }
         if (Input.GetKeyDown(abilityThree))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Interface/General/UI_Main_Button_Click", GetComponent<Transform>().position);
             characterActions.BeginCasting(actionThree, gameObject.GetComponent<TargettingEnemies>().target);
             SetCastTime(actionThree);
         }

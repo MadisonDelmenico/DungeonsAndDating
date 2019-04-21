@@ -7,7 +7,7 @@ public class UIBlurToggle : MonoBehaviour
     private SuperBlur.SuperBlur blur;
 
     private float targetBlur = 0.0f;
-    
+
     // Start is called before the first frame update
     void Start()
     {

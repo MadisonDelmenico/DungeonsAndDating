@@ -38,5 +38,6 @@ public class PickupHealth : MonoBehaviour
         respawnTimer = respawnTime;
         meshRenderer.enabled = false;
         isSpawned = false;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Interactables/Interact_Game_ItemPickup", GetComponent<Transform>().position);
     }
 }

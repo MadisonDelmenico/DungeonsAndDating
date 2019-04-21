@@ -84,6 +84,7 @@ public class Health : MonoBehaviour
                 {
                     if (other.GetComponent<PickupHealth>().isSpawned)
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Interactables/Interact_Game_Healing", GetComponent<Transform>().position);
                         health += other.GetComponent<PickupHealth>().healAmount;
                         other.GetComponent<PickupHealth>().PickUp();
                     }

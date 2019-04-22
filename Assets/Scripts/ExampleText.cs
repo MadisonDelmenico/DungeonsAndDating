@@ -17,7 +17,7 @@ public class ExampleText : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-		Class = "fighter";
+		Class = "Polymath";
 		Affiliation = "The Emerald Enclave";
 		Deity = "Tyr";
 		worship = "worship";

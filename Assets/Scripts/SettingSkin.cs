@@ -12,7 +12,7 @@ public class SettingSkin : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        skincolour = PlayerPrefs.GetInt("PSkin") -1;
+        //skincolour = PlayerPrefs.GetInt("PSkin") -1;
         
         skin.GetComponent<SkinnedMeshRenderer>().material = skins[skincolour];
     }

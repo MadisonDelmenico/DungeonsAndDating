@@ -8,18 +8,20 @@ public class ButtonScript : MonoBehaviour
 {
 	public GameObject manager;
 	public Scene scene;
-	public Image characterpic;
-	public Sprite skin1;
-	public Sprite skin2;
-	public Sprite skin3;
-	public Sprite skin4;
-	public Sprite skin5;
+	public GameObject character;
+	public Material skin1;
+	public Material skin2;
+	public Material skin3;
+	public Material skin4;
+	public Material skin5;
 	public int skincolour;
 
 	// Use this for initialization
 	void Start ()
-	{
-		characterpic.GetComponent<Image> ().sprite = skin1;
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SkinnedMeshRenderer>().material = skin1;
+        character.GetComponentInChildren<SkinnedMeshRenderer>().material = skin1;
+//            .GetComponent<Material>().mainTexture = skin1;
 		skincolour = 1;
 	}
 	
@@ -64,31 +66,36 @@ public class ButtonScript : MonoBehaviour
 
 	public void SetSkinColour1 ()
 	{
-		characterpic.GetComponent<Image> ().sprite = skin1;
-		skincolour = 1;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SkinnedMeshRenderer>().material = skin1;
+        //		character.GetComponent<Material>().mainTexture = skin1;
+        skincolour = 1;
 	}
 
 	public void SetSkinColour2 ()
 	{
-		characterpic.GetComponent<Image> ().sprite = skin2;
-		skincolour = 2;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SkinnedMeshRenderer>().material = skin2;
+        //        character.GetComponent<Material>().mainTexture = skin2;
+        skincolour = 2;
 	}
 
 	public void SetSkinColour3 ()
 	{
-		characterpic.GetComponent<Image> ().sprite = skin3;
-		skincolour = 3;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SkinnedMeshRenderer>().material = skin3;
+        //        character.GetComponent<Material>().mainTexture = skin3;
+        skincolour = 3;
 	}
 
 	public void SetSkinColour4 ()
 	{
-		characterpic.GetComponent<Image> ().sprite = skin4;
-		skincolour = 4;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SkinnedMeshRenderer>().material = skin4;
+        //        character.GetComponent<Material>().mainTexture = skin4;
+        skincolour = 4;
 	}
 
 	public void SetSkinColour5 ()
 	{
-		characterpic.GetComponent<Image> ().sprite = skin5;
-		skincolour = 5;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SkinnedMeshRenderer>().material = skin5;
+        //        character.GetComponent<Material>().mainTexture = skin5;
+        skincolour = 5;
 	}
 }

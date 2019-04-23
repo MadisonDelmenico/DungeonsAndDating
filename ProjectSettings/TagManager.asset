@@ -13,6 +13,7 @@ TagManager:
   - UI
   - Healthpotion
   - Portal
+  - Robes
   layers:
   - Default
   - TransparentFX

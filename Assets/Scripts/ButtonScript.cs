@@ -14,6 +14,7 @@ public class ButtonScript : MonoBehaviour
 	public Material skin3;
 	public Material skin4;
 	public Material skin5;
+
 	public int skincolour;
 
 	// Use this for initialization
@@ -23,7 +24,7 @@ public class ButtonScript : MonoBehaviour
         character.GetComponentInChildren<SkinnedMeshRenderer>().material = skin1;
 //            .GetComponent<Material>().mainTexture = skin1;
 		skincolour = 1;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -52,7 +53,58 @@ public class ButtonScript : MonoBehaviour
 		manager.GetComponent<Pronouns> ().They = true;
 	}
 
-	public void Reload ()
+    public void Deity(string deityName)
+    {
+        PlayerPrefs.SetString("PDeity", deityName);
+        print(PlayerPrefs.GetString("PDeity"));
+
+        switch (deityName)
+        {
+            case "Torm":
+                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesTorm");
+              PlayerPrefs.SetString("PAffiliation", "The order of the Gauntlet");
+                PlayerPrefs.SetString("PAffiliationText",
+                    "at the behest of your order, you have traveled to the small town of Barovia. There is an evil plague upon this town, and it is your duty to squash it - Permitted or not.");
+                   ;
+                break;
+            case "Sseth":
+                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesSseth");
+                PlayerPrefs.SetString("PAffiliation", "The Vrael Olo");
+                PlayerPrefs.SetString("PAffiliationText",
+                  "at the behest of your order, you have traveled to the small town of Barovia. The people of this desolate town will make great sacrifices for Sseth. If the other monsters that dwell here don't get them first, that is.");
+                break;
+            case "Bahamut":
+                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesBahamut");
+                PlayerPrefs.SetString("PAffiliation", "The Talons of Justice");
+                PlayerPrefs.SetString("PAffiliationText",
+                  "at the behest of your order, you have traveled to the small town of Barovia. You seek the lost artifacts of Bahamut, hidden deep within the ruins just outside of town. Reclaim them for the glory of the Platinum Dragon. ");
+                break;
+            case "The Traveler":
+                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesTheTraveler");
+                PlayerPrefs.SetString("PAffiliation", "The Vassals of the Dark Six");
+                PlayerPrefs.SetString("PAffiliationText",
+                    "at the behest of your order, you have traveled to the small town of Barovia. The Travelers plans for you are yet to be revealed, though you know it will come to you in the form of great change.");
+                break;
+            case "Mielikki":
+                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesMielikki");
+                PlayerPrefs.SetString("PAffiliation", "The Emerald Enclave");
+                PlayerPrefs.SetString("PAffiliationText",
+                    "at the behest of your order, you have traveled to the small town of Barovia.  As conflict grows within Barovia, it is the duty of your order to maintain the balance between nature and civilisation.");
+                break;
+            case "Tyr":
+                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesTyr");
+                PlayerPrefs.SetString("PAffiliation", "The Knights of Holy Judgment");
+                PlayerPrefs.SetString("PAffiliationText",
+                    "at the behest of your order, you have traveled to the small town of Barovia. Sent here with the purpose of hunting devils, the nightly raiding of the town has caught your attention. could the devil be behind this?");
+                break;
+            case null:
+                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesTorm");
+                break;
+        }
+
+    }
+
+    public void Reload ()
 	{
 		scene = SceneManager.GetActiveScene ();
 		SceneManager.LoadScene (scene.name);

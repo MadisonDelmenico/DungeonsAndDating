@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ClassSymbolScript : MonoBehaviour
 {
-    public Sprite[] DeitySprites;
-
-    public Image ShieldImage;
+    public Sprite[] deitySprites;
+    public Image shieldImage;
+    public ExampleText exampleText;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,28 +17,28 @@ public class ClassSymbolScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (PlayerPrefs.GetString("PDeity"))
+        switch (exampleText.deity)
         {
             case "Bahamut":
-               ShieldImage.sprite = DeitySprites[0];
+               shieldImage.sprite = deitySprites[0];
                 break;
             case "Tyr":
-                ShieldImage.sprite = DeitySprites[1];
+                shieldImage.sprite = deitySprites[1];
                 break;
             case "Torm":
-                ShieldImage.sprite = DeitySprites[2];
+                shieldImage.sprite = deitySprites[2];
                 break;
             case "Mielikki":
-                ShieldImage.sprite = DeitySprites[3];
+                shieldImage.sprite = deitySprites[3];
                 break;
             case "The Traveler":
-                ShieldImage.sprite = DeitySprites[4];
+                shieldImage.sprite = deitySprites[4];
                 break;
             case "Sseth":
-                ShieldImage.sprite = DeitySprites[5];
+                shieldImage.sprite = deitySprites[5];
                 break;
             default:
-                ShieldImage.sprite = DeitySprites[2];
+                shieldImage.sprite = deitySprites[2];
                 break;
         }
     }

@@ -14,7 +14,7 @@ TagManager:
   - Healthpotion
   - Portal
   - Robes
-  - PlayerSkin
+  - Villager
   layers:
   - Default
   - TransparentFX

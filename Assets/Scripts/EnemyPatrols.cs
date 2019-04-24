@@ -19,13 +19,22 @@ public class EnemyPatrols : MonoBehaviour
     {
         meshAgent = GetComponent<NavMeshAgent>();
         waypointNumber = 0;
+        if (gameObject.CompareTag("Villager"))
+        {
+            Patrol();
+        }
+
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (gameObject.CompareTag("Villager"))
+        {
+            Patrol();
+        }
 
     }
 
@@ -52,7 +61,10 @@ public class EnemyPatrols : MonoBehaviour
         {
             waypointNumber = 0;
         }
+       
         meshAgent.destination = Waypoints[waypointNumber].transform.position;
+
+       
     }
 
 }

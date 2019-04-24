@@ -8,7 +8,7 @@ public class PlayerTreasureTracker : MonoBehaviour
     public enum TreasureType { Common, Uncommon, Rare }
     public TreasureType type;
 
-    public PlayerInventory player;
+    private PlayerInventory player;
     private Text text;
 
     // Start is called before the first frame update

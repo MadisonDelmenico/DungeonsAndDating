@@ -18,6 +18,6 @@ public class PlayerGoldTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        displayText.text = (player.money + "gp");
+        displayText.text = ("Gold: " + player.money + "gp");
     }
 }

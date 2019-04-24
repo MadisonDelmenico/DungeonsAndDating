@@ -5,5 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerWrapper
 {
-    public PlayerData playerData;
+    public PlayerData data;
 }

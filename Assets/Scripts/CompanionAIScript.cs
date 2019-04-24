@@ -525,7 +525,7 @@ public class CompanionAIScript : MonoBehaviour
 
     public void ReadFromPlayerData(PlayerCompanionData data)
     {
-        switch (companionClass.currentClass)
+        switch (GetComponent<CharacterClass>().currentClass)
         {
             case CharacterClass.Class.Barbarian:
                 isRecruited = data.strannikRecruited;
@@ -546,7 +546,7 @@ public class CompanionAIScript : MonoBehaviour
     {
         PlayerCompanionData data = new PlayerCompanionData();
 
-        switch (companionClass.currentClass)
+        switch (GetComponent<CharacterClass>().currentClass)
         {
             case CharacterClass.Class.Barbarian:
                 data.strannikRecruited = isRecruited;

@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Pronouns : MonoBehaviour
 {
-	public bool She;
-	public bool He;
-	public bool They;
+	public bool she;
+	public bool he;
+	public bool they;
 	public string pronounSubjective;
 	public string pronounObjective;
 	public string pronounPossessive;
@@ -22,31 +22,31 @@ public class Pronouns : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if(She == true)
+		if(she == true)
 		{
 			pronounSubjective = "She";
 			pronounObjective = "Her";
 			pronounPossessive = "Hers";
-			He = false;
-			They = false;
+			he = false;
+			they = false;
 		}
 
-		if (He == true) 
+		if (he == true) 
 		{
 			pronounSubjective = "He";
 			pronounObjective = "Him";
 			pronounPossessive = "His";
-			She = false;
-			They = false;
+			she = false;
+			they = false;
 		}
 
-		if (They == true) 
+		if (they == true) 
 		{
 			pronounSubjective = "They";
 			pronounObjective = "Them";
 			pronounPossessive = "Theirs";
-			She = false;
-			He = false;
+			she = false;
+			he = false;
 		}
 	}
 

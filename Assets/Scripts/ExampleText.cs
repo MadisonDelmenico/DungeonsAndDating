@@ -5,101 +5,113 @@ using UnityEngine.UI;
 
 public class ExampleText : MonoBehaviour
 {
-	public GameObject exampleText;
-	public string CharName;
-	public string Class;
-	public string Affiliation;
-	public string Deity;
-	public GameObject characterNameInput;
-	public string pronounSubjective;
-	public string worship;
-    public GameObject affiliation;
+    public GameObject exampleText;
+    public string charName;
+    public string playerClass;
+    public string affiliation;
+    public string deity;
+    public GameObject characterNameInput;
+    public string pronounSubjective;
+    public string worship;
+    public Text affiliationText;
     public string text;
     public string affiliationtext;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
-		Class = "Polymath";
-		Affiliation = "The Emerald Enclave";
-        
-		worship = "worship";
+        playerClass = "Polymath";
+        affiliation = "The Emerald Enclave";
+        worship = "worship";
+    }
 
-        switch (PlayerPrefs.GetString("PDeity"))
-        {
-            case "Bahamut":
-                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesBahamut");
-                break;
-            case "Tyr":
-                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesTyr");
-                break;
-            case "Torm":
-                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesTorm");
-                break;
-            case "Mielikki":
-                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesMielikki");
-                break;
-            case "The Traveler":
-                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesTheTraveler");
-                break;
-            case "Sseth":
-                GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesSseth");
-                break;
-                default:
-                    GameObject.FindGameObjectWithTag("Robes").GetComponent<SkinnedMeshRenderer>().material = Resources.Load<Material>("RobesTorm");
-                break;
-        }
-    
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
-        Deity = PlayerPrefs.GetString("PDeity");
-        Affiliation = PlayerPrefs.GetString("PAffiliation");
-        pronounSubjective = GetComponentInParent<Pronouns> ().pronounSubjective;
-		CharName = characterNameInput.GetComponent<Text> ().text;
-        if (CharName == "")
+        pronounSubjective = GetComponentInParent<Pronouns>().pronounSubjective;
+        charName = characterNameInput.GetComponent<Text>().text;
+        if (charName == "")
         {
-            CharName = PlayerPrefs.GetString("Pname");
+            charName = "Player";
         }
 
-		if (pronounSubjective == "null") 
-		{
-			pronounSubjective = "they";
-		}
-		if (pronounSubjective == "He") 
-		{
-			worship = "worships";
-		} 
-		if (pronounSubjective == "She") 
-		{
-			worship = "worships";
-		} 
-		if (pronounSubjective == "They") 
-		{
-			worship = "worship";
-		}
+        if (pronounSubjective == "null")
+        {
+            pronounSubjective = "they";
+        }
+        if (pronounSubjective == "He")
+        {
+            worship = "worships";
+        }
+        if (pronounSubjective == "She")
+        {
+            worship = "worships";
+        }
+        if (pronounSubjective == "They")
+        {
+            worship = "worship";
+        }
 
-        affiliation.GetComponent<Text>().text = Affiliation;
-        affiliationtext = PlayerPrefs.GetString("PAffiliationText");
+        affiliationText.text = affiliation;
+        affiliationtext = SetAffiliationText(affiliation);
 
-		UpdateText ();
-	}
+        UpdateText();
+    }
 
     public void UpdateText()
-	{
-		if (CharName == "") 
-		{
-			CharName = "Name";
-		}
-        text = CharName + " is a " + Class + " of " + Affiliation + ". " + pronounSubjective + " " + worship + " the Deity " + Deity + "." + '$' + affiliationtext;
+    {
+        if (charName == "")
+        {
+            charName = "Name";
+        }
+        text = charName + " is a " + playerClass + " of " + affiliation + ". " + pronounSubjective + " " + worship + " the Deity " + deity + "." + '$' + affiliationtext;
         text = text.Replace('$', '\n');
 
         exampleText = GameObject.Find("ExampleText");
         exampleText.GetComponentInParent<Text>().text = text;
-           
-        
-        
-	}
+    }
+
+    public void SetAffiliation(string _affiliation)
+    {
+        affiliation = _affiliation;
+    }
+
+    public void SetDeity(string _deity)
+    {
+        deity = _deity;
+    }
+
+    private string SetAffiliationText(string _affiliation)
+    {
+        switch (_affiliation)
+        {
+            case "The Order of the Gauntlet":
+                return
+                    "At the behest of your order, you have traveled to the small town of Barovia. There is an evil plague upon this town, and it is your duty to squash it - Permitted or not.";
+
+            case "The Vrael Olo":
+                return
+                    "At the behest of your order, you have traveled to the small town of Barovia. The people of this desolate town will make great sacrifices for Sseth. If the other monsters that dwell here don't get them first, that is.";
+
+            case "The Talons of Justice":
+                return
+                "At the behest of your order, you have traveled to the small town of Barovia. You seek the lost artifacts of Bahamut, hidden deep within the ruins just outside of town. Reclaim them for the glory of the Platinum Dragon. ";
+
+            case "The Vassals of the Dark Six":
+                return
+                    "At the behest of your order, you have traveled to the small town of Barovia. The Travelers plans for you are yet to be revealed, though you know it will come to you in the form of great change.";
+
+            case "The Emerald Enclave":
+                return
+                    "At the behest of your order, you have traveled to the small town of Barovia.  As conflict grows within Barovia, it is the duty of your order to maintain the balance between nature and civilisation.";
+
+            case "The Knights of Holy Judgment":
+                return
+                    "At the behest of your order, you have traveled to the small town of Barovia. Sent here with the purpose of hunting devils, the nightly raiding of the town has caught your attention. could the devil be behind this?";
+
+            default:
+                return
+                    "Default Affiliation Text";
+        }
+    }
 }

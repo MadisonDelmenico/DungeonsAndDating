@@ -22,12 +22,12 @@ public class PlayerPrefsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerSkintone = Manager.GetComponent<ButtonScript>().skincolour;
+
     }
 
     public void UpdatePlayerPrefs()
     {
-        string PlayerName = Manager.GetComponent<ExampleText>().CharName;
+        string PlayerName = Manager.GetComponent<ExampleText>().charName;
         string PlayerGender = "They";
         switch (Manager.GetComponent<Pronouns>().pronounSubjective)
         {
@@ -45,8 +45,8 @@ public class PlayerPrefsScript : MonoBehaviour
                 break;
         }
 
-        string PlayerClass = Manager.GetComponent<ExampleText>().Class;
-        string PlayerDeity = Manager.GetComponent<ExampleText>().Deity;
+        string PlayerClass = Manager.GetComponent<ExampleText>().playerClass;
+        string PlayerDeity = Manager.GetComponent<ExampleText>().deity;
         
         PlayerPrefs.SetString("PName", PlayerName);
         PlayerPrefs.SetString("PGender", PlayerGender);

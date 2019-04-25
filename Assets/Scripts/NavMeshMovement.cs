@@ -97,7 +97,6 @@ public class NavMeshMovement : MonoBehaviour
 
                             // Attack the target
                             Attack();
-                            GetComponent<PlayerAI>().LookAt(target.transform.position);
 
                             break;
                             // Otherwise

@@ -156,7 +156,10 @@ public class CompanionAIScript : MonoBehaviour
                     if (GetComponent<TargettingEnemies>().enabled)
                     {
                         // Look at them
-                        transform.rotation = Quaternion.Lerp(transform.rotation, GetComponent<TargettingEnemies>().target.transform.rotation, Time.deltaTime * rotspeed);
+                        Transform targetTransform = GetComponent<TargettingEnemies>().target.transform;
+                        Vector3 lookPos = new Vector3(targetTransform.position.x, this.transform.position.y, targetTransform.transform.position.z);
+
+                        transform.LookAt(lookPos);
                     }
 
                     switch (companionClass.currentClass)
@@ -445,10 +448,7 @@ public class CompanionAIScript : MonoBehaviour
                 if (player.GetComponent<TargettingEnemies>().target != player)
                 {
                     GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
-
-                    // Look at the enemy
-                    transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
-
+                    
                     // Attack the enemy
                     if (text != null)
                     {
@@ -470,10 +470,7 @@ public class CompanionAIScript : MonoBehaviour
                 if (player.GetComponent<TargettingEnemies>().target != player)
                 {
                     GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
-
-                    // Look at the enemy
-                    transform.LookAt(GetComponent<TargettingEnemies>().target.transform);
-
+                    
                     // Attack the enemy
                     if (text != null)
                     {

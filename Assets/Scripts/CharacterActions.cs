@@ -94,6 +94,10 @@ public class CharacterActions : MonoBehaviour
 
     public void DoAction(Action action, GameObject target)
     {
+        Transform targetTransform = target.transform;
+        Vector3 lookPos = new Vector3(targetTransform.position.x, this.transform.position.y, targetTransform.transform.position.z);
+        transform.LookAt(lookPos);
+
         switch (action)
         {
             case Action.Basic:
@@ -116,7 +120,6 @@ public class CharacterActions : MonoBehaviour
                            // Debug.Log(target.name);
                             basicCooldown = basicCooldownReset;
                             SendAttackerInfo(target);
-                            gameObject.transform.LookAt(target.transform);
                             Debug.Log("basic attack");
                         }
                     }
@@ -133,11 +136,12 @@ public class CharacterActions : MonoBehaviour
                             if (GetComponent<CompanionAIScript>())
                             {
                                 target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
+
                             }
                             else
                             {
                                 target.GetComponent<Health>().health -= fireboltValue;
-                                GetComponent<PlayerAI>().LookAt(target.transform.position);
+
                             }
 
                             SendAttackerInfo(target);
@@ -157,6 +161,7 @@ public class CharacterActions : MonoBehaviour
                     if (target != null)
                     {
                         Debug.Log("Healing Spell!");
+
                         if (target.CompareTag("Enemy"))
                         {
                             if (GetComponent<CompanionAIScript>())
@@ -170,11 +175,12 @@ public class CharacterActions : MonoBehaviour
                             if (GetComponent<CompanionAIScript>())
                             {
                                 target.GetComponent<Health>().health += affectionLevel * revitalizeValue;
+
                             }
                             else
                             {
                                 target.GetComponent<Health>().health += revitalizeValue;
-                                GetComponent<PlayerAI>().LookAt(target.transform.position);
+
                             }
 
                             revitalizeCooldown = revitalizeCooldownReset;
@@ -231,6 +237,7 @@ public class CharacterActions : MonoBehaviour
                     if (target.CompareTag("Enemy"))
                     {
                         Debug.Log("Elemental Sphere attack!");
+
                         if (GetComponent<CompanionAIScript>())
                         {
                             target.GetComponent<Health>().health -= (affectionLevel * elementalSphereValue);
@@ -238,7 +245,6 @@ public class CharacterActions : MonoBehaviour
                         else
                         {
                             target.GetComponent<Health>().health -= (elementalSphereValue);
-                            GetComponent<PlayerAI>().LookAt(target.transform.position);
                         }
 
                         SendAttackerInfo(target);

@@ -73,11 +73,12 @@ public class DialogueScript : MonoBehaviour
                 case "Sheeva_Idle":
                     cameraSheva.GetComponent<RawImage>().enabled = true;
                     break;
-                case "Strannik_Finished (2)":
-                  ;
+                case "Strannik_Finished":
+                    cameraStrannik.GetComponent<RawImage>().enabled = true;
+                    ;
                     break;
                 case "Kallista_Idle":
-                  ;
+                 cameraKallista.GetComponent<RawImage>().enabled = true;
                     break;
                 case "Sendar":
                     cameraSendar.GetComponent<RawImage>().enabled = true;
@@ -118,6 +119,11 @@ public class DialogueScript : MonoBehaviour
     public void EndConversation()
     {
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAI>().Talking();
+        GameObject.Find("Camera_Sendar").GetComponent<RawImage>().enabled = false;
+        GameObject.Find("Camera_Sheva").GetComponent<RawImage>().enabled = false;
+        GameObject.Find("Camera_Strannik").GetComponent<RawImage>().enabled = false;
+        GameObject.Find("Camera_Kallista").GetComponent<RawImage>().enabled = false;
+
     }
    
     //Give a response in the dialogue based on my current affection level

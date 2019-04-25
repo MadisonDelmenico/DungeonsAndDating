@@ -20,7 +20,11 @@ public class CompanionAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (walking == true)
+
+
+
+        
+if (walking == true)
 
         {
             switch (GetComponentInParent<CharacterClass>().currentClass)

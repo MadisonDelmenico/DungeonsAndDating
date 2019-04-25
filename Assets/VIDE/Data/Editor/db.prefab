@@ -43,15 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268dc70b105993846a123be43345df63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileIndex: 8
+  fileIndex: 14
   skinIndex: 0
   loadTag: 
   startID: 0
   curFocusID: 0
-  currentID: 65095
+  currentID: 24680
   autosave: 1
   previewPanning: 0
-  currentDiag: 8
+  currentDiag: 14
   locEdit: 0
   pNodeID: 18
   aNodeID: 2
@@ -74,7 +74,7 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: Excuse me, I couldn't resist your charm, your charisma is so high.
+    - text: You'll have to excuse me. I have trouble ignoring such alluring people.
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: 4
@@ -85,22 +85,22 @@ MonoBehaviour:
         x: 302
         y: 102
         width: 30
-        height: 29
+        height: 42
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    - text: h..h.. hot... I mean... my stew is hot, not you....I'm gonna leave now....
+    - text: Hey, I'm... I mean, uhh, you'll... never mind.
       extraData: ExtraData
       inputSetIndex: 0
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 3
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 145
+        width: 30
+        height: 29
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -113,16 +113,106 @@ MonoBehaviour:
       height: 309
     pTag: Player
     expand: 1
-    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: I am Kallista, a daughter of the light, sworn to protect. I like to train
-        with my shield and mace.
+    - text: 'Nothing I''d want to do with you. '
       extraData: ExtraData
       inputSetIndex: 1
+      outputNodeIndex: 2
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 1
+    rect:
+      serializedVersion: 2
+      x: 340
+      y: -40
+      width: 349
+      height: 121
+    pTag: ???
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: 'I have noticed the nearby dungeons just off of the town. '
+      extraData: ExtraData
+      inputSetIndex: 2
+      outputNodeIndex: 7
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 2
+    rect:
+      serializedVersion: 2
+      x: 820
+      y: -20
+      width: 349
+      height: 223
+    pTag: Player
+    expand: 1
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Oh, you're STILL talking? I ssuppose I could set you alight, that could
+        be pretty entertaining.
+      extraData: ExtraData
+      inputSetIndex: 3
+      outputNodeIndex: 5
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 42
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 3
+    rect:
+      serializedVersion: 2
+      x: 2070
+      y: 0
+      width: 349
+      height: 142
+    pTag: ???
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: And I just can't resist drinking your blood if you keep talking. Go away.
+      extraData: ExtraData
+      inputSetIndex: 4
       outputNodeIndex: 2
       outActionIndex: -1
       showmore: 0
@@ -135,11 +225,11 @@ MonoBehaviour:
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    ID: 1
+    ID: 4
     rect:
       serializedVersion: 2
-      x: 360
-      y: 60
+      x: 340
+      y: 110
       width: 349
       height: 142
     pTag: ???
@@ -150,101 +240,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: 'Well, I am thinking about exploring the dungeon nearby. I have heard
-        of the creatures that have been attacking the town. '
-      extraData: ExtraData
-      inputSetIndex: 2
-      outputNodeIndex: 7
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 302
-        y: 59
-        width: 30
-        height: 55
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 2
-    rect:
-      serializedVersion: 2
-      x: 820
-      y: 60
-      width: 349
-      height: 249
-    pTag: Player
-    expand: 1
-    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: 'I can call on the light to protect us. I''m a holy paladin, proficient
-        in the revitalize spell! You seem like a strong fighter with your heart in
-        the right place. I think we would make a splendid team. '
-      extraData: ExtraData
-      inputSetIndex: 3
-      outputNodeIndex: 5
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 302
-        y: 59
-        width: 30
-        height: 81
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 3
-    rect:
-      serializedVersion: 2
-      x: 2170
-      y: 140
-      width: 349
-      height: 181
-    pTag: Kallista
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: What do you mean? I only use charisma for smiting evil.
-      extraData: ExtraData
-      inputSetIndex: 4
-      outputNodeIndex: 2
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 302
-        y: 59
-        width: 30
-        height: 29
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 4
-    rect:
-      serializedVersion: 2
-      x: 340
-      y: 250
-      width: 349
-      height: 129
-    pTag: Kallista
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
-  - commentCount: 1
-    s_comment:
-    - text: That sounds like you have just what I am looking for. Will you come join
-        me on this adventure?
+    - text: You sound like a valuable ally. I could use your help exploring the dungeons
+        if you'd assist me?
       extraData: ExtraData
       inputSetIndex: 5
       outputNodeIndex: 6
@@ -262,23 +259,23 @@ MonoBehaviour:
     ID: 5
     rect:
       serializedVersion: 2
-      x: 2680
-      y: 110
+      x: 2470
+      y: -20
       width: 349
       height: 236
     pTag: Player
     expand: 1
-    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: I would relish the opportunity to smite evil and protect the town.
+    - text: 'What''s in it for me? You had better make it worth my while. '
       extraData: ExtraData
       inputSetIndex: 6
-      outputNodeIndex: -1
-      outActionIndex: 0
+      outputNodeIndex: 20
+      outActionIndex: -1
       showmore: 0
       outRect:
         serializedVersion: 2
@@ -292,11 +289,11 @@ MonoBehaviour:
     ID: 6
     rect:
       serializedVersion: 2
-      x: 3060
-      y: 100
+      x: 2870
+      y: -10
       width: 349
       height: 129
-    pTag: Kallista
+    pTag: ???
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -304,8 +301,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: I would like to help protect the town. It could be dangerous to go alone,
-        and there is safety in numbers.
+    - text: 'If the rumours are true, the monsters that dwell within them have even
+        been posing a threat to the village. '
       extraData: ExtraData
       inputSetIndex: 7
       outputNodeIndex: 8
@@ -323,20 +320,20 @@ MonoBehaviour:
     ID: 8
     rect:
       serializedVersion: 2
-      x: 1320
-      y: 100
+      x: 1290
+      y: -20
       width: 349
       height: 249
     pTag: Player
     expand: 1
-    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: If I were to bring you along, could you help me? Do you think I would
-        be a suitable dungeoneering partner?
+    - text: If I see to it to venture into the dungeons would you be able to help
+        me? It's dangerous to go alone after all.
       extraData: ExtraData
       inputSetIndex: 8
       outputNodeIndex: 3
@@ -354,19 +351,19 @@ MonoBehaviour:
     ID: 9
     rect:
       serializedVersion: 2
-      x: 1760
-      y: 120
+      x: 1660
+      y: -20
       width: 349
       height: 249
     pTag: Player
     expand: 1
-    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 3
     s_comment:
-    - text: Talk to [CNAME].
+    - text: Talk to [CName].
       extraData: ExtraData
       inputSetIndex: 9
       outputNodeIndex: 10
@@ -400,22 +397,22 @@ MonoBehaviour:
       extraData: ExtraData
       inputSetIndex: 9
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 3
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 103
+        width: 30
+        height: 21
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     ID: 10
     rect:
       serializedVersion: 2
-      x: -440
-      y: 600
+      x: -570
+      y: 550
       width: 349
       height: 165
     pTag: Player
@@ -474,8 +471,8 @@ MonoBehaviour:
     - text: Return
       extraData: ExtraData
       inputSetIndex: 10
-      outputNodeIndex: 9
-      outActionIndex: -1
+      outputNodeIndex: -1
+      outActionIndex: 7
       showmore: 0
       outRect:
         serializedVersion: 2
@@ -489,8 +486,8 @@ MonoBehaviour:
     ID: 11
     rect:
       serializedVersion: 2
-      x: -10
-      y: 510
+      x: 0
+      y: 520
       width: 349
       height: 281
     pTag: Player
@@ -549,8 +546,8 @@ MonoBehaviour:
     - text: Nothing, sorry
       extraData: ExtraData
       inputSetIndex: 11
-      outputNodeIndex: 10
-      outActionIndex: -1
+      outputNodeIndex: -1
+      outActionIndex: 5
       showmore: 0
       outRect:
         serializedVersion: 2
@@ -564,8 +561,8 @@ MonoBehaviour:
     ID: 12
     rect:
       serializedVersion: 2
-      x: 1300
-      y: 440
+      x: 1340
+      y: 450
       width: 349
       height: 187
     pTag: 
@@ -594,8 +591,8 @@ MonoBehaviour:
     ID: 13
     rect:
       serializedVersion: 2
-      x: 880
-      y: 450
+      x: 870
+      y: 420
       width: 349
       height: 121
     pTag: Kallista
@@ -624,13 +621,13 @@ MonoBehaviour:
     ID: 14
     rect:
       serializedVersion: 2
-      x: 480
-      y: 450
+      x: 470
+      y: 410
       width: 349
       height: 223
     pTag: Player
     expand: 1
-    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
@@ -639,8 +636,8 @@ MonoBehaviour:
     - text: Comment...
       extraData: ExtraData
       inputSetIndex: 14
-      outputNodeIndex: 11
-      outActionIndex: -1
+      outputNodeIndex: -1
+      outActionIndex: 6
       showmore: 0
       outRect:
         serializedVersion: 2
@@ -654,17 +651,19 @@ MonoBehaviour:
     ID: 17
     rect:
       serializedVersion: 2
-      x: 2170
+      x: 2180
       y: 440
       width: 349
       height: 281
-    pTag: Kallista
+    pTag: Sheva
     expand: 1
     sprite: {fileID: 0}
     vars:
-    - Hobby1
-    - Hobby2
-    - Hobby3
+    - I used to bullsseye Giant Rats with my Elemental Sphere back home.
+    - 'Ssometimes I like to hide away with a good tome...why are you looking at me
+      like that? I''m allowed to read. '
+    - Through my travels, I've found that you can create some pretty fasscinating
+      potions from human blood...
     varKeys:
     - Key1
     - Key2
@@ -690,30 +689,30 @@ MonoBehaviour:
     ID: 15
     rect:
       serializedVersion: 2
-      x: 520
-      y: 780
+      x: 470
+      y: 650
       width: 349
       height: 215
     pTag: Player
     expand: 1
-    sprite: {fileID: 21300000, guid: 19c673c793173dd4c9a2bb7870bbf289, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: below 25% comment
+    - text: '"Us"?'
       extraData: ExtraData
       inputSetIndex: 16
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 4
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 59
+        width: 30
+        height: 21
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -721,29 +720,32 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 1200
-      y: 660
+      y: 640
       width: 349
-      height: 121
-    pTag: Kallista
-    expand: 0
+      height: 237
+    pTag: Sheva
+    expand: 1
     sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 0
+    vars:
+    - 
+    varKeys:
+    - Key1
+    isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: below 50% comment
+    - text: 'There''s that word again. Do not mistake this partnership for something
+        more. '
       extraData: ExtraData
       inputSetIndex: 17
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 4
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 59
+        width: 30
+        height: 42
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -751,10 +753,10 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 1200
-      y: 780
+      y: 760
       width: 349
-      height: 121
-    pTag: Kallista
+      height: 142
+    pTag: Sheva
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -762,18 +764,18 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: below 75% comment
+    - text: Our adventures thus far have been unexpectedly amusing. I like you.
       extraData: ExtraData
       inputSetIndex: 18
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 4
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 59
+        width: 30
+        height: 42
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -783,7 +785,7 @@ MonoBehaviour:
       x: 1200
       y: 900
       width: 349
-      height: 121
+      height: 142
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -792,18 +794,19 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: below 100% comment
+    - text: I...trust you? This is not something I say lightly or easily, but I feel
+        strongly attached to you.
       extraData: ExtraData
       inputSetIndex: 19
       outputNodeIndex: -1
-      outActionIndex: -1
+      outActionIndex: 4
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 59
+        width: 30
+        height: 55
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -811,10 +814,85 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 1200
-      y: 1020
+      y: 1040
+      width: 349
+      height: 155
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: How about this? Whatever you find in the dungeon, you get to keep.
+      extraData: ExtraData
+      inputSetIndex: 20
+      outputNodeIndex: -1
+      outActionIndex: 0
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 42
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Sorry,  I don't have anything to offer you.
+      extraData: ExtraData
+      inputSetIndex: 20
+      outputNodeIndex: 21
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 102
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 28
+    rect:
+      serializedVersion: 2
+      x: 3260
+      y: -10
+      width: 349
+      height: 172
+    pTag: Player
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: Then Begone, you pest
+      extraData: ExtraData
+      inputSetIndex: 21
+      outputNodeIndex: -1
+      outActionIndex: 8
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 29
+    rect:
+      serializedVersion: 2
+      x: 3240
+      y: 270
       width: 349
       height: 121
-    pTag: Kallista
+    pTag: ???
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -822,46 +900,67 @@ MonoBehaviour:
     isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
-    gameObjectName: Paladin
+    gameObjectName: Sheeva_Idle
     methodName: RecruitCompanion
-    nameIndex: 2
-    methodIndex: 9
+    nameIndex: 18
+    methodIndex: 17
     paramIndex: 0
     opts:
     - '[No method]'
+    - SetEnergy
+    - CalculateQuarters
+    - FinishCasting
+    - Button1
+    - Button2
+    - Button3
+    - PlayAudio
+    - Attack
+    - Disengage
+    - StopMoving
+    - MoveToAttackRange
+    - SpawnTargetCircle
+    - DestroyTargetCircle
+    - SaveToPlayerData
     - Die
-    - Attack
-    - Disengage
-    - Attack
-    - Disengage
-    - AttackMelee
-    - AttackRanged
-    - MoveToDistance
-    - RecruitCompanion
     - Hobbies
+    - RecruitCompanion
+    - EndConversation
+    - AffectionLevel
+    - EnableShopUI
     - GetAssigned
     - AssignNew
     - SaveState
     - LoadState
     - OnBeforeSerialize
     - OnAfterDeserialize
-    - CallNext
-    - SelectChoice
-    - RecruitCompanion
-    - Hobbies
     nameOpts:
     - '[No object]'
+    - Kallista_Idle
+    - Strannik_Finished (2)
+    - Villager_Patrolling
+    - Villager_Patrolling (1)
+    - Villager_Patrolling (2)
+    - Portal
+    - InnAudio
     - Player
-    - Paladin
+    - Main Camera
+    - Portal
+    - Camera
+    - Manager
+    - DialogueManager
+    - Sendar
+    - Water
+    - InsideTrigger
     - Barbarian
+    - Sheeva_Idle
     param_bool: 0
     param_string: 
     param_int: 0
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 3480
-      y: 100
+      x: 3990
+      y: -20
       width: 200
       height: 154
     ID: 7
@@ -871,37 +970,59 @@ MonoBehaviour:
     ovrStartNode: 10
     renameDialogue: 
   - pauseHere: 0
-    gameObjectName: Paladin
+    gameObjectName: Sheeva_Idle
     methodName: Hobbies
-    nameIndex: 2
-    methodIndex: 18
+    nameIndex: 18
+    methodIndex: 16
     paramIndex: 0
     opts:
     - '[No method]'
+    - SetEnergy
+    - CalculateQuarters
+    - FinishCasting
+    - Button1
+    - Button2
+    - Button3
+    - PlayAudio
+    - Attack
+    - Disengage
+    - StopMoving
+    - MoveToAttackRange
+    - SpawnTargetCircle
+    - DestroyTargetCircle
+    - SaveToPlayerData
     - Die
-    - Attack
-    - Disengage
-    - Attack
-    - Disengage
-    - AttackMelee
-    - AttackRanged
-    - MoveToDistance
+    - Hobbies
+    - RecruitCompanion
+    - EndConversation
+    - AffectionLevel
+    - EnableShopUI
     - GetAssigned
     - AssignNew
     - SaveState
     - LoadState
     - OnBeforeSerialize
     - OnAfterDeserialize
-    - CallNext
-    - SelectChoice
-    - RecruitCompanion
-    - Hobbies
-    - Hobbies
     nameOpts:
     - '[No object]'
+    - Kallista_Idle
+    - Strannik_Finished (2)
+    - Villager_Patrolling
+    - Villager_Patrolling (1)
+    - Villager_Patrolling (2)
+    - Portal
+    - InnAudio
     - Player
-    - Paladin
+    - Main Camera
+    - Portal
+    - Camera
+    - Manager
+    - DialogueManager
+    - Sendar
+    - Water
+    - InsideTrigger
     - Barbarian
+    - Sheeva_Idle
     param_bool: 0
     param_string: 
     param_int: 0
@@ -909,7 +1030,7 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 1780
-      y: 480
+      y: 410
       width: 200
       height: 158
     ID: 16
@@ -919,37 +1040,59 @@ MonoBehaviour:
     ovrStartNode: -1
     renameDialogue: 
   - pauseHere: 0
-    gameObjectName: Paladin
+    gameObjectName: Sheeva_Idle
     methodName: AffectionLevel
-    nameIndex: 2
+    nameIndex: 18
     methodIndex: 19
     paramIndex: 0
     opts:
     - '[No method]'
-    - Die
+    - SetEnergy
+    - CalculateQuarters
+    - FinishCasting
+    - Button1
+    - Button2
+    - Button3
+    - PlayAudio
     - Attack
     - Disengage
-    - Attack
-    - Disengage
-    - AttackMelee
-    - AttackRanged
+    - StopMoving
     - MoveToAttackRange
+    - SpawnTargetCircle
+    - DestroyTargetCircle
+    - SaveToPlayerData
+    - Die
+    - Hobbies
+    - RecruitCompanion
+    - EndConversation
+    - AffectionLevel
+    - EnableShopUI
     - GetAssigned
     - AssignNew
     - SaveState
     - LoadState
     - OnBeforeSerialize
     - OnAfterDeserialize
-    - CallNext
-    - SelectChoice
-    - RecruitCompanion
-    - Hobbies
-    - AffectionLevel
     nameOpts:
     - '[No object]'
+    - Kallista_Idle
+    - Strannik_Finished (2)
+    - Villager_Patrolling
+    - Villager_Patrolling (1)
+    - Villager_Patrolling (2)
+    - Portal
+    - InnAudio
     - Player
-    - Paladin
+    - Main Camera
+    - Portal
+    - Camera
+    - Manager
+    - DialogueManager
+    - Sendar
+    - Water
+    - InsideTrigger
     - Barbarian
+    - Sheeva_Idle
     param_bool: 0
     param_string: 
     param_int: 0
@@ -965,5 +1108,249 @@ MonoBehaviour:
     outActionIndex: -1
     more: 0
     ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Sheeva_Idle
+    methodName: EndConversation
+    nameIndex: 18
+    methodIndex: 18
+    paramIndex: 0
+    opts:
+    - '[No method]'
+    - SetEnergy
+    - CalculateQuarters
+    - FinishCasting
+    - Button1
+    - Button2
+    - Button3
+    - PlayAudio
+    - Attack
+    - Disengage
+    - StopMoving
+    - MoveToAttackRange
+    - SpawnTargetCircle
+    - DestroyTargetCircle
+    - SaveToPlayerData
+    - Die
+    - Hobbies
+    - RecruitCompanion
+    - EndConversation
+    - AffectionLevel
+    - EnableShopUI
+    - GetAssigned
+    - AssignNew
+    - SaveState
+    - LoadState
+    - OnBeforeSerialize
+    - OnAfterDeserialize
+    nameOpts:
+    - '[No object]'
+    - Kallista_Idle
+    - Strannik_Finished (2)
+    - Villager_Patrolling
+    - Villager_Patrolling (1)
+    - Villager_Patrolling (2)
+    - Portal
+    - InnAudio
+    - Player
+    - Main Camera
+    - Portal
+    - Camera
+    - Manager
+    - DialogueManager
+    - Sendar
+    - Water
+    - InsideTrigger
+    - Barbarian
+    - Sheeva_Idle
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 260
+      y: 270
+      width: 200
+      height: 158
+    ID: 23
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 0
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    nameIndex: 0
+    methodIndex: 0
+    paramIndex: -1
+    opts:
+    - '[No method]'
+    nameOpts:
+    - '[No object]'
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 1710
+      y: 800
+      width: 200
+      height: 158
+    ID: 24
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 0
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    nameIndex: 0
+    methodIndex: 0
+    paramIndex: -1
+    opts:
+    - '[No method]'
+    nameOpts:
+    - '[No object]'
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 1780
+      y: 570
+      width: 200
+      height: 158
+    ID: 25
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 0
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    nameIndex: 0
+    methodIndex: 0
+    paramIndex: -1
+    opts:
+    - '[No method]'
+    nameOpts:
+    - '[No object]'
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 2550
+      y: 440
+      width: 200
+      height: 154
+    ID: 26
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    nameIndex: 0
+    methodIndex: 0
+    paramIndex: -1
+    opts:
+    - '[No method]'
+    nameOpts:
+    - '[No object]'
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 470
+      y: 870
+      width: 200
+      height: 154
+    ID: 27
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Sheeva_Idle
+    methodName: EndConversation
+    nameIndex: 18
+    methodIndex: 18
+    paramIndex: 0
+    opts:
+    - '[No method]'
+    - SetEnergy
+    - CalculateQuarters
+    - FinishCasting
+    - Button1
+    - Button2
+    - Button3
+    - PlayAudio
+    - Attack
+    - Disengage
+    - StopMoving
+    - MoveToAttackRange
+    - SpawnTargetCircle
+    - DestroyTargetCircle
+    - SaveToPlayerData
+    - Die
+    - Hobbies
+    - RecruitCompanion
+    - EndConversation
+    - AffectionLevel
+    - EnableShopUI
+    - GetAssigned
+    - AssignNew
+    - SaveState
+    - LoadState
+    - OnBeforeSerialize
+    - OnAfterDeserialize
+    nameOpts:
+    - '[No object]'
+    - Kallista_Idle
+    - Strannik_Finished (2)
+    - Villager_Patrolling
+    - Villager_Patrolling (1)
+    - Villager_Patrolling (2)
+    - Portal
+    - InnAudio
+    - Player
+    - Main Camera
+    - Portal
+    - Camera
+    - Manager
+    - DialogueManager
+    - Sendar
+    - Water
+    - InsideTrigger
+    - Barbarian
+    - Sheeva_Idle
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 3760
+      y: 240
+      width: 200
+      height: 158
+    ID: 30
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 0
+    ovrStartNode: 5
     renameDialogue: 
   S_selNodes: []

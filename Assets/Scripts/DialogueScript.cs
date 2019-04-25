@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using VIDE_Data;
 
 public class DialogueScript : MonoBehaviour
@@ -33,6 +34,11 @@ public class DialogueScript : MonoBehaviour
 
     private int currentXP;
     private int totalXP;
+    public GameObject cameraSheva;
+    public GameObject cameraSendar;
+    public GameObject cameraKallista;
+    public GameObject cameraStrannik;
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,9 +67,29 @@ public class DialogueScript : MonoBehaviour
 
             //tell the player to talk to me
             player.GetComponent<PlayerAI>().Talking();
-           
+
+            switch (gameObject.name)
+            {
+                case "Sheeva_Idle":
+                    cameraSheva.GetComponent<RawImage>().enabled = true;
+                    break;
+                case "Strannik_Finished (2)":
+                  ;
+                    break;
+                case "Kallista_Idle":
+                  ;
+                    break;
+                case "Sendar":
+                    cameraSendar.GetComponent<RawImage>().enabled = true;
+                    print("Sendar");
+                    break;
+
+            }
+
             //initiate my dialogue script
             GameObject.Find("DialogueManager").GetComponent<Template_UIManager>().Interact(GetComponent<VIDE_Assign>());
+
+           
 
         }
     }
@@ -103,6 +129,7 @@ public class DialogueScript : MonoBehaviour
 
             case 0:
                 VD.SetNode(19);
+                GetComponent<AudioSource>().Play();
                 break;
             case 1:
                 VD.SetNode(20);

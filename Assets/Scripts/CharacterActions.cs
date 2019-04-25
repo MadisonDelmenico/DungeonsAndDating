@@ -112,6 +112,7 @@ public class CharacterActions : MonoBehaviour
                             if (GetComponent<CompanionAIScript>())
                             {
                                 target.GetComponent<Health>().health -= affectionLevel * attackValue;
+
                             }
                             else
                             {
@@ -121,6 +122,7 @@ public class CharacterActions : MonoBehaviour
                             basicCooldown = basicCooldownReset;
                             SendAttackerInfo(target);
                             Debug.Log("basic attack");
+                            GetComponent<animationscript>().Attack();
                         }
                     }
                 }
@@ -141,7 +143,12 @@ public class CharacterActions : MonoBehaviour
                             else
                             {
                                 target.GetComponent<Health>().health -= fireboltValue;
+<<<<<<< HEAD
 
+=======
+                                GetComponent<PlayerAI>().LookAt(target.transform.position);
+                                GetComponent<animationscript>().Cast();
+>>>>>>> allkindsofbroken
                             }
 
                             SendAttackerInfo(target);
@@ -180,7 +187,12 @@ public class CharacterActions : MonoBehaviour
                             else
                             {
                                 target.GetComponent<Health>().health += revitalizeValue;
+<<<<<<< HEAD
 
+=======
+                                GetComponent<PlayerAI>().LookAt(target.transform.position);
+                                GetComponent<animationscript>().Cast();
+>>>>>>> allkindsofbroken
                             }
 
                             revitalizeCooldown = revitalizeCooldownReset;
@@ -210,6 +222,7 @@ public class CharacterActions : MonoBehaviour
                                 {
                                     enemy.GetComponent<Health>().health -= (affectionLevel * wildSpinValue);
                                     SendAttackerInfo(enemy);
+                                  
                                 }
                             }
                         }
@@ -224,6 +237,7 @@ public class CharacterActions : MonoBehaviour
                                 {
                                     enemy.GetComponent<Health>().health -= (wildSpinValue);
                                     SendAttackerInfo(enemy);
+                                    GetComponent<animationscript>().WildSpin();
                                 }
                             }
                         }

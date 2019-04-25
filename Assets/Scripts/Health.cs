@@ -33,6 +33,7 @@ public class Health : MonoBehaviour
         {
             if (isPlayer == true)
             {
+                GetComponent<animationscript>().Die();
                 fainted = true;
                 SceneManager.LoadScene("Map");
             }

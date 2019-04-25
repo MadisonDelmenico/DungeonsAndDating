@@ -186,7 +186,7 @@ public class PlayerAI : MonoBehaviour
 
     public void Talking()
     {
-        if (isInteracting == true)
+        if (isInteracting)
         {
             isInteracting = false;
         }

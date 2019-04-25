@@ -18,6 +18,10 @@ public class DataManager : MonoBehaviour
 
     public PlayerData playerData = new PlayerData();
 
+    public bool manualReset;
+    public bool manualSave;
+    public bool manualLoad;
+
     private GameObject player;
     private GameObject[] companions;
 
@@ -52,18 +56,21 @@ public class DataManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (manualLoad)
         {
+            manualLoad = false;
             ReadData();
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (manualSave)
         {
+            manualSave = false;
             SaveData();
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (manualReset)
         {
+            manualReset = false;
             ResetSaveData();
         }
     }

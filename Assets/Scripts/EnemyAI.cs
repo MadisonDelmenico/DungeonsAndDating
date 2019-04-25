@@ -139,8 +139,8 @@ public class EnemyAI : MonoBehaviour
                 if (target != gameObject)
                 {
                     // GetComponent<NavMeshMovement>().meshAgent.destination = target.transform.position;
-
-                    target.gameObject.transform.LookAt(target.transform);
+                    Vector3 lookPos = new Vector3(target.transform.position.x, this.transform.position.y, target.transform.position.z);
+                    transform.LookAt(lookPos);
 
                     // Is the enemy is greater than 5m from where im patrolling
                     if (Vector3.Distance(GetComponent<EnemyPatrols>().Waypoints[GetComponent<EnemyPatrols>().waypointNumber].transform.position, target.transform.position) > 20f)
@@ -161,7 +161,7 @@ public class EnemyAI : MonoBehaviour
                         MoveToAttackRange(target);
                     }
                     // Look at the enemy
-                    transform.LookAt(target.transform);
+                    transform.LookAt(lookPos);
                     //do the basic attack on the target
                     switch (GetComponent<EnemyClass>().currentClass)
                     {

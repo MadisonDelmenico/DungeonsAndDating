@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 8685263210796287126}
   - component: {fileID: 8685263210796287141}
   - component: {fileID: 8685263210796287140}
-  - component: {fileID: 6864506289392522019}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -322,20 +321,6 @@ MonoBehaviour:
   scaleRepairKit: 0
   hauntedDagger: 0
   localCharityReciept: 0
---- !u!114 &6864506289392522019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8685263210796287127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 625f3d50205fbb740a4cf27dbec5f1ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioLocation: event:/Characters/Kallista/Kallista_Footsteps
-  EnableFootstepsAudio: 1
 --- !u!1 &8685263211057667450
 GameObject:
   m_ObjectHideFlags: 0

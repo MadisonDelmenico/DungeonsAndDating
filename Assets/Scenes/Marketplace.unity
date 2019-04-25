@@ -5583,7 +5583,23 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6443115476218185432, guid: 357bb15f97076bc4b8f5705647548fc7,
+        type: 3}
+      propertyPath: camearLocation
+      value: 
+      objectReference: {fileID: 846284021}
+    - target: {fileID: 6443115476218185432, guid: 357bb15f97076bc4b8f5705647548fc7,
+        type: 3}
+      propertyPath: camearaLocation
+      value: 
+      objectReference: {fileID: 846284021}
+    - target: {fileID: 6443115476218185432, guid: 357bb15f97076bc4b8f5705647548fc7,
+        type: 3}
+      propertyPath: cameraLocation
+      value: 
+      objectReference: {fileID: 846284021}
+    m_RemovedComponents:
+    - {fileID: 6443115476218185432, guid: 357bb15f97076bc4b8f5705647548fc7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 357bb15f97076bc4b8f5705647548fc7, type: 3}
 --- !u!1 &161363921
 GameObject:
@@ -11791,6 +11807,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8749671338476260045, guid: 696d20c7f34f6d2439a2b486320b90d2,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8749671338476260035, guid: 696d20c7f34f6d2439a2b486320b90d2,
         type: 3}
       propertyPath: m_NavMeshLayer
@@ -11807,11 +11828,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8749671338476260039, guid: 696d20c7f34f6d2439a2b486320b90d2,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749671338476260045, guid: 696d20c7f34f6d2439a2b486320b90d2,
         type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
@@ -15007,7 +15023,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 482174924}
-  - component: {fileID: 482174923}
   - component: {fileID: 482174925}
   m_Layer: 0
   m_Name: InnAudio
@@ -15016,29 +15031,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &482174923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482174922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/Environment/Env_RoomTone_Inn
-  PlayEvent: 1
-  StopEvent: 2
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 6
-  OverrideMaxDistance: 20
 --- !u!4 &482174924
 Transform:
   m_ObjectHideFlags: 0
@@ -22604,6 +22596,12 @@ MonoBehaviour:
   PlayerClass: 
   PlayerDeity: 
   PlayerSkin: 0
+--- !u!4 &698813996 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8685263210796287138, guid: 357bb15f97076bc4b8f5705647548fc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 161161795}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &702449112
 GameObject:
   m_ObjectHideFlags: 0
@@ -24272,6 +24270,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2d2e723609fe24e9d66565433a3de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &751724267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751724262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0424105a34ddcf34eb5564881094a46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 698813996}
+  inn: {fileID: 482174924}
+--- !u!114 &751724268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751724262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Music/v1/Music_Overworld
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &753114369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27762,8 +27797,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &848152434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62109,6 +62144,11 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8516401505605355091, guid: c8ec7884840d3d142907a018ff5e4e75,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8516401505966046019, guid: c8ec7884840d3d142907a018ff5e4e75,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -79003,6 +79043,35 @@ Transform:
   m_Father: {fileID: 1617096300}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1764756570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1553382495050512528, guid: 679d190a04bee27459726dc8b4c306d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 899504789}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1764756571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764756570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Environment/Env_Torches_Burning_Loop
+  PlayEvent: 1
+  StopEvent: 2
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 4
 --- !u!1 &1768069630
 GameObject:
   m_ObjectHideFlags: 0

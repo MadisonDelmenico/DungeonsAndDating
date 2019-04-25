@@ -236,7 +236,7 @@ public class EnemyAI : MonoBehaviour
         {
             distance = rangedDistance;
         }
-        Debug.Log("Moving to distance");
+        //Debug.Log("Moving to distance");
 
         Vector3 direction = transform.position - attackTarget.transform.position;
         direction.Normalize();

@@ -90,6 +90,25 @@ public class CharacterActions : MonoBehaviour
         revitalizeCooldown -= Time.deltaTime;
         wildSpinCooldown -= Time.deltaTime;
         elementalSphereCooldown -= Time.deltaTime;
+
+        if (GetComponent<PlayerAI>())
+        {
+            if (fireboltCooldown <= 1)
+            {
+                GetComponent<animationscript>().casting = false;
+            }
+
+            if (revitalizeCooldown <= 1)
+            {
+                GetComponent<animationscript>().casting = false;
+            }
+            if (wildSpinCooldown <= 2)
+            {
+                GetComponent<animationscript>().whirlwinding = false;
+            }
+        }
+       
+
     }
 
     public void DoAction(Action action, GameObject target)
@@ -112,17 +131,19 @@ public class CharacterActions : MonoBehaviour
                             if (GetComponent<CompanionAIScript>())
                             {
                                 target.GetComponent<Health>().health -= affectionLevel * attackValue;
+                                GetComponentInChildren<CompanionAnimations>().Attack();
 
                             }
                             else
                             {
                                 target.GetComponent<Health>().health -= attackValue;
+                                GetComponent<animationscript>().Attack();
                             }
                            // Debug.Log(target.name);
                             basicCooldown = basicCooldownReset;
                             SendAttackerInfo(target);
                             Debug.Log("basic attack");
-                            GetComponent<animationscript>().Attack();
+
                         }
                     }
                 }
@@ -138,6 +159,7 @@ public class CharacterActions : MonoBehaviour
                             if (GetComponent<CompanionAIScript>())
                             {
                                 target.GetComponent<Health>().health -= affectionLevel * fireboltValue;
+                                GetComponentInChildren<CompanionAnimations>().Cast();
 
                             }
                             else
@@ -145,6 +167,7 @@ public class CharacterActions : MonoBehaviour
                                 target.GetComponent<Health>().health -= fireboltValue;
                                 GetComponent<PlayerAI>().LookAt(target.transform.position);
                                 GetComponent<animationscript>().Cast();
+                                GetComponent<animationscript>().casting = true;
                             }
 
                             SendAttackerInfo(target);
@@ -178,6 +201,7 @@ public class CharacterActions : MonoBehaviour
                             if (GetComponent<CompanionAIScript>())
                             {
                                 target.GetComponent<Health>().health += affectionLevel * revitalizeValue;
+                                GetComponentInChildren<CompanionAnimations>().Cast();
 
                             }
                             else
@@ -185,6 +209,7 @@ public class CharacterActions : MonoBehaviour
                                 target.GetComponent<Health>().health += revitalizeValue;
                                 GetComponent<PlayerAI>().LookAt(target.transform.position);
                                 GetComponent<animationscript>().Cast();
+                                GetComponent<animationscript>().casting = true;
                             }
 
                             revitalizeCooldown = revitalizeCooldownReset;
@@ -210,6 +235,7 @@ public class CharacterActions : MonoBehaviour
                             {
                                 if (Vector3.Distance(gameObject.transform.position, enemy.transform.position) < 1.0f)
                                 {
+                                    GetComponentInChildren<CompanionAnimations>().WildSpin();
                                     enemy.GetComponent<Health>().health -= (affectionLevel * wildSpinValue);
                                     SendAttackerInfo(enemy);
                                   
@@ -228,11 +254,13 @@ public class CharacterActions : MonoBehaviour
                                     enemy.GetComponent<Health>().health -= (wildSpinValue);
                                     SendAttackerInfo(enemy);
                                     GetComponent<animationscript>().WildSpin();
+                                    GetComponent<animationscript>().whirlwinding = true;
                                 }
                             }
                         }
                     }
                     wildSpinCooldown = wildSpinCooldownReset;
+
                 }
                 break;
             case Action.ElementalSphere:
@@ -242,9 +270,10 @@ public class CharacterActions : MonoBehaviour
                     {
                         Debug.Log("Elemental Sphere attack!");
 
-                        if (GetComponent<CompanionAIScript>())
+                        if (GetComponentInChildren<CompanionAIScript>())
                         {
                             target.GetComponent<Health>().health -= (affectionLevel * elementalSphereValue);
+                            GetComponentInChildren<CompanionAnimations>().Cast();
                         }
                         else
                         {
@@ -325,18 +354,22 @@ public class CharacterActions : MonoBehaviour
     {
         PlayAudio("click");
         DoAction(Action.Revitalize, GetComponent<TargettingEnemies>().friendlyTarget);
+        GetComponent<animationscript>().Cast();
     }
 
     public void Button2()
     {
         PlayAudio("click");
         DoAction(Action.Firebolt, GetComponent<TargettingEnemies>().target);
+        GetComponent<animationscript>().Cast();
+
     }
 
     public void Button3()
     {
         PlayAudio("click");
         DoAction(Action.WildSpin, GetComponent<TargettingEnemies>().target);
+        GetComponent<animationscript>().WildSpin();
     }
 
     public void PlayAudio(string type)

@@ -7,18 +7,33 @@ public class animationscript : MonoBehaviour
 {
     public bool walking;
     public bool idling;
+    public bool casting;
+    public bool whirlwinding;
     public Animator animator;
+    public float animationtimer;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponentInChildren<Animator>();
+        animationtimer = 1.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (casting) 
+        {
+            Cast();
+        }
+
+        if (whirlwinding)
+        {
+            WildSpin();
+        }
+
         if (walking== true)
         {
             animator.Play("Player_Walk");
@@ -57,21 +72,25 @@ public class animationscript : MonoBehaviour
 
     public void Die()
     {
+        animator = GetComponentInChildren<Animator>();
         animator.Play("Player_Die");
     }
 
     public void Cast()
     {
+        animator = GetComponentInChildren<Animator>();
         animator.Play("Player_Cast");
     }
 
     public void Attack()
     {
+        animator = GetComponentInChildren<Animator>();
         animator.Play("Player_Attack");
     }
 
     public void WildSpin()
     {
+        animator = GetComponentInChildren<Animator>();
         animator.Play("Player_WildSpin");
     }
 }

@@ -143,12 +143,8 @@ public class CharacterActions : MonoBehaviour
                             else
                             {
                                 target.GetComponent<Health>().health -= fireboltValue;
-<<<<<<< HEAD
-
-=======
                                 GetComponent<PlayerAI>().LookAt(target.transform.position);
                                 GetComponent<animationscript>().Cast();
->>>>>>> allkindsofbroken
                             }
 
                             SendAttackerInfo(target);
@@ -187,20 +183,14 @@ public class CharacterActions : MonoBehaviour
                             else
                             {
                                 target.GetComponent<Health>().health += revitalizeValue;
-<<<<<<< HEAD
-
-=======
                                 GetComponent<PlayerAI>().LookAt(target.transform.position);
                                 GetComponent<animationscript>().Cast();
->>>>>>> allkindsofbroken
                             }
 
                             revitalizeCooldown = revitalizeCooldownReset;
-
-
+                            
                             Debug.Log(target.name);
                            
-
                             GameObject particle = Instantiate(revitalizeParticleEffect, target.transform.position, target.transform.rotation);
                             particle.GetComponent<ParticleFollow>().target = target.transform;
                             Destroy(particle, 5.5f);

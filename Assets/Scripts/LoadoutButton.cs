@@ -9,6 +9,7 @@ public class LoadoutButton : MonoBehaviour
     public Vector3 unselectedPos;
     public Vector3 selectedPos;
     public CompanionAIScript companion;
+    public CharacterClass.Class companionClass;
 
     // Start is called before the first frame update
     void Start()

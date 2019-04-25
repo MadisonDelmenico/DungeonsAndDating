@@ -13,4 +13,5 @@ public class PlayerData
     public int skinTone = 1;
     public PlayerInventoryData inventoryData = new PlayerInventoryData();
     public PlayerCompanionData companionData = new PlayerCompanionData();
+    public PlayerLoadoutData loadoutData = new PlayerLoadoutData();
 }

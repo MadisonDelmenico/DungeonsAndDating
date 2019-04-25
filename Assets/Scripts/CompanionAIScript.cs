@@ -539,29 +539,9 @@ public class CompanionAIScript : MonoBehaviour
         }
     }
 
-    public PlayerCompanionData SaveToPlayerData()
+    public bool SaveToPlayerData()
     {
-        PlayerCompanionData data = new PlayerCompanionData();
-
-        switch (GetComponent<CharacterClass>().currentClass)
-        {
-            case CharacterClass.Class.Barbarian:
-                data.strannikRecruited = isRecruited;
-                break;
-            case CharacterClass.Class.Paladin:
-                data.kalistaRecruited = isRecruited;
-                break;
-            case CharacterClass.Class.Sorcerer:
-                data.sheevaRecruited = isRecruited;
-                break;
-            default:
-                data.kalistaRecruited = false;
-                data.sheevaRecruited = false;
-                data.strannikRecruited = false;
-                break;
-        }
-
-        return data;
+        return isRecruited;
     }
 
     #endregion

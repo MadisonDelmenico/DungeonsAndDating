@@ -23,8 +23,8 @@ public class DataManager : MonoBehaviour
     public bool manualLoad;
 
     private GameObject player;
-    private GameObject[] companions;
-
+    public GameObject[] companions;
+    public LoadoutButton[] companionButtons;
     private bool started;
 
     // Start is called before the first frame update
@@ -33,10 +33,10 @@ public class DataManager : MonoBehaviour
         // DontDestroyOnLoad(this.gameObject);
 
         player = GameObject.FindGameObjectWithTag("Player");
-        companions = GameObject.FindGameObjectsWithTag("Companion");
 
         filePath = Application.persistentDataPath + "/" + fileName;
         Debug.Log(filePath);
+        
     }
 
     // Update is called once per frame
@@ -75,28 +75,58 @@ public class DataManager : MonoBehaviour
         }
     }
 
-
     public void SaveData()
     {
         Debug.Log("Saving Data...");
+
+        // Save Player Inventory
         if (player.GetComponent<PlayerInventory>())
         {
             playerData.inventoryData = player.GetComponent<PlayerInventory>().SaveToPlayerData();
         }
 
+        // Save Companion Data
         foreach (GameObject companion in companions)
         {
-            if (companion.GetComponent<CompanionAIScript>())
+            switch (companion.GetComponent<CharacterClass>().currentClass)
             {
-                playerData.companionData = companion.GetComponent<CompanionAIScript>().SaveToPlayerData();
+                case CharacterClass.Class.Barbarian:
+                    playerData.companionData.strannikRecruited = companion.GetComponent<CompanionAIScript>().SaveToPlayerData();
+                    break;
+                case CharacterClass.Class.Paladin:
+                    playerData.companionData.kalistaRecruited = companion.GetComponent<CompanionAIScript>().SaveToPlayerData();
+                    break;
+                case CharacterClass.Class.Sorcerer:
+                    playerData.companionData.sheevaRecruited = companion.GetComponent<CompanionAIScript>().SaveToPlayerData();
+                    break;
+            }
+
+        }
+
+        // Save Loadout Data
+        foreach (LoadoutButton button in companionButtons)
+        {
+            switch (button.companionClass)
+            {
+                case CharacterClass.Class.Barbarian:
+                    playerData.loadoutData.strannikSelected = button.isSelected;
+                    break;
+                case CharacterClass.Class.Paladin:
+                    playerData.loadoutData.kallistaSelected = button.isSelected;
+                    break;
+                case CharacterClass.Class.Sorcerer:
+                    playerData.loadoutData.sheevaSelected = button.isSelected;
+                    break;
             }
         }
 
+        // Save Player Class
         if (player.GetComponent<CharacterClass>())
         {
             playerData.playerClass = player.GetComponent<CharacterClass>().currentClass.ToString();
         }
 
+        // Save Player Preferences
         if (GetComponent<ExampleText>())
         {
             ExampleText text = GetComponent<ExampleText>();
@@ -106,17 +136,20 @@ public class DataManager : MonoBehaviour
             playerData.affiliation = text.affiliation;
         }
 
+        // Save Player Skin Colour
         if (GetComponent<SettingSkin>())
         {
             SettingSkin skin = GetComponent<SettingSkin>();
             playerData.skinTone = skin.skincolour;
         }
 
+        // Add save data to a wrapper
         PlayerWrapper wrapper = new PlayerWrapper
         {
             data = playerData
         };
 
+        // Write wrapper data to JSON file
         string contents = JsonUtility.ToJson(wrapper, true);
         System.IO.File.WriteAllText(filePath, contents);
     }

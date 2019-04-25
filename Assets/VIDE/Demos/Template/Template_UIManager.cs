@@ -245,6 +245,11 @@ public class Template_UIManager : MonoBehaviour
             else if (VD.assigned.defaultNPCSprite != null)
                 NPCSprite.sprite = VD.assigned.defaultNPCSprite;
 
+            if (data.extraVars.ContainsKey("event:"))
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(data.extraVars.ToString(),GetComponent<Transform>().position);
+            }
+
             if (NPC_animateText)
             {
                 //This coroutine animates the NPC text instead of displaying it all at once

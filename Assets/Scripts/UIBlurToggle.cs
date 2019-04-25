@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIBlurToggle : MonoBehaviour
 {
@@ -43,11 +44,14 @@ public class UIBlurToggle : MonoBehaviour
         if (targetBlur == 1.0f)
         {
             targetBlur = 0.0f;
+           // GameObject.Find("NPC_Sprite").SetActive(false);
         }
         else
         {
             targetBlur = 1.0f;
             blur.iterations = 2;
+           // GameObject.Find("NPC_Sprite").SetActive(true);
+
         }
     }
 }

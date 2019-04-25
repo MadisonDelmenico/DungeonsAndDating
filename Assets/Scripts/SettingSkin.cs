@@ -6,13 +6,11 @@ public class SettingSkin : MonoBehaviour
 {
     public GameObject manager;
     public int skincolour;
-    public GameObject player;
     public Material[] skins;
 
     // Use this for initialization
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("PlayerSkin");
         skincolour = 1;
         UpdateSkinColour();
         UpdateRobeColour("");
@@ -26,7 +24,7 @@ public class SettingSkin : MonoBehaviour
 
     public void UpdateSkinColour()
     {
-        player.GetComponent<SkinnedMeshRenderer>().material = skins[skincolour - 1];
+        GameObject.FindGameObjectWithTag("PlayerSkin").GetComponent<SkinnedMeshRenderer>().material = skins[skincolour - 1];
     }
 
     public void UpdateRobeColour(string deity)

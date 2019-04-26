@@ -43,15 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268dc70b105993846a123be43345df63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileIndex: 14
+  fileIndex: 8
   skinIndex: 0
   loadTag: 
   startID: 0
   curFocusID: 0
-  currentID: 24680
+  currentID: 65095
   autosave: 1
   previewPanning: 0
-  currentDiag: 14
+  currentDiag: 8
   locEdit: 0
   pNodeID: 18
   aNodeID: 2
@@ -68,24 +68,24 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 42
+        height: 41
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     - text: You'll have to excuse me. I have trouble ignoring such alluring people.
       extraData: ExtraData
       inputSetIndex: 0
-      outputNodeIndex: 4
+      outputNodeIndex: -1
       outActionIndex: -1
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 302
-        y: 102
-        width: 30
-        height: 42
+        x: 0
+        y: 0
+        width: 0
+        height: 0
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -98,19 +98,19 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 145
+        y: 142
         width: 30
-        height: 29
+        height: 28
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     ID: 0
     rect:
       serializedVersion: 2
-      x: -220
-      y: 50
+      x: -330
+      y: 30
       width: 349
-      height: 309
+      height: 305
     pTag: Player
     expand: 1
     sprite: {fileID: 0}
@@ -119,7 +119,8 @@ MonoBehaviour:
     isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: 'Nothing I''d want to do with you. '
+    - text: ' I occasionally volunteer helping out at the church or the markets...
+        Oh! And my name is Kallista.'
       extraData: ExtraData
       inputSetIndex: 1
       outputNodeIndex: 2
@@ -128,9 +129,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 21
+        height: 54
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -140,7 +141,7 @@ MonoBehaviour:
       x: 340
       y: -40
       width: 349
-      height: 121
+      height: 152.66667
     pTag: ???
     expand: 0
     sprite: {fileID: 0}
@@ -158,9 +159,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 29
+        height: 28
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -170,17 +171,18 @@ MonoBehaviour:
       x: 820
       y: -20
       width: 349
-      height: 223
+      height: 221.00002
     pTag: Player
     expand: 1
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: Oh, you're STILL talking? I ssuppose I could set you alight, that could
-        be pretty entertaining.
+    - text: 'Dont worry, my friend, I can be your shield! I''m a paladin of Torm,
+        and proficient in the revitalize spell. If you can pull your weight, I think
+        we could make a suitable team.  '
       extraData: ExtraData
       inputSetIndex: 3
       outputNodeIndex: 5
@@ -189,9 +191,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 42
+        height: 79
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -201,8 +203,8 @@ MonoBehaviour:
       x: 2070
       y: 0
       width: 349
-      height: 142
-    pTag: ???
+      height: 178.00002
+    pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -210,7 +212,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: And I just can't resist drinking your blood if you keep talking. Go away.
+    - text: I apologise. Charisma helps me access divine magic... My name is Kallista
+        by the way.
       extraData: ExtraData
       inputSetIndex: 4
       outputNodeIndex: 2
@@ -219,9 +222,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 42
+        height: 41
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -231,7 +234,7 @@ MonoBehaviour:
       x: 340
       y: 110
       width: 349
-      height: 142
+      height: 140
     pTag: ???
     expand: 0
     sprite: {fileID: 0}
@@ -250,9 +253,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 42
+        height: 41
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -262,27 +265,28 @@ MonoBehaviour:
       x: 2470
       y: -20
       width: 349
-      height: 236
+      height: 233.66669
     pTag: Player
     expand: 1
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: 'What''s in it for me? You had better make it worth my while. '
+    - text: You're asking if I want to help protect the town...AND smite evil? Lets
+        go!
       extraData: ExtraData
       inputSetIndex: 6
-      outputNodeIndex: 20
-      outActionIndex: -1
+      outputNodeIndex: -1
+      outActionIndex: 0
       showmore: 0
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 29
+        height: 41
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -292,8 +296,8 @@ MonoBehaviour:
       x: 2870
       y: -10
       width: 349
-      height: 129
-    pTag: ???
+      height: 140
+    pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -311,9 +315,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 55
+        height: 54
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -323,10 +327,10 @@ MonoBehaviour:
       x: 1290
       y: -20
       width: 349
-      height: 249
+      height: 246.33334
     pTag: Player
     expand: 1
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
     vars: []
     varKeys: []
     isPlayer: 0
@@ -342,9 +346,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 55
+        height: 54
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -354,10 +358,10 @@ MonoBehaviour:
       x: 1660
       y: -20
       width: 349
-      height: 249
+      height: 246.33334
     pTag: Player
     expand: 1
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
     vars: []
     varKeys: []
     isPlayer: 0
@@ -372,7 +376,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -402,7 +406,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 103
+        y: 102
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -414,7 +418,7 @@ MonoBehaviour:
       x: -570
       y: 550
       width: 349
-      height: 165
+      height: 164
     pTag: Player
     expand: 0
     sprite: {fileID: 0}
@@ -432,7 +436,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -447,7 +451,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 81
+        y: 80
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -477,7 +481,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 125
+        y: 124
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -489,7 +493,7 @@ MonoBehaviour:
       x: 0
       y: 520
       width: 349
-      height: 281
+      height: 279.6667
     pTag: Player
     expand: 1
     sprite: {fileID: 0}
@@ -507,7 +511,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -516,30 +520,30 @@ MonoBehaviour:
     - text: Tell me something from your past
       extraData: ExtraData
       inputSetIndex: 11
-      outputNodeIndex: -1
+      outputNodeIndex: 20
       outActionIndex: -1
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 80
+        width: 30
+        height: 28
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     - text: Tell me about your likes / dislikes
       extraData: ExtraData
       inputSetIndex: 11
-      outputNodeIndex: -1
+      outputNodeIndex: 25
       outActionIndex: -1
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 110
+        width: 30
+        height: 21
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -552,7 +556,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 125
+        y: 132
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -564,8 +568,8 @@ MonoBehaviour:
       x: 1340
       y: 450
       width: 349
-      height: 187
-    pTag: 
+      height: 193.33334
+    pTag: Player
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -582,7 +586,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -591,10 +595,10 @@ MonoBehaviour:
     ID: 13
     rect:
       serializedVersion: 2
-      x: 870
-      y: 420
+      x: 880
+      y: 450
       width: 349
-      height: 121
+      height: 120
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -612,9 +616,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 29
+        height: 28
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -622,12 +626,12 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 470
-      y: 410
+      y: 430
       width: 349
-      height: 223
+      height: 221.00002
     pTag: Player
     expand: 1
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
     vars: []
     varKeys: []
     isPlayer: 0
@@ -642,7 +646,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -651,19 +655,20 @@ MonoBehaviour:
     ID: 17
     rect:
       serializedVersion: 2
-      x: 2180
-      y: 440
+      x: 2080
+      y: 180
       width: 349
-      height: 281
-    pTag: Sheva
+      height: 278.6667
+    pTag: Kallista
     expand: 1
     sprite: {fileID: 0}
     vars:
-    - I used to bullsseye Giant Rats with my Elemental Sphere back home.
-    - 'Ssometimes I like to hide away with a good tome...why are you looking at me
-      like that? I''m allowed to read. '
-    - Through my travels, I've found that you can create some pretty fasscinating
-      potions from human blood...
+    - I often exercise when I have time. It helps to stay in peak physical condition,
+      especially in this career.
+    - I like to browse the markets. and admire the crafts of different artisans. It's
+      nice to remember what I fight for sometimes.
+    - Star gazing is quite enjoyable. sometimes the stars guide me, other times its
+      simply calming. I find It keeps me grounded in my duties.
     varKeys:
     - Key1
     - Key2
@@ -680,7 +685,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -692,16 +697,16 @@ MonoBehaviour:
       x: 470
       y: 650
       width: 349
-      height: 215
+      height: 213.66669
     pTag: Player
     expand: 1
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: '"Us"?'
+    - text: Us?
       extraData: ExtraData
       inputSetIndex: 16
       outputNodeIndex: -1
@@ -710,7 +715,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -720,21 +725,19 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 1200
-      y: 640
+      y: 770
       width: 349
-      height: 237
-    pTag: Sheva
-    expand: 1
+      height: 120
+    pTag: Kallista
+    expand: 0
     sprite: {fileID: 0}
-    vars:
-    - 
-    varKeys:
-    - Key1
-    isPlayer: 1
+    vars: []
+    varKeys: []
+    isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: 'There''s that word again. Do not mistake this partnership for something
-        more. '
+    - text: You've proven reliable so far. I'm glad to have found someone I can count
+        on.
       extraData: ExtraData
       inputSetIndex: 17
       outputNodeIndex: -1
@@ -743,9 +746,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 42
+        height: 41
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -753,10 +756,10 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 1200
-      y: 760
+      y: 890
       width: 349
-      height: 142
-    pTag: Sheva
+      height: 140
+    pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -764,7 +767,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: Our adventures thus far have been unexpectedly amusing. I like you.
+    - text: I'm glad I found you. So few in this town have kept pace with me and things
+        were getting lonely if I'm honest.
       extraData: ExtraData
       inputSetIndex: 18
       outputNodeIndex: -1
@@ -773,9 +777,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 42
+        height: 54
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -783,9 +787,9 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 1200
-      y: 900
+      y: 1030
       width: 349
-      height: 142
+      height: 152.66667
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -794,8 +798,7 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: I...trust you? This is not something I say lightly or easily, but I feel
-        strongly attached to you.
+    - text: below 100% comment
       extraData: ExtraData
       inputSetIndex: 19
       outputNodeIndex: -1
@@ -804,9 +807,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 55
+        height: 21
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -814,101 +817,252 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 1200
-      y: 1040
+      y: 1180
       width: 349
-      height: 155
+      height: 120
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
-  - commentCount: 2
-    s_comment:
-    - text: How about this? Whatever you find in the dungeon, you get to keep.
-      extraData: ExtraData
-      inputSetIndex: 20
-      outputNodeIndex: -1
-      outActionIndex: 0
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 302
-        y: 59
-        width: 30
-        height: 42
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    - text: Sorry,  I don't have anything to offer you.
-      extraData: ExtraData
-      inputSetIndex: 20
-      outputNodeIndex: 21
-      outActionIndex: -1
-      showmore: 0
-      outRect:
-        serializedVersion: 2
-        x: 302
-        y: 102
-        width: 30
-        height: 29
-      sprites: {fileID: 0}
-      audios: {fileID: 0}
-      visible: 1
-    ID: 28
-    rect:
-      serializedVersion: 2
-      x: 3260
-      y: -10
-      width: 349
-      height: 172
-    pTag: Player
-    expand: 0
-    sprite: {fileID: 0}
-    vars: []
-    varKeys: []
-    isPlayer: 1
   - commentCount: 1
     s_comment:
-    - text: Then Begone, you pest
+    - text: Where are you from? What brought you here?
       extraData: ExtraData
-      inputSetIndex: 21
+      inputSetIndex: 20
       outputNodeIndex: -1
       outActionIndex: 8
       showmore: 0
       outRect:
         serializedVersion: 2
         x: 302
-        y: 59
+        y: 58
         width: 30
-        height: 21
+        height: 28
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
-    ID: 29
+    ID: 28
     rect:
       serializedVersion: 2
-      x: 3240
-      y: 270
+      x: 1790
+      y: 480
       width: 349
-      height: 121
-    pTag: ???
+      height: 127.33334
+    pTag: Player
     expand: 0
     sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: I feel this is where I'm meant to be. The people here need me.
+      extraData: ExtraData
+      inputSetIndex: 21
+      outputNodeIndex: -1
+      outActionIndex: 9
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 58
+        width: 30
+        height: 28
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 30
+    rect:
+      serializedVersion: 2
+      x: 2400
+      y: 520
+      width: 349
+      height: 127.33334
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: My parents were less than kind, I'll say that. I guess I just wanted to
+        make my own way through life.
+      extraData: ExtraData
+      inputSetIndex: 22
+      outputNodeIndex: -1
+      outActionIndex: 9
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 58
+        width: 30
+        height: 54
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 31
+    rect:
+      serializedVersion: 2
+      x: 2400
+      y: 650
+      width: 349
+      height: 152.66667
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: When I came into this world, I was born to a human mother and a demon
+        father. You can imagine the complications that came from that. I didn't want
+        to follow in their footsteps so I came here to help people.
+      extraData: ExtraData
+      inputSetIndex: 23
+      outputNodeIndex: -1
+      outActionIndex: 9
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 58
+        width: 30
+        height: 92
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 32
+    rect:
+      serializedVersion: 2
+      x: 2400
+      y: 790
+      width: 349
+      height: 190.66667
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: One day when I was still young, I wandered into the city by myself. My
+        criminal parents were off robbing a jewellery store I think and I realised
+        I didn't know my way back home. The streets get so confusing. A merchant saw
+        me, though. He must have thought I was an urchin. A lone kid all by herself
+        and he gave me a coin. I didn't have to do anything for it. That kindness
+        is why I fight to protect people.
+      extraData: ExtraData
+      inputSetIndex: 24
+      outputNodeIndex: -1
+      outActionIndex: 9
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 58
+        width: 30
+        height: 168
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 33
+    rect:
+      serializedVersion: 2
+      x: 2400
+      y: 970
+      width: 349
+      height: 266.6667
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: What do you like? What do you hate?
+      extraData: ExtraData
+      inputSetIndex: 25
+      outputNodeIndex: -1
+      outActionIndex: 10
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 58
+        width: 30
+        height: 28
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 35
+    rect:
+      serializedVersion: 2
+      x: 1480
+      y: 670
+      width: 349
+      height: 127.33334
+    pTag: Player
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Comment...
+      extraData: ExtraData
+      inputSetIndex: 26
+      outputNodeIndex: -1
+      outActionIndex: 6
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 58
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 36
+    rect:
+      serializedVersion: 2
+      x: 2040
+      y: 670
+      width: 349
+      height: 278.6667
+    pTag: Kallista
+    expand: 1
+    sprite: {fileID: 0}
+    vars:
+    - I often exercise when I have time. It helps to stay in peak physical condition,
+      especially in this career.
+    - I like to browse the markets. and admire the crafts of different artisans. It's
+      nice to remember what I fight for sometimes.
+    - Star gazing is quite enjoyable. sometimes the stars guide me, other times its
+      simply calming. I find It keeps me grounded in my duties.
+    varKeys:
+    - Key1
+    - Key2
+    - Key3
+    isPlayer: 0
   S_actionNodes:
   - pauseHere: 0
-    gameObjectName: Sheeva_Idle
+    gameObjectName: Kallista_Idle
     methodName: RecruitCompanion
-    nameIndex: 18
-    methodIndex: 17
+    nameIndex: 13
+    methodIndex: 23
     paramIndex: 0
     opts:
     - '[No method]'
-    - SetEnergy
-    - CalculateQuarters
+    - Die
     - FinishCasting
     - Button1
     - Button2
@@ -917,52 +1071,53 @@ MonoBehaviour:
     - Attack
     - Disengage
     - StopMoving
+    - CalculateQuarters
     - MoveToAttackRange
     - SpawnTargetCircle
     - DestroyTargetCircle
     - SaveToPlayerData
-    - Die
-    - Hobbies
-    - RecruitCompanion
-    - EndConversation
-    - AffectionLevel
-    - EnableShopUI
+    - SetEnergy
     - GetAssigned
     - AssignNew
     - SaveState
     - LoadState
     - OnBeforeSerialize
     - OnAfterDeserialize
+    - Hobbies
+    - RecruitCompanion
+    - EndConversation
+    - AffectionLevel
+    - TellMeAboutYourPast
+    - EnableShopUI
     nameOpts:
     - '[No object]'
-    - Kallista_Idle
-    - Strannik_Finished (2)
     - Villager_Patrolling
+    - SceneManager
     - Villager_Patrolling (1)
     - Villager_Patrolling (2)
     - Portal
     - InnAudio
-    - Player
+    - Strannik_Finished
     - Main Camera
     - Portal
     - Camera
-    - Manager
     - DialogueManager
     - Sendar
+    - Kallista_Idle
     - Water
     - InsideTrigger
-    - Barbarian
     - Sheeva_Idle
+    - Player
     param_bool: 0
     param_string: 
     param_int: 0
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 3990
+      x: 3290
       y: -20
       width: 200
-      height: 154
+      height: 153
     ID: 7
     outPlayerIndex: -1
     outActionIndex: -1
@@ -970,28 +1125,13 @@ MonoBehaviour:
     ovrStartNode: 10
     renameDialogue: 
   - pauseHere: 0
-    gameObjectName: Sheeva_Idle
+    gameObjectName: Kallista_Idle
     methodName: Hobbies
-    nameIndex: 18
-    methodIndex: 16
+    nameIndex: 1
+    methodIndex: 1
     paramIndex: 0
     opts:
     - '[No method]'
-    - SetEnergy
-    - CalculateQuarters
-    - FinishCasting
-    - Button1
-    - Button2
-    - Button3
-    - PlayAudio
-    - Attack
-    - Disengage
-    - StopMoving
-    - MoveToAttackRange
-    - SpawnTargetCircle
-    - DestroyTargetCircle
-    - SaveToPlayerData
-    - Die
     - Hobbies
     - RecruitCompanion
     - EndConversation
@@ -1003,6 +1143,21 @@ MonoBehaviour:
     - LoadState
     - OnBeforeSerialize
     - OnAfterDeserialize
+    - SetEnergy
+    - MoveToAttackRange
+    - SpawnTargetCircle
+    - DestroyTargetCircle
+    - SaveToPlayerData
+    - CalculateQuarters
+    - Attack
+    - Disengage
+    - StopMoving
+    - FinishCasting
+    - Button1
+    - Button2
+    - Button3
+    - PlayAudio
+    - Die
     nameOpts:
     - '[No object]'
     - Kallista_Idle
@@ -1030,9 +1185,9 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 1780
-      y: 410
+      y: 250
       width: 200
-      height: 158
+      height: 156.66667
     ID: 16
     outPlayerIndex: 14
     outActionIndex: -1
@@ -1040,15 +1195,14 @@ MonoBehaviour:
     ovrStartNode: -1
     renameDialogue: 
   - pauseHere: 0
-    gameObjectName: Sheeva_Idle
+    gameObjectName: Kallista_Idle
     methodName: AffectionLevel
-    nameIndex: 18
-    methodIndex: 19
+    nameIndex: 13
+    methodIndex: 25
     paramIndex: 0
     opts:
     - '[No method]'
-    - SetEnergy
-    - CalculateQuarters
+    - Die
     - FinishCasting
     - Button1
     - Button2
@@ -1057,42 +1211,43 @@ MonoBehaviour:
     - Attack
     - Disengage
     - StopMoving
+    - CalculateQuarters
     - MoveToAttackRange
     - SpawnTargetCircle
     - DestroyTargetCircle
     - SaveToPlayerData
-    - Die
-    - Hobbies
-    - RecruitCompanion
-    - EndConversation
-    - AffectionLevel
-    - EnableShopUI
+    - SetEnergy
     - GetAssigned
     - AssignNew
     - SaveState
     - LoadState
     - OnBeforeSerialize
     - OnAfterDeserialize
+    - Hobbies
+    - RecruitCompanion
+    - EndConversation
+    - AffectionLevel
+    - TellMeAboutYourPast
+    - EnableShopUI
     nameOpts:
     - '[No object]'
-    - Kallista_Idle
-    - Strannik_Finished (2)
     - Villager_Patrolling
+    - SceneManager
     - Villager_Patrolling (1)
     - Villager_Patrolling (2)
     - Portal
     - InnAudio
-    - Player
+    - Strannik_Finished
     - Main Camera
     - Portal
     - Camera
-    - Manager
     - DialogueManager
     - Sendar
+    - Kallista_Idle
     - Water
     - InsideTrigger
-    - Barbarian
     - Sheeva_Idle
+    - Player
     param_bool: 0
     param_string: 
     param_int: 0
@@ -1102,7 +1257,7 @@ MonoBehaviour:
       x: 930
       y: 780
       width: 200
-      height: 158
+      height: 156.66667
     ID: 18
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1110,28 +1265,13 @@ MonoBehaviour:
     ovrStartNode: -1
     renameDialogue: 
   - pauseHere: 0
-    gameObjectName: Sheeva_Idle
+    gameObjectName: Kallista_Idle
     methodName: EndConversation
-    nameIndex: 18
-    methodIndex: 18
+    nameIndex: 1
+    methodIndex: 3
     paramIndex: 0
     opts:
     - '[No method]'
-    - SetEnergy
-    - CalculateQuarters
-    - FinishCasting
-    - Button1
-    - Button2
-    - Button3
-    - PlayAudio
-    - Attack
-    - Disengage
-    - StopMoving
-    - MoveToAttackRange
-    - SpawnTargetCircle
-    - DestroyTargetCircle
-    - SaveToPlayerData
-    - Die
     - Hobbies
     - RecruitCompanion
     - EndConversation
@@ -1143,6 +1283,21 @@ MonoBehaviour:
     - LoadState
     - OnBeforeSerialize
     - OnAfterDeserialize
+    - SetEnergy
+    - MoveToAttackRange
+    - SpawnTargetCircle
+    - DestroyTargetCircle
+    - SaveToPlayerData
+    - CalculateQuarters
+    - Attack
+    - Disengage
+    - StopMoving
+    - FinishCasting
+    - Button1
+    - Button2
+    - Button3
+    - PlayAudio
+    - Die
     nameOpts:
     - '[No object]'
     - Kallista_Idle
@@ -1169,10 +1324,10 @@ MonoBehaviour:
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 260
-      y: 270
+      x: 130
+      y: 300
       width: 200
-      height: 158
+      height: 156.66667
     ID: 23
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1195,10 +1350,10 @@ MonoBehaviour:
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 1710
-      y: 800
+      x: 1750
+      y: 1080
       width: 200
-      height: 158
+      height: 156.66667
     ID: 24
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1215,20 +1370,37 @@ MonoBehaviour:
     - '[No method]'
     nameOpts:
     - '[No object]'
+    - Villager_Patrolling
+    - SceneManager
+    - Villager_Patrolling (1)
+    - Villager_Patrolling (2)
+    - Portal
+    - InnAudio
+    - Strannik_Finished
+    - Main Camera
+    - Portal
+    - Camera
+    - DialogueManager
+    - Sendar
+    - Kallista_Idle
+    - Water
+    - InsideTrigger
+    - Sheeva_Idle
+    - Player
     param_bool: 0
     param_string: 
     param_int: 0
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 1780
-      y: 570
+      x: 1760
+      y: 870
       width: 200
-      height: 158
+      height: 153
     ID: 25
     outPlayerIndex: -1
     outActionIndex: -1
-    more: 0
+    more: 1
     ovrStartNode: -1
     renameDialogue: 
   - pauseHere: 0
@@ -1247,10 +1419,10 @@ MonoBehaviour:
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 2550
-      y: 440
+      x: 2540
+      y: 270
       width: 200
-      height: 154
+      height: 153
     ID: 26
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1276,7 +1448,7 @@ MonoBehaviour:
       x: 470
       y: 870
       width: 200
-      height: 154
+      height: 153
     ID: 27
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1284,15 +1456,14 @@ MonoBehaviour:
     ovrStartNode: -1
     renameDialogue: 
   - pauseHere: 0
-    gameObjectName: Sheeva_Idle
-    methodName: EndConversation
-    nameIndex: 18
-    methodIndex: 18
+    gameObjectName: Kallista_Idle
+    methodName: TellMeAboutYourPast
+    nameIndex: 13
+    methodIndex: 26
     paramIndex: 0
     opts:
     - '[No method]'
-    - SetEnergy
-    - CalculateQuarters
+    - Die
     - FinishCasting
     - Button1
     - Button2
@@ -1301,56 +1472,109 @@ MonoBehaviour:
     - Attack
     - Disengage
     - StopMoving
+    - CalculateQuarters
     - MoveToAttackRange
     - SpawnTargetCircle
     - DestroyTargetCircle
     - SaveToPlayerData
-    - Die
-    - Hobbies
-    - RecruitCompanion
-    - EndConversation
-    - AffectionLevel
-    - EnableShopUI
+    - SetEnergy
     - GetAssigned
     - AssignNew
     - SaveState
     - LoadState
     - OnBeforeSerialize
     - OnAfterDeserialize
+    - Hobbies
+    - RecruitCompanion
+    - EndConversation
+    - AffectionLevel
+    - TellMeAboutYourPast
+    - EnableShopUI
     nameOpts:
     - '[No object]'
-    - Kallista_Idle
-    - Strannik_Finished (2)
     - Villager_Patrolling
+    - SceneManager
     - Villager_Patrolling (1)
     - Villager_Patrolling (2)
     - Portal
     - InnAudio
-    - Player
+    - Strannik_Finished
     - Main Camera
     - Portal
     - Camera
-    - Manager
     - DialogueManager
     - Sendar
+    - Kallista_Idle
     - Water
     - InsideTrigger
-    - Barbarian
     - Sheeva_Idle
+    - Player
     param_bool: 0
     param_string: 
     param_int: 0
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 3760
-      y: 240
+      x: 2160
+      y: 470
       width: 200
-      height: 158
-    ID: 30
+      height: 156.66667
+    ID: 29
     outPlayerIndex: -1
     outActionIndex: -1
     more: 0
-    ovrStartNode: 5
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    nameIndex: 0
+    methodIndex: 0
+    paramIndex: -1
+    opts:
+    - '[No method]'
+    nameOpts:
+    - '[No object]'
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 2890
+      y: 730
+      width: 200
+      height: 153
+    ID: 34
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    nameIndex: 0
+    methodIndex: 0
+    paramIndex: -1
+    opts:
+    - '[No method]'
+    nameOpts:
+    - '[No object]'
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 1830
+      y: 680
+      width: 200
+      height: 156.66667
+    ID: 37
+    outPlayerIndex: 26
+    outActionIndex: -1
+    more: 0
+    ovrStartNode: -1
     renameDialogue: 
   S_selNodes: []

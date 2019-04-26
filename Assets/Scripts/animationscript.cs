@@ -49,7 +49,7 @@ public class animationscript : MonoBehaviour
             walking = false;
         }
 
-        if (GetComponent<PlayerAI>().isAttacking  == false && walking == false)
+        if (GetComponent<PlayerAI>().isAttacking  == false && walking == false && GetComponent<PlayerAI>().state == PlayerAI.PlayerState.Idle)
         {
             animator.Play("Player_Idle");
         }

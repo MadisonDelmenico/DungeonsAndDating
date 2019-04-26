@@ -301,6 +301,11 @@ public class CharacterActions : MonoBehaviour
             default:
                 break;
         }
+
+        if (GetComponent<PlayerAI>())
+        {
+            GetComponent<PlayerAI>().state = PlayerAI.PlayerState.Idle;
+        }
     }
 
     public void FinishCasting()
@@ -330,7 +335,6 @@ public class CharacterActions : MonoBehaviour
         GetComponent<Energy>().SetEnergy(0);
         preparedAction = Action.None;
         preparedTarget = gameObject;
-
     }
 
     public void BeginCasting(Action action, GameObject target)
@@ -354,6 +358,7 @@ public class CharacterActions : MonoBehaviour
     {
         PlayAudio("click");
         DoAction(Action.Revitalize, GetComponent<TargettingEnemies>().friendlyTarget);
+        GetComponent<PlayerAI>().state = PlayerAI.PlayerState.Cast;
         GetComponent<animationscript>().Cast();
     }
 
@@ -361,14 +366,15 @@ public class CharacterActions : MonoBehaviour
     {
         PlayAudio("click");
         DoAction(Action.Firebolt, GetComponent<TargettingEnemies>().target);
+        GetComponent<PlayerAI>().state = PlayerAI.PlayerState.Cast;
         GetComponent<animationscript>().Cast();
-
     }
 
     public void Button3()
     {
         PlayAudio("click");
         DoAction(Action.WildSpin, GetComponent<TargettingEnemies>().target);
+        GetComponent<PlayerAI>().state = PlayerAI.PlayerState.WildSpin;
         GetComponent<animationscript>().WildSpin();
     }
 

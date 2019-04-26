@@ -18,6 +18,9 @@ public class PlayerAI : MonoBehaviour
     private float castTime;
     private CharacterActions characterActions;
 
+    public enum PlayerState { Idle, Walk, Cast, Melee, WildSpin, Die };
+    public PlayerState state;
+
     [Header("My Abilities")]
     public CharacterActions.Action actionOne;
     public CharacterActions.Action actionTwo;
@@ -49,7 +52,7 @@ public class PlayerAI : MonoBehaviour
         isInteracting = false;
         name = PlayerPrefs.GetString("PName");
         characterActions = GetComponent<CharacterActions>();
-
+        state = PlayerState.Idle;
     }
 
     // Update is called once per frame

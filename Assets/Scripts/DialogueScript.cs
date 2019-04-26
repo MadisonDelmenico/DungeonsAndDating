@@ -39,6 +39,7 @@ public class DialogueScript : MonoBehaviour
     public GameObject cameraKallista;
     public GameObject cameraStrannik;
 
+    public GameObject giftUI;
 
     // Start is called before the first frame update
     void Start()
@@ -185,6 +186,61 @@ public class DialogueScript : MonoBehaviour
         VD.SetComment(VD.assigned.assignedDialogue, 40, 0, newText);
 
     }
+    public void GiftUI()
+    {
+        if (giftUI.activeSelf == true)
+        {
+            giftUI.SetActive(false);
+        }
+        if (giftUI.activeSelf == false)
+        {
+            giftUI.SetActive(true);
+        }
+
+
+    }
+
+    public void Steak()
+    {
+        VD.BeginDialogue("Kalista");
+        VD.SetNode(44);
+    }
+
+    public void Wand()
+    {
+        VD.SetNode(45);
+    }
+    public void HolyOrderEnlistment()
+    {
+
+        VD.SetNode(46);
+    }
+    public void Boots()
+    {
+        VD.SetNode(47);
+    }
+
+    public void Whetstone()
+    {
+        VD.SetNode(48);
+    }
+    public void Cookies()
+    {
+        VD.SetNode(49);
+    }
+    public void Receipt()
+    {
+        VD.SetNode(50);
+    }
+    public void Dagger()
+    {
+        VD.SetNode(51);
+    }
+    public void ScaleKit()
+    {
+        VD.SetNode(52);
+    }
+
 
         public void EnableShopUI()
         {

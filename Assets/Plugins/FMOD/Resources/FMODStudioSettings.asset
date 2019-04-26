@@ -78,13 +78,13 @@ MonoBehaviour:
   MasterBanks:
   - Master Bank
   Banks:
+  - Characters
+  - Dialogue
   - Enemys
   - Environment
   - Interactables
   - Master Bank.strings
   - Music
   - UI
-  - Characters
-  - Dialogue
   BanksToLoad: []
   LiveUpdatePort: 9264

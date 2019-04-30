@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using VIDE_Data;
 
@@ -41,6 +42,7 @@ public class DialogueScript : MonoBehaviour
     public GameObject cameraStrannik;
 
     public GameObject giftUI;
+    public bool affectionLevelUp;
 
     // Start is called before the first frame update
     void Start()
@@ -89,8 +91,35 @@ public class DialogueScript : MonoBehaviour
 
             }
 
-            //initiate my dialogue script
+           
+
+            if (affectionLevelUp)
+            {
+                switch (GetComponent<AffectionRating>().affectionLevel)
+                {
+                    case 2:
+                        GetComponent<VIDE_Assign>().overrideStartNode = 61;
+                        //VD.SetNode(61);
+                      
+                        break;
+                    case 3:
+                        GetComponent<VIDE_Assign>().overrideStartNode = 65;
+                        //  VD.SetNode(65);
+
+                        break;
+                    case 4:
+                        GetComponent<VIDE_Assign>().overrideStartNode = 68;
+                        //  VD.SetNode(68);
+                        break;
+
+                }
+                affectionLevelUp = false;
+            }
             GameObject.Find("DialogueManager").GetComponent<Template_UIManager>().Interact(GetComponent<VIDE_Assign>());
+
+            //initiate my dialogue script
+
+
 
 
 
@@ -206,12 +235,9 @@ public class DialogueScript : MonoBehaviour
                 VD.SetComment(VD.assigned.assignedDialogue, 40, 0, newText);
                 break;          
         }
-       
-
-       
-
-
     }
+
+
     public void GiftUI()
     {
         if (giftUI.activeSelf == true)
@@ -272,6 +298,36 @@ public class DialogueScript : MonoBehaviour
     {
         GetComponent<Shop>();
     }
+
+    public void HasSteak()
+    {
+        if (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.steakOfStrength >=1)
+        {
+            VD.Next();
+        }
+        else
+        {
+            
+        }
+
+       
+    }
+
+    public void HasWand()
+    {
+
+    }
+
+    public void HasEnlistment()
+    {
+
+    }
+
+    public void HasWhetstone()
+    {
+
+    }
+
 
     /*
     public void l()

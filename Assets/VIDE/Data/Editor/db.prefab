@@ -60,7 +60,7 @@ MonoBehaviour:
     s_comment:
     - text: Hey, I'm new in town. My name's [PName]. what is there to do for fun around
         here?
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 0
       outputNodeIndex: 1
       outActionIndex: -1
@@ -68,29 +68,29 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 41
+        height: 42
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     - text: You'll have to excuse me. I have trouble ignoring such alluring people.
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 0
-      outputNodeIndex: -1
+      outputNodeIndex: 4
       outActionIndex: -1
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 102
+        width: 30
+        height: 42
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     - text: Hey, I'm... I mean, uhh, you'll... never mind.
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 0
       outputNodeIndex: -1
       outActionIndex: 3
@@ -98,9 +98,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 142
+        y: 145
         width: 30
-        height: 28
+        height: 29
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -110,9 +110,9 @@ MonoBehaviour:
       x: -330
       y: 30
       width: 349
-      height: 305
-    pTag: Player
-    expand: 1
+      height: 215
+    pTag: '[PName]'
+    expand: 0
     sprite: {fileID: 0}
     vars: []
     varKeys: []
@@ -121,17 +121,17 @@ MonoBehaviour:
     s_comment:
     - text: ' I occasionally volunteer helping out at the church or the markets...
         Oh! And my name is Kallista.'
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 1
       outputNodeIndex: 2
       outActionIndex: -1
-      showmore: 0
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 54
+        height: 55
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -139,11 +139,11 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 340
-      y: -40
+      y: -230
       width: 349
-      height: 152.66667
+      height: 276
     pTag: ???
-    expand: 0
+    expand: 1
     sprite: {fileID: 0}
     vars: []
     varKeys: []
@@ -151,30 +151,30 @@ MonoBehaviour:
   - commentCount: 1
     s_comment:
     - text: 'I have noticed the nearby dungeons just off of the town. '
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 2
       outputNodeIndex: 7
       outActionIndex: -1
-      showmore: 0
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 28
+        height: 29
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     ID: 2
     rect:
       serializedVersion: 2
-      x: 820
-      y: -20
+      x: 720
+      y: -30
       width: 349
-      height: 221.00002
-    pTag: Player
+      height: 250
+    pTag: '[PName]'
     expand: 1
-    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
@@ -183,29 +183,29 @@ MonoBehaviour:
     - text: 'Dont worry, my friend, I can be your shield! I''m a paladin of Torm,
         and proficient in the revitalize spell. If you can pull your weight, I think
         we could make a suitable team.  '
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 3
       outputNodeIndex: 5
       outActionIndex: -1
-      showmore: 0
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 79
+        height: 81
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     ID: 3
     rect:
       serializedVersion: 2
-      x: 2070
-      y: 0
+      x: 2050
+      y: -160
       width: 349
-      height: 178.00002
+      height: 302
     pTag: Kallista
-    expand: 0
+    expand: 1
     sprite: {fileID: 0}
     vars: []
     varKeys: []
@@ -214,17 +214,17 @@ MonoBehaviour:
     s_comment:
     - text: I apologise. Charisma helps me access divine magic... My name is Kallista
         by the way.
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 4
       outputNodeIndex: 2
       outActionIndex: -1
-      showmore: 0
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 41
+        height: 42
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -232,11 +232,11 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 340
-      y: 110
+      y: 60
       width: 349
-      height: 140
+      height: 263
     pTag: ???
-    expand: 0
+    expand: 1
     sprite: {fileID: 0}
     vars: []
     varKeys: []
@@ -245,30 +245,30 @@ MonoBehaviour:
     s_comment:
     - text: You sound like a valuable ally. I could use your help exploring the dungeons
         if you'd assist me?
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 5
       outputNodeIndex: 6
       outActionIndex: -1
-      showmore: 0
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 41
+        height: 42
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     ID: 5
     rect:
       serializedVersion: 2
-      x: 2470
-      y: -20
+      x: 2530
+      y: -120
       width: 349
-      height: 233.66669
-    pTag: Player
+      height: 263
+    pTag: '[PName]'
     expand: 1
-    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
@@ -276,17 +276,17 @@ MonoBehaviour:
     s_comment:
     - text: You're asking if I want to help protect the town...AND smite evil? Lets
         go!
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 6
       outputNodeIndex: -1
       outActionIndex: 0
-      showmore: 0
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 41
+        height: 42
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -296,9 +296,9 @@ MonoBehaviour:
       x: 2870
       y: -10
       width: 349
-      height: 140
+      height: 263
     pTag: Kallista
-    expand: 0
+    expand: 1
     sprite: {fileID: 0}
     vars: []
     varKeys: []
@@ -315,9 +315,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 54
+        height: 55
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -327,10 +327,10 @@ MonoBehaviour:
       x: 1290
       y: -20
       width: 349
-      height: 246.33334
-    pTag: Player
+      height: 249
+    pTag: '[PName]'
     expand: 1
-    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
@@ -338,17 +338,17 @@ MonoBehaviour:
     s_comment:
     - text: If I see to it to venture into the dungeons would you be able to help
         me? It's dangerous to go alone after all.
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 8
       outputNodeIndex: 3
       outActionIndex: -1
-      showmore: 0
+      showmore: 1
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 54
+        height: 55
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -358,17 +358,17 @@ MonoBehaviour:
       x: 1660
       y: -20
       width: 349
-      height: 246.33334
-    pTag: Player
+      height: 276
+    pTag: '[PName]'
     expand: 1
-    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 3
     s_comment:
     - text: Talk to [CName].
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 9
       outputNodeIndex: 10
       outActionIndex: -1
@@ -376,29 +376,29 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
         height: 21
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     - text: Give Gift.
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 9
-      outputNodeIndex: -1
+      outputNodeIndex: 29
       outActionIndex: -1
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 81
+        width: 30
+        height: 21
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     - text: Leave.
-      extraData: ExtraData
+      extraData: 
       inputSetIndex: 9
       outputNodeIndex: -1
       outActionIndex: 3
@@ -406,7 +406,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 102
+        y: 103
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -418,8 +418,8 @@ MonoBehaviour:
       x: -570
       y: 550
       width: 349
-      height: 164
-    pTag: Player
+      height: 165
+    pTag: '[PName]'
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -436,7 +436,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -451,7 +451,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 80
+        y: 81
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -460,15 +460,15 @@ MonoBehaviour:
     - text: Ask about Character Stats
       extraData: ExtraData
       inputSetIndex: 10
-      outputNodeIndex: -1
+      outputNodeIndex: 27
       outActionIndex: -1
       showmore: 0
       outRect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
+        x: 302
+        y: 103
+        width: 30
+        height: 21
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -481,7 +481,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 124
+        y: 125
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -493,8 +493,8 @@ MonoBehaviour:
       x: 0
       y: 520
       width: 349
-      height: 279.6667
-    pTag: Player
+      height: 281
+    pTag: '[PName]'
     expand: 1
     sprite: {fileID: 0}
     vars: []
@@ -511,7 +511,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -526,9 +526,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 80
+        y: 81
         width: 30
-        height: 28
+        height: 21
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -541,7 +541,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 110
+        y: 103
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -556,7 +556,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 132
+        y: 125
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -568,8 +568,8 @@ MonoBehaviour:
       x: 1340
       y: 450
       width: 349
-      height: 193.33334
-    pTag: Player
+      height: 187
+    pTag: '[PName]'
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -586,7 +586,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -598,7 +598,7 @@ MonoBehaviour:
       x: 880
       y: 450
       width: 349
-      height: 120
+      height: 121
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -616,9 +616,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 28
+        height: 29
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -628,10 +628,10 @@ MonoBehaviour:
       x: 470
       y: 430
       width: 349
-      height: 221.00002
-    pTag: Player
+      height: 223
+    pTag: '[PName]'
     expand: 1
-    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -655,10 +655,10 @@ MonoBehaviour:
     ID: 17
     rect:
       serializedVersion: 2
-      x: 2080
-      y: 180
+      x: 2070
+      y: 170
       width: 349
-      height: 278.6667
+      height: 281
     pTag: Kallista
     expand: 1
     sprite: {fileID: 0}
@@ -685,7 +685,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -697,16 +697,17 @@ MonoBehaviour:
       x: 470
       y: 650
       width: 349
-      height: 213.66669
-    pTag: Player
+      height: 215
+    pTag: '[PName]'
     expand: 1
-    sprite: {fileID: 21300000, guid: f3af7c655cfd8584a98b9a5bafb75b04, type: 3}
+    sprite: {fileID: 0}
     vars: []
     varKeys: []
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: Us?
+    - text: I've been fooled by sweet words before, but you seem to mean what you
+        say. We can continue to work together.
       extraData: ExtraData
       inputSetIndex: 16
       outputNodeIndex: -1
@@ -715,9 +716,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 21
+        height: 55
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -725,9 +726,9 @@ MonoBehaviour:
     rect:
       serializedVersion: 2
       x: 1200
-      y: 770
+      y: 740
       width: 349
-      height: 120
+      height: 155
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -746,9 +747,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 41
+        height: 42
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -758,7 +759,7 @@ MonoBehaviour:
       x: 1200
       y: 890
       width: 349
-      height: 140
+      height: 142
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -777,9 +778,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 54
+        height: 55
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -789,7 +790,7 @@ MonoBehaviour:
       x: 1200
       y: 1030
       width: 349
-      height: 152.66667
+      height: 155
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -798,7 +799,8 @@ MonoBehaviour:
     isPlayer: 0
   - commentCount: 1
     s_comment:
-    - text: below 100% comment
+    - text: I don't want to seem too proud, but I think we make an excellent team.
+        You can count on me to fight by your side any time you wish.
       extraData: ExtraData
       inputSetIndex: 19
       outputNodeIndex: -1
@@ -807,9 +809,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 21
+        height: 68
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -819,7 +821,7 @@ MonoBehaviour:
       x: 1200
       y: 1180
       width: 349
-      height: 120
+      height: 168
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -837,9 +839,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 28
+        height: 29
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -849,8 +851,8 @@ MonoBehaviour:
       x: 1790
       y: 480
       width: 349
-      height: 127.33334
-    pTag: Player
+      height: 129
+    pTag: '[PName]'
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -867,9 +869,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 28
+        height: 29
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -879,7 +881,7 @@ MonoBehaviour:
       x: 2400
       y: 520
       width: 349
-      height: 127.33334
+      height: 129
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -898,9 +900,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 54
+        height: 55
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -910,7 +912,7 @@ MonoBehaviour:
       x: 2400
       y: 650
       width: 349
-      height: 152.66667
+      height: 155
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -930,9 +932,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 92
+        height: 94
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -942,7 +944,7 @@ MonoBehaviour:
       x: 2400
       y: 790
       width: 349
-      height: 190.66667
+      height: 194
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -965,9 +967,9 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 168
+        height: 172
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
@@ -977,7 +979,7 @@ MonoBehaviour:
       x: 2400
       y: 970
       width: 349
-      height: 266.6667
+      height: 272
     pTag: Kallista
     expand: 0
     sprite: {fileID: 0}
@@ -995,20 +997,20 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
-        height: 28
+        height: 29
       sprites: {fileID: 0}
       audios: {fileID: 0}
       visible: 1
     ID: 35
     rect:
       serializedVersion: 2
-      x: 1480
+      x: 1600
       y: 670
       width: 349
-      height: 127.33334
-    pTag: Player
+      height: 129
+    pTag: '[PName]'
     expand: 0
     sprite: {fileID: 0}
     vars: []
@@ -1025,7 +1027,7 @@ MonoBehaviour:
       outRect:
         serializedVersion: 2
         x: 302
-        y: 58
+        y: 59
         width: 30
         height: 21
       sprites: {fileID: 0}
@@ -1034,25 +1036,938 @@ MonoBehaviour:
     ID: 36
     rect:
       serializedVersion: 2
-      x: 2040
-      y: 670
+      x: 2050
+      y: 850
       width: 349
-      height: 278.6667
+      height: 281
     pTag: Kallista
     expand: 1
     sprite: {fileID: 0}
     vars:
-    - I often exercise when I have time. It helps to stay in peak physical condition,
-      especially in this career.
-    - I like to browse the markets. and admire the crafts of different artisans. It's
-      nice to remember what I fight for sometimes.
-    - Star gazing is quite enjoyable. sometimes the stars guide me, other times its
-      simply calming. I find It keeps me grounded in my duties.
+    - Well, my favourite colour is yellow. It feels optimistic for me. It helps to
+      remind me of my faith.
+    - Apples are great. All the nutrients needed for adventuring provided willingly
+      by nature... and they're delicious too.
+    - Well I'm not too fond of lamb or veal. I don't really like the idea of eating
+      baby animals.
     varKeys:
     - Key1
     - Key2
     - Key3
     isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: What can you tell me about your abilities?
+      extraData: ExtraData
+      inputSetIndex: 27
+      outputNodeIndex: -1
+      outActionIndex: 11
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 38
+    rect:
+      serializedVersion: 2
+      x: 20
+      y: 990
+      width: 349
+      height: 129
+    pTag: '[PName]'
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Comment...
+      extraData: ExtraData
+      inputSetIndex: 28
+      outputNodeIndex: -1
+      outActionIndex: 12
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 40
+    rect:
+      serializedVersion: 2
+      x: 680
+      y: 1110
+      width: 349
+      height: 121
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Oh? What's this?
+      extraData: 
+      inputSetIndex: 29
+      outputNodeIndex: 39
+      outActionIndex: -1
+      showmore: 1
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 42
+    rect:
+      serializedVersion: 2
+      x: -1390
+      y: 1150
+      width: 349
+      height: 242
+    pTag: Kallista
+    expand: 1
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Oh how generous, but how will we divide it up to feed the orphans?
+      extraData: ExtraData
+      inputSetIndex: 30
+      outputNodeIndex: -1
+      outActionIndex: 13
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 42
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 44
+    rect:
+      serializedVersion: 2
+      x: -450
+      y: 860
+      width: 349
+      height: 142
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "This wand feels\u2026 vile. I appreciate the thought, but you don\u2019t
+        need my permission to destroy these things."
+      extraData: ExtraData
+      inputSetIndex: 31
+      outputNodeIndex: -1
+      outActionIndex: 13
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 55
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 45
+    rect:
+      serializedVersion: 2
+      x: -450
+      y: 1000
+      width: 349
+      height: 155
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: I had no idea you also answered a higher calling. Perhaps we can discuss
+        our faiths when we have more spare time.
+      extraData: ExtraData
+      inputSetIndex: 32
+      outputNodeIndex: -1
+      outActionIndex: 13
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 55
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 46
+    rect:
+      serializedVersion: 2
+      x: -450
+      y: 1140
+      width: 349
+      height: 155
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "I don\u2019t think these will offer the protection that my current greaves
+        do. But these do look dangerous. Perhaps it is better they are out of harm\u2019s
+        way."
+      extraData: ExtraData
+      inputSetIndex: 33
+      outputNodeIndex: -1
+      outActionIndex: 13
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 68
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 47
+    rect:
+      serializedVersion: 2
+      x: -450
+      y: 1280
+      width: 349
+      height: 168
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "I don\u2019t think this is the right type of equipment for my mace, but
+        I admire your attention to weapon maintenance. Perhaps the city guard could
+        still use it"
+      extraData: ExtraData
+      inputSetIndex: 34
+      outputNodeIndex: -1
+      outActionIndex: 13
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 68
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 48
+    rect:
+      serializedVersion: 2
+      x: -450
+      y: 1440
+      width: 349
+      height: 168
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Oh how lovely! You just wanted to give your money to a good cause! I greatly
+        respect that about you. They will be a good source of sustinace on our adventures
+        as we smite evil.
+      extraData: ExtraData
+      inputSetIndex: 35
+      outputNodeIndex: -1
+      outActionIndex: 13
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 81
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 49
+    rect:
+      serializedVersion: 2
+      x: -450
+      y: 1600
+      width: 349
+      height: 181
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "You really care about those less fortunate than you, don\u2019t you?
+        It is an honour to have you as my friend, [PName]"
+      extraData: ExtraData
+      inputSetIndex: 36
+      outputNodeIndex: -1
+      outActionIndex: 13
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 55
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 50
+    rect:
+      serializedVersion: 2
+      x: -450
+      y: 1770
+      width: 349
+      height: 155
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "This dagger, it speaks to me\u2026 I don\u2019t think I like what it
+        says."
+      extraData: ExtraData
+      inputSetIndex: 37
+      outputNodeIndex: -1
+      outActionIndex: 13
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 51
+    rect:
+      serializedVersion: 2
+      x: -450
+      y: 1920
+      width: 349
+      height: 129
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: "I understand this would benefit some metallic dragons who are champions
+        of good, but\u2026 I personally don\u2019t know where we would find such a
+        creature."
+      extraData: ExtraData
+      inputSetIndex: 38
+      outputNodeIndex: -1
+      outActionIndex: 13
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 68
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 52
+    rect:
+      serializedVersion: 2
+      x: -450
+      y: 2040
+      width: 349
+      height: 168
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 4
+    s_comment:
+    - text: "Steak of Strength\t"
+      extraData: ExtraData
+      inputSetIndex: 39
+      outputNodeIndex: 30
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Snake-shaped Wand
+      extraData: ExtraData
+      inputSetIndex: 39
+      outputNodeIndex: 31
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 81
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Holy Order Enlistment
+      extraData: ExtraData
+      inputSetIndex: 39
+      outputNodeIndex: 32
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 103
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: More
+      extraData: ExtraData
+      inputSetIndex: 39
+      outputNodeIndex: 40
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 125
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 43
+    rect:
+      serializedVersion: 2
+      x: -970
+      y: 1130
+      width: 349
+      height: 187
+    pTag: '[PName]'
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 4
+    s_comment:
+    - text: Spiked Boots
+      extraData: ExtraData
+      inputSetIndex: 40
+      outputNodeIndex: 33
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Halberd Whetstone
+      extraData: ExtraData
+      inputSetIndex: 40
+      outputNodeIndex: 34
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 81
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Ranger Scout Cookies
+      extraData: ExtraData
+      inputSetIndex: 40
+      outputNodeIndex: 35
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 103
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: More
+      extraData: ExtraData
+      inputSetIndex: 40
+      outputNodeIndex: 41
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 125
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 53
+    rect:
+      serializedVersion: 2
+      x: -970
+      y: 1310
+      width: 349
+      height: 187
+    pTag: '[PName]'
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 4
+    s_comment:
+    - text: Local Charity Receipt
+      extraData: ExtraData
+      inputSetIndex: 41
+      outputNodeIndex: 36
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Haunted Dagger
+      extraData: ExtraData
+      inputSetIndex: 41
+      outputNodeIndex: 37
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 81
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Scale Repair Kit
+      extraData: ExtraData
+      inputSetIndex: 41
+      outputNodeIndex: 38
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 103
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Return
+      extraData: ExtraData
+      inputSetIndex: 41
+      outputNodeIndex: 9
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 125
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 54
+    rect:
+      serializedVersion: 2
+      x: -970
+      y: 1500
+      width: 349
+      height: 187
+    pTag: '[PName]'
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 2
+    s_comment:
+    - text: I really enjoyed spending time with you. We sure make a great team.
+      extraData: ExtraData
+      inputSetIndex: 42
+      outputNodeIndex: 49
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 42
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: Are you a sorcerer? Because your beauty is inate.
+      extraData: ExtraData
+      inputSetIndex: 42
+      outputNodeIndex: 48
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 102
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 61
+    rect:
+      serializedVersion: 2
+      x: -1350
+      y: 1820
+      width: 349
+      height: 172
+    pTag: '[PName]'
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: 'Agreed! It has been wonderful fighting side by side. '
+      extraData: ExtraData
+      inputSetIndex: 43
+      outputNodeIndex: -1
+      outActionIndex: 14
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 56
+    rect:
+      serializedVersion: 2
+      x: -940
+      y: 2030
+      width: 349
+      height: 129
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: I admire your boldness, but I do hope you're not getting distracted from
+        our task.
+      extraData: ExtraData
+      inputSetIndex: 44
+      outputNodeIndex: -1
+      outActionIndex: 14
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 42
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 57
+    rect:
+      serializedVersion: 2
+      x: -940
+      y: 2160
+      width: 349
+      height: 142
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: 'We have been through so much together now. '
+      extraData: ExtraData
+      inputSetIndex: 45
+      outputNodeIndex: 43
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: You and I are a natural crit, how about we take things to the next level?
+      extraData: ExtraData
+      inputSetIndex: 45
+      outputNodeIndex: 44
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 89
+        width: 30
+        height: 42
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 65
+    rect:
+      serializedVersion: 2
+      x: -1360
+      y: 2090
+      width: 349
+      height: 172
+    pTag: '[PName]'
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
+  - commentCount: 1
+    s_comment:
+    - text: You are an excellent partner! no villian has gone past us unscathed.
+      extraData: ExtraData
+      inputSetIndex: 46
+      outputNodeIndex: -1
+      outActionIndex: 14
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 42
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 58
+    rect:
+      serializedVersion: 2
+      x: -940
+      y: 2300
+      width: 349
+      height: 142
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: You know I'm unskilled in sleight of hand. I believe you gave it willingly.
+      extraData: ExtraData
+      inputSetIndex: 47
+      outputNodeIndex: -1
+      outActionIndex: 14
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 42
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 59
+    rect:
+      serializedVersion: 2
+      x: -940
+      y: 2440
+      width: 349
+      height: 142
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: Comment...
+      extraData: ExtraData
+      inputSetIndex: 48
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 60
+    rect:
+      serializedVersion: 2
+      x: -940
+      y: 1890
+      width: 349
+      height: 121
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 1
+    s_comment:
+    - text: I'm glad you think so. I feel the same way.
+      extraData: ExtraData
+      inputSetIndex: 49
+      outputNodeIndex: -1
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 21
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 62
+    rect:
+      serializedVersion: 2
+      x: -940
+      y: 1770
+      width: 349
+      height: 129
+    pTag: Kallista
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 0
+  - commentCount: 2
+    s_comment:
+    - text: 'I really feel like we get along famously. '
+      extraData: ExtraData
+      inputSetIndex: 50
+      outputNodeIndex: 46
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 59
+        width: 30
+        height: 29
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    - text: You must be a rogue with high dexterity, because you've stolen my heart.
+      extraData: ExtraData
+      inputSetIndex: 50
+      outputNodeIndex: 47
+      outActionIndex: -1
+      showmore: 0
+      outRect:
+        serializedVersion: 2
+        x: 302
+        y: 89
+        width: 30
+        height: 42
+      sprites: {fileID: 0}
+      audios: {fileID: 0}
+      visible: 1
+    ID: 68
+    rect:
+      serializedVersion: 2
+      x: -1350
+      y: 2370
+      width: 349
+      height: 172
+    pTag: '[PName]'
+    expand: 0
+    sprite: {fileID: 0}
+    vars: []
+    varKeys: []
+    isPlayer: 1
   S_actionNodes:
   - pauseHere: 0
     gameObjectName: Kallista_Idle
@@ -1117,7 +2032,7 @@ MonoBehaviour:
       x: 3290
       y: -20
       width: 200
-      height: 153
+      height: 154
     ID: 7
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1187,7 +2102,7 @@ MonoBehaviour:
       x: 1780
       y: 250
       width: 200
-      height: 156.66667
+      height: 158
     ID: 16
     outPlayerIndex: 14
     outActionIndex: -1
@@ -1257,7 +2172,7 @@ MonoBehaviour:
       x: 930
       y: 780
       width: 200
-      height: 156.66667
+      height: 158
     ID: 18
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1324,10 +2239,10 @@ MonoBehaviour:
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 130
-      y: 300
+      x: 160
+      y: 310
       width: 200
-      height: 156.66667
+      height: 158
     ID: 23
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1353,11 +2268,11 @@ MonoBehaviour:
       x: 1750
       y: 1080
       width: 200
-      height: 156.66667
+      height: 154
     ID: 24
     outPlayerIndex: -1
     outActionIndex: -1
-    more: 0
+    more: 1
     ovrStartNode: -1
     renameDialogue: 
   - pauseHere: 0
@@ -1396,7 +2311,7 @@ MonoBehaviour:
       x: 1760
       y: 870
       width: 200
-      height: 153
+      height: 154
     ID: 25
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1422,7 +2337,7 @@ MonoBehaviour:
       x: 2540
       y: 270
       width: 200
-      height: 153
+      height: 154
     ID: 26
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1445,10 +2360,10 @@ MonoBehaviour:
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 470
-      y: 870
+      x: 510
+      y: 920
       width: 200
-      height: 153
+      height: 154
     ID: 27
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1518,7 +2433,7 @@ MonoBehaviour:
       x: 2160
       y: 470
       width: 200
-      height: 156.66667
+      height: 158
     ID: 29
     outPlayerIndex: -1
     outActionIndex: -1
@@ -1544,8 +2459,177 @@ MonoBehaviour:
       x: 2890
       y: 730
       width: 200
-      height: 153
+      height: 154
     ID: 34
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 1
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Kallista_Idle
+    methodName: LikesDislikes
+    nameIndex: 13
+    methodIndex: 23
+    paramIndex: 0
+    opts:
+    - '[No method]'
+    - Die
+    - FinishCasting
+    - Button1
+    - Button2
+    - Button3
+    - PlayAudio
+    - Attack
+    - Disengage
+    - StopMoving
+    - CalculateQuarters
+    - MoveToAttackRange
+    - SpawnTargetCircle
+    - DestroyTargetCircle
+    - SaveToPlayerData
+    - SetEnergy
+    - GetAssigned
+    - AssignNew
+    - SaveState
+    - LoadState
+    - OnBeforeSerialize
+    - OnAfterDeserialize
+    - Hobbies
+    - LikesDislikes
+    - RecruitCompanion
+    - EndConversation
+    - AffectionLevel
+    - TellMeAboutYourPast
+    - EnableShopUI
+    nameOpts:
+    - '[No object]'
+    - Villager_Patrolling
+    - SceneManager
+    - Villager_Patrolling (1)
+    - Villager_Patrolling (2)
+    - Portal
+    - InnAudio
+    - Strannik_Finished
+    - Main Camera
+    - Portal
+    - Camera
+    - DialogueManager
+    - Sendar
+    - Kallista_Idle
+    - Water
+    - InsideTrigger
+    - Sheeva_Idle
+    - Player
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 1940
+      y: 640
+      width: 200
+      height: 158
+    ID: 37
+    outPlayerIndex: 26
+    outActionIndex: -1
+    more: 0
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: Kallista_Idle
+    methodName: TellMeAboutYourAbilities
+    nameIndex: 13
+    methodIndex: 28
+    paramIndex: 0
+    opts:
+    - '[No method]'
+    - Die
+    - FinishCasting
+    - Button1
+    - Button2
+    - Button3
+    - PlayAudio
+    - Attack
+    - Disengage
+    - StopMoving
+    - CalculateQuarters
+    - MoveToAttackRange
+    - SpawnTargetCircle
+    - DestroyTargetCircle
+    - SaveToPlayerData
+    - SetEnergy
+    - GetAssigned
+    - AssignNew
+    - SaveState
+    - LoadState
+    - OnBeforeSerialize
+    - OnAfterDeserialize
+    - Hobbies
+    - LikesDislikes
+    - RecruitCompanion
+    - EndConversation
+    - AffectionLevel
+    - TellMeAboutYourPast
+    - TellMeAboutYourAbilities
+    - EnableShopUI
+    nameOpts:
+    - '[No object]'
+    - Villager_Patrolling
+    - SceneManager
+    - Villager_Patrolling (1)
+    - Villager_Patrolling (2)
+    - Portal
+    - InnAudio
+    - Strannik_Finished
+    - Main Camera
+    - Portal
+    - Camera
+    - DialogueManager
+    - Sendar
+    - Kallista_Idle
+    - Water
+    - InsideTrigger
+    - Sheeva_Idle
+    - Player
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 430
+      y: 1120
+      width: 200
+      height: 158
+    ID: 39
+    outPlayerIndex: 28
+    outActionIndex: -1
+    more: 0
+    ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    nameIndex: 0
+    methodIndex: 0
+    paramIndex: -1
+    opts:
+    - '[No method]'
+    nameOpts:
+    - '[No object]'
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: 970
+      y: 1310
+      width: 200
+      height: 154
+    ID: 41
     outPlayerIndex: -1
     outActionIndex: -1
     more: 1
@@ -1567,14 +2651,40 @@ MonoBehaviour:
     param_float: 0
     rect:
       serializedVersion: 2
-      x: 1830
-      y: 680
+      x: 110
+      y: 1340
       width: 200
-      height: 156.66667
-    ID: 37
-    outPlayerIndex: 26
+      height: 154
+    ID: 55
+    outPlayerIndex: -1
     outActionIndex: -1
-    more: 0
+    more: 1
     ovrStartNode: -1
+    renameDialogue: 
+  - pauseHere: 0
+    gameObjectName: '[No object]'
+    methodName: '[No method]'
+    nameIndex: 0
+    methodIndex: 0
+    paramIndex: -1
+    opts:
+    - '[No method]'
+    nameOpts:
+    - '[No object]'
+    param_bool: 0
+    param_string: 
+    param_int: 0
+    param_float: 0
+    rect:
+      serializedVersion: 2
+      x: -440
+      y: 2320
+      width: 200
+      height: 154
+    ID: 63
+    outPlayerIndex: -1
+    outActionIndex: -1
+    more: 1
+    ovrStartNode: 10
     renameDialogue: 
   S_selNodes: []

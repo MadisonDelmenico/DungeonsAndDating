@@ -403,6 +403,48 @@ public class Template_UIManager : MonoBehaviour
             data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[CName]", VD.assigned.assignedDialogue);
         if (data.comments[data.commentIndex].Contains("[PName]"))
             data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[PName]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.name);
+
+
+        for (int i = 0; i < VD.nodeData.comments.Length; i++)
+        {
+            if (data.comments[i].Contains("[NumberWand]"))
+            {
+                data.comments[i] = data.comments[i].Replace("[NumberWand]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.snakeShapedWand.ToString());
+            }
+            if (data.comments[i].Contains("[NumberSteak]"))
+            {
+                data.comments[i] = data.comments[i].Replace("[NumberSteak]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.steakOfStrength.ToString());
+            }
+            if (data.comments[i].Contains("[NumberEnlistment]"))
+            {
+                data.comments[i] = data.comments[i].Replace("[NumberEnlistment]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.holyOrderEnlistment.ToString());
+            }
+            if (data.comments[i].Contains("[NumberWhetstone]"))
+            {
+                data.comments[i] = data.comments[i].Replace("[NumberWhetstone]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.halberdWhetstone.ToString());
+            }
+            if (data.comments[i].Contains("[NumberBoots]"))
+            {
+                data.comments[i] = data.comments[i].Replace("[NumberBoots]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.spikedBoots.ToString());
+            }
+            if (data.comments[i].Contains("[NumberCookies]"))
+            {
+                data.comments[i] = data.comments[i].Replace("[NumberCookies]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.rangerScoutCookies.ToString());
+            }
+            if (data.comments[i].Contains("[NumberRepairKit]"))
+            {
+                data.comments[i] = data.comments[i].Replace("[NumberRepairKit]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.scaleRepairKit.ToString());
+            }
+            if (data.comments[i].Contains("[NumberDagger]"))
+            {
+                data.comments[i] = data.comments[i].Replace("[NumberDagger]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.hauntedDagger.ToString());
+            }
+            if (data.comments[i].Contains("[NumberReceipt]"))
+            {
+                data.comments[i] = data.comments[i].Replace("[NumberReceipt]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.localCharityReciept.ToString());
+            }
+        }
+   
         if (data.comments[data.commentIndex].Contains("[PGender]"))
         {
             

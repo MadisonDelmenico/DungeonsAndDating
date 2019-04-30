@@ -34,6 +34,7 @@ public class AffectionRating : MonoBehaviour
         if (currentXP >= currentlevelTotalXP && currentXP > 0) 
         {
             affectionLevel++;
+            GetComponent<DialogueScript>().affectionLevelUp = true;
         }
 
         switch (affectionLevel)

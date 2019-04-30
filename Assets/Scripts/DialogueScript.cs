@@ -42,6 +42,7 @@ public class DialogueScript : MonoBehaviour
     public GameObject cameraStrannik;
 
     public GameObject giftUI;
+    public Object heart;
     public bool affectionLevelUp;
 
     // Start is called before the first frame update
@@ -304,10 +305,33 @@ public class DialogueScript : MonoBehaviour
         if (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.steakOfStrength >=1)
         {
             VD.Next();
+            GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.steakOfStrength--;
+            switch (VD.assigned.assignedDialogue)
+            {
+                case "Kallista":
+                    GetComponent<AffectionRating>().currentXP += 25;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Kallista_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(33, 0.5f, -12);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Sheva":
+                    GetComponent<AffectionRating>().currentXP += 25;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Sheeva_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(8.8f, -0.25f, 3.2f);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Strannik":
+                    GetComponent<AffectionRating>().currentXP += 50;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Strannik_Finished").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(55, -0.25f, -25);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+            }
+
         }
         else
         {
-            
+            VD.SetNode(75);
         }
 
        
@@ -315,18 +339,287 @@ public class DialogueScript : MonoBehaviour
 
     public void HasWand()
     {
+        if (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.snakeShapedWand >= 1)
+        {
+            VD.Next();
+            
+            GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.snakeShapedWand--;
+            switch (VD.assigned.assignedDialogue)
+            {
+                case "Kallista":
+                    GetComponent<AffectionRating>().currentXP += 5;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Kallista_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(33, 0.5f, -12);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
 
+                    break;
+                case "Sheva":
+                    GetComponent<AffectionRating>().currentXP += 50;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Sheeva_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(8.8f, -0.25f, 3.2f);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Strannik":
+                    GetComponent<AffectionRating>().currentXP += 20;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Strannik_Finished").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(55, -0.25f, -25);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+            }
+
+           
+        }
+        else
+        {
+            VD.SetNode(75);
+        }
     }
 
     public void HasEnlistment()
     {
-
+        if (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.holyOrderEnlistment >= 1)
+        {
+            VD.Next();
+            GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.holyOrderEnlistment--;
+            switch (VD.assigned.assignedDialogue)
+            {
+                case "Kallista":
+                    GetComponent<AffectionRating>().currentXP += 50;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Kallista_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(33, 0.5f, -12);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Sheva":
+                    GetComponent<AffectionRating>().currentXP += 5;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Sheeva_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(8.8f, -0.25f, 3.2f);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Strannik":
+                    GetComponent<AffectionRating>().currentXP += 20;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Strannik_Finished").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(55, -0.25f, -25);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+            }
+           
+        }
+        else
+        {
+            VD.SetNode(75);
+        }
     }
 
     public void HasWhetstone()
     {
+        if (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.halberdWhetstone >= 1)
+        {
+            VD.Next();
+            GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.halberdWhetstone--;
+            switch (VD.assigned.assignedDialogue)
+            {
+                case "Kallista":
+                    GetComponent<AffectionRating>().currentXP += 75;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Kallista_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(33, 0.5f, -12);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Sheva":
+                    GetComponent<AffectionRating>().currentXP += 50;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Sheeva_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(8.8f, -0.25f, 3.2f);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Strannik":
+                    GetComponent<AffectionRating>().currentXP += 100;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Strannik_Finished").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(55, -0.25f, -25);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+            }
+
+        }
+        else
+        {
+            VD.SetNode(75);
+        }
+    }
+
+    public void HasBoots()
+    {
+        if (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.spikedBoots >= 1)
+        {
+            VD.Next();
+            GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.spikedBoots--;
+            switch (VD.assigned.assignedDialogue)
+            {
+                case "Kallista":
+                    GetComponent<AffectionRating>().currentXP += 50;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Kallista_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(33, 0.5f, -12);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Sheva":
+                    GetComponent<AffectionRating>().currentXP += 100;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Sheeva_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(8.8f, -0.25f, 3.2f);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Strannik":
+                    GetComponent<AffectionRating>().currentXP += 75;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Strannik_Finished").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(55, -0.25f, -25);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+            }
+
+        }
+        else
+        {
+            VD.SetNode(75);
+        }
 
     }
+    public void HasCookies()
+    {
+        if (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.rangerScoutCookies >= 1)
+        {
+            VD.Next();
+            GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.rangerScoutCookies--;
+            switch (VD.assigned.assignedDialogue)
+            {
+                case "Kallista":
+                    GetComponent<AffectionRating>().currentXP += 100;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Kallista_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(33, 0.5f, -12);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Sheva":
+                    GetComponent<AffectionRating>().currentXP += 50;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Sheeva_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(8.8f, -0.25f, 3.2f);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Strannik":
+                    GetComponent<AffectionRating>().currentXP += 75;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Strannik_Finished").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(55, -0.25f, -25);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+            }
+
+        }
+        else
+        {
+            VD.SetNode(75);
+        }
+
+    }
+    public void HasReceipt()
+    {
+        if (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.localCharityReciept >= 1)
+        {
+            VD.Next();
+            GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.localCharityReciept--;
+            switch (VD.assigned.assignedDialogue)
+            {
+                case "Kallista":
+                    GetComponent<AffectionRating>().currentXP += 200;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Kallista_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(33, 0, -11);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Sheva":
+                    GetComponent<AffectionRating>().currentXP += 75;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Sheeva_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(8.8f, -0.25f, 3.2f);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Strannik":
+                    GetComponent<AffectionRating>().currentXP += 100;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Strannik_Finished").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(55, -0.25f, -25);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+            }
+        }
+        else
+        {
+            VD.SetNode(75);
+        }
+
+    }
+    public void HasDagger()
+    {
+        if (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.hauntedDagger >= 1)
+        {
+            VD.Next();
+            GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.hauntedDagger--;
+            switch (VD.assigned.assignedDialogue)
+            {
+                case "Kallista":
+                    GetComponent<AffectionRating>().currentXP += 50;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Kallista_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(33, 0, -11);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Sheva":
+                    GetComponent<AffectionRating>().currentXP += 200;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Sheeva_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(8.8f, -0.25f, 3.2f);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Strannik":
+                    GetComponent<AffectionRating>().currentXP += 100;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Strannik_Finished").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(55, -0.25f, -25);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+            }
+
+        }
+        else
+        {
+            VD.SetNode(75);
+        }
+
+    }
+    public void HasRepairKit()
+    {
+        if (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.scaleRepairKit >= 1)
+        {
+            VD.Next();
+            GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.inventoryData.scaleRepairKit--;
+            switch (VD.assigned.assignedDialogue)
+            {
+                case "Kallista":
+                    GetComponent<AffectionRating>().currentXP += 100;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Kallista_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(33, 0, -11);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Sheva":
+                    GetComponent<AffectionRating>().currentXP += 150;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Sheeva_Idle").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(8.8f, -0.25f, 3.2f);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+                case "Strannik":
+                    GetComponent<AffectionRating>().currentXP += 200;
+                    heart = Instantiate(Resources.Load("ParticleEffects/ParticleHeart"), GameObject.Find("Strannik_Finished").transform);
+                    GameObject.Find("ParticleHeart(Clone)").transform.position = new Vector3(55, -0.25f, -25);
+                    Destroy(GameObject.Find("ParticleHeart(Clone)"), 5f);
+                    break;
+            }
+
+        }
+        else
+        {
+            VD.SetNode(75);
+        }
+
+    }
+
 
 
     /*

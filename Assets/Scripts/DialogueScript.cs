@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.UI;
 using VIDE_Data;
@@ -139,8 +140,11 @@ public class DialogueScript : MonoBehaviour
     //Give a response in the dialogue based on my current affection level
     public void AffectionLevel()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<AffectionRating>().CalculateQuarters();
-        switch (GameObject.FindGameObjectWithTag("Player").GetComponent<AffectionRating>().quarters)
+        GetComponent<AffectionRating>().CalculateQuarters();
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<AffectionRating>().CalculateQuarters();
+        switch (GetComponent<AffectionRating>().floatToInt)
+
+        //switch (GameObject.FindGameObjectWithTag("Player").GetComponent<AffectionRating>().quarters)
         {
 
             case 0:
@@ -181,9 +185,31 @@ public class DialogueScript : MonoBehaviour
     public void TellMeAboutYourAbilities()
     {
         string newText;
-        newText = "Attack :" + GetComponent<CharacterActions>().attackValue + "$" + "Health :" + GetComponent<Health>().maxHealth + "$" + "Revitalize :" + GetComponent<CharacterActions>().revitalizeValue;
-        newText = newText.Replace("$", "\n");
-        VD.SetComment(VD.assigned.assignedDialogue, 40, 0, newText);
+        //newText = "Health :" + GetComponent<Health>().maxHealth + "$" + "Attack :" + GetComponent<CharacterActions>().attackValue + "$" + "Firebolt :" + GetComponent<CharacterActions>().fireboltValue + "$" + "Wild Spin :" + GetComponent<CharacterActions>().wildSpinValue + "$" + "Revitalize :" + GetComponent<CharacterActions>().revitalizeValue;
+        //newText = newText.Replace("$", "\n");
+
+        switch (VD.assigned.assignedDialogue)
+        {
+            case "Kallista":
+                newText = "Health :" + GetComponent<Health>().maxHealth + "$" + "Attack:" + GetComponent<CharacterActions>().attackValue + "$" +  "Revitalize:" + GetComponent<CharacterActions>().revitalizeValue;
+                newText = newText.Replace("$", "\n");
+                VD.SetComment(VD.assigned.assignedDialogue, 40, 0, newText);
+                break;
+            case "Sheva":
+                newText = "Health :" + GetComponent<Health>().maxHealth + "$" + "Attack:" + GetComponent<CharacterActions>().attackValue + "$" + "Firebolt:" + GetComponent<CharacterActions>().fireboltValue;
+                newText = newText.Replace("$", "\n");
+                VD.SetComment(VD.assigned.assignedDialogue, 40, 0, newText);
+                break;
+            case "Strannik":
+                newText = "Health :" + GetComponent<Health>().maxHealth + "$" + "Attack:" + GetComponent<CharacterActions>().attackValue + "$" +  "Wild Spin:" + GetComponent<CharacterActions>().wildSpinValue;
+                newText = newText.Replace("$", "\n");
+                VD.SetComment(VD.assigned.assignedDialogue, 40, 0, newText);
+                break;          
+        }
+       
+
+       
+
 
     }
     public void GiftUI()
@@ -242,148 +268,148 @@ public class DialogueScript : MonoBehaviour
     }
 
 
-        public void EnableShopUI()
-        {
-            GetComponent<Shop>();
-        }
-
-        /*
-        public void l()
-        {
-
-            switch (GetComponent<AffectionRating>().affectionLevel)
-            {
-
-                case 1:
-                    currentXP = GetComponent<AffectionRating>().currentXP;
-                    totalXP = GetComponent<AffectionRating>().levelOneXP;
-
-
-                    //if your current affection level xp is lower than 25% of the limit for this level
-                    if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
-                    {
-
-                        VD.SetComment(VD.assigned.assignedDialogue, 19, 0, levelOneBelow25);
-                    }
-                    //if your current affection level xp is lower than 50%  but  higher than 25% of the limit for this level
-                    if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 19, 0, levelOneBelow50);
-
-                    }
-                    //if your current affection level xp is lower than 75%  but  higher than 50% of the limit for this level
-                    if (currentXP <= ((totalXP / 2) + (totalXP / 4)) && currentXP > (totalXP / 2))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 19, 0, levelOneBelow75);
-
-                    }
-                    //if your current affection level xp is lower than 100%  but  higher than 75% of the limit for this level
-                    if (currentXP > ((totalXP / 2) + (totalXP / 4)))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 19, 0, levelOneBelow100);
-                    }
-
-
-                    VD.SetNode(19);
-                    break;
-
-                case 2:
-                    currentXP = GetComponent<AffectionRating>().currentXP;
-                    totalXP = GetComponent<AffectionRating>().levelTwoXP;
-
-
-                    //if your current affection level xp is lower than 25% of the limit for this level
-                    if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
-                    {
-
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelTwoBelow25);
-                    }
-                    //if your current affection level xp is lower than 50%  but  higher than 25% of the limit for this level
-                    if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelTwoBelow50);
-
-                    }
-                    //if your current affection level xp is lower than 75%  but  higher than 50% of the limit for this level
-                    if (currentXP <= ((totalXP / 2) + (totalXP / 4)) && currentXP > (totalXP / 2))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelTwoBelow75);
-
-                    }
-
-                    //if your current affection level xp is lower than 100%  but  higher than 75% of the limit for this level
-                    if (currentXP > ((totalXP / 2) + (totalXP / 4)))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelTwoBelow100);
-                    }
-
-                    VD.SetNode(20);
-                    break;
-
-                case 3:
-                    currentXP = GetComponent<AffectionRating>().currentXP;
-                    totalXP = GetComponent<AffectionRating>().levelThreeXP;
-
-
-                    //if your current affection level xp is lower than 25% of the limit for this level
-                    if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
-                    {
-
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelThreeBelow25);
-                    }
-                    //if your current affection level xp is lower than 50%  but  higher than 25% of the limit for this level
-                    if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelThreeBelow50);
-
-                    }
-                    //if your current affection level xp is lower than 75%  but  higher than 50% of the limit for this level
-                    if (currentXP <= ((totalXP / 2) + (totalXP / 4)) && currentXP > (totalXP / 2))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelThreeBelow50);
-
-                    }
-                    //if your current affection level xp is lower than 100%  but  higher than 75% of the limit for this level
-                    if (currentXP > ((totalXP / 2) + (totalXP / 4)))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelThreeBelow100);
-                    }
-
-                    VD.SetNode(21);
-                    break;
-                case 4:
-                    currentXP = GetComponent<AffectionRating>().currentXP;
-                    totalXP = GetComponent<AffectionRating>().levelFourXP;
-
-
-                    //if your current affection level xp is lower than 25% of the limit for this level
-                    if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
-                    {
-
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelFourBelow25);
-                    }
-                    //if your current affection level xp is lower than 50%  but  higher than 25% of the limit for this level
-                    if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelFourBelow50);
-
-                    }
-                    //if your current affection level xp is lower than 75%  but  higher than 50% of the limit for this level
-                    if (currentXP <= ((totalXP / 2) + (totalXP / 4)) && currentXP > (totalXP / 2))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelFourBelow75);
-
-                    }
-                    //if your current affection level xp is lower than 100%  but  higher than 75% of the limit for this level
-                    if (currentXP > ((totalXP / 2) + (totalXP / 4)))
-                    {
-                        VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelFourBelow100);
-                    }
-                    VD.SetNode(22);
-                    break;
-
-            }
-        }
-    */
-
+    public void EnableShopUI()
+    {
+        GetComponent<Shop>();
     }
+
+    /*
+    public void l()
+    {
+
+        switch (GetComponent<AffectionRating>().affectionLevel)
+        {
+
+            case 1:
+                currentXP = GetComponent<AffectionRating>().currentXP;
+                totalXP = GetComponent<AffectionRating>().levelOneXP;
+
+
+                //if your current affection level xp is lower than 25% of the limit for this level
+                if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
+                {
+
+                    VD.SetComment(VD.assigned.assignedDialogue, 19, 0, levelOneBelow25);
+                }
+                //if your current affection level xp is lower than 50%  but  higher than 25% of the limit for this level
+                if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 19, 0, levelOneBelow50);
+
+                }
+                //if your current affection level xp is lower than 75%  but  higher than 50% of the limit for this level
+                if (currentXP <= ((totalXP / 2) + (totalXP / 4)) && currentXP > (totalXP / 2))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 19, 0, levelOneBelow75);
+
+                }
+                //if your current affection level xp is lower than 100%  but  higher than 75% of the limit for this level
+                if (currentXP > ((totalXP / 2) + (totalXP / 4)))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 19, 0, levelOneBelow100);
+                }
+
+
+                VD.SetNode(19);
+                break;
+
+            case 2:
+                currentXP = GetComponent<AffectionRating>().currentXP;
+                totalXP = GetComponent<AffectionRating>().levelTwoXP;
+
+
+                //if your current affection level xp is lower than 25% of the limit for this level
+                if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
+                {
+
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelTwoBelow25);
+                }
+                //if your current affection level xp is lower than 50%  but  higher than 25% of the limit for this level
+                if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelTwoBelow50);
+
+                }
+                //if your current affection level xp is lower than 75%  but  higher than 50% of the limit for this level
+                if (currentXP <= ((totalXP / 2) + (totalXP / 4)) && currentXP > (totalXP / 2))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelTwoBelow75);
+
+                }
+
+                //if your current affection level xp is lower than 100%  but  higher than 75% of the limit for this level
+                if (currentXP > ((totalXP / 2) + (totalXP / 4)))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelTwoBelow100);
+                }
+
+                VD.SetNode(20);
+                break;
+
+            case 3:
+                currentXP = GetComponent<AffectionRating>().currentXP;
+                totalXP = GetComponent<AffectionRating>().levelThreeXP;
+
+
+                //if your current affection level xp is lower than 25% of the limit for this level
+                if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
+                {
+
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelThreeBelow25);
+                }
+                //if your current affection level xp is lower than 50%  but  higher than 25% of the limit for this level
+                if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelThreeBelow50);
+
+                }
+                //if your current affection level xp is lower than 75%  but  higher than 50% of the limit for this level
+                if (currentXP <= ((totalXP / 2) + (totalXP / 4)) && currentXP > (totalXP / 2))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelThreeBelow50);
+
+                }
+                //if your current affection level xp is lower than 100%  but  higher than 75% of the limit for this level
+                if (currentXP > ((totalXP / 2) + (totalXP / 4)))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelThreeBelow100);
+                }
+
+                VD.SetNode(21);
+                break;
+            case 4:
+                currentXP = GetComponent<AffectionRating>().currentXP;
+                totalXP = GetComponent<AffectionRating>().levelFourXP;
+
+
+                //if your current affection level xp is lower than 25% of the limit for this level
+                if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
+                {
+
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelFourBelow25);
+                }
+                //if your current affection level xp is lower than 50%  but  higher than 25% of the limit for this level
+                if (currentXP <= (totalXP / 2) && currentXP > (totalXP / 4))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelFourBelow50);
+
+                }
+                //if your current affection level xp is lower than 75%  but  higher than 50% of the limit for this level
+                if (currentXP <= ((totalXP / 2) + (totalXP / 4)) && currentXP > (totalXP / 2))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelFourBelow75);
+
+                }
+                //if your current affection level xp is lower than 100%  but  higher than 75% of the limit for this level
+                if (currentXP > ((totalXP / 2) + (totalXP / 4)))
+                {
+                    VD.SetComment(VD.assigned.assignedDialogue, 20, 0, levelFourBelow100);
+                }
+                VD.SetNode(22);
+                break;
+
+        }
+    }
+*/
+
+}

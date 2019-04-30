@@ -13,6 +13,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Experimental.UIElements;
 using UnityEngine.UI;
+using UnityEngine.XR.WSA;
 using VIDE_Data;
 using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
@@ -57,6 +58,8 @@ public class Template_UIManager : MonoBehaviour
     bool animatingText = false; //Will help us know when text is currently being animated
     int availableChoices = 0;
 
+    private string gender;
+
     IEnumerator TextAnimator;
 
     #endregion
@@ -82,7 +85,7 @@ public class Template_UIManager : MonoBehaviour
         if (!VD.isActive)
         {
             Begin(dialogue);
-           
+
         }
         else
         {
@@ -108,7 +111,7 @@ public class Template_UIManager : MonoBehaviour
         dialogueContainer.SetActive(true); //Let's make our dialogue container visible
 
     }
-    
+
     //Calls next node in the dialogue
     public void CallNext()
     {
@@ -217,6 +220,11 @@ public class Template_UIManager : MonoBehaviour
             //If it has a tag, show it, otherwise let's use the alias we set in the VIDE Assign
             if (data.tag.Length > 0)
                 playerLabel.text = data.tag;
+            if (data.tag.Contains("[PName]"))
+            {
+                playerLabel.text = GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.name;
+                NPC_label.text = GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.name;
+            }
 
             //Sets the player container on
             playerContainer.SetActive(true);
@@ -247,7 +255,7 @@ public class Template_UIManager : MonoBehaviour
 
             if (data.extraVars.ContainsKey("event:"))
             {
-                FMODUnity.RuntimeManager.PlayOneShot(data.extraVars.ToString(),GetComponent<Transform>().position);
+                FMODUnity.RuntimeManager.PlayOneShot(data.extraVars.ToString(), GetComponent<Transform>().position);
             }
 
             if (NPC_animateText)
@@ -255,11 +263,12 @@ public class Template_UIManager : MonoBehaviour
                 //This coroutine animates the NPC text instead of displaying it all at once
                 TextAnimator = AnimateNPCText(data.comments[data.commentIndex]);
                 StartCoroutine(TextAnimator);
-            } else
+            }
+            else
             {
                 NPC_Text.text = data.comments[data.commentIndex];
             }
-            
+
             if (data.audios[data.commentIndex] != null)
             {
                 audioSource.clip = data.audios[data.commentIndex];
@@ -271,7 +280,10 @@ public class Template_UIManager : MonoBehaviour
                 NPC_label.text = data.tag;
             else
                 NPC_label.text = VD.assigned.alias;
-
+            if (data.tag.Contains("[PName]"))
+            {
+                NPC_label.text = GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.name;
+            }
             //Sets the NPC container on
             NPC_Container.SetActive(true);
         }
@@ -291,7 +303,8 @@ public class Template_UIManager : MonoBehaviour
             //This coroutine animates the Player choices instead of displaying it all at once
             TextAnimator = AnimatePlayerText(choices);
             StartCoroutine(TextAnimator);
-        } else
+        }
+        else
         {
             for (int i = 0; i < choices.Length; i++)
             {
@@ -343,11 +356,12 @@ public class Template_UIManager : MonoBehaviour
             {
 
             }
-        } else
+        }
+        else
         {
 
         }
-        
+
         return false;
     }
 
@@ -374,7 +388,8 @@ public class Template_UIManager : MonoBehaviour
             {
                 NPC_Text.fontSize = 14;
             }
-        } else
+        }
+        else
         {
 
         }
@@ -385,9 +400,27 @@ public class Template_UIManager : MonoBehaviour
         if (data.comments[data.commentIndex].Contains("[NAME]"))
             data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[NAME]", VD.assigned.gameObject.name);
         if (data.comments[data.commentIndex].Contains("[CName]"))
-            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[CName]",  VD.assigned.assignedDialogue);
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[CName]", VD.assigned.assignedDialogue);
         if (data.comments[data.commentIndex].Contains("[PName]"))
-            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[PName]", PlayerPrefs.GetString("PName"));
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[PName]", GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.name);
+        if (data.comments[data.commentIndex].Contains("[PGender]"))
+        {
+            
+            switch (GameObject.Find("SceneManager").GetComponent<DataManager>().playerData.subjectivePronoun)
+            {
+                case "He":
+                    gender = "man";
+                    break;
+                case "She":
+                    gender = "woman";
+                    break;
+                case "They":
+                    gender = "human";
+                    break;
+            }
+
+            data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[PGender]", gender);
+        }
 
         if (data.comments[data.commentIndex].Contains("[WEAPON]"))
             data.comments[data.commentIndex] = data.comments[data.commentIndex].Replace("[WEAPON]", "sword");
@@ -487,7 +520,7 @@ public class Template_UIManager : MonoBehaviour
         StopCoroutine(TextAnimator);
         if (VD.nodeData.isPlayer)
         {
-                availableChoices = 0;
+            availableChoices = 0;
             for (int i = 0; i < VD.nodeData.comments.Length; i++)
             {
                 maxPlayerChoices[i].transform.GetChild(0).GetComponent<Text>().text = VD.nodeData.comments[i]; //Assumes first child of button gameobject is text gameobject

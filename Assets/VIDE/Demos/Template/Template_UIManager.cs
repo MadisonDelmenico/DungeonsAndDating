@@ -29,6 +29,7 @@ public class Template_UIManager : MonoBehaviour
     public GameObject dialogueContainer;
     public GameObject NPC_Container;
     public GameObject playerContainer;
+    public GameObject mainCamera;
 
     public Text NPC_Text;
     public Text NPC_label;
@@ -252,10 +253,9 @@ public class Template_UIManager : MonoBehaviour
             } //or use the default sprite if there isnt a node sprite at all
             else if (VD.assigned.defaultNPCSprite != null)
                 NPCSprite.sprite = VD.assigned.defaultNPCSprite;
-
-            if (data.extraVars.ContainsKey("event:"))
+            if (data.extraData[0].Contains("event:"))
             {
-                FMODUnity.RuntimeManager.PlayOneShot(data.extraVars.ToString(), GetComponent<Transform>().position);
+                FMODUnity.RuntimeManager.PlayOneShot(data.extraData[0], mainCamera.GetComponent<Transform>().position);
             }
 
             if (NPC_animateText)

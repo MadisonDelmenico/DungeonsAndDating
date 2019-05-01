@@ -44,6 +44,7 @@ public class DialogueScript : MonoBehaviour
     public GameObject giftUI;
     public Object heart;
     public bool affectionLevelUp;
+    public GameObject shop;
 
     // Start is called before the first frame update
     void Start()
@@ -51,12 +52,18 @@ public class DialogueScript : MonoBehaviour
         currentXP = 0;
         totalXP = 0;
         player = GameObject.FindGameObjectWithTag("Player");
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        //if the shop is open, dont move
+        if (shop.activeSelf == true)
+        {
 
+            player.GetComponent<NavMeshMovement>().enabled = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -297,7 +304,13 @@ public class DialogueScript : MonoBehaviour
 
     public void EnableShopUI()
     {
-        GetComponent<Shop>();
+       
+       
+        shop.SetActive(true);
+        GameObject.Find("Player").GetComponent<NavMeshMovement>().enabled = false;
+        Camera.main.GetComponent<UIBlurToggle>().ToggleBlur();
+
+
     }
 
     public void HasSteak()

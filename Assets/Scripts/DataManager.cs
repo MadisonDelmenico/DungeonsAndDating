@@ -24,6 +24,7 @@ public class DataManager : MonoBehaviour
 
     private GameObject player;
     public GameObject[] companions;
+    public GameObject[] dungeonCompanionContainers;
     public LoadoutButton[] companionButtons;
     private bool started;
 
@@ -222,6 +223,29 @@ public class DataManager : MonoBehaviour
             skin.skincolour = playerData.skinTone;
             skin.UpdateSkinColour();
             skin.UpdateRobeColour((playerData.deity));
+        }
+
+        if (scene == CurrentScene.Dungeon)
+        {
+            foreach (GameObject obj in dungeonCompanionContainers)
+            {
+                if (obj.name == "Kallista" && playerData.loadoutData.kallistaSelected)
+                {
+                    obj.SetActive(true);
+                }
+                else if (obj.name == "Sheeva" && playerData.loadoutData.sheevaSelected)
+                {
+                    obj.SetActive(true);
+                }
+                else if (obj.name == "Strannik" && playerData.loadoutData.strannikSelected)
+                {
+                    obj.SetActive(true);
+                }
+                else
+                {
+                    obj.SetActive(false);
+                }
+            }
         }
     }
 

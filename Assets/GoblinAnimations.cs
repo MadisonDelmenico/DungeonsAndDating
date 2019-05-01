@@ -32,6 +32,11 @@ public class GoblinAnimations : MonoBehaviour
             walking = false;
         }
 
+        if (walking)
+        {
+            animator.Play("Goblin_Walk");
+        }
+
         if (ai.currentState == EnemyAI.State.Idle)
         {
             animator.Play("Goblin_Idle");

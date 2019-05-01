@@ -169,6 +169,7 @@ public class EnemyAI : MonoBehaviour
                             if (Vector3.Distance(transform.position, target.transform.position) <= rangedDistance + 1)
                             {
                                 GetComponent<EnemyActions>().DoAction(EnemyActions.Action.Basic, target);
+                                GetComponent<GoblinAnimations>().Cast();
                             }
 
                             break;
@@ -176,6 +177,7 @@ public class EnemyAI : MonoBehaviour
                             if (Vector3.Distance(transform.position, target.transform.position) <= meleeDistance + 1)
                             {
                                 GetComponent<EnemyActions>().DoAction(EnemyActions.Action.Basic, target);
+                                GetComponent<GoblinAnimations>().Attack();
                             }
                             break;
                     }

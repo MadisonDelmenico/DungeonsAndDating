@@ -55,7 +55,6 @@ MonoBehaviour:
   - {fileID: 114347491349403070}
   - {fileID: 114581957693733198}
   - {fileID: 114309022276519778}
-  - {fileID: 114057954349527724}
   - {fileID: 114642542435039774}
   - {fileID: 114704518383031422}
   - {fileID: 114268678766799714}
@@ -245,8 +244,25 @@ MonoBehaviour:
   - {fileID: 114594460622976494}
   StringsBanks:
   - {fileID: 114975719314212324}
-  stringsBankWriteTime: 636918724064591206
+  stringsBankWriteTime: 636923594408925331
   cacheVersion: 3
+--- !u!114 &114001302089775278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114002043541274986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +383,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114013822479729226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Kalista
+  m_EditorClassIdentifier: 
+  Name: Kalista
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114014960379311352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +440,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114021634798272024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114022241738454034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,6 +651,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2439
+--- !u!114 &114032769387651412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CombatIntensity
+  m_EditorClassIdentifier: 
+  Name: CombatIntensity
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114034893127423850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,6 +833,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2647
+--- !u!114 &114047313582858846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: PlayerHealth
+  m_EditorClassIdentifier: 
+  Name: PlayerHealth
+  Min: 0
+  Max: 101
+  Default: 100
+  Exists: 0
 --- !u!114 &114047880959442514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,7 +1071,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114328757148071210}
+  - {fileID: 114788823068493316}
   MinDistance: 1
   MaxDistance: 60
   Length: 0
@@ -1115,6 +1199,23 @@ MonoBehaviour:
   Min: 0
   Max: 50
   Default: 50
+  Exists: 0
+--- !u!114 &114065506328931948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: inn_music
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 0
 --- !u!114 &114066071855845520
 MonoBehaviour:
@@ -1276,6 +1377,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114073376867201254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114074654448561536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1289,6 +1407,23 @@ MonoBehaviour:
   m_Name: Stannik
   m_EditorClassIdentifier: 
   Name: Stannik
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114074741568896548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
   Min: 0
   Max: 3
   Default: 0
@@ -1383,6 +1518,23 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+  Exists: 0
+--- !u!114 &114081835365199640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
   Exists: 0
 --- !u!114 &114082445819685340
 MonoBehaviour:
@@ -1635,6 +1787,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3088
+--- !u!114 &114098928350217854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Stannik
+  m_EditorClassIdentifier: 
+  Name: Stannik
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114098998636445750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,6 +1889,23 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &114101314045444206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CombatIntensity
+  m_EditorClassIdentifier: 
+  Name: CombatIntensity
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114102243335968528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1750,6 +1936,23 @@ MonoBehaviour:
   m_Name: Sheva
   m_EditorClassIdentifier: 
   Name: Sheva
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114104566683556708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
   Min: 0
   Max: 3
   Default: 0
@@ -1786,6 +1989,23 @@ MonoBehaviour:
   Name: Kalista
   Min: 0
   Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114106539098203362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: inn_music
+  Min: 0
+  Max: 2
   Default: 0
   Exists: 0
 --- !u!114 &114107179811620776
@@ -1977,6 +2197,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114117300038420242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Sheva
+  m_EditorClassIdentifier: 
+  Name: Sheva
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114118699138456812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2074,11 +2311,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 114592243409152250}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 4266
 --- !u!114 &114125231136143862
 MonoBehaviour:
@@ -2126,6 +2363,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1862
+--- !u!114 &114129876892280810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CoinsCollected
+  m_EditorClassIdentifier: 
+  Name: CoinsCollected
+  Min: 0
+  Max: 1000
+  Default: 0
+  Exists: 0
 --- !u!114 &114129996623713126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2314,6 +2568,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &114139636714106760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: PlayerHealth
+  m_EditorClassIdentifier: 
+  Name: PlayerHealth
+  Min: 0
+  Max: 101
+  Default: 100
+  Exists: 0
 --- !u!114 &114140653760694026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2367,7 +2638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\DungeonsAndDatingRepo\Assets\StreamingAssets\Desktop\Music.bank
-  lastModified: 636918724081645578
+  lastModified: 636923594415323293
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -2960,6 +3231,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114175568377550248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Stannik
+  m_EditorClassIdentifier: 
+  Name: Stannik
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114175579229304040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2994,6 +3282,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114176917116894394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: PlayerHealth
+  m_EditorClassIdentifier: 
+  Name: PlayerHealth
+  Min: 0
+  Max: 101
+  Default: 100
+  Exists: 0
 --- !u!114 &114177688026150012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3027,6 +3332,23 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
+  Exists: 0
+--- !u!114 &114178401994063890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
   Exists: 0
 --- !u!114 &114178976031792674
 MonoBehaviour:
@@ -3576,7 +3898,41 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 7244
+--- !u!114 &114202881980916190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CoinsCollected
+  m_EditorClassIdentifier: 
+  Name: CoinsCollected
+  Min: 0
+  Max: 1000
+  Default: 0
+  Exists: 0
 --- !u!114 &114203098451178264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
+--- !u!114 &114203451791903960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3680,7 +4036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\DungeonsAndDatingRepo\Assets\StreamingAssets\Desktop\Enemys.bank
-  lastModified: 636918723355408245
+  lastModified: 636923594407839227
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -3720,7 +4076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\DungeonsAndDatingRepo\Assets\StreamingAssets\Desktop\Environment.bank
-  lastModified: 636918724064561544
+  lastModified: 636923594408406723
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -3784,7 +4140,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114124662268960058}
+  - {fileID: 114021634798272024}
   MinDistance: 0
   MaxDistance: 0
   Length: 259200
@@ -3938,7 +4294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\DungeonsAndDatingRepo\Assets\StreamingAssets\Desktop\Characters.bank
-  lastModified: 636918723353852442
+  lastModified: 636923594405594247
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -4035,10 +4391,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\DungeonsAndDatingRepo\Assets\StreamingAssets\Desktop\Master Bank.strings.bank
-  lastModified: 636918724064591206
+  lastModified: 636923594408925331
   LoadResult: 70
   FileSizes: []
   Exists: 1
+--- !u!114 &114224126342202504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: inn_music
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &114226616201863922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4130,6 +4503,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &114230747847425880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114236047477000080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4147,12 +4537,29 @@ MonoBehaviour:
   Banks:
   - {fileID: 114220721327206486}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 5632
+--- !u!114 &114236552885067454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114240119031305014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4364,6 +4771,40 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1433
+--- !u!114 &114248609994213526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
+--- !u!114 &114249530543039286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Kalista
+  m_EditorClassIdentifier: 
+  Name: Kalista
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114251602669882560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4428,6 +4869,23 @@ MonoBehaviour:
   Max: 101
   Default: 100
   Exists: 0
+--- !u!114 &114253462167548806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: inn_music
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &114256308072742426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4491,6 +4949,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 200
+--- !u!114 &114259960614409848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114260235603327846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4514,6 +4989,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1901
+--- !u!114 &114261191454011908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DistanceToInn
+  Min: 0
+  Max: 50
+  Default: 50
+  Exists: 0
 --- !u!114 &114262414367672012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4646,6 +5138,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1911
+--- !u!114 &114269467623752024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CombatIntensity
+  m_EditorClassIdentifier: 
+  Name: CombatIntensity
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114269510414718512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5177,6 +5686,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114295532200469486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Stannik
+  m_EditorClassIdentifier: 
+  Name: Stannik
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114295640010802726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5234,6 +5760,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &114302418757263818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114302768016073954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5257,6 +5800,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3088
+--- !u!114 &114303819750500768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: inn_music
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &114305050105889072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5397,8 +5957,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114107179811620776}
-  - {fileID: 114288932242256318}
+  - {fileID: 114081835365199640}
+  - {fileID: 114864717327840624}
   MinDistance: 1
   MaxDistance: 20
   Length: 98446
@@ -5425,6 +5985,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 196
+--- !u!114 &114310405765325456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Kalista
+  m_EditorClassIdentifier: 
+  Name: Kalista
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114311454727925638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5612,6 +6189,8 @@ MonoBehaviour:
   Path: snapshot:/dialogue_in_progress
   guid: 07a4fb9fa1df5041a5bcbc29be5a5e76
   Banks:
+  - {fileID: 114220721327206486}
+  - {fileID: 114592243409152250}
   - {fileID: 114594460622976494}
   IsStream: 0
   Is3D: 0
@@ -5643,6 +6222,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2069
+--- !u!114 &114323668121502846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DistanceToInn
+  Min: 0
+  Max: 50
+  Default: 50
+  Exists: 0
 --- !u!114 &114324828689548210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5659,6 +6255,23 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+  Exists: 0
+--- !u!114 &114325849257110818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
   Exists: 0
 --- !u!114 &114326434737871342
 MonoBehaviour:
@@ -6123,6 +6736,40 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &114352166653069810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CombatIntensity
+  m_EditorClassIdentifier: 
+  Name: CombatIntensity
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114353120957889878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Stannik
+  m_EditorClassIdentifier: 
+  Name: Stannik
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114353555089461440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6226,6 +6873,23 @@ MonoBehaviour:
   Max: 1000
   Default: 0
   Exists: 0
+--- !u!114 &114358422974708276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Sheva
+  m_EditorClassIdentifier: 
+  Name: Sheva
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114361853526521406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6316,6 +6980,23 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
+  Exists: 0
+--- !u!114 &114364743669578118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CombatIntensity
+  m_EditorClassIdentifier: 
+  Name: CombatIntensity
+  Min: 0
+  Max: 4
+  Default: 0
   Exists: 0
 --- !u!114 &114365356762794816
 MonoBehaviour:
@@ -6529,6 +7210,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2298
+--- !u!114 &114381240432622146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Stannik
+  m_EditorClassIdentifier: 
+  Name: Stannik
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114383179907737476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6780,6 +7478,23 @@ MonoBehaviour:
   MinDistance: 2
   MaxDistance: 20
   Length: 5500
+--- !u!114 &114394461870716498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Stannik
+  m_EditorClassIdentifier: 
+  Name: Stannik
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114396132998461914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6894,6 +7609,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1308
+--- !u!114 &114401509358251948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114402200259486164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7391,6 +8123,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114428654874769392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: PlayerHealth
+  m_EditorClassIdentifier: 
+  Name: PlayerHealth
+  Min: 0
+  Max: 101
+  Default: 100
+  Exists: 0
 --- !u!114 &114428871002749962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7434,7 +8183,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114770633453413542}
+  - {fileID: 114302418757263818}
   MinDistance: 0
   MaxDistance: 0
   Length: 234008
@@ -7558,6 +8307,40 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114433862100999828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Kalista
+  m_EditorClassIdentifier: 
+  Name: Kalista
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114436237493282078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: PlayerHealth
+  m_EditorClassIdentifier: 
+  Name: PlayerHealth
+  Min: 0
+  Max: 101
+  Default: 100
+  Exists: 0
 --- !u!114 &114436978861759356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7574,6 +8357,23 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
+  Exists: 0
+--- !u!114 &114440885672511784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: inn_music
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 0
 --- !u!114 &114441405275155282
 MonoBehaviour:
@@ -7609,6 +8409,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &114443479683532220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114445369018868450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7632,6 +8449,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1176
+--- !u!114 &114445496454831056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114445751467623538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7997,6 +8831,40 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114466583999455188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
+--- !u!114 &114467130855461210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DistanceToInn
+  Min: 0
+  Max: 50
+  Default: 50
+  Exists: 0
 --- !u!114 &114467924857618826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8037,6 +8905,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1109
+--- !u!114 &114468989979409176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CoinsCollected
+  m_EditorClassIdentifier: 
+  Name: CoinsCollected
+  Min: 0
+  Max: 1000
+  Default: 0
+  Exists: 0
 --- !u!114 &114469604556322690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8100,6 +8985,23 @@ MonoBehaviour:
   Max: 1000
   Default: 0
   Exists: 0
+--- !u!114 &114470884947274418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Sheva
+  m_EditorClassIdentifier: 
+  Name: Sheva
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114472247535222418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8123,6 +9025,57 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1862
+--- !u!114 &114472365466075318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
+--- !u!114 &114473350271579474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114473470403000350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114473645995606874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8397,6 +9350,40 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 220
+--- !u!114 &114482202835574164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
+--- !u!114 &114482405957771480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DistanceToInn
+  Min: 0
+  Max: 50
+  Default: 50
+  Exists: 0
 --- !u!114 &114482420379226660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8571,10 +9558,27 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114815709191914752}
+  - {fileID: 114261191454011908}
   MinDistance: 0
   MaxDistance: 0
   Length: 352242
+--- !u!114 &114494453554634366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114495932544927156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8638,6 +9642,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &114496854793335504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114498628209391884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8661,6 +9682,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 100
+--- !u!114 &114498711049612080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Kalista
+  m_EditorClassIdentifier: 
+  Name: Kalista
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114498838307984376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8782,6 +9820,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114504417090855466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114504995865241990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8878,6 +9933,23 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+  Exists: 0
+--- !u!114 &114509356563402484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DistanceToInn
+  Min: 0
+  Max: 50
+  Default: 50
   Exists: 0
 --- !u!114 &114509589967331442
 MonoBehaviour:
@@ -8993,6 +10065,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114517095830767664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CoinsCollected
+  m_EditorClassIdentifier: 
+  Name: CoinsCollected
+  Min: 0
+  Max: 1000
+  Default: 0
+  Exists: 0
 --- !u!114 &114517231677467774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9147,6 +10236,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 200
+--- !u!114 &114531610783482986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114532147795080832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9404,6 +10510,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2298
+--- !u!114 &114545400505246612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CoinsCollected
+  m_EditorClassIdentifier: 
+  Name: CoinsCollected
+  Min: 0
+  Max: 1000
+  Default: 0
+  Exists: 0
 --- !u!114 &114546822296867578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9483,6 +10606,23 @@ MonoBehaviour:
   Min: 0
   Max: 1000
   Default: 0
+  Exists: 0
+--- !u!114 &114550058547430594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
   Exists: 0
 --- !u!114 &114551463470437238
 MonoBehaviour:
@@ -9746,6 +10886,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &114562345449492968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Kalista
+  m_EditorClassIdentifier: 
+  Name: Kalista
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114564337902733124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9855,6 +11012,23 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &114570204918651786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: PlayerHealth
+  m_EditorClassIdentifier: 
+  Name: PlayerHealth
+  Min: 0
+  Max: 101
+  Default: 100
+  Exists: 0
 --- !u!114 &114570249643312526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9888,6 +11062,23 @@ MonoBehaviour:
   Min: 0
   Max: 101
   Default: 100
+  Exists: 0
+--- !u!114 &114571613946352410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: inn_music
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 0
 --- !u!114 &114572731970115596
 MonoBehaviour:
@@ -9969,6 +11160,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1176
+--- !u!114 &114578626089643820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114579137791035870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10112,6 +11320,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &114586274920181882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114586773916078410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10185,6 +11410,23 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+  Exists: 0
+--- !u!114 &114589890039218372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
   Exists: 0
 --- !u!114 &114590383421495044
 MonoBehaviour:
@@ -10302,10 +11544,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\DungeonsAndDatingRepo\Assets\StreamingAssets\Desktop\Dialogue.bank
-  lastModified: 636918723355388297
+  lastModified: 636923594407409399
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &114593218899216482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CoinsCollected
+  m_EditorClassIdentifier: 
+  Name: CoinsCollected
+  Min: 0
+  Max: 1000
+  Default: 0
+  Exists: 0
 --- !u!114 &114593977853269632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10387,7 +11646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\DungeonsAndDatingRepo\Assets\StreamingAssets\Desktop\Master Bank.bank
-  lastModified: 636918724064581229
+  lastModified: 636923594408865487
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -10448,6 +11707,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &114598444202712040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: PlayerHealth
+  m_EditorClassIdentifier: 
+  Name: PlayerHealth
+  Min: 0
+  Max: 101
+  Default: 100
+  Exists: 0
 --- !u!114 &114599545593080294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10484,6 +11760,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114604638487961782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Kalista
+  m_EditorClassIdentifier: 
+  Name: Kalista
   Min: 0
   Max: 3
   Default: 0
@@ -10665,6 +11958,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114617191002946702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114618590636815570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10785,11 +12095,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 114220721327206486}
   IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
+  Is3D: 0
+  IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 8917
 --- !u!114 &114626158322820514
 MonoBehaviour:
@@ -10951,6 +12261,23 @@ MonoBehaviour:
   LoadResult: 70
   FileSizes: []
   Exists: 1
+--- !u!114 &114635872439957708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DistanceToInn
+  Min: 0
+  Max: 50
+  Default: 50
+  Exists: 0
 --- !u!114 &114636095412524316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11015,6 +12342,23 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &114638123843266278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Sheva
+  m_EditorClassIdentifier: 
+  Name: Sheva
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114638375621627170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11241,6 +12585,23 @@ MonoBehaviour:
   lastModified: 636915493476795411
   LoadResult: 19
   FileSizes: []
+  Exists: 0
+--- !u!114 &114649549614487458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
   Exists: 0
 --- !u!114 &114649771531383268
 MonoBehaviour:
@@ -11507,6 +12868,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114666552927251178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114666826062848152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11541,11 +12919,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 114220721327206486}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 3764
 --- !u!114 &114669337281539342
 MonoBehaviour:
@@ -11594,6 +12972,40 @@ MonoBehaviour:
   m_Name: Kalista
   m_EditorClassIdentifier: 
   Name: Kalista
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114671637546718740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CoinsCollected
+  m_EditorClassIdentifier: 
+  Name: CoinsCollected
+  Min: 0
+  Max: 1000
+  Default: 0
+  Exists: 0
+--- !u!114 &114672562371188752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Sheva
+  m_EditorClassIdentifier: 
+  Name: Sheva
   Min: 0
   Max: 3
   Default: 0
@@ -11734,6 +13146,40 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
+  Exists: 0
+--- !u!114 &114679473164680040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Sheva
+  m_EditorClassIdentifier: 
+  Name: Sheva
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114679929071826674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
   Exists: 0
 --- !u!114 &114679994853706202
 MonoBehaviour:
@@ -11935,6 +13381,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1628
+--- !u!114 &114686838282455902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DistanceToInn
+  Min: 0
+  Max: 50
+  Default: 50
+  Exists: 0
 --- !u!114 &114687109025258734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12112,6 +13575,40 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2500
+--- !u!114 &114697088878937944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CombatIntensity
+  m_EditorClassIdentifier: 
+  Name: CombatIntensity
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114697706761875398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Sheva
+  m_EditorClassIdentifier: 
+  Name: Sheva
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114697838947478618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12163,12 +13660,46 @@ MonoBehaviour:
   Banks:
   - {fileID: 114220721327206486}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 2560
+--- !u!114 &114701356875294842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DistanceToInn
+  Min: 0
+  Max: 50
+  Default: 50
+  Exists: 0
+--- !u!114 &114702696367769744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114702981128644898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12209,6 +13740,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114703632516407558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114703748698755970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12329,6 +13877,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114710277273087782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Stannik
+  m_EditorClassIdentifier: 
+  Name: Stannik
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114711879913104822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12375,6 +13940,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4714
+--- !u!114 &114719549177647790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Sheva
+  m_EditorClassIdentifier: 
+  Name: Sheva
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114720535527683914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12501,6 +14083,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &114727186562807876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114728359330594684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12634,7 +14233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\DungeonsAndDatingRepo\Assets\StreamingAssets\Desktop\Interactables.bank
-  lastModified: 636918723372203316
+  lastModified: 636923594408755784
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -12895,6 +14494,23 @@ MonoBehaviour:
   Max: 101
   Default: 100
   Exists: 0
+--- !u!114 &114738946774285120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114739071779456400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13055,6 +14671,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 100
+--- !u!114 &114746050800751680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: PlayerHealth
+  m_EditorClassIdentifier: 
+  Name: PlayerHealth
+  Min: 0
+  Max: 101
+  Default: 100
+  Exists: 0
 --- !u!114 &114746060461212780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13278,6 +14911,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114755391966494226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Stannik
+  m_EditorClassIdentifier: 
+  Name: Stannik
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114757864380021804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13291,6 +14941,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114758032843539378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Sheva
+  m_EditorClassIdentifier: 
+  Name: Sheva
   Min: 0
   Max: 3
   Default: 0
@@ -13444,6 +15111,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 410
+--- !u!114 &114765158846160210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114765465518686230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13476,6 +15160,23 @@ MonoBehaviour:
   Name: CoinsCollected
   Min: 0
   Max: 1000
+  Default: 0
+  Exists: 0
+--- !u!114 &114768046979001070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
   Default: 0
   Exists: 0
 --- !u!114 &114768148366627078
@@ -13575,6 +15276,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1911
+--- !u!114 &114772909260089952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114773189152931952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13902,6 +15620,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114788823068493316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114789451060141024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14056,11 +15791,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 114592243409152250}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 4714
 --- !u!114 &114795728023279634
 MonoBehaviour:
@@ -14344,7 +16079,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114300717698972450}
+  - {fileID: 114466583999455188}
   MinDistance: 0
   MaxDistance: 0
   Length: 93451
@@ -14958,6 +16693,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114845250347362150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Kalista
+  m_EditorClassIdentifier: 
+  Name: Kalista
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114845289364747418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15061,6 +16813,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1470
+--- !u!114 &114850334846437628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114851172295426800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15096,6 +16865,23 @@ MonoBehaviour:
   Default: 0
   Exists: 0
 --- !u!114 &114852065809676214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
+--- !u!114 &114852657524462960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15358,6 +17144,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &114864717327840624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: inn_music
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &114866002479781604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15415,6 +17218,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &114869529700573504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114870178542681456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15438,6 +17258,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 100
+--- !u!114 &114870668453289258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114872858206135220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15689,6 +17526,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 200
+--- !u!114 &114883626271974474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CoinsCollected
+  m_EditorClassIdentifier: 
+  Name: CoinsCollected
+  Min: 0
+  Max: 1000
+  Default: 0
+  Exists: 0
 --- !u!114 &114886064290133832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15735,6 +17589,40 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 514
+--- !u!114 &114887436929621082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CombatIntensity
+  m_EditorClassIdentifier: 
+  Name: CombatIntensity
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114887814336899984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114889820079264162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16015,11 +17903,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 114208464665492112}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 85110
 --- !u!114 &114907825177736702
 MonoBehaviour:
@@ -16158,12 +18046,29 @@ MonoBehaviour:
   Banks:
   - {fileID: 114592243409152250}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 3029
+--- !u!114 &114914427581177672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Stannik
+  m_EditorClassIdentifier: 
+  Name: Stannik
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114914742667350906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16336,6 +18241,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &114925804899260442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DistanceToInn
+  Min: 0
+  Max: 50
+  Default: 50
+  Exists: 0
 --- !u!114 &114925939170868796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16479,6 +18401,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2930
+--- !u!114 &114935486019817868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114935573871841118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16553,6 +18492,40 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &114939193255415318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: inn_music
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &114940536654398762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114940650500500882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16566,7 +18539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\DungeonsAndDatingRepo\Assets\StreamingAssets\Desktop\UI.bank
-  lastModified: 636918723436082445
+  lastModified: 636923594415582604
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -16620,6 +18593,23 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+  Exists: 0
+--- !u!114 &114946298145438886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
   Exists: 0
 --- !u!114 &114948056231254596
 MonoBehaviour:
@@ -16936,6 +18926,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114969962784470970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: fade
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 0
 --- !u!114 &114970212902887206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17012,11 +19019,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\StreamingAssets\Desktop\Master Bank.strings.bank
-  lastModified: 636918724064591206
+  lastModified: 636923594408925331
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 14312
+    Value: 14272
   Exists: 1
 --- !u!114 &114976431966721976
 MonoBehaviour:
@@ -17122,6 +19129,57 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114980258229844046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CombatIntensity
+  m_EditorClassIdentifier: 
+  Name: CombatIntensity
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
+--- !u!114 &114982677947099048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Kalista
+  m_EditorClassIdentifier: 
+  Name: Kalista
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114983521325280906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &114985518746320928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17138,6 +19196,23 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
+  Exists: 0
+--- !u!114 &114986170668209686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: PlayerHealth
+  m_EditorClassIdentifier: 
+  Name: PlayerHealth
+  Min: 0
+  Max: 101
+  Default: 100
   Exists: 0
 --- !u!114 &114987894677243832
 MonoBehaviour:
@@ -17338,6 +19413,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &114994389413892548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CombatIntensity
+  m_EditorClassIdentifier: 
+  Name: CombatIntensity
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 0
 --- !u!114 &114995691122681288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17353,6 +19445,23 @@ MonoBehaviour:
   Name: water_distance
   Min: 0
   Max: 3
+  Default: 0
+  Exists: 0
+--- !u!114 &114996833609837774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: CoinsCollected
+  m_EditorClassIdentifier: 
+  Name: CoinsCollected
+  Min: 0
+  Max: 1000
   Default: 0
   Exists: 0
 --- !u!114 &114997405684538934

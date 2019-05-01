@@ -14,7 +14,6 @@ public class OverWorldMusic : MonoBehaviour
     {
         overworldMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/v1/Music_Overworld");
         overworldMusic.start(); //Overworld Music
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Environment/Env_Overworld_Atmos", this.transform.position); // ROOMTONE
     }
     // Update is called once per frame
     void Update()

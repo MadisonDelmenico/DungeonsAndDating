@@ -142,7 +142,6 @@ public class CharacterActions : MonoBehaviour
                            // Debug.Log(target.name);
                             basicCooldown = basicCooldownReset;
                             SendAttackerInfo(target);
-                            Debug.Log("basic attack");
 
                         }
                     }
@@ -233,7 +232,7 @@ public class CharacterActions : MonoBehaviour
                         {
                             if (enemy != null)
                             {
-                                if (Vector3.Distance(gameObject.transform.position, enemy.transform.position) < 1.0f)
+                                if (Vector3.Distance(gameObject.transform.position, enemy.transform.position) < 2.0f)
                                 {
                                     GetComponentInChildren<CompanionAnimations>().WildSpin();
                                     enemy.GetComponent<Health>().health -= (affectionLevel * wildSpinValue);

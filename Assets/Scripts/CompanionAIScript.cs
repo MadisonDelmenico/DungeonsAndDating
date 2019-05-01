@@ -125,7 +125,11 @@ public class CompanionAIScript : MonoBehaviour
         // If the player is being attacked, attack
         if (player.GetComponent<PlayerAI>().beingattacked == true)
         {
-            state = CompanionState.Attacking;
+            if (state != CompanionState.Casting)
+            {
+                state = CompanionState.Attacking;
+            }
+
             MoveToAttackRange();
             GetComponent<NavMeshMovement>().Attack();
         }
@@ -176,10 +180,13 @@ public class CompanionAIScript : MonoBehaviour
                                 MoveToAttackRange();
                                 if (companionActions.wildSpinCooldown <= 0)
                                 {
+                                    state = CompanionState.Casting;
+                                    castTime = 3;
                                     companionActions.BeginCasting(CharacterActions.Action.WildSpin, GetComponent<TargettingEnemies>().target);
                                 }
                                 else
                                 {
+                                    Debug.Log("Basic");
                                     AttackMelee();
                                 }
                             }
@@ -219,6 +226,8 @@ public class CompanionAIScript : MonoBehaviour
                             {
                                 if (companionActions.elementalSphereCooldown <= 0)
                                 {
+                                    state = CompanionState.Casting;
+                                    castTime = 3;
                                     companionActions.BeginCasting(CharacterActions.Action.ElementalSphere, GetComponent<TargettingEnemies>().target);
                                 }
                                 else
@@ -448,7 +457,7 @@ public class CompanionAIScript : MonoBehaviour
                 if (player.GetComponent<TargettingEnemies>().target != player)
                 {
                     GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
-                    
+
                     // Attack the enemy
                     if (text != null)
                     {
@@ -470,7 +479,7 @@ public class CompanionAIScript : MonoBehaviour
                 if (player.GetComponent<TargettingEnemies>().target != player)
                 {
                     GetComponent<TargettingEnemies>().target = player.GetComponent<TargettingEnemies>().target;
-                    
+
                     // Attack the enemy
                     if (text != null)
                     {
@@ -485,6 +494,8 @@ public class CompanionAIScript : MonoBehaviour
 
     public void MoveToAttackRange()
     {
+        Debug.Log(gameObject.name + ": Moving to range");
+
         float distance;
 
         if (companionClass.currentClass == CharacterClass.Class.Sorcerer)

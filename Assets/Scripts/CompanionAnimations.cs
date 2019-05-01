@@ -36,7 +36,7 @@ if (walking == true)
                     animator.Play("Strannik_Walk");
                     break;
                 case CharacterClass.Class.Sorcerer:
-                    animator.Play("Sheva_Walk");
+                    animator.Play("Sheeva_Walk");
                     break;
             }
         }
@@ -53,7 +53,7 @@ if (walking == true)
                     animator.Play("Strannik_Walk");
                     break;
                 case CharacterClass.Class.Sorcerer:
-                    animator.Play("Sheva_Walk");
+                    animator.Play("Sheeva_Walk");
                     break;
             }
 
@@ -77,7 +77,7 @@ if (walking == true)
                     animator.Play("Strannik_Idle");
                     break;
                 case CharacterClass.Class.Sorcerer:
-                    animator.Play("Sheva_Idle");
+                    animator.Play("Sheeva_Idle");
                     break;
             }
         }
@@ -97,7 +97,7 @@ if (walking == true)
                 animator.Play("Strannik_Die");
                 break;
             case CharacterClass.Class.Sorcerer:
-                animator.Play("Sheva_Die");
+                animator.Play("Sheeva_Die");
                 break;
         }
     }
@@ -110,7 +110,7 @@ if (walking == true)
                     animator.Play("Kallista_Cast");
                     break;
                 case CharacterClass.Class.Sorcerer:
-                    animator.Play("Sheva_Cast");
+                    animator.Play("Sheeva_Cast");
                     break;
             }
         }
@@ -129,7 +129,7 @@ if (walking == true)
                 animator.Play("Strannik_Attack");
                 break;
             case CharacterClass.Class.Sorcerer:
-                animator.Play("Sheva_Attack");
+                animator.Play("Sheeva_Attack");
                 break;
         }
     }

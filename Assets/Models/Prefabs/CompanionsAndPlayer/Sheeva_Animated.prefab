@@ -4129,8 +4129,9 @@ GameObject:
   - component: {fileID: 378163542}
   - component: {fileID: 378163543}
   - component: {fileID: 378163544}
+  - component: {fileID: 766874428}
   m_Layer: 0
-  m_Name: Sheeva_Idle
+  m_Name: Sheeva_Animated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4238,6 +4239,8 @@ MonoBehaviour:
   levelThreeXP: 0
   levelFourXP: 0
   quarters: 0
+  finalValue: 0
+  floatToInt: 0
 --- !u!114 &378163538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4270,7 +4273,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378163532}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e230d85138b81c4da45b1511097a2cf, type: 3}
   m_Name: 
@@ -4368,6 +4371,21 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &766874428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378163532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db6239e35ae9434694a978d69d2c83c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  walking: 0
+  idling: 0
 --- !u!1 &386334167
 GameObject:
   m_ObjectHideFlags: 0

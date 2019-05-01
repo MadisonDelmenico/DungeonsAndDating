@@ -16,6 +16,12 @@ public class TargettingEnemies : MonoBehaviour
             target = gameObject;
             friendlyTarget = gameObject;
         }
+
+        if (GetComponent<CompanionAIScript>())
+        {
+            target = gameObject;
+            friendlyTarget = gameObject;
+        }
     }
 
     // Update is called once per frame

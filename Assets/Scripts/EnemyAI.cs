@@ -178,12 +178,14 @@ public class EnemyAI : MonoBehaviour
                                 GetComponent<EnemyActions>().DoAction(EnemyActions.Action.Basic, target);
                             }
                             break;
-                        default:
-                            break;
                     }
                 }
 
-                text.text = currentState.ToString();
+                if (text.IsDestroyed() == false)
+                {
+                    text.text = currentState.ToString();
+
+                }
                 break;
         }
     }

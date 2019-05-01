@@ -25537,9 +25537,10 @@ GameObject:
   - component: {fileID: 6763604512997702613}
   - component: {fileID: 3745927238962206498}
   - component: {fileID: 1483755366967980209}
+  - component: {fileID: 697254809}
   m_Layer: 0
-  m_Name: Strannik_Attack
-  m_TagString: Untagged
+  m_Name: Strannik_Animated
+  m_TagString: Companion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25692,7 +25693,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923717182}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e230d85138b81c4da45b1511097a2cf, type: 3}
   m_Name: 
@@ -25719,6 +25720,8 @@ MonoBehaviour:
   levelThreeXP: 0
   levelFourXP: 0
   quarters: 0
+  finalValue: 0
+  floatToInt: 0
 --- !u!114 &6763604512997702613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25776,6 +25779,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &697254809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923717182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db6239e35ae9434694a978d69d2c83c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  walking: 0
+  idling: 0
 --- !u!1 &1925177346
 GameObject:
   m_ObjectHideFlags: 0

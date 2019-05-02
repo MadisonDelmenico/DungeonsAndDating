@@ -1767,7 +1767,6 @@ GameObject:
   - component: {fileID: 208475016}
   - component: {fileID: 208475015}
   - component: {fileID: 208475018}
-  - component: {fileID: 208475019}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1864,31 +1863,6 @@ MonoBehaviour:
   gammaCorrection: 1
   blurMaterial: {fileID: 2100000, guid: a850d9c8bd0ee3843bd237968bb2e4bc, type: 2}
   UIMaterial: {fileID: 2100000, guid: d1b86caa9787d114d9596ae1e52f9ab4, type: 2}
---- !u!114 &208475019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208475014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/Music/v1/Music_Inn
-  PlayEvent: 1
-  StopEvent: 2
-  CollisionTag: 
-  AllowFadeout: 0
-  TriggerOnce: 0
-  Preload: 1
-  Params:
-  - Name: inn_music
-    Value: 2
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &208903960
 GameObject:
   m_ObjectHideFlags: 0
@@ -5266,6 +5240,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 461bbdc17f1563a468d6a51dc1d3ca62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &871105923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871105917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c7543a60fea7c4eb073ca6a3cc2188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 208475014}
 --- !u!1001 &871289575
 PrefabInstance:
   m_ObjectHideFlags: 0

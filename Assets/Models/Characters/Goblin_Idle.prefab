@@ -10946,8 +10946,9 @@ GameObject:
   - component: {fileID: 5473804601916263636}
   - component: {fileID: 2018092032509756027}
   - component: {fileID: 2027700198575702378}
+  - component: {fileID: 2975383710293412548}
   m_Layer: 0
-  m_Name: Goblin_Idle (4)
+  m_Name: Goblin_Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11046,7 +11047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c255eea1391b546a3ba76680ef48f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  currentState: 2
   target: {fileID: 0}
   text: {fileID: 0}
   Enemies: []
@@ -11113,8 +11114,6 @@ MonoBehaviour:
   Waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   waypointNumber: 0
 --- !u!114 &2018092032509756027
 MonoBehaviour:
@@ -11149,6 +11148,23 @@ MonoBehaviour:
   health: 40
   maxHealth: 40
   fainted: 0
+--- !u!114 &2975383710293412548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658190375554078166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad0b3abfb89e1542b89b9b608d8ac59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ai: {fileID: 0}
+  animator: {fileID: 0}
+  navMeshAgent: {fileID: 0}
+  walking: 0
+  idling: 0
 --- !u!1 &4665098488981750513
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class OverWorldMusic : MonoBehaviour
 {
     public Transform player;
     public Transform inn;
-    private FMOD.Studio.EventInstance overworldMusic;
+    public FMOD.Studio.EventInstance overworldMusic;
     private float distanceToInn;
     private float innnumber;
 
@@ -21,10 +21,11 @@ public class OverWorldMusic : MonoBehaviour
         distanceToInn = Vector3.Distance(inn.position, player.position);
         //Debug.Log(distanceToInn);
         overworldMusic.setParameterByName("DistanceToInn", distanceToInn);
-    }
+    }   
 
     private void OnDestroy()
     {
+        overworldMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         overworldMusic.release();
     }
 }

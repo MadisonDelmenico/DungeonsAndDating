@@ -85,18 +85,33 @@ public class CompanionAIScript : MonoBehaviour
     {
         if (!started)
         {
-
-            // Finding the number of companions currently in the dungeon, adding them to an array of companions
-            allCompanions = GameObject.FindGameObjectsWithTag("Companion");
-
             int activeCompanions = 0;
-            foreach (GameObject c in allCompanions)
+            foreach (GameObject c in GameObject.FindGameObjectsWithTag("Companion"))
             {
                 if (c.activeSelf)
                 {
                     activeCompanions++;
                 }
+                else
+                {
+                    for (int i = 0; i < allCompanions.Length; i++)
+                    {
+                        if (allCompanions[i] == gameObject)
+                        {
+                            //allCompanions.
+                        }
+                    }
+                }
             }
+
+            // Finding the number of companions currently in the dungeon, adding them to an array of companions
+            allCompanions = GameObject.FindGameObjectsWithTag("Companion");
+            GameObject[] companions;
+            foreach (GameObject c in GameObject.FindGameObjectsWithTag("Companion"))
+            {
+                //companions.a
+            }
+            
             // Setting the companion number for each companion, 0 by default
             for (int i = 0; i < allCompanions.Length; i++)
             {

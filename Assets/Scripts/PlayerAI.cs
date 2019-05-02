@@ -142,6 +142,9 @@ public class PlayerAI : MonoBehaviour
             case "Portal":
                 other.gameObject.GetComponent<DungeonMouseOver>().TurnOn();
                 break;
+            case "DungeonExit":
+                other.gameObject.GetComponent<DungeonMouseOver>().TurnOn();
+                break;
             default:
                 break;
         }
@@ -197,7 +200,7 @@ public class PlayerAI : MonoBehaviour
         {
             isInteracting = true;
         }
-        GameObject.Find("DialogueManager").GetComponent<Template_UIManager>().Blur();
+        Camera.main.GetComponent<UIBlurToggle>().ToggleBlur();
     }
 
     public void UIPopUp()
@@ -210,7 +213,7 @@ public class PlayerAI : MonoBehaviour
         {
             isInteracting = true;
         }
-        GameObject.Find("DialogueManager").GetComponent<Template_UIManager>().Blur();
+        Camera.main.GetComponent<UIBlurToggle>().ToggleBlur();
     }
 
     public void LookAt(Vector3 lookingAt)

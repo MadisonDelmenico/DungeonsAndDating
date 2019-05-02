@@ -46,7 +46,8 @@ public class CompanionAIScript : MonoBehaviour
     [Header("Debug text item")]
     public Text text;
 
-
+    [SerializeField]
+    private bool started;
 
     private GameObject friendlyTargetParticleEffect;
 
@@ -56,7 +57,6 @@ public class CompanionAIScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         isRecruited = false;
         state = CompanionState.Following;
         rotspeed = 3f;
@@ -72,47 +72,10 @@ public class CompanionAIScript : MonoBehaviour
         companionClass = GetComponent<CharacterClass>();
         companionActions = GetComponent<CharacterActions>();
 
-        // Finding the number of companions currently in the dungeon, adding them to an array of companions
-        allCompanions = GameObject.FindGameObjectsWithTag("Companion");
 
         //companions know where the health potions are
         healthpotions = GameObject.FindGameObjectsWithTag("Healthpotion");
-
-        // Setting the companion number for each companion, 0 by default
-        for (int i = 0; i < allCompanions.Length; i++)
-        {
-            if (allCompanions[i] == gameObject)
-            {
-                companionNumber = i;
-                break;
-            }
-        }
-        // Setting the transforms for companion target for quick referencing
-        switch (companionNumber)
-        {
-            case 0:
-                if (allCompanions.Length == 2)
-                {
-                    companionTarget = GameObject.Find("CompanionTarget2");
-                    break;
-                }
-                else
-                {
-                    companionTarget = GameObject.Find("CompanionTarget0");
-                    break;
-                }
-            case 1:
-                companionTarget = GameObject.Find("CompanionTarget1");
-                break;
-            case 2:
-                companionTarget = GameObject.Find("CompanionTarget2");
-                break;
-            default:
-                break;
-        }
-        companionTargetTransform = companionTarget.transform;
-
-
+        
         //setting particle effects
         friendlyTargetParticleEffect = Resources.Load<GameObject>("ParticleEffects/ParticleFriendly");
     }
@@ -120,6 +83,60 @@ public class CompanionAIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!started)
+        {
+
+            // Finding the number of companions currently in the dungeon, adding them to an array of companions
+            allCompanions = GameObject.FindGameObjectsWithTag("Companion");
+
+            int activeCompanions = 0;
+            foreach (GameObject c in allCompanions)
+            {
+                if (c.activeSelf)
+                {
+                    activeCompanions++;
+                }
+            }
+            // Setting the companion number for each companion, 0 by default
+            for (int i = 0; i < allCompanions.Length; i++)
+            {
+                if (allCompanions[i] == gameObject)
+                {
+                    companionNumber = i;
+                    break;
+                }
+            }
+
+            // Setting the transforms for companion target for quick referencing
+            switch (companionNumber)
+            {
+                case 0:
+                    if (activeCompanions == 2)
+                    {
+                        companionTarget = GameObject.Find("CompanionTarget2");
+                        break;
+                    }
+                    else
+                    {
+                        companionTarget = GameObject.Find("CompanionTarget0");
+                        break;
+                    }
+                case 1:
+                    companionTarget = GameObject.Find("CompanionTarget1");
+                    break;
+                case 2:
+                    companionTarget = GameObject.Find("CompanionTarget2");
+                    break;
+                default:
+                    break;
+            }
+            companionTargetTransform = companionTarget.transform;
+
+
+            started = true;
+        }
+
+
         castTime -= Time.deltaTime;
 
         // If the player is being attacked, attack

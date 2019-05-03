@@ -14,4 +14,5 @@ public class PlayerData
     public PlayerInventoryData inventoryData = new PlayerInventoryData();
     public PlayerCompanionData companionData = new PlayerCompanionData();
     public PlayerLoadoutData loadoutData = new PlayerLoadoutData();
+    public PlayerNpcData npcData = new PlayerNpcData();
 }

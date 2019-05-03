@@ -24,6 +24,7 @@ public class DataManager : MonoBehaviour
 
     private GameObject player;
     public GameObject[] companions;
+    public GameObject[] allSpeakingCharacters;
     public GameObject[] dungeonCompanionContainers;
     public LoadoutButton[] companionButtons;
     private bool started;
@@ -247,6 +248,42 @@ public class DataManager : MonoBehaviour
                 }
             }
         }
+
+        if (scene == CurrentScene.Market)
+        {
+            foreach (GameObject c in allSpeakingCharacters)
+            {
+                switch (c.name)
+                {
+                    case "Kallista_Idle":
+                        if (playerData.npcData.kallistaSpoken)
+                        {
+                            c.GetComponent<VIDE_Assign>().overrideStartNode = 10;
+                        }
+                        break;
+                    case "Sheeva_Idle":
+                        if (playerData.npcData.sheevaSpoken)
+                        {
+                            c.GetComponent<VIDE_Assign>().overrideStartNode = 10;
+                        }
+                        break;
+                    case "Strannik_Finished":
+                        if (playerData.npcData.strannikSpoken)
+                        {
+                            c.GetComponent<VIDE_Assign>().overrideStartNode = 10;
+                        }
+                        break;
+                    case "Sendar":
+                        if (playerData.npcData.sendarSpoken)
+                        {
+                            c.GetComponent<VIDE_Assign>().overrideStartNode = 5;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 
     private void ReadDataLocal()
@@ -257,5 +294,25 @@ public class DataManager : MonoBehaviour
         PlayerWrapper wrapper = JsonUtility.FromJson<PlayerWrapper>(contents);
 
         playerData = wrapper.data;
+    }
+
+    public void KallistaSpoken()
+    {
+        playerData.npcData.kallistaSpoken = true;
+    }
+
+    public void SheevaSpoken()
+    {
+        playerData.npcData.sheevaSpoken = true;
+    }
+
+    public void StrannikSpoken()
+    {
+        playerData.npcData.strannikSpoken = true;
+    }
+
+    public void SendarSpoken()
+    {
+        playerData.npcData.sendarSpoken = true;
     }
 }

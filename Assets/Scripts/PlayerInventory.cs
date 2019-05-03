@@ -45,6 +45,16 @@ public class PlayerInventory : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/Interactables/Interact_Game_Gold_Collect", GetComponent<Transform>().position);
             money += other.GetComponent<PickupCoin>().value;
             other.GetComponent<PickupCoin>().PickUp(this.gameObject.transform);
+
+            int randomTreasure = Random.Range(0, 20);
+
+            if (randomTreasure < 5)
+            {
+                Debug.Log("Treasure Obtained!");
+                commonTreasure += 3;
+                uncommonTreasure += 2;
+                rareTreasure += 1;
+            }
         }
         if (other.GetComponent<PickupTreasure>())
         {
@@ -209,7 +219,23 @@ public class PlayerInventory : MonoBehaviour
     {
         PlayerInventoryData data = new PlayerInventoryData();
 
+        data.money = money;
 
+        data.commonTreasure = commonTreasure;
+        data.uncommonTreasure = uncommonTreasure;
+        data.rareTreasure = rareTreasure;
+
+        data.steakOfStrength = steakOfStrength;
+        data.snakeShapedWand = snakeShapedWand;
+        data.holyOrderEnlistment = holyOrderEnlistment;
+
+        data.halberdWhetstone = halberdWhetstone;
+        data.spikedBoots = spikedBoots;
+        data.rangerScoutCookies = rangerScoutCookies;
+
+        data.scaleRepairKit = scaleRepairKit;
+        data.hauntedDagger = hauntedDagger;
+        data.localCharityReciept = localCharityReciept;
 
         return data;
     }

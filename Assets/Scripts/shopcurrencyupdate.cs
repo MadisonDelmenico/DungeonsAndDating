@@ -9,22 +9,21 @@ public class shopcurrencyupdate : MonoBehaviour
     public Text gems;
     public Text artifacts;
     public Text money;
-    public GameObject sceneManager;
-
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        sceneManager = GameObject.Find("SceneManager");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        swords.text = "x" + sceneManager.GetComponent<DataManager>().playerData.inventoryData.commonTreasure;
-        gems.text = "x" + sceneManager.GetComponent<DataManager>().playerData.inventoryData.uncommonTreasure;
-        artifacts.text = "x" + sceneManager.GetComponent<DataManager>().playerData.inventoryData.rareTreasure;
-        money.text = "x" + sceneManager.GetComponent<DataManager>().playerData.inventoryData.money;
+        swords.text = "x" + player.GetComponent<PlayerInventory>().commonTreasure;
+        gems.text = "x" + player.GetComponent<PlayerInventory>().uncommonTreasure;
+        artifacts.text = "x" + player.GetComponent<PlayerInventory>().rareTreasure;
+        money.text = "x" + player.GetComponent<PlayerInventory>().money;
 
     }
 }

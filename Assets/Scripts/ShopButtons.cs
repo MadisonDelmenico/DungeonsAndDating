@@ -16,13 +16,12 @@ public class ShopButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public int objectPrice;
     public string objectName;
     public GameObject container;
-    public GameObject sceneManager;
-
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        sceneManager = GameObject.Find("SceneManager");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -32,12 +31,12 @@ public class ShopButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         if (gameObject.name != "sell")
         {
             //if the player doesn't have enough money, they shouldn't be able to click the button
-            if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.money < gameObject.GetComponent<ShopButtons>().objectPrice)
+            if (player.GetComponent<PlayerInventory>().money < gameObject.GetComponent<ShopButtons>().objectPrice)
             {
                 gameObject.GetComponent<Button>().interactable = false;
             }
 
-            if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.money >= gameObject.GetComponent<ShopButtons>().objectPrice)
+            if (player.GetComponent<PlayerInventory>().money >= gameObject.GetComponent<ShopButtons>().objectPrice)
             {
                 gameObject.GetComponent<Button>().interactable = true;
             }
@@ -50,14 +49,14 @@ public class ShopButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             switch (gameObject.GetComponent<ShopButtons>().objectName)
             {
                 case "Rusted sword":
-                    if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.commonTreasure < 1)
+                    if (player.GetComponent<PlayerInventory>().commonTreasure < 1)
                     {
                         gameObject.GetComponent<Button>().interactable = false;
                         gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.grey;
                        GameObject.Find("swordimage").GetComponent<UnityEngine.UI.Image>().color = Color.grey;
                     }
 
-                    if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.commonTreasure >= 1)
+                    if (player.GetComponent<PlayerInventory>().commonTreasure >= 1)
                     {
                         gameObject.GetComponent<Button>().interactable = true;
                         gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.white;
@@ -66,14 +65,14 @@ public class ShopButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                     break;
                              
                 case "Average jewell":
-                    if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.uncommonTreasure < 1)
+                    if (player.GetComponent<PlayerInventory>().uncommonTreasure < 1)
                     {
                         gameObject.GetComponent<Button>().interactable = false;
                         gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.grey;
                         GameObject.Find("gemimage").GetComponent<UnityEngine.UI.Image>().color = Color.grey;
                     }
 
-                    if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.uncommonTreasure >= 1)
+                    if (player.GetComponent<PlayerInventory>().uncommonTreasure >= 1)
                     {
                         gameObject.GetComponent<Button>().interactable = true;
                         gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.white;
@@ -81,14 +80,14 @@ public class ShopButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                     }
                     break;
                 case "Magical Artifact":
-                    if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.rareTreasure < 1)
+                    if (player.GetComponent<PlayerInventory>().rareTreasure < 1)
                     {
                         gameObject.GetComponent<Button>().interactable = false;
                         gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.grey;
                         GameObject.Find("ringimage").GetComponent<UnityEngine.UI.Image>().color = Color.grey;
                     }
 
-                    if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.rareTreasure >= 1)
+                    if (player.GetComponent<PlayerInventory>().rareTreasure >= 1)
                     {
                         gameObject.GetComponent<Button>().interactable = true;
                         gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.white;
@@ -125,29 +124,26 @@ public class ShopButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         switch (gameObject.GetComponent<ShopButtons>().objectName)
         {
             case "Rusted sword":
-                if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.commonTreasure >= 1)
+                if (player.GetComponent<PlayerInventory>().commonTreasure >= 1)
                 {
-                    sceneManager.GetComponent<DataManager>().playerData.inventoryData.money +=
-                        objectPrice;
-                    sceneManager.GetComponent<DataManager>().playerData.inventoryData.commonTreasure--;
+                    player.GetComponent<PlayerInventory>().money += objectPrice;
+                    player.GetComponent<PlayerInventory>().commonTreasure--;
                 }
 
                 break;
             case "Average jewell":
-                if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.uncommonTreasure >= 1)
+                if (player.GetComponent<PlayerInventory>().uncommonTreasure >= 1)
                 {
-                    sceneManager.GetComponent<DataManager>().playerData.inventoryData.money +=
-                        objectPrice;
-                    sceneManager.GetComponent<DataManager>().playerData.inventoryData.uncommonTreasure--;
+                    player.GetComponent<PlayerInventory>().money += objectPrice;
+                    player.GetComponent<PlayerInventory>().uncommonTreasure--;
                 }
 
                 break;
             case "Magical Artifact":
-                if (sceneManager.GetComponent<DataManager>().playerData.inventoryData.rareTreasure >= 1)
+                if (player.GetComponent<PlayerInventory>().rareTreasure >= 1)
                 {
-                    sceneManager.GetComponent<DataManager>().playerData.inventoryData.money +=
-                        objectPrice;
-                    sceneManager.GetComponent<DataManager>().playerData.inventoryData.rareTreasure--;
+                    player.GetComponent<PlayerInventory>().money += objectPrice;
+                    player.GetComponent<PlayerInventory>().rareTreasure--;
                 }
 
                 break;
@@ -161,35 +157,34 @@ public class ShopButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         switch (gameObject.GetComponent<ShopButtons>().objectName)
         {
             case "Steak of Strength":
-                sceneManager.GetComponent<DataManager>().playerData.inventoryData.steakOfStrength++;
+                player.GetComponent<PlayerInventory>().AddItem(1);
                 break;
             case "Snake Shaped Wand":
-                sceneManager.GetComponent<DataManager>().playerData.inventoryData.snakeShapedWand++;
+                player.GetComponent<PlayerInventory>().AddItem(2);
                 break;
             case "Holy Order Enlistment":
-                sceneManager.GetComponent<DataManager>().playerData.inventoryData.holyOrderEnlistment++;
+                player.GetComponent<PlayerInventory>().AddItem(3);
                 break;
             case "Halberd Whetstone":
-                sceneManager.GetComponent<DataManager>().playerData.inventoryData.halberdWhetstone++;
+                player.GetComponent<PlayerInventory>().AddItem(4);
                 break;
             case "Spiked Boots":
-                sceneManager.GetComponent<DataManager>().playerData.inventoryData.spikedBoots++;
+                player.GetComponent<PlayerInventory>().AddItem(5);
                 break;
             case "Ranger Scout cookies":
-                sceneManager.GetComponent<DataManager>().playerData.inventoryData.rangerScoutCookies++;
+                player.GetComponent<PlayerInventory>().AddItem(6);
                 break;
             case "Scale Repair Kit":
-                sceneManager.GetComponent<DataManager>().playerData.inventoryData.scaleRepairKit++;
+                player.GetComponent<PlayerInventory>().AddItem(7);
                 break;
             case "Haunted Dagger":
-                sceneManager.GetComponent<DataManager>().playerData.inventoryData.hauntedDagger++;
+                player.GetComponent<PlayerInventory>().AddItem(8);
                 break;
             case "Local Charity Receipt":
-                sceneManager.GetComponent<DataManager>().playerData.inventoryData.localCharityReciept++;
+                player.GetComponent<PlayerInventory>().AddItem(9);
                 break;
         }
-        sceneManager.GetComponent<DataManager>().playerData.inventoryData.money -=
-            gameObject.GetComponent<ShopButtons>().objectPrice;
+        player.GetComponent<PlayerInventory>().money -= gameObject.GetComponent<ShopButtons>().objectPrice;
         print("I just bought a " + gameObject.GetComponent<ShopButtons>().objectName);
 
     }
